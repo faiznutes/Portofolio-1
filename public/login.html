@@ -25,7 +25,7 @@
           <a class="btn btn-ghost" href="index.html">Back</a>
         </div>
       </form>
-      <p class="hint">Demo: <strong>admin / password123</strong></p>
+      <p class="hint"><strong></strong></p>
     </div>
   </main>
 
@@ -35,7 +35,7 @@
       e.preventDefault();
       const u = document.getElementById('user').value.trim();
       const p = document.getElementById('pass').value;
-      if(u === 'admin' && p === 'password123'){
+      if(u === 'faiz' && p === '123'){
         localStorage.setItem(ADMIN_KEY, '1');
         location.href = 'index.html';
       } else {
