@@ -7,7 +7,7 @@ const projectsData = [
     image: "assets/images/project1.jpg",
     description: "Desain website portofolio modern dengan layout clean dan animasi halus.",
     longDescription: `
-      Desain website portofolio modern dengan tampilan bersih dan fokus pada kessssssssssssssssssssssssssssssssssssssssssssterbacaan.
+      Desain website portofolio modern dengan tampilan bersih dan fokus pada .
       Dibuat menggunakan HTML, CSS, dan JavaScript dengan layout fleksibel dan responsive.
       Terdapat animasi subtle serta dark mode untuk tampilan profesional.
     `,

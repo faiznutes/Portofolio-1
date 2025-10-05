@@ -658,9 +658,9 @@ footer {
 
 /* ==== PROJECTS3 DETAIL PAGE ==== */
 .projects3-section {
-  padding: 30px 30px;
+  padding: 20px 20px;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 20px auto;
   color: var(--text-color);
   background-color: var(--section-bg);
   border-radius: 12px;
