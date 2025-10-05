@@ -130,8 +130,6 @@ footer {
 @media (max-width: 800px) {
   header, main, footer {
     padding: 0 40px;
-    padding-top: 30px;
-    padding-bottom: 10px;
     font-size: 15px;
   }
 
@@ -177,6 +175,9 @@ footer {
   margin: 0 auto;           /* agar posisinya di tengah */
   border-radius: 20px;      /* sesuai about2-section */
   margin-bottom: 0px;
+  max-width: 1400px;
+  margin: 0 auto;
+
 }
 
 .profile-photo {
@@ -212,30 +213,31 @@ footer {
   line-height: 1.7;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 600px) {
   .profile-section {
-    padding: 30px 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 20px 30px;
   }
 
-  .profile-photo {
-    width: 120px;
-    height: 120px;
+  .skills-section {
+    margin-top: 40px;
+    padding: 20px 30px;
+    padding-top: 20px;
   }
 
-  .profile-name {
-    font-size: 20px;
-  }
-
-  .profile-bio {
-    font-size: 14px;
+  .projects1-section {
+    margin-top: 40px;
   }
 }
+
 
 /* ==== SKILLS SECTION ==== */
 .skills-section {
   text-align: center;
   margin: 60px auto 0 auto; /* top: 60px, left/right: auto (centered), bottom: 0 */
   padding: 60px 0;
+  padding-top: 30; /* supaya nyambung profile-section */
   background-color: var(--section-bg);
   border-radius: 20px;
   box-shadow: 0 2px 10px var(--shadow-color);
