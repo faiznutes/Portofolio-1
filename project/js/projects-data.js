@@ -57,7 +57,84 @@ const projectsData = [
       "assets/images/project3_2.jpg",
       "assets/images/project3_3.jpg"
     ]
+  },
+  {
+    id: "project3",
+    title: "Minimalist Poster Design",
+    category: "design",
+    image: "assets/images/project1.jpg",
+    description: "Desain poster gaya minimalis untuk event musik.",
+    longDescription: `
+      Poster berukuran A2 dengan fokus pada tipografi dan keseimbangan ruang negatif.
+      Warna utama hitam-putih dengan aksen merah untuk kesan elegan dan kuat.
+    `,
+    date: "Juli 2025",
+    tools: ["Illustrator", "Photoshop"],
+    tags: ["Design", "Typography", "Minimalist"],
+    gallery: [
+      "assets/images/project3_1.jpg",
+      "assets/images/project3_2.jpg",
+      "assets/images/project3_3.jpg"
+    ]
+  },
+  {
+    id: "project3",
+    title: "Minimalist Poster Design",
+    category: "design",
+    image: "assets/images/project1.jpg",
+    description: "Desain poster gaya minimalis untuk event musik.",
+    longDescription: `
+      Poster berukuran A2 dengan fokus pada tipografi dan keseimbangan ruang negatif.
+      Warna utama hitam-putih dengan aksen merah untuk kesan elegan dan kuat.
+    `,
+    date: "Juli 2025",
+    tools: ["Illustrator", "Photoshop"],
+    tags: ["Design", "Typography", "Minimalist"],
+    gallery: [
+      "assets/images/project3_1.jpg",
+      "assets/images/project3_2.jpg",
+      "assets/images/project3_3.jpg"
+    ]
+  },
+  {
+    id: "project3",
+    title: "Minimalist Poster Design",
+    category: "design",
+    image: "assets/images/project1.jpg",
+    description: "Desain poster gaya minimalis untuk event musik.",
+    longDescription: `
+      Poster berukuran A2 dengan fokus pada tipografi dan keseimbangan ruang negatif.
+      Warna utama hitam-putih dengan aksen merah untuk kesan elegan dan kuat.
+    `,
+    date: "Juli 2025",
+    tools: ["Illustrator", "Photoshop"],
+    tags: ["Design", "Typography", "Minimalist"],
+    gallery: [
+      "assets/images/project3_1.jpg",
+      "assets/images/project3_2.jpg",
+      "assets/images/project3_3.jpg"
+    ]
+  },
+  {
+    id: "project3",
+    title: "Minimalist Poster Design",
+    category: "design",
+    image: "assets/images/project1.jpg",
+    description: "Desain poster gaya minimalis untuk event musik.",
+    longDescription: `
+      Poster berukuran A2 dengan fokus pada tipografi dan keseimbangan ruang negatif.
+      Warna utama hitam-putih dengan aksen merah untuk kesan elegan dan kuat.
+    `,
+    date: "Juli 2025",
+    tools: ["Illustrator", "Photoshop"],
+    tags: ["Design", "Typography", "Minimalist"],
+    gallery: [
+      "assets/images/project3_1.jpg",
+      "assets/images/project3_2.jpg",
+      "assets/images/project3_3.jpg"
+    ]
   }
+  
 ];
 
 
