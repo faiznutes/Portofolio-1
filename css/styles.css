@@ -25,7 +25,7 @@ body {
 }
 
 /* Layout umum */
-header, main, footer {
+main {
   max-width: 2000px;
   margin: 0 auto;
   padding: 0 200px;
@@ -33,18 +33,27 @@ header, main, footer {
 
 /* HEADER */
 header {
-  background-color: var(--section-bg);
-  box-shadow: 0 2px 6px var(--shadow-color);
+  width: 100vw;
   position: sticky;
   top: 0;
+  left: 0;
+  background-color: var(--section-bg);
+  box-shadow: 0 2px 6px var(--shadow-color);
   z-index: 1000;
+  padding: 0; /* pastikan paddingnya dihapus */
+  max-width: 100vw; /* supaya pas viewport */
 }
 
-.container {
+
+header .container {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 12px 0; /* padding atas-bawah 12px, kiri-kanan 0 */
 }
+
 
 /* LOGO */
 .logo {
@@ -102,17 +111,19 @@ main {
 }
 
 /* FOOTER */
+/* FOOTER */
 footer {
   background-color: var(--section-bg);
   text-align: center;
-  padding: 30px 0; /* sebelumnya 30px → sekarang lebih tinggi */
-  font-size: 16px; /* sedikit lebih besar */
+  padding: 30px 20px;
+  font-size: 16px;
   color: var(--subtext-color);
-  margin-top: 40px; /* beri jarak lebih lega dari section sebelumnya */
+  margin-top: 40px;
   border-radius: 20px 20px 0 0;
-  box-shadow: 0 -2px 10px var(--shadow-color); /* efek lembut di atas footer */
-   width: 100%;
+  box-shadow: 0 -2px 10px var(--shadow-color);
+  width: 100%;
 }
+
 
 /* RESPONSIVE */
 @media (max-width: 800px) {
@@ -156,9 +167,12 @@ footer {
   text-align: center;
   padding: 60px 0;
   background-color: var(--section-bg);
-  border-radius: 12px;
+  border-radius: 20px;
   box-shadow: 0 2px 10px var(--shadow-color);
   margin-top: 20px;
+  max-width: 1400px;
+  margin: 0 auto;           /* agar posisinya di tengah */
+  border-radius: 20px;      /* sesuai about2-section */
   margin-bottom: 0px;
 }
 
@@ -217,11 +231,13 @@ footer {
 /* ==== SKILLS SECTION ==== */
 .skills-section {
   text-align: center;
-  margin-top: 20px;
+  margin: 60px auto 0 auto; /* top: 60px, left/right: auto (centered), bottom: 0 */
   padding: 60px 0;
   background-color: var(--section-bg);
-  border-radius: 12px;
+  border-radius: 20px;
   box-shadow: 0 2px 10px var(--shadow-color);
+  max-width: 1400px;
+  margin:  auto;           /* agar posisinya di tengah */
 }
 
 .skills-title {
@@ -235,8 +251,9 @@ footer {
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  padding: 0 40px;
+  gap: 30px;
+  margin: 60px auto 0 auto; /* top: 60px, left/right: auto (centered), bottom: 0 */
+  padding: 0 90px;
 }
 
 /* BOX STYLE */
@@ -244,7 +261,7 @@ footer {
   background-color: var(--bg-color);
   border: 1px solid var(--border-color);
   border-radius: 10px;
-  padding: 25px 15px;
+  padding: 40px 15px;
   transition: all 0.3s ease;
 }
 
@@ -295,12 +312,13 @@ footer {
 /* ==== PROJECTS SECTION ==== */
 .projects1-section {
   text-align: center;
-  margin-top: 60px;
+  margin: 60px auto 0 auto; /* top: 60px, left/right: auto (centered), bottom: 0 */
   padding: 60px 0;
   background-color: var(--section-bg);
-  border-radius: 12px;
+  border-radius: 20px;
   box-shadow: 0 2px 12px var(--shadow-color);
   border: 1px solid var(--border-color);
+  max-width: 1400px;
 }
 
 .projects-title {
@@ -451,12 +469,14 @@ footer {
 /* ==== SOCIAL SECTION (MATCHED WITH PROFILE SECTION) ==== */
 .social-section {
   text-align: center;
-  margin-top: 60px;
+  margin: 60px auto 0 auto; /* top: 60px, left/right: auto (centered), bottom: 0 */
   padding: 60px 0;
   background-color: var(--section-bg); /* sama dengan profile-section */
-  border-radius: 12px;
+  border-radius: 20px;
   box-shadow: 0 2px 12px var(--shadow-color); /* bayangan lembut */
   border: 0px solid var(--border-color); /* garis halus */
+  max-width: 1400px;
+  
 }
 
 .social-title {
@@ -774,6 +794,7 @@ footer {
 .projects3-back {
   text-align: center;
   margin-top: 60px;
+  margin-bottom: 30px;
 }
 
 .projects3-back a {
@@ -882,14 +903,16 @@ footer {
 
 /* === ABOUT SECTION STYLE === */
 .about2-section {
-  padding: 100px 20px;
+  padding: 30px 20px;
   background-color: #111;
   color: #f5f5f5;
   text-align: center;
   border-radius: 20px;
-  margin: 80px auto;
-  max-width: 1100px;
+  margin: 60px auto 0 auto; /* top: 60px, left/right: auto (centered), bottom: 0 */
+  max-width: 1200px;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  max-width: 1200px;
+  margin: 10 auto;           /* agar posisinya di tengah */
 }
 
 .about2-section h2.skills-title {
