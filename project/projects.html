@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio Projects</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+
+  <header>
+    <div class="container">
+     <a href="/index.html" class="logo-link">
+  <div class="logo">FAIZNUTE</div>
+</a>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="projects.html" class="active">Portfolio</a></li>
+          <li><a href="/about.html" class="active">About me</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="projects2-section">
+      <h1 class="projects2-title">All Projects</h1>
+
+      <div class="projects2-filters">
+        <button class="active" data-filter="all">All</button>
+        <button data-filter="website">Website</button>
+        <button data-filter="video">Video</button>
+        <button data-filter="design">Design</button>
+      </div>
+
+      <div class="projects-grid" id="projects-grid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 FAIZNUTE. All rights reserved.</p>
+  </footer>
+
+  <script src="js/projects-data.js"></script>
+  <script>
+    const grid = document.getElementById("projects-grid");
+    const buttons = document.querySelectorAll(".projects2-filters button");
+
+    function renderProjects(filter = "all") {
+      grid.innerHTML = "";
+      const filtered = filter === "all" ? projectsData : projectsData.filter(p => p.category === filter);
+
+      filtered.forEach(project => {
+        const card = document.createElement("div");
+        card.classList.add("project-card");
+        card.innerHTML = `
+          <img src="${project.image}" alt="${project.title}">
+          <div class="project-info">
+            <h3>${project.title}</h3>
+            <p>${project.description}</p>
+          </div>
+        `;
+        card.onclick = () => {
+          window.location.href = `project-detail.html?id=${project.id}`;
+        };
+        grid.appendChild(card);
+      });
+    }
+
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        renderProjects(btn.dataset.filter);
+      });
+    });
+
+    renderProjects();
+  </script>
+</body>
+</html>
