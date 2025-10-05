@@ -1,5 +1,3 @@
-// js/project-detail.js
-
 // Ambil parameter ID dari URL
 const urlParams = new URLSearchParams(window.location.search);
 const projectId = urlParams.get("id");
@@ -27,7 +25,7 @@ if (!project) {
   mainImage.src = project.image;
   mainImage.alt = project.title;
 
-  // Deskripsi panjang (gunakan <p>)
+  // Deskripsi panjang
   const descContainer = document.getElementById("project-description");
   project.longDescription
     .trim()
@@ -38,46 +36,21 @@ if (!project) {
       descContainer.appendChild(p);
     });
 
-// === Galeri gambar di bawah deskripsi ===
-const gallery = document.getElementById("project-gallery");
+  // === Tampilkan gallery (gambar & video) ===
+  const galleryContainer = document.getElementById("project-gallery");
 
-// Judul section (optional)
-const galleryHeader = document.createElement("h3");
-galleryHeader.textContent = "Page Info";
-galleryHeader.classList.add("gallery-header");
-gallery.appendChild(galleryHeader);
+  // Section Header
+  const galleryHeader = document.createElement("h3");
+  galleryHeader.textContent = "Page Info";
+  galleryHeader.classList.add("gallery-header");
+  galleryContainer.appendChild(galleryHeader);
 
-// Tampilkan gambar satu per satu ke bawah
-project.gallery.forEach((item, index) => {
-  const wrapper = document.createElement("div");
-  wrapper.classList.add("gallery-item");
-
-  const imgTitle = document.createElement("h4");
-  imgTitle.textContent = item.title || `Gambar ${index + 1}`;
-  imgTitle.classList.add("gallery-title");
-  wrapper.appendChild(imgTitle);
-
-  const img = document.createElement("img");
-  img.src = item.image || item;
-  img.alt = item.title || `${project.title} - image ${index + 1}`;
-  img.classList.add("gallery-image");
-
-  wrapper.appendChild(img);
-  gallery.appendChild(wrapper);
-});
-
-
-}
-
-// Galeri gambar dengan judul
-const gallery = document.getElementById("project-gallery");
-
-// Cek jika ada galleryDetails
-if (project.galleryDetails && project.galleryDetails.length > 0) {
-  project.galleryDetails.forEach(item => {
+  // Render Gallery
+  project.gallery.forEach((item, index) => {
     const wrapper = document.createElement("div");
     wrapper.classList.add("gallery-item");
 
+    // Judul tiap item
     if (item.title) {
       const title = document.createElement("h4");
       title.textContent = item.title;
@@ -85,12 +58,24 @@ if (project.galleryDetails && project.galleryDetails.length > 0) {
       wrapper.appendChild(title);
     }
 
-    const img = document.createElement("img");
-    img.src = item.image;
-    img.alt = item.title || project.title;
-    img.classList.add("gallery-image");
+    // Cek apakah item video
+    if (item.type === "video") {
+      const linkButton = document.createElement("a");
+      linkButton.href = item.src;
+      linkButton.target = "_blank";
+      linkButton.rel = "noopener noreferrer";
+      linkButton.textContent = "Tonton Video";
+      linkButton.classList.add("video-button"); // gunakan CSS khusus jika mau
+      wrapper.appendChild(linkButton);
+    } else {
+      // Default: tampilkan gambar
+      const img = document.createElement("img");
+      img.src = item.src;
+      img.alt = item.title || `Image ${index + 1}`;
+      img.classList.add("gallery-image");
+      wrapper.appendChild(img);
+    }
 
-    wrapper.appendChild(img);
-    gallery.appendChild(wrapper);
+    galleryContainer.appendChild(wrapper);
   });
 }
