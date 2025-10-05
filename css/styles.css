@@ -665,6 +665,7 @@ footer {
   background-color: var(--section-bg);
   border-radius: 12px;
   box-shadow: 0 2px 10px var(--shadow-color);
+  margin-bottom: 50px;
 }
 
 /* ==== HEADER ==== */
