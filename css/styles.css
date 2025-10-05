@@ -99,7 +99,7 @@ nav ul li a:hover {
   cursor: pointer;
   color: var(--text-color);
   margin-right: 0;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   margin-top: 0px;
   padding: 0px;
 }
