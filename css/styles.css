@@ -1082,3 +1082,24 @@ nav ul li a:hover {
   }
 }
 
+/* readmore index */
+.project-read {
+  display: inline-block;
+  padding: 8px 18px;
+  font-size: 14px;
+  color: var(--text-color);
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 30px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.project-read:hover {
+  background-color: var(--accent-color);
+  color: #fff;
+  box-shadow: 0 0 15px var(--accent-color);
+}
+
+
