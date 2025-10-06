@@ -424,6 +424,7 @@ footer {
   font-size: 14px;
   text-decoration: none;
   margin-top: 8px;
+  margin-left: 10px;
   transition: color 0.3s ease;
 }
 
@@ -434,6 +435,7 @@ footer {
 /* VIEW ALL BUTTON */
 .project-more {
   margin-top: 40px;
+  margin-left: 10px;
 }
 
 .project-btn {
