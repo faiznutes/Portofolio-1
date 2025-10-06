@@ -132,12 +132,19 @@
 
   <script src="project/js/projects-data.js"></script>
   <script>
+    // Function to truncate text
+    const truncate = (text, words) => {
+      const wordArray = text.split(' ');
+      if (wordArray.length <= words) return text;
+      return wordArray.slice(0, words).join(' ') + '...';
+    };
+
     // Function to populate projects
     const populateProjects = () => {
       const projectsGrid = document.getElementById('projects-grid');
       projectsGrid.innerHTML = '';
       const projectsData = getProjectsData();
-      const featuredIds = ['modern-website-design', 'creative-logo-concept', 'promotional-video-edit'];
+      const featuredIds = ['modern-website-design', 'creative-logo-concept', 'promotional-video-edit', 'logo-fossei-rakereg-2021'];
       const featuredProjects = featuredIds.map(id => projectsData.find(p => p.id === id)).filter(p => p);
 
       featuredProjects.forEach(project => {
@@ -157,7 +164,7 @@
 
         const desc = document.createElement('p');
         desc.classList.add('project-desc');
-        desc.textContent = project.description;
+        desc.textContent = truncate(project.description, 20);
         card.appendChild(desc);
 
         const tag = document.createElement('span');
