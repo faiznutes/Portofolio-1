@@ -41,29 +41,14 @@ const staticProjectsData = [
     ]
   },
 
-  {
-    id: "promotional-video-edit",
-    title: "Promotional Video Edit",
-    category: "video",
-    image: "assets/images/project1.jpg",
-    description: "Editing video promo dengan efek cinematic dan transisi halus.",
-    longDescription: `
-      Proyek editing video promosional dengan gaya cinematic yang menarik perhatian.
-      Menggunakan transisi halus, efek visual, dan musik latar yang sesuai untuk meningkatkan engagement.
-      Ditujukan untuk kampanye pemasaran produk atau layanan.
-    `,
-    date: "November 2025",
-    tools: ["Adobe Premiere Pro", "After Effects"],
-    tags: ["Video Editing", "Cinematic", "Promotion"],
-    gallery: [
-      { type: "image", title: "Thumbnail Video", src: "assets/images/project1.jpg" },
-      { type: "video", title: "Full Video", src: "https://www.youtube.com/watch?v=example3" }
-    ]
-  }
+  
 ];
 
 const getProjectsData = () => {
   const stored = localStorage.getItem('submittedProjects');
   const dynamicData = stored ? JSON.parse(stored) : [];
-  return [...dynamicData, ...staticProjectsData];
+  const deletedStatic = localStorage.getItem('deletedStaticProjects') || '[]';
+  const deleted = JSON.parse(deletedStatic);
+  const filteredStatic = staticProjectsData.filter(p => !deleted.includes(p.id));
+  return [...dynamicData, ...filteredStatic];
 };

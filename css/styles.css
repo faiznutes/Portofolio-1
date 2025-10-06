@@ -1405,6 +1405,84 @@ nav ul li a:hover {
   box-shadow: 0 6px 18px var(--hover-shadow);
 }
 
+/* Edit form buttons */
+#edit-add-image {
+  background-color: var(--accent-color);
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+#edit-add-image:hover {
+  background-color: #ffffff;
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--hover-shadow);
+}
+
+#edit-add-video {
+  background-color: var(--accent-color);
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+#edit-add-video:hover {
+  background-color: #ffffff;
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--hover-shadow);
+}
+
+#save-edit {
+  background-color: var(--accent-color);
+  color: #000;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+#save-edit:hover {
+  background-color: #ffffff;
+  color: #000;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px var(--hover-shadow);
+}
+
+#cancel-edit {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+#cancel-edit:hover {
+  background-color: #c82333;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(220, 53, 69, 0.3);
+}
+
 /* Responsive for login section */
 @media (max-width: 600px) {
   .login-section {
