@@ -92,7 +92,7 @@ nav ul li a:hover {
   color: var(--accent-color);
 }
 
-/* BURGER ICON 
+/* BURGER ICON */
 .menu-toggle {
   display: none;
   font-size: 26px;

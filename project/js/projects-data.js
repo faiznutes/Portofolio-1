@@ -20,5 +20,46 @@ const projectsData = [
     ]
   },
 
+  {
+    id: "project2",
+    title: "Creative Logo Concept",
+    category: "design",
+    image: "assets/images/project2.jpg",
+    description: "Logo minimalis untuk brand digital yang menonjolkan identitas visual.",
+    longDescription: `
+      Desain logo kreatif dengan konsep minimalis yang fokus pada identitas visual brand.
+      Menggunakan elemen-elemen sederhana namun kuat untuk menciptakan kesan yang memorable.
+      Cocok untuk brand digital dan startup yang ingin tampil profesional.
+    `,
+    date: "October 2025",
+    tools: ["Adobe Illustrator", "Figma"],
+    tags: ["Logo Design", "Branding", "Minimalist"],
+    gallery: [
+      { type: "image", title: "Konsep Awal", src: "assets/images/project2.jpg" },
+      { type: "image", title: "Varian Warna", src: "assets/images/project2.jpg" },
+      { type: "video", title: "Animasi Logo", src: "https://www.youtube.com/watch?v=example2" }
+    ]
+  },
+
+  {
+    id: "project3",
+    title: "Promotional Video Edit",
+    category: "video",
+    image: "assets/images/project1.jpg",
+    description: "Editing video promo dengan efek cinematic dan transisi halus.",
+    longDescription: `
+      Proyek editing video promosional dengan gaya cinematic yang menarik perhatian.
+      Menggunakan transisi halus, efek visual, dan musik latar yang sesuai untuk meningkatkan engagement.
+      Ditujukan untuk kampanye pemasaran produk atau layanan.
+    `,
+    date: "November 2025",
+    tools: ["Adobe Premiere Pro", "After Effects"],
+    tags: ["Video Editing", "Cinematic", "Promotion"],
+    gallery: [
+      { type: "image", title: "Thumbnail Video", src: "assets/images/project1.jpg" },
+      { type: "video", title: "Full Video", src: "https://www.youtube.com/watch?v=example3" }
+    ]
+  }
+
   // Tambahan project lain bisa ditambahkan di sini dengan format yang sama
 ];
