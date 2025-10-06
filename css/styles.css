@@ -249,17 +249,12 @@ footer {
 /* ==== GRID LAYOUT ==== */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 kolom tetap */
+  grid-template-columns: repeat(3, 1fr); /* 3 kolom di desktop */
   gap: 30px;
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 20px;
-
-  /* BATAS 2 baris saja */
-  max-height: calc((200px + 30px) * 2); /* perkiraan tinggi item + gap, bisa kamu sesuaikan */
-  overflow: hidden; /* sembunyikan item lebih dari 6 */
 }
-
 
 /* ==== BOX STYLE ==== */
 .skill-box {
@@ -302,16 +297,14 @@ footer {
 /* === RESPONSIVE === */
 @media (max-width: 900px) {
   .skills-grid {
-    grid-template-columns: repeat(2, 1fr); /* tampil 2 kolom di tablet */
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom di tablet */
     gap: 20px;
-    max-height: none;         /* hilangkan batas tinggi agar semua muncul */
-    overflow: visible;
   }
 }
 
 @media (max-width: 600px) {
   .skills-grid {
-    grid-template-columns: 1fr; /* tampil 1 kolom di HP */
+    grid-template-columns: 1fr; /* 1 kolom di HP */
     padding: 0 20px;
   }
 
