@@ -144,7 +144,7 @@
       const projectsGrid = document.getElementById('projects-grid');
       projectsGrid.innerHTML = '';
       const projectsData = getProjectsData();
-      const featuredIds = ['modern-website-design', 'creative-logo-concept', 'promotional-video-edit', 'logo-fossei-rakereg-2021'];
+      const featuredIds = ['modern-website-design', 'creative-logo-concept', 'logo-fossei-rakereg-2021', 'logo-fossei-rakereg-2021'];
       const featuredProjects = featuredIds.map(id => projectsData.find(p => p.id === id)).filter(p => p);
 
       featuredProjects.forEach(project => {
