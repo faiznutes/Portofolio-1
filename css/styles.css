@@ -302,14 +302,16 @@ footer {
 /* === RESPONSIVE === */
 @media (max-width: 900px) {
   .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(px, 1fr));
+    grid-template-columns: repeat(2, 1fr); /* tampil 2 kolom di tablet */
     gap: 20px;
+    max-height: none;         /* hilangkan batas tinggi agar semua muncul */
+    overflow: visible;
   }
 }
 
 @media (max-width: 600px) {
   .skills-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* tampil 1 kolom di HP */
     padding: 0 20px;
   }
 
@@ -317,6 +319,7 @@ footer {
     font-size: 20px;
   }
 }
+
 
 
 /* ==== PROJECTS SECTION ==== */
