@@ -88,39 +88,8 @@
 <section class="projects1-section" id="projects">
   <h2 class="projects-title">My Projects</h2>
 
-  <div class="projects-grid">
-    <!-- Project 1 -->
-    <div class="project-card">
-      <img src="assets/images/project1.jpg" alt="Project 1" class="project-thumb">
-      <h3 class="project-name">Modern Website Design</h3>
-      <p class="project-desc">
-        Desain website portofolio dengan tampilan responsif dan modern.
-      </p>
-      <span class="project-tag">Website</span>
-      <a href="project/project-detail.html?id=project1" class="project-read">Read More</a>
-    </div>
-
-    <!-- Project 2 -->
-    <div class="project-card">
-      <img src="assets/images/project2.jpg" alt="Project 2" class="project-thumb">
-      <h3 class="project-name">Creative Logo Concept</h3>
-      <p class="project-desc">
-        Logo minimalis untuk brand digital yang menonjolkan identitas visual.
-      </p>
-      <span class="project-tag">Logo Design</span>
-      <a href="project/project-detail.html?id=project2" class="project-read">Read More</a>
-    </div>
-
-    <!-- Project 3 -->
-    <div class="project-card">
-      <img src="assets/images/project1.jpg" alt="Project 3" class="project-thumb">
-      <h3 class="project-name">Promotional Video Edit</h3>
-      <p class="project-desc">
-        Editing video promo dengan efek cinematic dan transisi halus.
-      </p>
-      <span class="project-tag">Video</span>
-      <a href="project/project-detail.html?id=project3" class="project-read">Read More</a>
-    </div>
+  <div class="projects-grid" id="projects-grid">
+    <!-- Projects will be populated by JS -->
   </div>
 
   <div class="project-more">
@@ -161,6 +130,57 @@
     <p>© 2025 FaizNute. All rights reserved.</p>
   </footer>
 
+  <script src="project/js/projects-data.js"></script>
+  <script>
+    // Function to populate projects
+    const populateProjects = () => {
+      const projectsGrid = document.getElementById('projects-grid');
+      projectsGrid.innerHTML = '';
+      const projectsData = getProjectsData();
+      const featuredIds = ['modern-website-design', 'creative-logo-concept', 'promotional-video-edit'];
+      const featuredProjects = featuredIds.map(id => projectsData.find(p => p.id === id)).filter(p => p);
+
+      featuredProjects.forEach(project => {
+        const card = document.createElement('div');
+        card.classList.add('project-card');
+
+        const img = document.createElement('img');
+        img.src = project.image;
+        img.alt = project.title;
+        img.classList.add('project-thumb');
+        card.appendChild(img);
+
+        const title = document.createElement('h3');
+        title.classList.add('project-name');
+        title.textContent = project.title;
+        card.appendChild(title);
+
+        const desc = document.createElement('p');
+        desc.classList.add('project-desc');
+        desc.textContent = project.description;
+        card.appendChild(desc);
+
+        const tag = document.createElement('span');
+        tag.classList.add('project-tag');
+        tag.textContent = project.category.charAt(0).toUpperCase() + project.category.slice(1);
+        card.appendChild(tag);
+
+        const link = document.createElement('a');
+        link.href = `project/project-detail.html?id=${project.id}`;
+        link.classList.add('project-read');
+        link.textContent = 'Read More';
+        card.appendChild(link);
+
+        projectsGrid.appendChild(card);
+      });
+    };
+
+    // Populate projects on index.html
+    document.addEventListener('DOMContentLoaded', populateProjects);
+
+    // Update on storage change (for other tabs)
+    window.addEventListener('storage', populateProjects);
+  </script>
   <script src="script.js"></script>
 </body>
 </html>

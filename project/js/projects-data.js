@@ -1,10 +1,10 @@
 const staticProjectsData = [
   {
-    id: "project1",
+    id: "modern-website-design",
     title: "Modern Website Design",
     category: "website",
     image: "assets/images/project1.jpg",
-    description: "Desain website portofolio modern dengan layout clean dan animasi halus.",
+    description: "Desain website portofolio dengan tampilan responsif dan modern.",
     longDescription: `
       Desain website portofolio modern dengan tampilan bersih dan fokus pada user experience.
       Dibuat menggunakan HTML, CSS, dan JavaScript dengan layout fleksibel dan responsive.
@@ -21,10 +21,10 @@ const staticProjectsData = [
   },
 
   {
-    id: "project2",
+    id: "creative-logo-concept",
     title: "Creative Logo Concept",
     category: "design",
-    image: "assets/images/project2.jpg",
+    image: "assets/images/project1.jpg",
     description: "Logo minimalis untuk brand digital yang menonjolkan identitas visual.",
     longDescription: `
       Desain logo kreatif dengan konsep minimalis yang fokus pada identitas visual brand.
@@ -35,14 +35,14 @@ const staticProjectsData = [
     tools: ["Adobe Illustrator", "Figma"],
     tags: ["Logo Design", "Branding", "Minimalist"],
     gallery: [
-      { type: "image", title: "Konsep Awal", src: "assets/images/project2.jpg" },
-      { type: "image", title: "Varian Warna", src: "assets/images/project2.jpg" },
+      { type: "image", title: "Konsep Awal", src: "assets/images/project1.jpg" },
+      { type: "image", title: "Varian Warna", src: "assets/images/project1.jpg" },
       { type: "video", title: "Animasi Logo", src: "https://www.youtube.com/watch?v=example2" }
     ]
   },
 
   {
-    id: "project3",
+    id: "promotional-video-edit",
     title: "Promotional Video Edit",
     category: "video",
     image: "assets/images/project1.jpg",
@@ -60,12 +60,10 @@ const staticProjectsData = [
       { type: "video", title: "Full Video", src: "https://www.youtube.com/watch?v=example3" }
     ]
   }
-
-  // Tambahan project lain bisa ditambahkan di sini dengan format yang sama
 ];
 
 const getProjectsData = () => {
   const stored = localStorage.getItem('submittedProjects');
   const dynamicData = stored ? JSON.parse(stored) : [];
-  return [...staticProjectsData, ...dynamicData];
+  return [...dynamicData, ...staticProjectsData];
 };
