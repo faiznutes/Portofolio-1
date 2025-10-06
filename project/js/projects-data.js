@@ -15,7 +15,6 @@ const staticProjectsData = [
       { type: "image", title: "", src: "../assets/images/fossei/FIlsof 2.jpg" },
       { type: "image", title: "", src: "../assets/images/fossei/FIlsof 3.jpg" },
       { type: "image", title: "", src: "../assets/images/fossei/FIlsof 4.jpg" },
-      { type: "image", title: "", src: "../assets/images/fossei/logo.jpg" },
       { type: "image", title: "Background Zoom", src: "../assets/images/fossei/banner zoom.jpg" }
     ]
   }
