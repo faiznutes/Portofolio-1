@@ -1319,6 +1319,8 @@ nav ul li a:hover {
 @media (max-width: 600px) {
   .login-section {
     padding: 40px 20px;
+    max-width: none;
+    margin: 20px 20px 20px 20px;
   }
 
   .login-section h1 {
