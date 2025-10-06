@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Project Submission</title>
+  <title>Faiznute - Portofolio</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -51,6 +51,8 @@
         <div id="project-actions" style="display: none;">
           <button id="edit-selected" class="edit-btn">Edit Selected Project</button>
           <button id="delete-selected" class="delete-btn">Delete Selected Project</button>
+          <button id="approve-selected" class="edit-btn" style="display: none;">Approve</button>
+          <button id="reject-selected" class="delete-btn" style="display: none;">Reject</button>
           <button id="export-projects" class="edit-btn">Export Projects to JSON</button>
         </div>
       </div>
@@ -76,9 +78,9 @@
           <input type="text" id="tags" placeholder="e.g. Website, UI/UX, Responsive">
         </div>
 
-        <div class="form-group">
-          <label for="thumbnail">Thumbnail Image:</label>
-          <input type="file" id="thumbnail" accept="image/*" required>
+        <div class="form-group" id="thumbnail-group">
+          <label for="thumbnail">Thumbnail Image (optional):</label>
+          <input type="file" id="thumbnail">
         </div>
 
         <div class="form-group">
@@ -121,6 +123,11 @@
       <!-- Edit Project Section -->
       <div id="edit-project" style="display: none;">
         <h2>Edit Project</h2>
+        <div class="form-group">
+          <label for="import-json">Import JSON (paste project data to auto-fill form):</label>
+          <textarea id="import-json" placeholder="Paste JSON here..."></textarea>
+          <button type="button" id="import-json-btn">Import JSON</button>
+        </div>
         <form id="edit-form">
           <div class="form-group">
             <label for="edit-title">Project Title:</label>
@@ -188,69 +195,7 @@
   <script src="project/js/projects-data.js"></script>
   <script>
 
-    if (typeof staticProjectsData === 'undefined') {
-      staticProjectsData = [
-        {
-          id: "modern-website-design",
-          title: "Modern Website Design",
-          category: "website",
-          image: "assets/images/project1.jpg",
-          description: "Desain website portofolio dengan tampilan responsif dan modern.",
-          longDescription: `
-            Desain website portofolio modern dengan tampilan bersih dan fokus pada user experience.
-            Dibuat menggunakan HTML, CSS, dan JavaScript dengan layout fleksibel dan responsive.
-            Terdapat animasi subtle serta dark mode untuk tampilan profesional.
-          `,
-          date: "September 2025",
-          tools: ["Figma", "HTML", "CSS", "JavaScript"],
-          tags: ["Website", "UI/UX", "Responsive"],
-          gallery: [
-            { type: "image", title: "Tampilan Homepage", src: "assets/images/project1.jpg" },
-            { type: "image", title: "Mode Gelap", src: "assets/images/project1.jpg" },
-            { type: "video", title: "Video Product", src: "https://www.youtube.com/watch?v=Ef2JX3gbShM" }
-          ]
-        },
-        {
-          id: "creative-logo-concept",
-          title: "Creative Logo Concept",
-          category: "design",
-          image: "assets/images/project2.jpg",
-          description: "Logo minimalis untuk brand digital yang menonjolkan identitas visual.",
-          longDescription: `
-            Desain logo kreatif dengan konsep minimalis yang fokus pada identitas visual brand.
-            Menggunakan elemen-elemen sederhana namun kuat untuk menciptakan kesan yang memorable.
-            Cocok untuk brand digital dan startup yang ingin tampil profesional.
-          `,
-          date: "October 2025",
-          tools: ["Adobe Illustrator", "Figma"],
-          tags: ["Logo Design", "Branding", "Minimalist"],
-          gallery: [
-            { type: "image", title: "Konsep Awal", src: "assets/images/project2.jpg" },
-            { type: "image", title: "Varian Warna", src: "assets/images/project2.jpg" },
-            { type: "video", title: "Animasi Logo", src: "https://www.youtube.com/watch?v=example2" }
-          ]
-        },
-        {
-          id: "promotional-video-edit",
-          title: "Promotional Video Edit",
-          category: "video",
-          image: "assets/images/project1.jpg",
-          description: "Editing video promo dengan efek cinematic dan transisi halus.",
-          longDescription: `
-            Proyek editing video promosional dengan gaya cinematic yang menarik perhatian.
-            Menggunakan transisi halus, efek visual, dan musik latar yang sesuai untuk meningkatkan engagement.
-            Ditujukan untuk kampanye pemasaran produk atau layanan.
-          `,
-          date: "November 2025",
-          tools: ["Adobe Premiere Pro", "After Effects"],
-          tags: ["Video Editing", "Cinematic", "Promotion"],
-          gallery: [
-            { type: "image", title: "Thumbnail Video", src: "assets/images/project1.jpg" },
-            { type: "video", title: "Full Video", src: "https://www.youtube.com/watch?v=example3" }
-          ]
-        }
-      ];
-    }
+
 
     const accessPassword = document.getElementById('access-password');
 
@@ -292,7 +237,49 @@
         <input type="file" accept="image/*" class="image-file">
         <button type="button" class="remove-image">Remove</button>
       `;
+      addDragDropToImageItem(imageItem);
       imagesContainer.appendChild(imageItem);
+    });
+
+    // Function to add drag and drop to image item
+    function addDragDropToImageItem(item) {
+      const fileInput = item.querySelector('.image-file');
+      item.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        item.classList.add('drag-over');
+      });
+      item.addEventListener('dragleave', () => {
+        item.classList.remove('drag-over');
+      });
+      item.addEventListener('drop', (e) => {
+        e.preventDefault();
+        item.classList.remove('drag-over');
+        const files = e.dataTransfer.files;
+        if (files.length > 0 && files[0].type.startsWith('image/')) {
+          fileInput.files = files;
+        }
+      });
+    }
+
+    // Add drag drop to initial image item
+    document.querySelectorAll('.image-item').forEach(addDragDropToImageItem);
+
+    // Add drag drop to thumbnail
+    const thumbnailGroup = document.getElementById('thumbnail-group');
+    thumbnailGroup.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      thumbnailGroup.classList.add('drag-over');
+    });
+    thumbnailGroup.addEventListener('dragleave', () => {
+      thumbnailGroup.classList.remove('drag-over');
+    });
+    thumbnailGroup.addEventListener('drop', (e) => {
+      e.preventDefault();
+      thumbnailGroup.classList.remove('drag-over');
+      const files = e.dataTransfer.files;
+      if (files.length > 0 && files[0].type.startsWith('image/')) {
+        document.getElementById('thumbnail').files = files;
+      }
     });
 
     imagesContainer.addEventListener('click', (e) => {
@@ -331,9 +318,10 @@
       imageItem.classList.add('image-item');
       imageItem.innerHTML = `
         <input type="text" placeholder="Image Title" class="image-title">
-        <input type="file" accept="image/*" class="image-file">
+        <input type="file" class="image-file">
         <button type="button" class="remove-image">Remove</button>
       `;
+      addDragDropToImageItem(imageItem);
       editImagesContainer.appendChild(imageItem);
     });
 
@@ -375,8 +363,18 @@
       const description = document.getElementById('description').value;
       const tools = document.getElementById('tools').value.split(',').map(t => t.trim()).filter(t => t);
 
+      // Validation
+      if (!title || !category || !description) {
+        alert('Please fill all required fields: Title, Category, Description');
+        return;
+      }
+      if (thumbnailFile && !thumbnailFile.type.startsWith('image/')) {
+        alert('Please select a valid image file for thumbnail');
+        return;
+      }
+
       // Encode thumbnail
-      const thumbnailBase64 = await fileToBase64(thumbnailFile);
+      const thumbnailBase64 = thumbnailFile ? await fileToBase64(thumbnailFile) : '';
 
       // Encode gallery images and videos
       const gallery = [];
@@ -410,7 +408,8 @@
         date: new Date().toLocaleDateString(),
         tools,
         tags,
-        gallery
+        gallery,
+        status: 'pending'
       };
 
       // Save to localStorage
@@ -470,13 +469,13 @@
           select.appendChild(option);
         }
       });
-      // Include submitted projects
+      // Include submitted projects (exclude rejected)
       const stored = localStorage.getItem('submittedProjects');
       const projects = stored ? JSON.parse(stored) : [];
-      projects.forEach(project => {
+      projects.filter(p => p.status !== 'rejected').forEach(project => {
         const option = document.createElement('option');
         option.value = project.id;
-        option.textContent = project.title;
+        option.textContent = project.title + (project.status === 'approved' ? '' : ' (' + (project.status || 'pending') + ')');
         select.appendChild(option);
       });
     }
@@ -485,6 +484,29 @@
       const actions = document.getElementById('project-actions');
       if (document.getElementById('project-select').value) {
         actions.style.display = 'block';
+        const id = document.getElementById('project-select').value;
+        const stored = localStorage.getItem('submittedProjects');
+        const projects = stored ? JSON.parse(stored) : [];
+        const isSubmitted = projects.some(p => p.id === id);
+        const proj = projects.find(p => p.id === id);
+        if (isSubmitted) {
+          if (proj && proj.status === 'approved') {
+            document.getElementById('edit-selected').style.display = 'inline';
+            document.getElementById('delete-selected').style.display = 'inline';
+            document.getElementById('approve-selected').style.display = 'none';
+            document.getElementById('reject-selected').style.display = 'none';
+          } else {
+            document.getElementById('edit-selected').style.display = 'none';
+            document.getElementById('delete-selected').style.display = 'none';
+            document.getElementById('approve-selected').style.display = 'inline';
+            document.getElementById('reject-selected').style.display = 'inline';
+          }
+        } else {
+          document.getElementById('edit-selected').style.display = 'inline';
+          document.getElementById('delete-selected').style.display = 'inline';
+          document.getElementById('approve-selected').style.display = 'none';
+          document.getElementById('reject-selected').style.display = 'none';
+        }
       } else {
         actions.style.display = 'none';
       }
@@ -517,6 +539,76 @@
       });
     });
 
+    document.getElementById('import-json-btn').addEventListener('click', () => {
+      try {
+        const jsonText = document.getElementById('import-json').value;
+        const json = JSON.parse(jsonText);
+        document.getElementById('edit-title').value = json.title || '';
+        document.getElementById('edit-category').value = json.category || '';
+        document.getElementById('edit-description').value = json.description || '';
+        document.getElementById('edit-tools').value = (json.tools || []).join(', ');
+        document.getElementById('edit-tags').value = (json.tags || []).join(', ');
+        // Clear and populate gallery
+        editImagesContainer.innerHTML = '';
+        editVideoContainer.innerHTML = '';
+        (json.gallery || []).forEach(item => {
+          if (item.type === 'image') {
+            const imageItem = document.createElement('div');
+            imageItem.classList.add('image-item');
+            imageItem.innerHTML = `
+              <input type="text" placeholder="Image Title" class="image-title" value="${item.title || ''}">
+              <input type="file" class="image-file">
+              <button type="button" class="remove-image">Remove</button>
+            `;
+            addDragDropToImageItem(imageItem);
+            editImagesContainer.appendChild(imageItem);
+          } else if (item.type === 'video') {
+            const videoItem = document.createElement('div');
+            videoItem.classList.add('video-item');
+            videoItem.innerHTML = `
+              <input type="text" placeholder="Video Title" class="video-title" value="${item.title || ''}">
+              <input type="url" placeholder="https://..." class="video-link" value="${item.src || ''}">
+              <button type="button" class="remove-video">Remove</button>
+            `;
+            editVideoContainer.appendChild(videoItem);
+          }
+        });
+        alert('JSON imported successfully!');
+      } catch (e) {
+        alert('Invalid JSON: ' + e.message);
+      }
+    });
+
+    document.getElementById('approve-selected').addEventListener('click', () => {
+      const id = document.getElementById('project-select').value;
+      if (id) {
+        const stored = localStorage.getItem('submittedProjects');
+        let projects = stored ? JSON.parse(stored) : [];
+        const index = projects.findIndex(p => p.id === id);
+        if (index !== -1) {
+          projects[index].status = 'approved';
+          localStorage.setItem('submittedProjects', JSON.stringify(projects));
+          alert('Project approved!');
+          populateProjectSelect();
+        }
+      }
+    });
+
+    document.getElementById('reject-selected').addEventListener('click', () => {
+      const id = document.getElementById('project-select').value;
+      if (id) {
+        const stored = localStorage.getItem('submittedProjects');
+        let projects = stored ? JSON.parse(stored) : [];
+        const index = projects.findIndex(p => p.id === id);
+        if (index !== -1) {
+          projects[index].status = 'rejected';
+          localStorage.setItem('submittedProjects', JSON.stringify(projects));
+          alert('Project rejected!');
+          populateProjectSelect();
+        }
+      }
+    });
+
     function editProject(id) {
       let stored = localStorage.getItem('submittedProjects');
       let projects = stored ? JSON.parse(stored) : [];
@@ -543,9 +635,10 @@
             imageItem.classList.add('image-item');
             imageItem.innerHTML = `
               <input type="text" placeholder="Image Title" class="image-title" value="${item.title}">
-              <input type="file" accept="image/*" class="image-file">
+              <input type="file" class="image-file">
               <button type="button" class="remove-image">Remove</button>
             `;
+            addDragDropToImageItem(imageItem);
             editImagesContainer.appendChild(imageItem);
           } else if (item.type === 'video') {
             const videoItem = document.createElement('div');

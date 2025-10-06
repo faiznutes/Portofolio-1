@@ -23,7 +23,7 @@ if (!project) {
 
   // Gambar utama
   const mainImage = document.getElementById("project-image");
-  mainImage.src = project.image;
+  mainImage.src = project.image || 'assets/images/project1.jpg';
   mainImage.alt = project.title;
 
   // Deskripsi panjang

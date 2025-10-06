@@ -1,52 +1,29 @@
 const staticProjectsData = [
   {
-    id: "modern-website-design",
-    title: "Modern Website Design",
-    category: "website",
-    image: "assets/images/project1.jpg",
-    description: "Desain website portofolio dengan tampilan responsif dan modern.",
-    longDescription: `
-      Desain website portofolio modern dengan tampilan bersih dan fokus pada user experience.
-      Dibuat menggunakan HTML, CSS, dan JavaScript dengan layout fleksibel dan responsive.
-      Terdapat animasi subtle serta dark mode untuk tampilan profesional.
-    `,
-    date: "September 2025",
-    tools: ["Figma", "HTML", "CSS", "JavaScript"],
-    tags: ["Website", "UI/UX", "Responsive"],
-    gallery: [
-      { type: "image", title: "Tampilan Homepage", src: "assets/images/project1.jpg" },
-      { type: "image", title: "Mode Gelap", src: "assets/images/project1.jpg" },
-      { type: "video", title: "Video Product", src: "https://www.youtube.com/watch?v=Ef2JX3gbShM" }
-    ]
-  },
-
-  {
-    id: "creative-logo-concept",
-    title: "Creative Logo Concept",
+    id: "logo-fossei-rakereg-2021",
+    title: "Logo FoSSEI RAKEREG 2021",
     category: "design",
-    image: "assets/images/project1.jpg",
-    description: "Logo minimalis untuk brand digital yang menonjolkan identitas visual.",
-    longDescription: `
-      Desain logo kreatif dengan konsep minimalis yang fokus pada identitas visual brand.
-      Menggunakan elemen-elemen sederhana namun kuat untuk menciptakan kesan yang memorable.
-      Cocok untuk brand digital dan startup yang ingin tampil profesional.
-    `,
+    image: "assets/images/fossei/logo.jpg",
+    description: "Logo ini menggambarkan semangat kebersamaan, pertumbuhan, dan intelektualitas mahasiswa ekonomi Islam di wilayah Jabodetabek dalam kegiatan Rakereg (Rapat Kerja Regional) 2021.\n\nBentuk utama terdiri dari kombinasi huruf F dan I yang disusun secara geometris untuk merepresentasikan identitas FOSEI (Forum Silaturahmi Studi Ekonomi Islam) — simbol soliditas, struktur, dan arah yang jelas dalam pengembangan ekonomi Islam.\n\nElemen daun berwarna hijau di bagian bawah melambangkan pertumbuhan, keseimbangan, dan nilai keberlanjutan (sustainability) yang menjadi dasar ekonomi Islam.\n\nSedangkan lengkungan biru di atas menggambarkan lingkaran ukhuwah dan perlindungan, mencerminkan semangat kolaborasi antar lembaga di bawah satu visi besar.\n\nWarna biru merepresentasikan profesionalisme dan intelektualitas, sementara hijau melambangkan spiritualitas dan kesejahteraan umat.\n\nKeduanya berpadu membentuk harmoni antara ilmu dan nilai keislaman.\n\nDengan gaya modern-minimalis, logo ini dirancang agar fleksibel digunakan dalam berbagai media visual acara, baik cetak maupun digital, serta tetap menonjolkan identitas khas FOSEI yang berkarakter dan bermakna.",
+    longDescription: "Logo ini menggambarkan semangat kebersamaan, pertumbuhan, dan intelektualitas mahasiswa ekonomi Islam di wilayah Jabodetabek dalam kegiatan Rakereg (Rapat Kerja Regional) 2021.\n\nBentuk utama terdiri dari kombinasi huruf F dan I yang disusun secara geometris untuk merepresentasikan identitas FOSEI (Forum Silaturahmi Studi Ekonomi Islam) — simbol soliditas, struktur, dan arah yang jelas dalam pengembangan ekonomi Islam.\n\nElemen daun berwarna hijau di bagian bawah melambangkan pertumbuhan, keseimbangan, dan nilai keberlanjutan (sustainability) yang menjadi dasar ekonomi Islam.\n\nSedangkan lengkungan biru di atas menggambarkan lingkaran ukhuwah dan perlindungan, mencerminkan semangat kolaborasi antar lembaga di bawah satu visi besar.\n\nWarna biru merepresentasikan profesionalisme dan intelektualitas, sementara hijau melambangkan spiritualitas dan kesejahteraan umat.\n\nKeduanya berpadu membentuk harmoni antara ilmu dan nilai keislaman.\n\nDengan gaya modern-minimalis, logo ini dirancang agar fleksibel digunakan dalam berbagai media visual acara, baik cetak maupun digital, serta tetap menonjolkan identitas khas FOSEI yang berkarakter dan bermakna.",
     date: "October 2025",
-    tools: ["Adobe Illustrator", "Figma"],
-    tags: ["Logo Design", "Branding", "Minimalist"],
+    tools: ["Adobe Illustrator", "Adobe Photoshop"],
+    tags: ["Logo", "Design"],
     gallery: [
-      { type: "image", title: "Konsep Awal", src: "assets/images/project1.jpg" },
-      { type: "image", title: "Varian Warna", src: "assets/images/project1.jpg" },
-      { type: "video", title: "Animasi Logo", src: "https://www.youtube.com/watch?v=example2" }
+      { type: "image", title: "Logo FoSSEI", src: "assets/images/fossei/logo.jpg" },
+      { type: "image", title: "Filosofi", src: "assets/images/fossei/FIlsof 1.jpg" },
+      { type: "image", title: "", src: "assets/images/fossei/FIlsof 2.jpg" },
+      { type: "image", title: "", src: "assets/images/fossei/FIlsof 3.jpg" },
+      { type: "image", title: "", src: "assets/images/fossei/FIlsof 4.jpg" },
+      { type: "image", title: "", src: "assets/images/fossei/logo.jpg" },
+      { type: "image", title: "Background Zoom", src: "assets/images/fossei/banner zoom.jpg" }
     ]
-  },
-
-  
+  }
 ];
 
 const getProjectsData = () => {
   const stored = localStorage.getItem('submittedProjects');
-  const dynamicData = stored ? JSON.parse(stored) : [];
+  const dynamicData = stored ? JSON.parse(stored).filter(p => p.status === 'approved') : [];
   const deletedStatic = localStorage.getItem('deletedStaticProjects') || '[]';
   const deleted = JSON.parse(deletedStatic);
   const filteredStatic = staticProjectsData.filter(p => !deleted.includes(p.id));
