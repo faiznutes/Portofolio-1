@@ -478,7 +478,7 @@ footer {
 /* ==== SOCIAL SECTION (MATCHED WITH PROFILE SECTION) ==== */
 .social-section {
   text-align: center;
-  margin: 30px auto 0 auto; /* top: 30px, center di tengah */
+  margin: 30px auto 30px auto; /* top: 30px, center di tengah, bottom: 30px */
   padding: 20px 0;
   background-color: var(--section-bg);
   border-radius: 20px;
