@@ -28,7 +28,34 @@
 
   <main>
     <section class="login-section">
-      <h1>Submit New Project</h1>
+      <div id="password-gate">
+        <h1>Access Project Management</h1>
+        <div class="form-group">
+          <label for="access-password">Password:</label>
+          <input type="password" id="access-password" required>
+        </div>
+        <button id="access-btn">Access</button>
+      </div>
+
+      <div id="main-content" style="display: none;">
+        <h1>Project Management</h1>
+
+      <!-- Existing Projects Section -->
+      <div id="existing-projects">
+        <h2>Manage Existing Projects</h2>
+        <div class="form-group">
+          <label for="project-select">Select Project:</label>
+          <select id="project-select">
+            <option value="">-- Choose a project --</option>
+          </select>
+        </div>
+        <div id="project-actions" style="display: none;">
+          <button id="edit-selected" class="edit-btn">Edit Selected Project</button>
+          <button id="delete-selected" class="delete-btn">Delete Selected Project</button>
+        </div>
+      </div>
+
+      <h2 id="form-title">Submit New Project</h2>
       <form id="project-form">
         <div class="form-group">
           <label for="title">Project Title:</label>
@@ -90,6 +117,22 @@
 
         <button type="submit">Submit Project</button>
       </form>
+
+      <!-- Edit Project Section -->
+      <div id="edit-project" style="display: none;">
+        <h2>Edit Project</h2>
+        <div class="form-group">
+          <label for="edit-title">Project Title:</label>
+          <input type="text" id="edit-title" required>
+        </div>
+        <div class="form-group">
+          <label for="edit-description">Description:</label>
+          <textarea id="edit-description" required></textarea>
+        </div>
+        <button id="save-edit" class="edit-btn">Save Changes</button>
+        <button id="cancel-edit" class="delete-btn">Cancel</button>
+      </div>
+      </div>
     </section>
   </main>
 
@@ -99,6 +142,19 @@
 
   <script src="script.js"></script>
   <script>
+    document.getElementById('access-btn').addEventListener('click', () => {
+      const pass = document.getElementById('access-password').value;
+      if (pass === 'faiznute') {
+        document.getElementById('password-gate').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+        populateProjectSelect();
+      } else {
+        alert('Incorrect password');
+      }
+    });
+
+
+
     // Handle adding/removing images
     const imagesContainer = document.getElementById('images-container');
     const addImageBtn = document.getElementById('add-image');
@@ -197,6 +253,7 @@
       localStorage.setItem('submittedProjects', JSON.stringify(projects));
 
       alert('Project submitted successfully!');
+      populateProjectSelect();
       // Reset form
       document.getElementById('project-form').reset();
       // Clear dynamic images
@@ -226,6 +283,100 @@
         reader.readAsDataURL(file);
       });
     }
+
+    let editingProject = null;
+    const editProjectDiv = document.getElementById('edit-project');
+    const saveEditBtn = document.getElementById('save-edit');
+    const cancelEditBtn = document.getElementById('cancel-edit');
+
+    function populateProjectSelect() {
+      const select = document.getElementById('project-select');
+      select.innerHTML = '<option value="">-- Choose a project --</option>';
+      const stored = localStorage.getItem('submittedProjects');
+      const projects = stored ? JSON.parse(stored) : [];
+      projects.forEach(project => {
+        const option = document.createElement('option');
+        option.value = project.id;
+        option.textContent = project.title;
+        select.appendChild(option);
+      });
+    }
+
+    document.getElementById('project-select').addEventListener('change', () => {
+      const actions = document.getElementById('project-actions');
+      if (document.getElementById('project-select').value) {
+        actions.style.display = 'block';
+      } else {
+        actions.style.display = 'none';
+      }
+    });
+
+    document.getElementById('edit-selected').addEventListener('click', () => {
+      const id = document.getElementById('project-select').value;
+      if (id) {
+        editProject(id);
+      }
+    });
+
+    document.getElementById('delete-selected').addEventListener('click', () => {
+      const id = document.getElementById('project-select').value;
+      if (id) {
+        deleteProject(id);
+      }
+    });
+
+    function editProject(id) {
+      const stored = localStorage.getItem('submittedProjects');
+      const projects = stored ? JSON.parse(stored) : [];
+      editingProject = projects.find(p => p.id === id);
+      if (editingProject) {
+        document.getElementById('edit-title').value = editingProject.title;
+        document.getElementById('edit-description').value = editingProject.description;
+        editProjectDiv.style.display = 'block';
+        document.getElementById('project-form').style.display = 'none';
+        document.getElementById('existing-projects').style.display = 'none';
+      }
+    }
+
+    function deleteProject(id) {
+      if (confirm('Are you sure you want to delete this project?')) {
+        const stored = localStorage.getItem('submittedProjects');
+        if (stored) {
+          let projects = JSON.parse(stored);
+          projects = projects.filter(p => p.id !== id);
+          localStorage.setItem('submittedProjects', JSON.stringify(projects));
+          populateProjectSelect();
+        }
+      }
+    }
+
+    saveEditBtn.addEventListener('click', () => {
+      if (editingProject) {
+        editingProject.title = document.getElementById('edit-title').value;
+        editingProject.description = document.getElementById('edit-description').value;
+        const stored = localStorage.getItem('submittedProjects');
+        let projects = stored ? JSON.parse(stored) : [];
+        const index = projects.findIndex(p => p.id === editingProject.id);
+        if (index !== -1) {
+          projects[index] = editingProject;
+          localStorage.setItem('submittedProjects', JSON.stringify(projects));
+          alert('Project updated successfully!');
+          editProjectDiv.style.display = 'none';
+          document.getElementById('project-form').style.display = 'block';
+          document.getElementById('existing-projects').style.display = 'block';
+          populateProjectSelect();
+        }
+      }
+    });
+
+    cancelEditBtn.addEventListener('click', () => {
+      editProjectDiv.style.display = 'none';
+      document.getElementById('project-form').style.display = 'block';
+      document.getElementById('existing-projects').style.display = 'block';
+      populateProjectSelect();
+    });
+
+
   </script>
 </body>
 </html>
