@@ -1318,9 +1318,9 @@ nav ul li a:hover {
 /* Responsive for login section */
 @media (max-width: 600px) {
   .login-section {
-    padding: 40px 20px;
+    padding: 20px 30px;
     max-width: none;
-    margin: 20px 20px 20px 20px;
+    margin: 30px 30px 30px 30px;
   }
 
   .login-section h1 {
@@ -1329,6 +1329,7 @@ nav ul li a:hover {
 
   .form-group {
     margin-bottom: 20px;
+    max-width: none;
   }
 
   .image-item {
