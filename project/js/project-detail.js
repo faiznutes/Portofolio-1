@@ -3,6 +3,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const projectId = urlParams.get("id");
 
 // Cari data project berdasarkan ID
+const projectsData = getProjectsData();
 const project = projectsData.find(item => item.id === projectId);
 
 // Pastikan data ada

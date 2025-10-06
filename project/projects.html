@@ -52,6 +52,7 @@
 
     function renderProjects(filter = "all") {
       grid.innerHTML = "";
+      const projectsData = getProjectsData();
       const filtered = filter === "all" ? projectsData : projectsData.filter(p => p.category === filter);
 
       filtered.forEach(project => {

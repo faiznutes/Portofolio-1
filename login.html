@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project Submission</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header>
+  <div class="container">
+    <a href="index.html" class="logo-link">
+      <div class="logo">FAIZNUTE</div>
+    </a>
+
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+
+    <nav>
+      <ul id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="project/projects.html">Portofolio</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    <section class="login-section">
+      <h1>Submit New Project</h1>
+      <form id="project-form">
+        <div class="form-group">
+          <label for="title">Project Title:</label>
+          <input type="text" id="title" required>
+        </div>
+
+        <div class="form-group">
+          <label for="category">Category:</label>
+          <select id="category" required>
+            <option value="website">Website</option>
+            <option value="design">Design</option>
+            <option value="video">Video</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="tags">Tags (comma separated):</label>
+          <input type="text" id="tags" placeholder="e.g. Website, UI/UX, Responsive">
+        </div>
+
+        <div class="form-group">
+          <label for="thumbnail">Thumbnail Image:</label>
+          <input type="file" id="thumbnail" accept="image/*" required>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <textarea id="description" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="tools">Tools (comma separated):</label>
+          <input type="text" id="tools" placeholder="e.g. Figma, HTML, CSS">
+        </div>
+
+        <div class="form-group">
+          <label>Gallery Images:</label>
+          <div id="images-container">
+            <div class="image-item">
+              <input type="text" placeholder="Image Title" class="image-title">
+              <input type="file" accept="image/*" class="image-file">
+              <button type="button" class="remove-image">Remove</button>
+            </div>
+          </div>
+          <button type="button" id="add-image">Add Image</button>
+        </div>
+
+        <div class="form-group">
+          <label>Video Links:</label>
+          <div id="video-container">
+            <div class="video-item">
+              <input type="text" placeholder="Video Title" class="video-title">
+              <input type="url" placeholder="https://..." class="video-link">
+              <button type="button" class="remove-video">Remove</button>
+            </div>
+          </div>
+          <button type="button" id="add-video">Add Video</button>
+        </div>
+
+        <button type="submit">Submit Project</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 FAIZNUTE. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Handle adding/removing images
+    const imagesContainer = document.getElementById('images-container');
+    const addImageBtn = document.getElementById('add-image');
+
+    addImageBtn.addEventListener('click', () => {
+      const imageItem = document.createElement('div');
+      imageItem.classList.add('image-item');
+      imageItem.innerHTML = `
+        <input type="text" placeholder="Image Title" class="image-title">
+        <input type="file" accept="image/*" class="image-file">
+        <button type="button" class="remove-image">Remove</button>
+      `;
+      imagesContainer.appendChild(imageItem);
+    });
+
+    imagesContainer.addEventListener('click', (e) => {
+      if (e.target.classList.contains('remove-image')) {
+        e.target.parentElement.remove();
+      }
+    });
+
+    // Handle adding/removing videos
+    const videoContainer = document.getElementById('video-container');
+    const addVideoBtn = document.getElementById('add-video');
+
+    addVideoBtn.addEventListener('click', () => {
+      const videoItem = document.createElement('div');
+      videoItem.classList.add('video-item');
+      videoItem.innerHTML = `
+        <input type="text" placeholder="Video Title" class="video-title">
+        <input type="url" placeholder="https://..." class="video-link">
+        <button type="button" class="remove-video">Remove</button>
+      `;
+      videoContainer.appendChild(videoItem);
+    });
+
+    videoContainer.addEventListener('click', (e) => {
+      if (e.target.classList.contains('remove-video')) {
+        e.target.parentElement.remove();
+      }
+    });
+
+    // Handle form submission
+    document.getElementById('project-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const title = document.getElementById('title').value;
+      const category = document.getElementById('category').value;
+      const tags = document.getElementById('tags').value.split(',').map(t => t.trim()).filter(t => t);
+      const thumbnailFile = document.getElementById('thumbnail').files[0];
+      const description = document.getElementById('description').value;
+      const tools = document.getElementById('tools').value.split(',').map(t => t.trim()).filter(t => t);
+
+      // Encode thumbnail
+      const thumbnailBase64 = await fileToBase64(thumbnailFile);
+
+      // Encode gallery images and videos
+      const gallery = [];
+      const imageItems = document.querySelectorAll('.image-item');
+      for (let item of imageItems) {
+        const titleInput = item.querySelector('.image-title');
+        const fileInput = item.querySelector('.image-file');
+        if (fileInput.files[0]) {
+          const base64 = await fileToBase64(fileInput.files[0]);
+          gallery.push({ type: 'image', title: titleInput.value, src: base64 });
+        }
+      }
+
+      // Add videos
+      const videoItems = document.querySelectorAll('.video-item');
+      for (let item of videoItems) {
+        const titleInput = item.querySelector('.video-title');
+        const linkInput = item.querySelector('.video-link');
+        if (titleInput.value && linkInput.value) {
+          gallery.push({ type: 'video', title: titleInput.value, src: linkInput.value });
+        }
+      }
+
+      const project = {
+        id: 'submitted_' + Date.now(),
+        title,
+        category,
+        image: thumbnailBase64,
+        description,
+        longDescription: description, // Use description as longDescription
+        date: new Date().toLocaleDateString(),
+        tools,
+        tags,
+        gallery
+      };
+
+      // Save to localStorage
+      const stored = localStorage.getItem('submittedProjects');
+      const projects = stored ? JSON.parse(stored) : [];
+      projects.push(project);
+      localStorage.setItem('submittedProjects', JSON.stringify(projects));
+
+      alert('Project submitted successfully!');
+      // Reset form
+      document.getElementById('project-form').reset();
+      // Clear dynamic images
+      imagesContainer.innerHTML = `
+        <div class="image-item">
+          <input type="text" placeholder="Image Title" class="image-title">
+          <input type="file" accept="image/*" class="image-file">
+          <button type="button" class="remove-image">Remove</button>
+        </div>
+      `;
+      // Clear dynamic videos
+      videoContainer.innerHTML = `
+        <div class="video-item">
+          <input type="text" placeholder="Video Title" class="video-title">
+          <input type="url" placeholder="https://..." class="video-link">
+          <button type="button" class="remove-video">Remove</button>
+        </div>
+      `;
+    });
+
+    // Helper function to convert file to base64
+    function fileToBase64(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-const projectsData = [
+const staticProjectsData = [
   {
     id: "project1",
     title: "Modern Website Design",
@@ -63,3 +63,9 @@ const projectsData = [
 
   // Tambahan project lain bisa ditambahkan di sini dengan format yang sama
 ];
+
+const getProjectsData = () => {
+  const stored = localStorage.getItem('submittedProjects');
+  const dynamicData = stored ? JSON.parse(stored) : [];
+  return [...staticProjectsData, ...dynamicData];
+};

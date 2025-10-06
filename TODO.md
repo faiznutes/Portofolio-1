@@ -1,20 +1,19 @@
-# TODO: Fix Portfolio Code Issues
+# TODO: Implement Hidden Login Page for Project Submission
 
-## Step 1: Fix index.html
-- [x] Merge the two <main> elements into one valid <main> element.
-- [x] Ensure all sections (profile, skills, projects, social) are inside the single <main>.
+## Step 1: Modify projects-data.js
+- [x] Change projectsData to a function getProjectsData() that merges static data with localStorage projects.
 
-## Step 2: Update project/js/projects-data.js
-- [x] Add data for project2 and project3 with unique titles, descriptions, images, and galleries.
-- [x] Ensure images exist or use placeholders.
+## Step 2: Update projects.html
+- [x] Modify the script to use getProjectsData() instead of projectsData.
 
-## Step 3: Fix Paths in HTML Files
-- [x] In index.html: Change href="/index.html" to "index.html", href="project/projects.html" to "project/projects.html", etc.
-- [x] In about.html: Change href="/index.html" to "../index.html", href="project/projects.html" to "project/projects.html", etc.
-- [x] In project/projects.html: Change href="/css/styles.css" to "../css/styles.css", href="/index.html" to "../index.html", etc.
-- [x] In project/project-detail.html: Change href="/css/styles.css" to "../css/styles.css", href="/index.html" to "../index.html", etc.
+## Step 3: Update project-detail.js
+- [x] Modify to use getProjectsData() instead of projectsData.
 
-## Step 4: Verify and Test
-- [x] Check for any remaining syntax errors or duplicates.
-- [x] Ensure all links work correctly.
-- [x] Test the burger menu and project navigation.
+## Step 4: Create login.html
+- [x] Create hidden login page with project submission form including fields for title, tags, thumbnail, description, multiple images with titles, video title and link.
+
+## Step 5: Implement Form Handling
+- [x] Add JavaScript to handle form submission, encode images to base64, create project object, and save to localStorage.
+
+## Step 6: Test Functionality
+- [ ] Test form submission and verify new projects appear in projects.html and project-detail.html.
