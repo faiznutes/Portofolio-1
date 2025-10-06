@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   if (menuToggle && navList) {
     menuToggle.addEventListener("click", function() {
-      navList.classList.toggle("active");
+      navList.classList.toggle("show");
     });
   }
 });
