@@ -52,6 +52,7 @@
         <div id="project-actions" style="display: none;">
           <button id="edit-selected" class="edit-btn">Edit Selected Project</button>
           <button id="delete-selected" class="delete-btn">Delete Selected Project</button>
+          <button id="export-projects" class="edit-btn">Export Projects to JSON</button>
         </div>
       </div>
 
@@ -234,7 +235,7 @@
       }
 
       const project = {
-        id: 'submitted_' + Date.now(),
+        id: title.replace(/\s+/g, '-').toLowerCase(),
         title,
         category,
         image: thumbnailBase64,
@@ -325,6 +326,19 @@
       }
     });
 
+    document.getElementById('export-projects').addEventListener('click', () => {
+      const stored = localStorage.getItem('submittedProjects');
+      const projects = stored ? JSON.parse(stored) : [];
+      const json = JSON.stringify(projects, null, 2);
+      navigator.clipboard.writeText(json).then(() => {
+        alert('Projects JSON copied to clipboard. Paste it into project/js/projects-data.js to replace staticProjectsData.');
+      }).catch(err => {
+        console.error('Failed to copy: ', err);
+        alert('Failed to copy to clipboard. Check console for JSON.');
+        console.log(json);
+      });
+    });
+
     function editProject(id) {
       const stored = localStorage.getItem('submittedProjects');
       const projects = stored ? JSON.parse(stored) : [];
@@ -353,6 +367,7 @@
     saveEditBtn.addEventListener('click', () => {
       if (editingProject) {
         editingProject.title = document.getElementById('edit-title').value;
+        editingProject.id = editingProject.title.replace(/\s+/g, '-').toLowerCase();
         editingProject.description = document.getElementById('edit-description').value;
         const stored = localStorage.getItem('submittedProjects');
         let projects = stored ? JSON.parse(stored) : [];
