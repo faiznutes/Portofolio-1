@@ -21,6 +21,15 @@ if (!project) {
     tagsContainer.appendChild(span);
   });
 
+  // Tampilkan tahun
+  if (project.date) {
+    const year = project.date.split('/')[2];
+    const yearSpan = document.createElement("span");
+    yearSpan.textContent = year;
+    yearSpan.classList.add("project-year");
+    tagsContainer.appendChild(yearSpan);
+  }
+
   // Gambar utama
   const mainImage = document.getElementById("project-image");
   mainImage.src = project.image || 'assets/images/project1.jpg';

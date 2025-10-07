@@ -90,6 +90,11 @@
         </div>
 
         <div class="form-group">
+          <label for="date">Date (MM/DD/YYYY):</label>
+          <input type="text" id="date" placeholder="e.g. 10/7/2025">
+        </div>
+
+        <div class="form-group">
           <label for="tools">Tools (comma separated):</label>
           <input type="text" id="tools" placeholder="e.g. Figma, HTML, CSS">
         </div>
@@ -399,6 +404,7 @@
         }
       }
 
+      const dateInput = document.getElementById('date').value;
       const project = {
         id: title.replace(/\s+/g, '-').toLowerCase(),
         title,
@@ -406,7 +412,7 @@
         image: thumbnailBase64,
         description,
         longDescription: description, // Use description as longDescription
-        date: new Date().toLocaleDateString(),
+        date: dateInput || new Date().toLocaleDateString(),
         tools,
         tags,
         gallery,

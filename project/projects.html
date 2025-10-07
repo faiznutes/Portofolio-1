@@ -73,11 +73,13 @@
       paginated.forEach(project => {
         const card = document.createElement("div");
         card.classList.add("project-card");
+        const year = project.date ? project.date.split('/')[2] : '';
         card.innerHTML = `
           <img src="${project.image || 'assets/images/project1.jpg'}" alt="${project.title}">
           <div class="project-info">
             <h3>${project.title}</h3>
           <p>${truncate(project.description, 5)}</p>
+          ${year ? `<span class="project-year">${year}</span>` : ''}
           </div>
         `;
         card.onclick = () => {

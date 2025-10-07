@@ -206,7 +206,7 @@ footer {
 }
 
 .profile-bio {
-  font-size: 15px;
+  font-size: 18px;
   color: var(--subtext-color);
   max-width: 600px;
   margin: 0 auto;
@@ -451,6 +451,19 @@ footer {
   padding: 4px 10px;
   border-radius: 20px;
   margin-bottom: 10px;
+}
+
+/* YEAR TAG */
+.project-year {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  color: var(--subtext-color);
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.3s ease;
+  box-shadow: 0 2px 6px var(--shadow-color);
 }
 
 /* READ MORE LINK */
@@ -928,12 +941,199 @@ footer {
 
 /* Styling untuk deskripsi di halaman project detail */
 #project-description {
-  font-size: 14px;           /* ukuran teks */
+  font-size: 18px;           /* ukuran teks lebih besar */
   line-height: 1.8;          /* jarak antar baris */
   color: #ddd;               /* warna teks (ubah sesuai tema kamu) */
   margin-bottom: 2rem;       /* jarak bawah sebelum gallery */
   white-space: pre-line;     /* supaya baris baru di longDescription tampil */
   text-align: left;        /* rata kiri */
+}
+
+/* General responsive font sizes */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  .profile-name {
+    font-size: 20px;
+  }
+
+  .profile-job {
+    font-size: 14px;
+  }
+
+  .profile-bio {
+    font-size: 14px;
+  }
+
+  .skills-title {
+    font-size: 20px;
+  }
+
+  .projects-title {
+    font-size: 20px;
+  }
+
+  .projects2-section h1 {
+    font-size: 28px;
+  }
+
+  .project-info h3 {
+    font-size: 18px;
+  }
+
+  .project-info p {
+    font-size: 14px;
+  }
+
+  .projects3-title {
+    font-size: 28px;
+  }
+
+  #project-description {
+    font-size: 16px;
+  }
+
+  .projects3-tags span {
+    font-size: 12px;
+    padding: 4px 12px;
+  }
+
+  .about2-section h2.skills-title {
+    font-size: 1.8rem;
+  }
+
+  .about2-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .about2-text h3 {
+    font-size: 1.1rem;
+  }
+
+  .about2-text p {
+    font-size: 0.9rem;
+  }
+
+  .login-section h1 {
+    font-size: 2rem;
+  }
+
+  .form-group label {
+    font-size: 14px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 13px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  .profile-name {
+    font-size: 18px;
+  }
+
+  .profile-job {
+    font-size: 13px;
+  }
+
+  .profile-bio {
+    font-size: 13px;
+  }
+
+  .skills-title {
+    font-size: 18px;
+  }
+
+  .projects-title {
+    font-size: 18px;
+  }
+
+  .projects2-section h1 {
+    font-size: 24px;
+  }
+
+  .project-info h3 {
+    font-size: 16px;
+  }
+
+  .project-info p {
+    font-size: 13px;
+  }
+
+  .projects3-title {
+    font-size: 24px;
+  }
+
+  #project-description {
+    font-size: 14px;
+  }
+
+  .projects3-tags span {
+    font-size: 11px;
+    padding: 3px 10px;
+  }
+
+  .about2-section h2.skills-title {
+    font-size: 1.6rem;
+  }
+
+  .about2-text h2 {
+    font-size: 1.4rem;
+  }
+
+  .about2-text h3 {
+    font-size: 1rem;
+  }
+
+  .about2-text p {
+    font-size: 0.85rem;
+  }
+
+  .login-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .form-group label {
+    font-size: 13px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 13px;
+  }
 }
 
 /* === ABOUT SECTION STYLE === */
