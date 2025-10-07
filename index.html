@@ -33,12 +33,12 @@
   <section class="profile-section">
     <img src="../assets/images/1000121680.png" alt="Foto Profil" class="profile-photo">
 
-    <h2 class="profile-name">Muhamad Faiz Abdurrahman</h2>
-    <h4 class="profile-job">Graphic Designer & Video Editor</h4>
+  <h2 class="profile-name">Muhamad Faiz Abdurrahman</h2>
+  <h4 class="profile-job">Graphic Designer & Video Editor</h4>
 
     <p class="profile-bio">
-      Saya seorang desainer grafis dan editor video yang berfokus pada gaya minimalis dan elegan.
-      Saat ini saya juga aktif sebagai konten kreator live di TikTok dan senang berbagi kreativitas visual.
+      Saya adalah seorang <strong>Graphic Designer</strong> dan <strong>Video Editor</strong> dengan gaya visual modern dan elegan.
+      Selain itu, saya juga aktif sebagai <strong>operator streaming</strong> dan <strong>live content creator di TikTok</strong> yang berfokus pada kualitas visual dan pengalaman interaktif.
     </p>
   </section>
 
@@ -50,36 +50,54 @@
       <img src="assets/images/Ps.png" alt="Photoshop">
       <h3>Adobe Photoshop</h3>
       <p>Menguasai manipulasi foto, color grading, dan desain visual.</p>
+      <div class="skill-progress">
+        <div class="progress-bar" style="width: 75%;"></div>
+      </div>
     </div>
 
     <div class="skill-box">
       <img src="assets/images/premiere.png" alt="Premiere Pro">
       <h3>Adobe Premiere Pro</h3>
       <p>Editing video profesional dengan transisi dan efek cinematic.</p>
+      <div class="skill-progress">
+        <div class="progress-bar" style="width: 90%;"></div>
+      </div>
     </div>
 
     <div class="skill-box">
       <img src="assets/images/ai.png" alt="Illustrator">
       <h3>Adobe Illustrator</h3>
       <p>Membuat vektor dan ilustrasi branding bergaya minimalis.</p>
+      <div class="skill-progress">
+        <div class="progress-bar" style="width: 90%;"></div>
+      </div>
     </div>
 
     <div class="skill-box">
       <img src="assets/images/Ae.png" alt="After Effects">
       <h3>Adobe After Effects</h3>
       <p>Motion graphics, animasi logo, dan efek visual kreatif.</p>
+      <div class="skill-progress">
+        <div class="progress-bar" style="width: 50%;"></div>
+      </div>
     </div>
 
     <div class="skill-box">
       <img src="assets/images/tt studio.webp" alt="Figma">
       <h3>Streamer Operator</h3>
       <p>Mengatur live, kontrol kamera, audio, dan interaksi penonton TikTok.</p>
+      <div class="skill-progress">
+        <div class="progress-bar" style="width: 90%;"></div>
+      </div>
     </div>
 
     <div class="skill-box">
       <img src="assets/images/tiktok.png" alt="TikTok Live">
       <h3>TikTok Live Content</h3>
       <p>Mengelola siaran live game, mengatur tampilan, audio, dan interaksi penonton.</p>
+      <div class="skill-progress">
+        <div class="progress-bar" style="width: 90%;"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -144,7 +162,7 @@
       const projectsGrid = document.getElementById('projects-grid');
       projectsGrid.innerHTML = '';
       const projectsData = getProjectsData();
-      const featuredIds = ['modern-website-design', 'creative-logo-concept', 'logo-fossei-rakereg-2021', 'logo-fossei-rakereg-2021'];
+      const featuredIds = ['banner-pencalonan-bupati-lamongan', '#', 'logo-fossei-rakereg-2021'];
       const featuredProjects = featuredIds.map(id => projectsData.find(p => p.id === id)).filter(p => p);
 
       featuredProjects.forEach(project => {

@@ -267,8 +267,8 @@ footer {
   border-radius: 10px;
   padding: 20px 25px;
   transition: all 0.3s ease;
-  max-width: 320px;
   margin: 0 auto;
+  max-width: 300px;
 }
 
 .skill-box:hover {
@@ -291,11 +291,29 @@ footer {
   margin-bottom: 8px;
 }
 
+/* PROGRESS BAR - INDEX */
+.skills-section .skill-progress {
+  width: 100%;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
 /* DESCRIPTION */
 .skill-box p {
   font-size: 14px;
   color: var(--subtext-color);
   line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: var(--accent-color);
+  border-radius: 4px;
+  transition: width 0.3s ease;
 }
 
 /* === RESPONSIVE === */
@@ -343,7 +361,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
-  padding: 0 20px;
+  padding: 0 100px;
 }
 
 /* CARD */
@@ -1033,6 +1051,40 @@ footer {
   box-shadow: 0 4px 12px var(--hover-shadow);
 }
 
+/* Skill items in about page */
+.skill-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.skill-item span {
+  flex: 1;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+.about2-section .skill-progress {
+  width: 100%;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: var(--accent-color);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.languages-list {
+  margin-top: 15px;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .about2-content {
@@ -1051,6 +1103,17 @@ footer {
 
   .skills-list {
     justify-content: center;
+  }
+
+  .skill-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .about2-section .skill-progress {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 5px;
   }
 }
 
@@ -1519,4 +1582,31 @@ nav ul li a:hover {
   .video-item input[type="url"] {
     flex: none;
   }
+}
+
+/* Pagination styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.page-btn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  min-width: 40px;
+}
+
+.page-btn:hover,
+.page-btn.active {
+  background-color: var(--accent-color);
+  color: #000;
+  border-color: var(--accent-color);
 }

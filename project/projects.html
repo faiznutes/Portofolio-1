@@ -38,6 +38,8 @@
       </div>
 
       <div class="projects-grid" id="projects-grid"></div>
+
+      <div class="pagination" id="pagination"></div>
     </section>
   </main>
 
@@ -48,7 +50,11 @@
   <script src="js/projects-data.js"></script>
   <script>
     const grid = document.getElementById("projects-grid");
+    const pagination = document.getElementById("pagination");
     const buttons = document.querySelectorAll(".projects2-filters button");
+    let currentFilter = "all";
+    let currentPage = 1;
+    const perPage = 9;
 
     function truncate(text, words) {
       const wordArray = text.split(' ');
@@ -56,12 +62,15 @@
       return wordArray.slice(0, words).join(' ') + '...';
     }
 
-    function renderProjects(filter = "all") {
+    function renderProjects(filter = "all", page = 1) {
       grid.innerHTML = "";
       const projectsData = getProjectsData();
       const filtered = filter === "all" ? projectsData : projectsData.filter(p => p.category === filter);
+      const start = (page - 1) * perPage;
+      const end = start + perPage;
+      const paginated = filtered.slice(start, end);
 
-      filtered.forEach(project => {
+      paginated.forEach(project => {
         const card = document.createElement("div");
         card.classList.add("project-card");
         card.innerHTML = `
@@ -76,13 +85,35 @@
         };
         grid.appendChild(card);
       });
+
+      renderPagination(filtered.length, page);
+    }
+
+    function renderPagination(totalItems, currentPage) {
+      pagination.innerHTML = "";
+      const totalPages = Math.ceil(totalItems / perPage);
+      if (totalPages <= 1) return;
+
+      for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement("button");
+        btn.textContent = i;
+        btn.classList.add("page-btn");
+        if (i === currentPage) btn.classList.add("active");
+        btn.addEventListener("click", () => {
+          currentPage = i;
+          renderProjects(currentFilter, currentPage);
+        });
+        pagination.appendChild(btn);
+      }
     }
 
     buttons.forEach(btn => {
       btn.addEventListener("click", () => {
         buttons.forEach(b => b.classList.remove("active"));
         btn.classList.add("active");
-        renderProjects(btn.dataset.filter);
+        currentFilter = btn.dataset.filter;
+        currentPage = 1;
+        renderProjects(currentFilter, currentPage);
       });
     });
 
