@@ -32,6 +32,37 @@ const staticProjectsData = [
       { type: "image", title: "", src: "../assets/images/banner/banner3.jpg" },
       { type: "image", title: "Postingan Social Media", src: "../assets/images/banner/Social.jpg" }
     ]
+  },
+  {
+    "id": "ayam-lepas-lebak-bulus",
+    "title": "Ayam Lepas Lebak Bulus",
+    "category": "design",
+    "image": "../assets/images/ayam lepas/Kemasan.png",
+    "description": "Saya terlibat langsung dalam pembuatan desain stiker produk untuk Ayam Lepas, sebuah usaha kuliner yang berlokasi di Lebak Bulus. Desain yang saya buat berfokus pada kesan yang menarik, bersih, dan mudah dikenali agar sesuai dengan karakter brand yang ingin dibangun.\n\nSelain itu, saya juga menangani kebutuhan desain visual lainnya serta mengelola akun media sosial mereka, termasuk pembuatan konten, penyusunan feed, dan strategi komunikasi visual untuk meningkatkan engagement serta daya tarik brand di platform digital.",
+    "longDescription": "Saya terlibat langsung dalam pembuatan desain stiker produk untuk Ayam Lepas, sebuah usaha kuliner yang berlokasi di Lebak Bulus. Desain yang saya buat berfokus pada kesan yang menarik, bersih, dan mudah dikenali agar sesuai dengan karakter brand yang ingin dibangun.\n\nSelain itu, saya juga menangani kebutuhan desain visual lainnya serta mengelola akun media sosial mereka, termasuk pembuatan konten, penyusunan feed, dan strategi komunikasi visual untuk meningkatkan engagement serta daya tarik brand di platform digital.",
+    "date": "10/7/2025",
+    "tools": [],
+    "tags": [
+      "Design",
+      "Packaging",
+      "Social Media"
+    ],
+    "gallery": [
+      { type: "image", title: "Sticker Kemasan Frozen Food", src: "../assets/images/ayam lepas/Kemasan.png" },
+      { type: "image", title: "", src: "../assets/images/ayam lepas/Sticker Kemasan 2.png" },
+      { type: "image", title: "", src: "../assets/images/ayam lepas/STICKER 1 WOOD BLACK.jpg" },
+      { type: "image", title: "", src: "../assets/images/ayam lepas/STICKER 2 WOOD YELLOW.jpg" },
+      { type: "image", title: "Social Media", src: "../assets/images/ayam lepas/paket20rb.png" },
+      { type: "image", title: "", src: "../assets/images/ayam lepas/9.png" },
+      { type: "image", title: "", src: "../assets/images/ayam lepas/11.png" },
+      { type: "image", title: "", src: "../assets/images/ayam lepas/14.png" },
+      { type: "image", title: "", src: "../assets/images/ayam lepas/19.png" },
+      { type: "image", title: "", src: "../assets/images/ayam lepas/20.png" },
+      { type: "image", title: "", src: "../assets/images/ayam lepas/22.png" },
+      { type: "image", title: "", src: "../assets/images/ayam lepas/29.png" }
+      
+    ],
+    "status": "pending"
   }
 ];
 

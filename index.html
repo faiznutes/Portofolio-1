@@ -162,7 +162,7 @@
       const projectsGrid = document.getElementById('projects-grid');
       projectsGrid.innerHTML = '';
       const projectsData = getProjectsData();
-      const featuredIds = ['banner-pencalonan-bupati-lamongan', '#', 'logo-fossei-rakereg-2021'];
+      const featuredIds = ['banner-pencalonan-bupati-lamongan', 'ayam-lepas-lebak-bulus', 'logo-fossei-rakereg-2021'];
       const featuredProjects = featuredIds.map(id => projectsData.find(p => p.id === id)).filter(p => p);
 
       featuredProjects.forEach(project => {
