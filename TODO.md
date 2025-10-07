@@ -1,4 +1,0 @@
-- [x] Separate CSS for progress bar in index.html and about.html
-  - [x] Add specific selector for .skills-section .skill-progress (index)
-  - [x] Add specific selector for .about2-section .skill-progress (about)
-  - [x] Remove or adjust the general .skill-progress rules
