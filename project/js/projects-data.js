@@ -20,7 +20,7 @@ const staticProjectsData = [
     id: "banner-pencalonan-bupati-lamongan",
     title: "Banner Pencalonan Bupati Lamongan",
     category: "design",
-    image: "../assets/images/banner/social.jpg",
+    image: "../assets/images/banner/Social.jpg",
     description: "Dalam proyek ini, saya bertanggung jawab mendesain berbagai kebutuhan visual untuk kampanye pencalonan Bupati Lamongan. Mulai dari pembuatan banner utama, banner untuk media sosial, hingga banner acara, semuanya dirancang dengan tujuan mendukung kelancaran dan kesuksesan kampanye. Desain yang saya buat mengutamakan pesan yang jelas, estetika yang menarik, serta kesesuaian dengan citra kandidat, sehingga mampu menarik perhatian dan meningkatkan engagement masyarakat. Dengan pendekatan kreatif dan strategis, saya memastikan setiap elemen desain berkontribusi pada penyampaian visi dan misi calon bupati secara efektif.",
     longDescription: "Dalam proyek ini, saya bertanggung jawab mendesain berbagai kebutuhan visual untuk kampanye pencalonan Bupati Lamongan. Mulai dari pembuatan banner utama, banner untuk media sosial, hingga banner acara, semuanya dirancang dengan tujuan mendukung kelancaran dan kesuksesan kampanye. Desain yang saya buat mengutamakan pesan yang jelas, estetika yang menarik, serta kesesuaian dengan citra kandidat, sehingga mampu menarik perhatian dan meningkatkan engagement masyarakat. Dengan pendekatan kreatif dan strategis, saya memastikan setiap elemen desain berkontribusi pada penyampaian visi dan misi calon bupati secara efektif.",
     date: "10/7/2025",
@@ -30,7 +30,7 @@ const staticProjectsData = [
       { type: "image", title: "Banner Calon Bupati", src: "../assets/images/banner/banner1.jpg" },
       { type: "image", title: "", src: "../assets/images/banner/banner2.jpg" },
       { type: "image", title: "", src: "../assets/images/banner/banner3.jpg" },
-      { type: "image", title: "Postingan Social Media", src: "../assets/images/banner/social.jpg" }
+      { type: "image", title: "Postingan Social Media", src: "../assets/images/banner/Social.jpg" }
     ]
   }
 ];
