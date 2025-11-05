@@ -41,6 +41,20 @@ npm run build
 npm run preview
 ```
 
+## Deployment
+
+### Vercel
+Project sudah dikonfigurasi dengan `vercel.json` untuk menangani SPA routing. Deploy langsung ke Vercel dengan:
+- Connect repository ke Vercel
+- Build command: `npm run build`
+- Output directory: `dist`
+
+### Netlify
+Jika menggunakan Netlify, buat file `netlify.toml` atau gunakan `public/_redirects` yang sudah tersedia.
+
+### Server Configuration
+Untuk server lain, pastikan semua routes di-redirect ke `index.html` untuk menangani Vue Router history mode.
+
 ## Project Management
 
 Akses project management di `/login` dengan password: `faiznute`
