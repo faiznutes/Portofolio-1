@@ -6,8 +6,17 @@ const fixImagePath = (path) => {
   if (!path) return path
   // If it's already a base64 data URL, return as is
   if (path.startsWith('data:image/')) return path
-  // Encode spaces and special characters properly
-  return path.split('/').map(segment => encodeURIComponent(segment)).join('/')
+  // If it's already encoded or starts with http, return as is
+  if (path.startsWith('http')) return path
+  // Encode only the filename parts, keep path separators
+  const parts = path.split('/')
+  const encodedParts = parts.map((part, index) => {
+    // Keep first part (empty string or root) and last part (filename)
+    if (index === 0 && part === '') return ''
+    // Encode only the filename (last part) and folder names
+    return encodeURIComponent(part)
+  })
+  return encodedParts.join('/')
 }
 
 export function useProjects() {
