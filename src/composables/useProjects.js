@@ -1,6 +1,15 @@
 import { ref, computed } from 'vue'
 import { staticProjectsData } from '../data/projects-data'
 
+// Helper function to fix image paths (handle spaces and special characters)
+const fixImagePath = (path) => {
+  if (!path) return path
+  // If it's already a base64 data URL, return as is
+  if (path.startsWith('data:image/')) return path
+  // Encode spaces and special characters properly
+  return path.split('/').map(segment => encodeURIComponent(segment)).join('/')
+}
+
 export function useProjects() {
   const getProjectsData = () => {
     const stored = localStorage.getItem('submittedProjects')
@@ -8,7 +17,16 @@ export function useProjects() {
     const deletedStatic = localStorage.getItem('deletedStaticProjects') || '[]'
     const deleted = JSON.parse(deletedStatic)
     const filteredStatic = staticProjectsData.filter(p => !deleted.includes(p.id))
-    return [...dynamicData, ...filteredStatic]
+    const allProjects = [...dynamicData, ...filteredStatic]
+    // Fix image paths in all projects
+    return allProjects.map(project => ({
+      ...project,
+      image: fixImagePath(project.image),
+      gallery: project.gallery ? project.gallery.map(item => ({
+        ...item,
+        src: item.type === 'image' ? fixImagePath(item.src) : item.src
+      })) : []
+    }))
   }
 
   const getAllProjects = () => {

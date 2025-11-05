@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Keep original assets folder (duplicate for reference)
+# assets folder is now in public/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
