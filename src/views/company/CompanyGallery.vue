@@ -137,7 +137,6 @@ export default {
           { src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format&fit=crop', title: 'Travel Destination', detail: 'Beautiful destinations we visit' },
           { src: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&auto=format&fit=crop', title: 'Group Tour', detail: 'Organized group travel experience' }
         ]
-      }
       } else if (category === 'it') {
         return [
           { src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&auto=format&fit=crop', title: 'Konsultasi IT', detail: 'Sesi konsultasi dengan klien untuk solusi teknologi' },

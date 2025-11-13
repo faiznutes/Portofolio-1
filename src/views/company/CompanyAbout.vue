@@ -198,6 +198,12 @@ export default {
           { icon: 'fas fa-rocket', title: 'Inovasi Teknologi', description: 'Terus mengadopsi teknologi terbaru untuk solusi terbaik' }
         ]
       }
+      return [
+        { icon: 'fas fa-users', title: 'Tim Ahli', description: 'Profesional berpengalaman dengan rekam jejak terbukti' },
+        { icon: 'fas fa-rocket', title: 'Solusi Inovatif', description: 'Pendekatan mutakhir untuk menyelesaikan tantangan bisnis Anda' },
+        { icon: 'fas fa-chart-line', title: 'Hasil Terbukti', description: 'Rekam jejak memberikan hasil bisnis yang terukur' },
+        { icon: 'fas fa-handshake', title: 'Pendekatan Kemitraan', description: 'Kami bekerja sebagai mitra Anda, bukan hanya penyedia layanan' }
+      ]
     })
     
     const teamMembers = [
