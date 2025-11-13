@@ -205,18 +205,22 @@ export default {
   font-size: 64px;
   font-weight: 700;
   margin-bottom: 24px;
-  color: #fff;
+  color: #ffffff !important;
   line-height: 1.2;
   letter-spacing: -0.02em;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.9), 0 2px 4px rgba(0, 0, 0, 0.5);
+  opacity: 1 !important;
 }
 
 .page-subtitle {
   font-size: 22px;
-  color: #ffffff;
+  color: #ffffff !important;
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.7;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.9), 0 2px 6px rgba(0, 0, 0, 0.7), 0 0 2px rgba(0, 0, 0, 0.5);
+  font-weight: 600;
+  opacity: 1 !important;
 }
 
 /* Packages Section */
