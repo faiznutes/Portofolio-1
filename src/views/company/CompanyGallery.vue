@@ -234,7 +234,7 @@ export default {
 }
 
 .gallery-hero {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
   color: #fff;
   text-align: center;
   padding: 100px 0;
@@ -264,13 +264,13 @@ export default {
 
 .intro-content h2 {
   font-size: 36px;
-  color: #1a1a1a;
+  color: #1e293b;
   margin-bottom: 20px;
 }
 
 .intro-content p {
   font-size: 18px;
-  color: #6c757d;
+  color: #64748b;
   line-height: 1.8;
 }
 
@@ -345,7 +345,7 @@ export default {
 .no-gallery {
   text-align: center;
   padding: 100px 20px;
-  color: #6c757d;
+  color: #64748b;
 }
 
 .no-gallery i {
@@ -371,12 +371,12 @@ export default {
 
 .story-card h3 {
   font-size: 22px;
-  color: #1a1a1a;
+  color: #1e293b;
   margin-bottom: 15px;
 }
 
 .story-card p {
-  color: #6c757d;
+  color: #64748b;
   line-height: 1.8;
   margin-bottom: 20px;
 }
@@ -386,7 +386,7 @@ export default {
   gap: 20px;
   flex-wrap: wrap;
   font-size: 14px;
-  color: #6c757d;
+  color: #64748b;
 }
 
 .story-meta span {
@@ -396,11 +396,11 @@ export default {
 }
 
 .story-meta i {
-  color: #2563eb;
+  color: #0ea5e9;
 }
 
 .cta-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
   color: #fff;
   text-align: center;
 }

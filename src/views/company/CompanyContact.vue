@@ -170,7 +170,7 @@ export default {
 }
 
 .contact-hero {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
   color: #fff;
   text-align: center;
   padding: 100px 0;
@@ -200,13 +200,13 @@ export default {
 
 .contact-info h2 {
   font-size: 36px;
-  color: #1a1a1a;
+  color: #1e293b;
   margin-bottom: 15px;
 }
 
 .contact-info > p {
   font-size: 18px;
-  color: #6c757d;
+  color: #64748b;
   line-height: 1.8;
   margin-bottom: 40px;
 }
@@ -230,7 +230,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
   color: #fff;
   border-radius: 12px;
   flex-shrink: 0;
@@ -239,25 +239,25 @@ export default {
 
 .info-item h3 {
   font-size: 20px;
-  color: #1a1a1a;
+  color: #1e293b;
   margin-bottom: 8px;
 }
 
 .info-item p {
   font-size: 15px;
-  color: #6c757d;
+  color: #64748b;
   line-height: 1.6;
   margin: 0;
 }
 
 .info-item a {
-  color: #2563eb;
+  color: #0ea5e9;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .info-item a:hover {
-  color: #1d4ed8;
+  color: #0284c7;
   text-decoration: underline;
 }
 
@@ -267,7 +267,7 @@ export default {
 
 .contact-form-wrapper h2 {
   font-size: 28px;
-  color: #1a1a1a;
+  color: #1e293b;
   margin-bottom: 30px;
 }
 
@@ -284,7 +284,7 @@ export default {
 }
 
 .form-group label {
-  color: #1a1a1a;
+  color: #1e293b;
   font-weight: 600;
   font-size: 14px;
 }
@@ -293,9 +293,9 @@ export default {
 .form-group textarea {
   padding: 14px;
   background: #ffffff;
-  border: 2px solid #e5e7eb;
+  border: 2px solid #e2e8f0;
   border-radius: 8px;
-  color: #1a1a1a;
+  color: #1e293b;
   font-size: 15px;
   font-family: inherit;
   transition: all 0.3s ease;
@@ -305,8 +305,8 @@ export default {
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
 }
 
 .form-group input::placeholder,
@@ -316,14 +316,14 @@ export default {
 
 .btn-submit {
   padding: 16px 32px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
   color: #fff;
   border: none;
   border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
   margin-top: 10px;
   display: flex;
   align-items: center;
@@ -334,7 +334,7 @@ export default {
 
 .btn-submit:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 6px 20px rgba(14, 165, 233, 0.4);
 }
 
 .map-section {
@@ -349,32 +349,32 @@ export default {
 }
 
 .map-placeholder {
-  background: #f8f9fa;
+  background: #f8fafc;
   padding: 80px 20px;
   text-align: center;
-  color: #6c757d;
+  color: #64748b;
 }
 
 .map-placeholder i {
   font-size: 64px;
-  color: #dee2e6;
+  color: #cbd5e1;
   margin-bottom: 20px;
 }
 
 .map-placeholder p {
   font-size: 20px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #1e293b;
   margin-bottom: 10px;
 }
 
 .map-placeholder span {
   font-size: 16px;
-  color: #6c757d;
+  color: #64748b;
 }
 
 .cta-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
   color: #fff;
   text-align: center;
 }
