@@ -1,5 +1,12 @@
 <template>
   <div class="company-profile-wrapper" :data-theme="companyData?.theme || 'default'">
+    <CompanyNavbar 
+      v-if="companyData"
+      :project-id="projectId"
+      :company-name="companyData.title"
+      :logo="companyData.image"
+      :theme="companyData.theme || 'default'"
+    />
     <div class="company-content">
       <router-view v-if="companyData" :company-data="companyData" />
       <div v-else class="not-found-company">
@@ -14,9 +21,13 @@
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { useProjects } from '../composables/useProjects'
+import CompanyNavbar from '../components/CompanyNavbar.vue'
 
 export default {
   name: 'CompanyProfile',
+  components: {
+    CompanyNavbar
+  },
   setup() {
     const route = useRoute()
     const { getProjectById } = useProjects()

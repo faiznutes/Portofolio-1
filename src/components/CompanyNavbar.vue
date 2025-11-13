@@ -17,10 +17,11 @@
         <ul class="navbar-menu" :class="{ 'show': menuOpen }">
           <li><router-link :to="`/website/${projectId}`" @click="closeMenu">Home</router-link></li>
           <li><router-link :to="`/website/${projectId}/about`" @click="closeMenu">About</router-link></li>
-          <li><router-link :to="`/website/${projectId}/services`" @click="closeMenu">Services</router-link></li>
-          <li><router-link :to="`/website/${projectId}/gallery`" @click="closeMenu">Gallery</router-link></li>
-          <li><router-link :to="`/website/${projectId}/contact`" @click="closeMenu">Contact</router-link></li>
-          <li><router-link :to="`/website/${projectId}/terms`" @click="closeMenu">Terms</router-link></li>
+          <li v-if="hasPackage"><router-link :to="`/website/${projectId}/package`" @click="closeMenu">Paket</router-link></li>
+          <li v-if="hasServices"><router-link :to="`/website/${projectId}/services`" @click="closeMenu">Services</router-link></li>
+          <li v-if="hasGallery"><router-link :to="`/website/${projectId}/gallery`" @click="closeMenu">Gallery</router-link></li>
+          <li v-if="hasContact"><router-link :to="`/website/${projectId}/contact`" @click="closeMenu">Contact</router-link></li>
+          <li v-if="hasTerms"><router-link :to="`/website/${projectId}/terms`" @click="closeMenu">Terms</router-link></li>
         </ul>
         <router-link to="/" class="back-to-home-btn" title="Back to Portfolio">
           <i class="fas fa-home"></i>
@@ -32,6 +33,10 @@
 </template>
 
 <script>
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+import { useProjects } from '../composables/useProjects'
+
 export default {
   name: 'CompanyNavbar',
   props: {
@@ -50,6 +55,50 @@ export default {
     theme: {
       type: String,
       default: 'default'
+    }
+  },
+  setup(props) {
+    const route = useRoute()
+    const { getProjectById } = useProjects()
+    
+    const project = computed(() => getProjectById(props.projectId))
+    
+    // Check which routes are available based on project theme/category
+    const hasPackage = computed(() => {
+      // Projects with 'umroh' or 'travel' category typically have package page
+      const projectData = project.value
+      return projectData && (projectData.category === 'umroh' || projectData.category === 'travel' || projectData.theme === 'barokah')
+    })
+    
+    const hasServices = computed(() => {
+      // Most projects have services, but some don't
+      const projectData = project.value
+      return projectData && projectData.category !== 'umroh' && projectData.theme !== 'barokah'
+    })
+    
+    const hasGallery = computed(() => {
+      // Check if project has gallery items
+      const projectData = project.value
+      return projectData && (projectData.gallery?.length > 0 || projectData.theme === 'barokah')
+    })
+    
+    const hasContact = computed(() => {
+      // Most projects have contact page
+      return true
+    })
+    
+    const hasTerms = computed(() => {
+      // Some projects don't have terms page
+      const projectData = project.value
+      return projectData && projectData.theme !== 'barokah'
+    })
+    
+    return {
+      hasPackage,
+      hasServices,
+      hasGallery,
+      hasContact,
+      hasTerms
     }
   },
   data() {
@@ -110,10 +159,17 @@ export default {
   border-bottom-color: rgba(34, 139, 34, 0.2);
 }
 
+.company-navbar[data-theme="barokah"] {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  border-bottom-color: rgba(212, 175, 55, 0.2);
+  box-shadow: 0 2px 20px rgba(10, 26, 47, 0.08);
+}
+
 .navbar-container {
-  max-width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 200px;
+  padding: 0 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -221,7 +277,7 @@ export default {
 
 @media (max-width: 1400px) {
   .navbar-container {
-    padding: 0 100px;
+    padding: 0 40px;
   }
 }
 
