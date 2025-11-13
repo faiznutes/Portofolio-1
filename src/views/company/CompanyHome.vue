@@ -345,7 +345,7 @@ export default {
   z-index: 2;
   width: 100%;
   text-align: center;
-  color: #fff;
+  color: #ffffff !important;
   padding: 80px 0;
 }
 
@@ -362,13 +362,14 @@ export default {
 .hero-subtitle {
   font-size: 22px;
   margin-bottom: 48px;
-  color: #ffffff;
+  color: #ffffff !important;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.7;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.9), 0 2px 6px rgba(0, 0, 0, 0.7), 0 0 2px rgba(0, 0, 0, 0.5);
   font-weight: 600;
+  opacity: 1 !important;
 }
 
 .hero-buttons {
