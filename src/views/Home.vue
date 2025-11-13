@@ -37,7 +37,7 @@
           <h3 class="project-name">{{ project.title }}</h3>
           <p class="project-desc">{{ truncate(project.description, 20) }}</p>
           <span class="project-tag">{{ capitalizeFirst(project.category) }}</span>
-          <router-link :to="`/project/${project.id}`" class="project-read">Read More</router-link>
+          <router-link :to="getProjectRoute(project)" class="project-read">Read More</router-link>
         </div>
       </div>
       <div class="project-more">
@@ -72,12 +72,14 @@
 </template>
 
 <script>
+import { useRouter } from 'vue-router'
 import { useProjects } from '../composables/useProjects'
 
 export default {
   name: 'Home',
   setup() {
-    const { getFeaturedProjects, truncate, capitalizeFirst } = useProjects()
+    const router = useRouter()
+    const { getFeaturedProjects, getAllProjects, truncate, capitalizeFirst } = useProjects()
     
     const skills = [
       {
@@ -121,7 +123,22 @@ export default {
     const featuredProjects = getFeaturedProjects()
 
     const goToProject = (id) => {
-      // Navigation handled by router-link in template
+      const project = getAllProjects().find(p => p.id === id)
+      // Project dengan category fnb, umroh, travel, it adalah website company profile
+      const websiteCategories = ['website', 'fnb', 'umroh', 'travel', 'it']
+      if (project && websiteCategories.includes(project.category)) {
+        router.push(`/website/${id}`)
+      } else {
+        router.push(`/project/${id}`)
+      }
+    }
+
+    const getProjectRoute = (project) => {
+      const websiteCategories = ['website', 'fnb', 'umroh', 'travel', 'it']
+      if (websiteCategories.includes(project.category)) {
+        return `/website/${project.id}`
+      }
+      return `/project/${project.id}`
     }
 
     return {
@@ -129,7 +146,8 @@ export default {
       featuredProjects,
       truncate,
       capitalizeFirst,
-      goToProject
+      goToProject,
+      getProjectRoute
     }
   }
 }

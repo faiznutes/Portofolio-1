@@ -58,6 +58,11 @@ export function useProjects() {
   const getProjectsByCategory = (category) => {
     const projectsData = getProjectsData()
     if (category === 'all') return projectsData
+    // Filter 'website' akan menampilkan semua project website company profile
+    if (category === 'website') {
+      const websiteCategories = ['website', 'fnb', 'umroh', 'travel', 'it']
+      return projectsData.filter(p => websiteCategories.includes(p.category))
+    }
     return projectsData.filter(p => p.category === category)
   }
 
