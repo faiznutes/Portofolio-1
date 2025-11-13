@@ -1,0 +1,119 @@
+/* Company Profile Theme - Modern, Simple, Elegant */
+:root {
+  --cp-bg-primary: #ffffff;
+  --cp-bg-secondary: #f8f9fa;
+  --cp-text-primary: #1a1a1a;
+  --cp-text-secondary: #6c757d;
+  --cp-accent: #2563eb;
+  --cp-accent-hover: #1d4ed8;
+  --cp-border: #e5e7eb;
+  --cp-shadow: rgba(0, 0, 0, 0.1);
+  --cp-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.company-profile-wrapper {
+  background: var(--cp-bg-primary);
+  color: var(--cp-text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+}
+
+.company-profile-wrapper * {
+  color: inherit;
+}
+
+/* Override untuk company profile pages */
+.company-profile-wrapper .company-content {
+  background: var(--cp-bg-primary);
+}
+
+/* Typography */
+.company-profile-wrapper h1,
+.company-profile-wrapper h2,
+.company-profile-wrapper h3 {
+  color: var(--cp-text-primary);
+  font-weight: 700;
+}
+
+.company-profile-wrapper p {
+  color: var(--cp-text-secondary);
+  line-height: 1.8;
+}
+
+/* Buttons */
+.company-profile-wrapper .btn-primary {
+  background: var(--cp-gradient);
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.company-profile-wrapper .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+.company-profile-wrapper .btn-secondary {
+  background: transparent;
+  color: var(--cp-accent);
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.3s ease;
+  border: 2px solid var(--cp-accent);
+}
+
+.company-profile-wrapper .btn-secondary:hover {
+  background: var(--cp-accent);
+  color: #fff;
+}
+
+/* Cards */
+.company-profile-wrapper .card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 2px 10px var(--cp-shadow);
+  border: 1px solid var(--cp-border);
+  transition: all 0.3s ease;
+}
+
+.company-profile-wrapper .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Sections */
+.company-profile-wrapper .section {
+  padding: 80px 0;
+}
+
+.company-profile-wrapper .section-alt {
+  background: var(--cp-bg-secondary);
+}
+
+/* Container */
+.company-profile-wrapper .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media (max-width: 768px) {
+  .company-profile-wrapper .container {
+    padding: 0 20px;
+  }
+  
+  .company-profile-wrapper .section {
+    padding: 60px 0;
+  }
+}
+

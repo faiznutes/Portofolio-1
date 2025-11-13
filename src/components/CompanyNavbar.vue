@@ -3,7 +3,6 @@
     <div class="navbar-container">
       <div class="navbar-brand">
         <router-link :to="`/website/${projectId}`" class="brand-link">
-          <img v-if="logo" :src="logo" :alt="companyName" class="brand-logo">
           <span class="brand-name">{{ companyName }}</span>
         </router-link>
       </div>
@@ -72,13 +71,13 @@ export default {
 
 <style scoped>
 .company-navbar {
-  background: linear-gradient(135deg, rgba(26, 35, 50, 0.98) 0%, rgba(15, 20, 25, 0.98) 100%);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .navbar-container {
@@ -99,28 +98,21 @@ export default {
 }
 
 .brand-link {
-  display: flex;
-  align-items: center;
-  gap: 12px;
   text-decoration: none;
   color: var(--text-color);
   font-weight: 700;
-  font-size: 20px;
+  font-size: 22px;
   transition: color 0.3s ease;
+  letter-spacing: 0.5px;
 }
 
 .brand-link:hover {
   color: var(--accent-color);
 }
 
-.brand-logo {
-  height: 40px;
-  width: auto;
-  object-fit: contain;
-}
-
 .brand-name {
-  font-size: 20px;
+  font-size: 22px;
+  font-weight: 700;
 }
 
 .navbar-menu {
@@ -214,10 +206,6 @@ export default {
 
   .brand-name {
     font-size: 18px;
-  }
-
-  .brand-logo {
-    height: 35px;
   }
 }
 

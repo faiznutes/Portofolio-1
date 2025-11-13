@@ -41,13 +41,16 @@ export default {
 }
 </script>
 
+<style>
+@import '../styles/company-profile.css';
+</style>
+
 <style scoped>
 .company-profile-wrapper {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-  background-attachment: fixed;
+  background: #ffffff;
   width: 100%;
   position: relative;
 }

@@ -1,46 +1,62 @@
 <template>
   <div class="company-home">
+    <!-- Hero Section dengan Background Visual -->
     <section class="hero-section">
-      <div class="hero-content">
-        <h1 class="hero-title">{{ companyData?.title }}</h1>
-        <p class="hero-subtitle">{{ companyData?.description?.split('\n')[0] || 'Welcome to our company' }}</p>
-        <div class="hero-buttons">
-          <router-link :to="`/website/${projectId}/contact`" class="btn-primary">Contact Us</router-link>
-          <router-link :to="`/website/${projectId}/services`" class="btn-secondary">Our Services</router-link>
-        </div>
-      </div>
-      <div class="hero-image">
-        <img :src="companyData?.image || 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&auto=format&fit=crop'" 
+      <div class="hero-background">
+        <img :src="companyData?.image || 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1920&auto=format&fit=crop'" 
              :alt="companyData?.title" 
-             loading="eager">
+             loading="eager"
+             class="hero-bg-image">
+        <div class="hero-overlay"></div>
       </div>
-    </section>
-
-    <section class="features-section">
-      <div class="container">
-        <h2 class="section-title">Why Choose Us</h2>
-        <div class="features-grid">
-          <div class="feature-card" v-for="(feature, index) in features" :key="index">
-            <div class="feature-icon">{{ feature.icon }}</div>
-            <h3>{{ feature.title }}</h3>
-            <p>{{ feature.description }}</p>
+      <div class="hero-content">
+        <div class="container">
+          <h1 class="hero-title">{{ companyData?.title }}</h1>
+          <p class="hero-subtitle">{{ getHeroDescription() }}</p>
+          <div class="hero-info">
+            <div class="info-item" v-for="(info, index) in heroInfo" :key="index">
+              <i :class="info.icon"></i>
+              <span>{{ info.text }}</span>
+            </div>
+          </div>
+          <div class="hero-buttons">
+            <router-link :to="`/website/${projectId}/contact`" class="btn-primary">
+              <i class="fas fa-envelope"></i> Get In Touch
+            </router-link>
+            <router-link :to="`/website/${projectId}/services`" class="btn-secondary">
+              <i class="fas fa-briefcase"></i> Our Services
+            </router-link>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="services-preview">
+    <!-- What We Offer Section -->
+    <section class="offer-section section">
       <div class="container">
-        <h2 class="section-title">Our Services</h2>
-        <div class="services-grid">
-          <div class="service-card" v-for="(service, index) in services" :key="index">
-            <img :src="service.image" :alt="service.title" loading="lazy">
-            <h3>{{ service.title }}</h3>
-            <p>{{ service.description }}</p>
+        <div class="section-header">
+          <h2 class="section-title">What We Offer</h2>
+          <p class="section-description">{{ getOfferDescription() }}</p>
+        </div>
+        <div class="offer-grid">
+          <div class="offer-card card" v-for="(offer, index) in offers" :key="index">
+            <div class="offer-icon">{{ offer.icon }}</div>
+            <h3>{{ offer.title }}</h3>
+            <p>{{ offer.description }}</p>
           </div>
         </div>
-        <div class="text-center">
-          <router-link :to="`/website/${projectId}/services`" class="btn-primary">View All Services</router-link>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section section section-alt">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Ready to Get Started?</h2>
+          <p>Let's work together to achieve your goals. Contact us today and discover how we can help you.</p>
+          <router-link :to="`/website/${projectId}/contact`" class="btn-primary btn-large">
+            <i class="fas fa-paper-plane"></i> Contact Us Now
+          </router-link>
         </div>
       </div>
     </section>
@@ -63,58 +79,75 @@ export default {
     const route = useRoute()
     const projectId = computed(() => route.params.id)
     
-    // Features based on company type
-    const features = computed(() => {
+    const getHeroDescription = () => {
+      const desc = props.companyData?.description || ''
+      const firstLine = desc.split('\n')[0] || 'Welcome to our company'
+      return firstLine.length > 150 ? firstLine.substring(0, 150) + '...' : firstLine
+    }
+    
+    const getOfferDescription = () => {
+      const category = props.companyData?.category || 'general'
+      if (category === 'fnb') {
+        return 'We provide exceptional food and beverage services tailored to your needs, from fine dining to catering events.'
+      } else if (category === 'umroh' || category === 'travel') {
+        return 'Experience unforgettable journeys with our carefully curated travel packages and professional services.'
+      }
+      return 'We deliver comprehensive solutions designed to help your business grow and succeed.'
+    }
+    
+    const heroInfo = computed(() => {
       const category = props.companyData?.category || 'general'
       if (category === 'fnb') {
         return [
-          { icon: '🍽️', title: 'Fresh Ingredients', description: 'We use only the freshest ingredients for our dishes' },
-          { icon: '👨‍🍳', title: 'Expert Chefs', description: 'Our experienced chefs create delicious meals' },
-          { icon: '🚚', title: 'Fast Delivery', description: 'Quick and reliable delivery service' },
-          { icon: '⭐', title: 'Quality Service', description: 'Committed to providing excellent service' }
+          { icon: 'fas fa-users', text: 'Serving Thousands' },
+          { icon: 'fas fa-map-marker-alt', text: 'Multiple Locations' },
+          { icon: 'fas fa-star', text: '5 Star Rated' }
         ]
-      } else if (category === 'travel' || category === 'umroh') {
+      } else if (category === 'umroh' || category === 'travel') {
         return [
-          { icon: '✈️', title: 'Best Packages', description: 'Carefully curated travel packages' },
-          { icon: '🕌', title: 'Religious Tours', description: 'Authentic religious travel experiences' },
-          { icon: '🏨', title: 'Quality Hotels', description: 'Comfortable accommodations' },
-          { icon: '👥', title: 'Expert Guides', description: 'Knowledgeable and friendly guides' }
+          { icon: 'fas fa-plane', text: 'Trusted Travel Partner' },
+          { icon: 'fas fa-users', text: '10,000+ Happy Travelers' },
+          { icon: 'fas fa-globe', text: 'Worldwide Coverage' }
         ]
       }
       return [
-        { icon: '💼', title: 'Professional', description: 'Professional service you can trust' },
-        { icon: '⚡', title: 'Fast Response', description: 'Quick response to your needs' },
-        { icon: '🎯', title: 'Quality Focus', description: 'We focus on quality in everything' },
-        { icon: '🤝', title: 'Trusted Partner', description: 'Your trusted business partner' }
+        { icon: 'fas fa-briefcase', text: 'Professional Service' },
+        { icon: 'fas fa-clock', text: '24/7 Support' },
+        { icon: 'fas fa-trophy', text: 'Award Winning' }
       ]
     })
     
-    const services = computed(() => {
+    const offers = computed(() => {
       const category = props.companyData?.category || 'general'
       if (category === 'fnb') {
         return [
-          { title: 'Catering Services', description: 'Professional catering for events', image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=400&auto=format&fit=crop' },
-          { title: 'Restaurant Dining', description: 'Fine dining experience', image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&auto=format&fit=crop' },
-          { title: 'Takeaway & Delivery', description: 'Order online and get delivered', image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&auto=format&fit=crop' }
+          { icon: '🍽️', title: 'What We Serve', description: 'Delicious meals made with fresh, quality ingredients' },
+          { icon: '👥', title: 'Who We Serve', description: 'Individuals, families, and businesses of all sizes' },
+          { icon: '💡', title: 'How We Help', description: 'From menu planning to delivery, we handle everything' },
+          { icon: '📍', title: 'Where We Are', description: 'Serving customers across multiple locations' }
         ]
-      } else if (category === 'travel' || category === 'umroh') {
+      } else if (category === 'umroh' || category === 'travel') {
         return [
-          { title: 'Umroh Packages', description: 'Complete umroh travel packages', image: 'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=400&auto=format&fit=crop' },
-          { title: 'Hajj Services', description: 'Professional hajj services', image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&auto=format&fit=crop' },
-          { title: 'Group Tours', description: 'Organized group travel', image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&auto=format&fit=crop' }
+          { icon: '✈️', title: 'What We Offer', description: 'Complete travel packages and religious tours' },
+          { icon: '👥', title: 'Who We Serve', description: 'Individuals, families, and groups seeking spiritual journeys' },
+          { icon: '💡', title: 'How We Help', description: 'From visa processing to guided tours, we make it easy' },
+          { icon: '🌍', title: 'Where We Go', description: 'Destinations worldwide with trusted partners' }
         ]
       }
       return [
-        { title: 'Consulting', description: 'Expert business consulting', image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&auto=format&fit=crop' },
-        { title: 'Solutions', description: 'Custom business solutions', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&auto=format&fit=crop' },
-        { title: 'Support', description: '24/7 customer support', image: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400&auto=format&fit=crop' }
+        { icon: '💼', title: 'What We Do', description: 'Professional services and solutions' },
+        { icon: '👥', title: 'Who We Serve', description: 'Businesses looking to grow and succeed' },
+        { icon: '💡', title: 'How We Help', description: 'Customized solutions tailored to your needs' },
+        { icon: '📍', title: 'Where We Operate', description: 'Serving clients globally' }
       ]
     })
     
     return {
       projectId,
-      features,
-      services
+      getHeroDescription,
+      getOfferDescription,
+      heroInfo,
+      offers
     }
   }
 }
@@ -125,219 +158,233 @@ export default {
   width: 100%;
 }
 
+/* Hero Section */
 .hero-section {
+  position: relative;
+  min-height: 600px;
   display: flex;
   align-items: center;
-  gap: 40px;
-  padding: 80px 40px;
-  max-width: 1400px;
-  margin: 0 auto;
-  min-height: 500px;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.hero-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.85) 0%, rgba(118, 75, 162, 0.85) 100%);
+  z-index: 1;
 }
 
 .hero-content {
-  flex: 1;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  padding: 80px 0;
 }
 
 .hero-title {
-  font-size: 48px;
+  font-size: 56px;
   font-weight: 700;
-  color: var(--text-color);
   margin-bottom: 20px;
+  color: #fff;
   line-height: 1.2;
 }
 
 .hero-subtitle {
-  font-size: 20px;
-  color: var(--subtext-color);
-  margin-bottom: 30px;
+  font-size: 22px;
+  margin-bottom: 40px;
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
   line-height: 1.6;
+}
+
+.hero-info {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 16px;
+}
+
+.info-item i {
+  font-size: 20px;
 }
 
 .hero-buttons {
   display: flex;
+  justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
 }
 
 .btn-primary, .btn-secondary {
-  padding: 14px 30px;
-  border-radius: 30px;
+  padding: 16px 32px;
+  border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
-  color: #fff;
-  box-shadow: 0 4px 15px rgba(91, 143, 199, 0.3);
+  background: #fff;
+  color: #2563eb;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(91, 143, 199, 0.4);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .btn-secondary {
   background: transparent;
-  color: var(--accent-color);
-  border: 2px solid var(--accent-color);
+  color: #fff;
+  border: 2px solid #fff;
 }
 
 .btn-secondary:hover {
-  background: var(--accent-color);
-  color: #fff;
+  background: #fff;
+  color: #2563eb;
 }
 
-.hero-image {
-  flex: 1;
-  max-width: 600px;
+/* Offer Section */
+.offer-section {
+  background: #ffffff;
 }
 
-.hero-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-}
-
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 40px;
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
 }
 
 .section-title {
-  font-size: 36px;
+  font-size: 42px;
   font-weight: 700;
-  color: var(--text-color);
-  text-align: center;
-  margin-bottom: 50px;
+  color: #1a1a1a;
+  margin-bottom: 15px;
 }
 
-.features-section {
-  padding: 80px 0;
-  background: linear-gradient(135deg, var(--section-bg) 0%, rgba(26, 35, 50, 0.8) 100%);
+.section-description {
+  font-size: 18px;
+  color: #6c757d;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
 }
 
-.features-grid {
+.offer-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
 }
 
-.feature-card {
-  background: linear-gradient(135deg, rgba(15, 20, 25, 0.6) 0%, rgba(26, 35, 50, 0.4) 100%);
-  padding: 40px 30px;
-  border-radius: 15px;
+.offer-card {
   text-align: center;
-  border: 1px solid var(--border-color);
-  transition: all 0.3s ease;
+  padding: 40px 30px;
 }
 
-.feature-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px var(--hover-shadow);
-  border-color: var(--accent-color);
-}
-
-.feature-icon {
+.offer-icon {
   font-size: 48px;
   margin-bottom: 20px;
 }
 
-.feature-card h3 {
+.offer-card h3 {
   font-size: 22px;
-  color: var(--text-color);
+  color: #1a1a1a;
   margin-bottom: 15px;
+  font-weight: 600;
 }
 
-.feature-card p {
-  color: var(--subtext-color);
+.offer-card p {
+  color: #6c757d;
   line-height: 1.6;
+  font-size: 15px;
 }
 
-.services-preview {
-  padding: 80px 0;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-bottom: 50px;
-}
-
-.service-card {
-  background: linear-gradient(135deg, var(--section-bg) 0%, rgba(26, 35, 50, 0.8) 100%);
-  border-radius: 15px;
-  overflow: hidden;
-  border: 1px solid var(--border-color);
-  transition: all 0.3s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px var(--hover-shadow);
-}
-
-.service-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.service-card h3 {
-  font-size: 22px;
-  color: var(--text-color);
-  margin: 20px 20px 10px;
-}
-
-.service-card p {
-  color: var(--subtext-color);
-  margin: 0 20px 20px;
-  line-height: 1.6;
-}
-
-.text-center {
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
   text-align: center;
 }
 
-@media (max-width: 1024px) {
-  .hero-section {
-    flex-direction: column;
-    text-align: center;
-    padding: 60px 20px;
-  }
+.cta-content h2 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  color: #fff;
+}
 
-  .hero-image {
-    max-width: 100%;
-  }
+.cta-content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-large {
+  padding: 18px 40px;
+  font-size: 18px;
 }
 
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 32px;
+    font-size: 36px;
   }
 
   .hero-subtitle {
     font-size: 18px;
   }
 
+  .hero-info {
+    gap: 20px;
+  }
+
   .section-title {
-    font-size: 28px;
+    font-size: 32px;
   }
 
-  .features-grid,
-  .services-grid {
+  .cta-content h2 {
+    font-size: 32px;
+  }
+
+  .offer-grid {
     grid-template-columns: 1fr;
-  }
-
-  .container {
-    padding: 0 20px;
   }
 }
 </style>
-
