@@ -21,7 +21,7 @@
               <div class="service-image">
                 <img :src="optimizeImageUrl(service.image, 600)" :alt="service.title" loading="lazy">
               </div>
-              <div class="service-details">
+              <div class="service-content">
                 <p class="service-description">{{ service.description }}</p>
                 
                 <div class="service-benefits">
@@ -60,7 +60,7 @@
     <section class="testimonials-section section">
       <div class="container">
         <h2 class="section-title">Apa Kata Klien Kami</h2>
-        <div class="testimonials-grid">
+        <div class="testimonials-wrapper">
           <div class="testimonial-card card" v-for="(testimonial, index) in testimonials" :key="index">
             <div class="testimonial-rating">
               <i class="fas fa-star" v-for="n in 5" :key="n"></i>
@@ -79,7 +79,7 @@
     <section class="metrics-section section section-alt">
       <div class="container">
         <h2 class="section-title">Metrik Kesuksesan Kami</h2>
-        <div class="metrics-grid">
+        <div class="metrics-wrapper">
           <div class="metric-card" v-for="(metric, index) in metrics" :key="index">
             <div class="metric-value">{{ metric.value }}</div>
             <div class="metric-label">{{ metric.label }}</div>
@@ -93,7 +93,7 @@
       <div class="container">
         <h2 class="section-title">Layanan Tambahan</h2>
         <p class="section-description">Tingkatkan pengalaman Anda dengan layanan pelengkap ini</p>
-        <div class="additional-grid">
+        <div class="additional-wrapper">
           <div class="additional-card card" v-for="(item, index) in additionalServices" :key="index">
             <i :class="item.icon"></i>
             <h3>{{ item.title }}</h3>
@@ -524,13 +524,17 @@ export default {
 }
 
 .service-body {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 40px;
   padding: 40px;
 }
 
 .service-image {
+  flex: 1 1 300px;
+  min-width: 300px;
+  max-width: 400px;
   border-radius: 12px;
   overflow: hidden;
 }
@@ -540,6 +544,11 @@ export default {
   height: 100%;
   object-fit: cover;
   min-height: 300px;
+}
+
+.service-content {
+  flex: 1 1 400px;
+  min-width: 300px;
 }
 
 .service-description {
@@ -592,14 +601,18 @@ export default {
   background: #ffffff;
 }
 
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.testimonials-wrapper {
+  display: flex;
+  flex-wrap: wrap;
   gap: 30px;
   margin-top: 40px;
+  justify-content: center;
 }
 
 .testimonial-card {
+  flex: 1 1 300px;
+  min-width: 300px;
+  max-width: 400px;
   padding: 30px;
 }
 
@@ -637,14 +650,18 @@ export default {
   background: #f8f9fa;
 }
 
-.metrics-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+.metrics-wrapper {
+  display: flex;
+  flex-wrap: wrap;
   gap: 40px;
   margin-top: 40px;
+  justify-content: center;
 }
 
 .metric-card {
+  flex: 1 1 200px;
+  min-width: 200px;
+  max-width: 250px;
   text-align: center;
   padding: 30px 20px;
 }
@@ -666,14 +683,18 @@ export default {
   background: var(--cp-bg-primary, #ffffff);
 }
 
-.additional-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+.additional-wrapper {
+  display: flex;
+  flex-wrap: wrap;
   gap: 32px;
   margin-top: 48px;
+  justify-content: center;
 }
 
 .additional-card {
+  flex: 1 1 280px;
+  min-width: 280px;
+  max-width: 350px;
   text-align: center;
   padding: 48px 32px;
   background: var(--cp-bg-primary, #ffffff);
