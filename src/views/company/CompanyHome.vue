@@ -401,6 +401,23 @@ export default {
   border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
+/* Button primary di hero section harus lebih terang dan kontras */
+.hero-section .btn-primary {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+  color: #0a1a2f;
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.4), 0 0 0 2px rgba(255, 255, 255, 0.6);
+  border: 2px solid #ffffff;
+  text-shadow: none;
+  font-weight: 700;
+}
+
+.hero-section .btn-primary:hover {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+  box-shadow: 0 12px 32px rgba(255, 255, 255, 0.5), 0 0 0 2px rgba(255, 255, 255, 0.8);
+  transform: translateY(-2px);
+  color: #0a1a2f;
+}
+
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 32px rgba(212, 175, 55, 0.4);
