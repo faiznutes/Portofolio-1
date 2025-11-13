@@ -7,10 +7,9 @@ import Login from '../views/Login.vue'
 import CompanyProfile from '../views/CompanyProfile.vue'
 import CompanyHome from '../views/company/CompanyHome.vue'
 import CompanyAbout from '../views/company/CompanyAbout.vue'
-import CompanyServices from '../views/company/CompanyServices.vue'
+import CompanyPackage from '../views/company/CompanyPackage.vue'
 import CompanyGallery from '../views/company/CompanyGallery.vue'
 import CompanyContact from '../views/company/CompanyContact.vue'
-import CompanyTerms from '../views/company/CompanyTerms.vue'
 import { useProjects } from '../composables/useProjects'
 
 const { getProjectById } = useProjects()
@@ -118,6 +117,75 @@ const routes = [
           }
         }
       },
+      {
+        path: 'package',
+        name: 'CompanyPackage',
+        component: CompanyPackage,
+        meta: {
+          title: (route) => {
+            try {
+              const project = getProjectById(route.params.id)
+              return project ? `Paket - ${project.title}` : 'Paket - Company Profile'
+            } catch {
+              return 'Paket - Company Profile'
+            }
+          },
+          description: (route) => {
+            try {
+              const project = getProjectById(route.params.id)
+              return project ? `Lihat paket umroh dan haji dari ${project.title}. Pilih paket yang sesuai dengan kebutuhan Anda.` : 'Paket perjalanan kami'
+            } catch {
+              return 'Paket perjalanan kami'
+            }
+          }
+        }
+      },
+      {
+        path: 'gallery',
+        name: 'CompanyGallery',
+        component: CompanyGallery,
+        meta: {
+          title: (route) => {
+            try {
+              const project = getProjectById(route.params.id)
+              return project ? `Galeri - ${project.title}` : 'Galeri - Company Profile'
+            } catch {
+              return 'Galeri - Company Profile'
+            }
+          },
+          description: (route) => {
+            try {
+              const project = getProjectById(route.params.id)
+              return project ? `Jelajahi galeri perjalanan dari ${project.title}. Lihat momen-momen indah perjalanan suci.` : 'Galeri perjalanan kami'
+            } catch {
+              return 'Galeri perjalanan kami'
+            }
+          }
+        }
+      },
+      {
+        path: 'contact',
+        name: 'CompanyContact',
+        component: CompanyContact,
+        meta: {
+          title: (route) => {
+            try {
+              const project = getProjectById(route.params.id)
+              return project ? `Kontak - ${project.title}` : 'Kontak - Company Profile'
+            } catch {
+              return 'Kontak - Company Profile'
+            }
+          },
+          description: (route) => {
+            try {
+              const project = getProjectById(route.params.id)
+              return project ? `Hubungi ${project.title}. Daftar sekarang atau konsultasi gratis untuk perjalanan suci Anda.` : 'Hubungi kami'
+            } catch {
+              return 'Hubungi kami'
+            }
+          }
+        }
+      }
     ]
   },
   {
