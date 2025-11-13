@@ -316,9 +316,9 @@ export default {
 .lightbox-prev,
 .lightbox-next {
   position: absolute;
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid #ffffff;
+  color: #ffffff;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -328,13 +328,16 @@ export default {
   cursor: pointer;
   transition: all 0.3s ease;
   font-size: 20px;
+  backdrop-filter: blur(10px);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .lightbox-close:hover,
 .lightbox-prev:hover,
 .lightbox-next:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.3);
+  border-color: #ffffff;
+  color: #ffffff;
 }
 
 .lightbox-close {
