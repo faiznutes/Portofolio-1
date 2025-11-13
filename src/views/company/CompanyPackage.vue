@@ -263,7 +263,8 @@ export default {
 .package-badge {
   position: absolute;
   top: -15px;
-  right: 30px;
+  left: 50%;
+  transform: translateX(-50%);
   background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
   color: #0a1a2f;
   padding: 8px 20px;
@@ -271,6 +272,7 @@ export default {
   font-size: 14px;
   font-weight: 600;
   box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+  white-space: nowrap;
 }
 
 .package-header {
@@ -278,6 +280,9 @@ export default {
   padding-bottom: 24px;
   border-bottom: 2px solid var(--cp-border, rgba(212, 175, 55, 0.2));
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .package-header h3 {
@@ -337,6 +342,9 @@ export default {
 
 .package-actions {
   margin-top: auto;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .btn-primary {
