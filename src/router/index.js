@@ -11,6 +11,9 @@ import CompanyServices from '../views/company/CompanyServices.vue'
 import CompanyGallery from '../views/company/CompanyGallery.vue'
 import CompanyContact from '../views/company/CompanyContact.vue'
 import CompanyTerms from '../views/company/CompanyTerms.vue'
+import { useProjects } from '../composables/useProjects'
+
+const { getProjectById } = useProjects()
 
 const routes = [
   {
@@ -74,7 +77,14 @@ const routes = [
         name: 'CompanyHome',
         component: CompanyHome,
         meta: {
-          title: 'Company Profile - Faiznute Portfolio'
+          title: (route) => {
+            const project = getProjectById(route.params.id)
+            return project ? `${project.title} - Home` : 'Company Profile - Home'
+          },
+          description: (route) => {
+            const project = getProjectById(route.params.id)
+            return project ? `Welcome to ${project.title}. ${project.description?.split('\n')[0] || 'Professional services tailored to your needs.'}` : 'Company profile homepage'
+          }
         }
       },
       {
@@ -82,7 +92,14 @@ const routes = [
         name: 'CompanyAbout',
         component: CompanyAbout,
         meta: {
-          title: 'About - Company Profile'
+          title: (route) => {
+            const project = getProjectById(route.params.id)
+            return project ? `About - ${project.title}` : 'About - Company Profile'
+          },
+          description: (route) => {
+            const project = getProjectById(route.params.id)
+            return project ? `Learn more about ${project.title} - our mission, vision, values, and team.` : 'About our company'
+          }
         }
       },
       {
@@ -90,7 +107,14 @@ const routes = [
         name: 'CompanyServices',
         component: CompanyServices,
         meta: {
-          title: 'Services - Company Profile'
+          title: (route) => {
+            const project = getProjectById(route.params.id)
+            return project ? `Services - ${project.title}` : 'Services - Company Profile'
+          },
+          description: (route) => {
+            const project = getProjectById(route.params.id)
+            return project ? `Our comprehensive services at ${project.title}. Discover how we can help you achieve your goals.` : 'Our services'
+          }
         }
       },
       {
@@ -98,7 +122,14 @@ const routes = [
         name: 'CompanyGallery',
         component: CompanyGallery,
         meta: {
-          title: 'Gallery - Company Profile'
+          title: (route) => {
+            const project = getProjectById(route.params.id)
+            return project ? `Gallery - ${project.title}` : 'Gallery - Company Profile'
+          },
+          description: (route) => {
+            const project = getProjectById(route.params.id)
+            return project ? `Explore our gallery showcasing ${project.title}'s work, achievements, and visual stories.` : 'Our gallery'
+          }
         }
       },
       {
@@ -106,7 +137,14 @@ const routes = [
         name: 'CompanyContact',
         component: CompanyContact,
         meta: {
-          title: 'Contact - Company Profile'
+          title: (route) => {
+            const project = getProjectById(route.params.id)
+            return project ? `Contact - ${project.title}` : 'Contact - Company Profile'
+          },
+          description: (route) => {
+            const project = getProjectById(route.params.id)
+            return project ? `Get in touch with ${project.title}. Contact us for inquiries, quotes, or support.` : 'Contact us'
+          }
         }
       },
       {
@@ -114,7 +152,12 @@ const routes = [
         name: 'CompanyTerms',
         component: CompanyTerms,
         meta: {
-          title: 'Terms & Conditions - Company Profile'
+          title: (route) => {
+            const project = getProjectById(route.params.id)
+            return project ? `Terms & Conditions - ${project.title}` : 'Terms & Conditions'
+          },
+          description: 'Terms and conditions, privacy policy, and legal information.',
+          robots: 'noindex, nofollow'
         }
       }
     ]
@@ -132,7 +175,15 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    // Always scroll to top when navigating to a new route
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { top: 0, behavior: 'smooth' }
+    }
+  }
 })
 
 // Update document title and meta tags on route change
@@ -168,6 +219,9 @@ router.beforeEach((to, from, next) => {
     document.head.appendChild(canonical)
   }
   canonical.setAttribute('href', `https://portofolio-1-alpha.vercel.app${to.fullPath}`)
+  
+  // Scroll to top on route change
+  window.scrollTo({ top: 0, behavior: 'instant' })
   
   // Update Open Graph tags
   const updateOGTag = (property, content) => {
