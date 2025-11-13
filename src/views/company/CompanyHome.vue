@@ -279,7 +279,8 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(14, 165, 233, 0.85) 0%, rgba(20, 184, 166, 0.85) 100%);
+  background: var(--cp-gradient);
+  opacity: 0.9;
   z-index: 1;
 }
 
@@ -351,7 +352,7 @@ export default {
 
 .btn-primary {
   background: #fff;
-  color: #0ea5e9;
+  color: var(--cp-accent);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -368,7 +369,7 @@ export default {
 
 .btn-secondary:hover {
   background: #fff;
-  color: #0ea5e9;
+  color: var(--cp-accent);
 }
 
 /* Intro Section */
@@ -383,7 +384,7 @@ export default {
 .section-title {
   font-size: 42px;
   font-weight: 700;
-  color: #1e293b;
+  color: var(--cp-text-primary, #1e293b);
   margin-bottom: 50px;
 }
 
@@ -396,14 +397,14 @@ export default {
 
 .intro-text h3 {
   font-size: 24px;
-  color: #1e293b;
+  color: var(--cp-text-primary, #1e293b);
   margin-bottom: 15px;
   font-weight: 600;
 }
 
 .intro-text p {
   font-size: 16px;
-  color: #64748b;
+  color: var(--cp-text-secondary, #64748b);
   line-height: 1.8;
 }
 
@@ -430,20 +431,20 @@ export default {
 
 .feature-card h3 {
   font-size: 22px;
-  color: #1e293b;
+  color: var(--cp-text-primary, #1e293b);
   margin-bottom: 15px;
   font-weight: 600;
 }
 
 .feature-card p {
-  color: #64748b;
+  color: var(--cp-text-secondary, #64748b);
   line-height: 1.6;
   font-size: 15px;
 }
 
 /* CTA Section */
 .cta-section {
-  background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
+  background: var(--cp-gradient);
   color: #fff;
   text-align: center;
 }

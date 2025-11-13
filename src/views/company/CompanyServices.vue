@@ -419,7 +419,7 @@ export default {
 }
 
 .services-hero {
-  background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
+  background: var(--cp-gradient);
   color: #fff;
   text-align: center;
   padding: 100px 0;
@@ -453,7 +453,7 @@ export default {
 }
 
 .service-header {
-  background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
+  background: var(--cp-gradient);
   color: #fff;
   padding: 30px 40px;
   display: flex;
@@ -494,7 +494,7 @@ export default {
 
 .service-description {
   font-size: 18px;
-  color: #64748b;
+  color: var(--cp-text-secondary, #64748b);
   line-height: 1.8;
   margin-bottom: 30px;
 }
@@ -507,7 +507,7 @@ export default {
 .service-benefits h3,
 .service-features h3 {
   font-size: 20px;
-  color: #1e293b;
+  color: var(--cp-text-primary, #1e293b);
   margin-bottom: 15px;
   font-weight: 600;
 }
@@ -524,12 +524,12 @@ export default {
   align-items: flex-start;
   gap: 12px;
   padding: 10px 0;
-  color: #64748b;
+  color: var(--cp-text-secondary, #64748b);
 }
 
 .benefits-list li i,
 .features-list li i {
-  color: #0ea5e9;
+  color: var(--cp-accent, #0ea5e9);
   margin-top: 4px;
   flex-shrink: 0;
 }
@@ -561,7 +561,7 @@ export default {
 
 .testimonial-text {
   font-size: 16px;
-  color: #64748b;
+  color: var(--cp-text-secondary, #64748b);
   line-height: 1.8;
   font-style: italic;
   margin-bottom: 20px;
@@ -574,12 +574,12 @@ export default {
 }
 
 .testimonial-author strong {
-  color: #1e293b;
+  color: var(--cp-text-primary, #1e293b);
   font-size: 16px;
 }
 
 .testimonial-author span {
-  color: #64748b;
+  color: var(--cp-text-secondary, #64748b);
   font-size: 14px;
 }
 
@@ -602,13 +602,13 @@ export default {
 .metric-value {
   font-size: 48px;
   font-weight: 700;
-  color: #0ea5e9;
+  color: var(--cp-accent, #0ea5e9);
   margin-bottom: 10px;
 }
 
 .metric-label {
   font-size: 16px;
-  color: #64748b;
+  color: var(--cp-text-secondary, #64748b);
   font-weight: 500;
 }
 
@@ -630,18 +630,18 @@ export default {
 
 .additional-card i {
   font-size: 48px;
-  color: #0ea5e9;
+  color: var(--cp-accent, #0ea5e9);
   margin-bottom: 20px;
 }
 
 .additional-card h3 {
   font-size: 22px;
-  color: #1e293b;
+  color: var(--cp-text-primary, #1e293b);
   margin-bottom: 15px;
 }
 
 .additional-card p {
-  color: #64748b;
+  color: var(--cp-text-secondary, #64748b);
   line-height: 1.6;
   margin-bottom: 20px;
 }
@@ -652,7 +652,7 @@ export default {
 }
 
 .cta-section {
-  background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
+  background: var(--cp-gradient);
   color: #fff;
   text-align: center;
 }

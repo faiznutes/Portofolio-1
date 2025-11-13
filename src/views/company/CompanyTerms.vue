@@ -187,7 +187,7 @@ export default {
 }
 
 .terms-hero {
-  background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
+  background: var(--cp-gradient);
   color: #fff;
   text-align: center;
   padding: 100px 0;
@@ -214,12 +214,12 @@ export default {
   padding: 30px;
   border-radius: 12px;
   margin-bottom: 40px;
-  border-left: 4px solid #0ea5e9;
+  border-left: 4px solid var(--cp-accent, #0ea5e9);
 }
 
 .terms-intro p {
   font-size: 18px;
-  color: #64748b;
+  color: var(--cp-text-secondary, #64748b);
   line-height: 1.8;
   margin: 0;
 }
@@ -237,14 +237,14 @@ export default {
 
 .terms-section h2 {
   font-size: 28px;
-  color: #1e293b;
+  color: var(--cp-text-primary, #1e293b);
   margin-bottom: 20px;
   font-weight: 700;
 }
 
 .terms-section p {
   font-size: 16px;
-  color: #64748b;
+  color: var(--cp-text-secondary, #64748b);
   line-height: 1.8;
   margin-bottom: 15px;
 }
@@ -256,7 +256,7 @@ export default {
 }
 
 .terms-section ul li {
-  color: #64748b;
+  color: var(--cp-text-secondary, #64748b);
   padding: 12px 0;
   padding-left: 30px;
   position: relative;
@@ -267,7 +267,7 @@ export default {
   content: '✓';
   position: absolute;
   left: 0;
-  color: #0ea5e9;
+  color: var(--cp-accent, #0ea5e9);
   font-weight: bold;
   font-size: 18px;
 }
@@ -280,7 +280,7 @@ export default {
 
 .section-title {
   font-size: 32px;
-  color: #1e293b;
+  color: var(--cp-text-primary, #1e293b);
   margin-bottom: 25px;
   font-weight: 700;
 }
@@ -300,7 +300,7 @@ export default {
 
 .privacy-content ul li,
 .cookies-content ul li {
-  color: #64748b;
+  color: var(--cp-text-secondary, #64748b);
   padding: 10px 0;
   padding-left: 25px;
   position: relative;
@@ -312,7 +312,7 @@ export default {
   content: '•';
   position: absolute;
   left: 0;
-  color: #0ea5e9;
+  color: var(--cp-accent, #0ea5e9);
   font-size: 20px;
 }
 
@@ -324,8 +324,8 @@ export default {
 
 .legal-item {
   padding: 15px 0;
-  border-bottom: 1px solid #e2e8f0;
-  color: #64748b;
+  border-bottom: 1px solid var(--cp-border, #e2e8f0);
+  color: var(--cp-text-secondary, #64748b);
   line-height: 1.8;
 }
 
@@ -334,7 +334,7 @@ export default {
 }
 
 .legal-item strong {
-  color: #1e293b;
+  color: var(--cp-text-primary, #1e293b);
   display: block;
   margin-bottom: 5px;
 }
@@ -350,13 +350,13 @@ export default {
 
 .cta-card h3 {
   font-size: 28px;
-  color: #1e293b;
+  color: var(--cp-text-primary, #1e293b);
   margin-bottom: 15px;
 }
 
 .cta-card p {
   font-size: 16px;
-  color: #64748b;
+  color: var(--cp-text-secondary, #64748b);
   margin-bottom: 25px;
   line-height: 1.8;
 }

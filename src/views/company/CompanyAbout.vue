@@ -242,7 +242,7 @@ export default {
 
 .about-header {
   position: relative;
-  background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
+  background: var(--cp-gradient);
   color: #fff;
   text-align: center;
   padding: 120px 0;
@@ -265,7 +265,8 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(14, 165, 233, 0.9) 0%, rgba(20, 184, 166, 0.9) 100%);
+  background: var(--cp-gradient);
+  opacity: 0.9;
 }
 
 .header-content {
@@ -311,13 +312,13 @@ export default {
 .mission-box h2,
 .vision-box h2 {
   font-size: 28px;
-  color: #1e293b;
+  color: var(--cp-text-primary, #1e293b);
   margin-bottom: 20px;
 }
 
 .mission-box p,
 .vision-box p {
-  color: #64748b;
+  color: var(--cp-text-secondary, #64748b);
   line-height: 1.8;
   font-size: 16px;
 }
@@ -347,14 +348,14 @@ export default {
 
 .story-content h2 {
   font-size: 36px;
-  color: #1e293b;
+  color: var(--cp-text-primary, #1e293b);
   margin-bottom: 25px;
 }
 
 .story-text p {
   font-size: 18px;
   line-height: 1.8;
-  color: #64748b;
+  color: var(--cp-text-secondary, #64748b);
   margin-bottom: 20px;
 }
 
@@ -380,7 +381,8 @@ export default {
   right: 20px;
   font-size: 48px;
   font-weight: 700;
-  color: rgba(14, 165, 233, 0.1);
+  color: var(--cp-accent, #0ea5e9);
+  opacity: 0.1;
 }
 
 .value-icon {
@@ -390,12 +392,12 @@ export default {
 
 .value-item h3 {
   font-size: 22px;
-  color: #1e293b;
+  color: var(--cp-text-primary, #1e293b);
   margin-bottom: 15px;
 }
 
 .value-item p {
-  color: #64748b;
+  color: var(--cp-text-secondary, #64748b);
   line-height: 1.6;
 }
 
@@ -411,7 +413,7 @@ export default {
 
 .market-description {
   font-size: 18px;
-  color: #64748b;
+  color: var(--cp-text-secondary, #64748b);
   line-height: 1.8;
   max-width: 900px;
 }
@@ -438,7 +440,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
+  background: var(--cp-gradient);
   color: #fff;
   border-radius: 12px;
   font-size: 24px;
@@ -447,12 +449,12 @@ export default {
 
 .advantage-content h3 {
   font-size: 22px;
-  color: #1e293b;
+  color: var(--cp-text-primary, #1e293b);
   margin-bottom: 10px;
 }
 
 .advantage-content p {
-  color: #64748b;
+  color: var(--cp-text-secondary, #64748b);
   line-height: 1.6;
 }
 
@@ -463,7 +465,7 @@ export default {
 .section-subtitle {
   text-align: center;
   font-size: 18px;
-  color: #64748b;
+  color: var(--cp-text-secondary, #64748b);
   margin-bottom: 50px;
 }
 
@@ -485,25 +487,25 @@ export default {
 
 .team-member h3 {
   font-size: 22px;
-  color: #1e293b;
+  color: var(--cp-text-primary, #1e293b);
   margin-bottom: 5px;
 }
 
 .member-role {
-  color: #2563eb;
+  color: var(--cp-accent, #2563eb);
   font-weight: 600;
   margin-bottom: 15px;
   font-size: 16px;
 }
 
 .member-bio {
-  color: #64748b;
+  color: var(--cp-text-secondary, #64748b);
   line-height: 1.6;
   font-size: 15px;
 }
 
 .cta-section {
-  background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
+  background: var(--cp-gradient);
   color: #fff;
   text-align: center;
 }

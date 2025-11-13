@@ -1,104 +1,103 @@
 /* Company Profile Themes - Different themes for different company types */
 
-/* Tech Solutions - IT Company (Futuristic, Modern) */
+/* Tech Solutions - IT Company (Futuristic, Blue) */
 .company-profile-wrapper[data-theme="futuristic"] {
-  --cp-primary: #0066ff;
-  --cp-secondary: #00d4ff;
-  --cp-accent: #0066ff;
-  --cp-accent-hover: #0052cc;
-  --cp-bg-primary: #0a0e27;
-  --cp-bg-secondary: #1a1f3a;
-  --cp-text-primary: #ffffff;
-  --cp-text-secondary: #b0b8d1;
-  --cp-border: rgba(0, 102, 255, 0.2);
-  --cp-gradient: linear-gradient(135deg, #0066ff 0%, #00d4ff 100%);
-  --cp-shadow: rgba(0, 102, 255, 0.3);
+  --cp-primary: #3b82f6;
+  --cp-secondary: #60a5fa;
+  --cp-accent: #3b82f6;
+  --cp-accent-hover: #2563eb;
+  --cp-bg-primary: #ffffff;
+  --cp-bg-secondary: #eff6ff;
+  --cp-text-primary: #1e3a8a;
+  --cp-text-secondary: #64748b;
+  --cp-border: rgba(59, 130, 246, 0.2);
+  --cp-gradient: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+  --cp-shadow: rgba(59, 130, 246, 0.2);
 }
 
 .company-profile-wrapper[data-theme="futuristic"] .hero-overlay {
-  background: linear-gradient(135deg, rgba(0, 102, 255, 0.85) 0%, rgba(0, 212, 255, 0.85) 100%);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.85) 0%, rgba(96, 165, 250, 0.85) 100%);
 }
 
 .company-profile-wrapper[data-theme="futuristic"] .card {
-  background: rgba(26, 31, 58, 0.8);
-  border: 1px solid rgba(0, 102, 255, 0.3);
-  backdrop-filter: blur(10px);
+  background: #ffffff;
+  border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
-/* Resto Nusantara - Traditional F&B (Warm, Traditional) */
+/* Resto Nusantara - Traditional F&B (Warm, Orange) */
 .company-profile-wrapper[data-theme="traditional"] {
-  --cp-primary: #8b4513;
-  --cp-secondary: #d2691e;
-  --cp-accent: #cd853f;
-  --cp-accent-hover: #b8860b;
-  --cp-bg-primary: #fff8f0;
-  --cp-bg-secondary: #f5e6d3;
-  --cp-text-primary: #3d2817;
-  --cp-text-secondary: #6b4e3d;
-  --cp-border: rgba(139, 69, 19, 0.2);
-  --cp-gradient: linear-gradient(135deg, #8b4513 0%, #cd853f 100%);
-  --cp-shadow: rgba(139, 69, 19, 0.2);
+  --cp-primary: #f97316;
+  --cp-secondary: #fb923c;
+  --cp-accent: #f97316;
+  --cp-accent-hover: #ea580c;
+  --cp-bg-primary: #ffffff;
+  --cp-bg-secondary: #fff7ed;
+  --cp-text-primary: #1c1917;
+  --cp-text-secondary: #78716c;
+  --cp-border: rgba(249, 115, 22, 0.2);
+  --cp-gradient: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+  --cp-shadow: rgba(249, 115, 22, 0.2);
 }
 
 .company-profile-wrapper[data-theme="traditional"] .hero-overlay {
-  background: linear-gradient(135deg, rgba(139, 69, 19, 0.85) 0%, rgba(205, 133, 63, 0.85) 100%);
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.85) 0%, rgba(251, 146, 60, 0.85) 100%);
 }
 
-/* Cafe Harmony - Cozy F&B (Pastel, Cozy) */
+/* Cafe Harmony - Cozy F&B (Warm Orange, Cozy) */
 .company-profile-wrapper[data-theme="cozy"] {
-  --cp-primary: #87ceeb;
-  --cp-secondary: #dda0dd;
-  --cp-accent: #98d8c8;
-  --cp-accent-hover: #7bc4a4;
-  --cp-bg-primary: #fafafa;
-  --cp-bg-secondary: #f5f5f5;
-  --cp-text-primary: #4a4a4a;
-  --cp-text-secondary: #7a7a7a;
-  --cp-border: rgba(135, 206, 235, 0.3);
-  --cp-gradient: linear-gradient(135deg, #87ceeb 0%, #dda0dd 100%);
-  --cp-shadow: rgba(135, 206, 235, 0.2);
+  --cp-primary: #fb923c;
+  --cp-secondary: #fdba74;
+  --cp-accent: #fb923c;
+  --cp-accent-hover: #f97316;
+  --cp-bg-primary: #ffffff;
+  --cp-bg-secondary: #fff7ed;
+  --cp-text-primary: #1c1917;
+  --cp-text-secondary: #78716c;
+  --cp-border: rgba(251, 146, 60, 0.2);
+  --cp-gradient: linear-gradient(135deg, #fb923c 0%, #fdba74 100%);
+  --cp-shadow: rgba(251, 146, 60, 0.2);
 }
 
 .company-profile-wrapper[data-theme="cozy"] .hero-overlay {
-  background: linear-gradient(135deg, rgba(135, 206, 235, 0.85) 0%, rgba(221, 160, 221, 0.85) 100%);
+  background: linear-gradient(135deg, rgba(251, 146, 60, 0.85) 0%, rgba(253, 186, 116, 0.85) 100%);
 }
 
-/* Wisata Nusantara - Travel (Nature, Adventure) */
+/* Wisata Nusantara - Travel (Nature, Green) */
 .company-profile-wrapper[data-theme="adventure"] {
-  --cp-primary: #2d5016;
-  --cp-secondary: #4a7c59;
-  --cp-accent: #6b8e23;
-  --cp-accent-hover: #556b2f;
+  --cp-primary: #16a34a;
+  --cp-secondary: #22c55e;
+  --cp-accent: #16a34a;
+  --cp-accent-hover: #15803d;
   --cp-bg-primary: #ffffff;
-  --cp-bg-secondary: #f0f8f0;
-  --cp-text-primary: #1a3d1a;
-  --cp-text-secondary: #4a6b4a;
-  --cp-border: rgba(45, 80, 22, 0.2);
-  --cp-gradient: linear-gradient(135deg, #2d5016 0%, #6b8e23 100%);
-  --cp-shadow: rgba(45, 80, 22, 0.2);
+  --cp-bg-secondary: #f0fdf4;
+  --cp-text-primary: #14532d;
+  --cp-text-secondary: #4b5563;
+  --cp-border: rgba(22, 163, 74, 0.2);
+  --cp-gradient: linear-gradient(135deg, #16a34a 0%, #22c55e 100%);
+  --cp-shadow: rgba(22, 163, 74, 0.2);
 }
 
 .company-profile-wrapper[data-theme="adventure"] .hero-overlay {
-  background: linear-gradient(135deg, rgba(45, 80, 22, 0.85) 0%, rgba(107, 142, 35, 0.85) 100%);
+  background: linear-gradient(135deg, rgba(22, 163, 74, 0.85) 0%, rgba(34, 197, 94, 0.85) 100%);
 }
 
-/* Baitul Hikmah - Umroh (Spiritual, Elegant) */
+/* Baitul Hikmah - Umroh (Spiritual, Green) */
 .company-profile-wrapper[data-theme="spiritual"] {
-  --cp-primary: #228b22;
-  --cp-secondary: #ffd700;
-  --cp-accent: #32cd32;
-  --cp-accent-hover: #228b22;
+  --cp-primary: #059669;
+  --cp-secondary: #10b981;
+  --cp-accent: #059669;
+  --cp-accent-hover: #047857;
   --cp-bg-primary: #ffffff;
-  --cp-bg-secondary: #f5f5f5;
-  --cp-text-primary: #1a4d1a;
-  --cp-text-secondary: #4a6b4a;
-  --cp-border: rgba(34, 139, 34, 0.2);
-  --cp-gradient: linear-gradient(135deg, #228b22 0%, #ffd700 100%);
-  --cp-shadow: rgba(34, 139, 34, 0.2);
+  --cp-bg-secondary: #ecfdf5;
+  --cp-text-primary: #064e3b;
+  --cp-text-secondary: #4b5563;
+  --cp-border: rgba(5, 150, 105, 0.2);
+  --cp-gradient: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  --cp-shadow: rgba(5, 150, 105, 0.2);
 }
 
 .company-profile-wrapper[data-theme="spiritual"] .hero-overlay {
-  background: linear-gradient(135deg, rgba(34, 139, 34, 0.85) 0%, rgba(255, 215, 0, 0.85) 100%);
+  background: linear-gradient(135deg, rgba(5, 150, 105, 0.85) 0%, rgba(16, 185, 129, 0.85) 100%);
 }
 
 /* Apply theme colors to components */
