@@ -48,11 +48,15 @@ export default {
   flex-direction: column;
   background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
   background-attachment: fixed;
+  width: 100%;
+  position: relative;
 }
 
 .company-content {
   flex: 1;
   width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 .not-found-company {

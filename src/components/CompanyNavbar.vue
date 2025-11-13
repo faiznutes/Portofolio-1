@@ -14,14 +14,20 @@
         <span></span>
       </button>
 
-      <ul class="navbar-menu" :class="{ 'show': menuOpen }">
-        <li><router-link :to="`/website/${projectId}`" @click="closeMenu">Home</router-link></li>
-        <li><router-link :to="`/website/${projectId}/about`" @click="closeMenu">About</router-link></li>
-        <li><router-link :to="`/website/${projectId}/services`" @click="closeMenu">Services</router-link></li>
-        <li><router-link :to="`/website/${projectId}/gallery`" @click="closeMenu">Gallery</router-link></li>
-        <li><router-link :to="`/website/${projectId}/contact`" @click="closeMenu">Contact</router-link></li>
-        <li><router-link :to="`/website/${projectId}/terms`" @click="closeMenu">Terms</router-link></li>
-      </ul>
+      <div class="navbar-right">
+        <ul class="navbar-menu" :class="{ 'show': menuOpen }">
+          <li><router-link :to="`/website/${projectId}`" @click="closeMenu">Home</router-link></li>
+          <li><router-link :to="`/website/${projectId}/about`" @click="closeMenu">About</router-link></li>
+          <li><router-link :to="`/website/${projectId}/services`" @click="closeMenu">Services</router-link></li>
+          <li><router-link :to="`/website/${projectId}/gallery`" @click="closeMenu">Gallery</router-link></li>
+          <li><router-link :to="`/website/${projectId}/contact`" @click="closeMenu">Contact</router-link></li>
+          <li><router-link :to="`/website/${projectId}/terms`" @click="closeMenu">Terms</router-link></li>
+        </ul>
+        <router-link to="/" class="back-to-home-btn" title="Back to Portfolio">
+          <i class="fas fa-home"></i>
+          <span>Home</span>
+        </router-link>
+      </div>
     </div>
   </nav>
 </template>
@@ -76,13 +82,20 @@ export default {
 }
 
 .navbar-container {
-  max-width: 1400px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 70px;
+  position: relative;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .brand-link {
@@ -205,6 +218,51 @@ export default {
 
   .brand-logo {
     height: 35px;
+  }
+}
+
+.back-to-home-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(91, 143, 199, 0.3);
+  white-space: nowrap;
+}
+
+.back-to-home-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(91, 143, 199, 0.4);
+  background: linear-gradient(135deg, var(--accent-hover), var(--accent-color));
+}
+
+.back-to-home-btn i {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .back-to-home-btn {
+    padding: 8px 15px;
+    font-size: 13px;
+  }
+
+  .back-to-home-btn span {
+    display: none;
+  }
+
+  .back-to-home-btn i {
+    font-size: 18px;
+  }
+
+  .navbar-right {
+    gap: 10px;
   }
 }
 

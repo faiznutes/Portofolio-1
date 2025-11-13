@@ -1,14 +1,16 @@
 <template>
   <div class="app-container">
-    <AppHeader />
-    <main class="main-content">
+    <AppHeader v-if="!isCompanyProfile" />
+    <main class="main-content" :class="{ 'full-page': isCompanyProfile }">
       <router-view />
     </main>
-    <AppFooter />
+    <AppFooter v-if="!isCompanyProfile" />
   </div>
 </template>
 
 <script>
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
 import AppHeader from './components/AppHeader.vue'
 import AppFooter from './components/AppFooter.vue'
 
@@ -17,6 +19,14 @@ export default {
   components: {
     AppHeader,
     AppFooter
+  },
+  setup() {
+    const route = useRoute()
+    const isCompanyProfile = computed(() => route.path.startsWith('/website/'))
+    
+    return {
+      isCompanyProfile
+    }
   }
 }
 </script>
@@ -31,6 +41,11 @@ export default {
 .main-content {
   flex: 1;
   width: 100%;
+}
+
+.main-content.full-page {
+  padding: 0;
+  max-width: 100%;
 }
 </style>
 
