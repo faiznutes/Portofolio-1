@@ -4,6 +4,13 @@ import About from '../views/About.vue'
 import Projects from '../views/Projects.vue'
 import ProjectDetail from '../views/ProjectDetail.vue'
 import Login from '../views/Login.vue'
+import CompanyProfile from '../views/CompanyProfile.vue'
+import CompanyHome from '../views/company/CompanyHome.vue'
+import CompanyAbout from '../views/company/CompanyAbout.vue'
+import CompanyServices from '../views/company/CompanyServices.vue'
+import CompanyGallery from '../views/company/CompanyGallery.vue'
+import CompanyContact from '../views/company/CompanyContact.vue'
+import CompanyTerms from '../views/company/CompanyTerms.vue'
 
 const routes = [
   {
@@ -56,6 +63,61 @@ const routes = [
       description: 'Project Management Login',
       robots: 'noindex, nofollow'
     }
+  },
+  {
+    path: '/website/:id',
+    component: CompanyProfile,
+    props: true,
+    children: [
+      {
+        path: '',
+        name: 'CompanyHome',
+        component: CompanyHome,
+        meta: {
+          title: 'Company Profile - Faiznute Portfolio'
+        }
+      },
+      {
+        path: 'about',
+        name: 'CompanyAbout',
+        component: CompanyAbout,
+        meta: {
+          title: 'About - Company Profile'
+        }
+      },
+      {
+        path: 'services',
+        name: 'CompanyServices',
+        component: CompanyServices,
+        meta: {
+          title: 'Services - Company Profile'
+        }
+      },
+      {
+        path: 'gallery',
+        name: 'CompanyGallery',
+        component: CompanyGallery,
+        meta: {
+          title: 'Gallery - Company Profile'
+        }
+      },
+      {
+        path: 'contact',
+        name: 'CompanyContact',
+        component: CompanyContact,
+        meta: {
+          title: 'Contact - Company Profile'
+        }
+      },
+      {
+        path: 'terms',
+        name: 'CompanyTerms',
+        component: CompanyTerms,
+        meta: {
+          title: 'Terms & Conditions - Company Profile'
+        }
+      }
+    ]
   },
   {
     path: '/:pathMatch(.*)*',

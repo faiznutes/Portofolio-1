@@ -58,7 +58,7 @@ export default {
   name: 'Projects',
   setup() {
     const router = useRouter()
-    const { getAllProjects, getProjectsByCategory, truncate } = useProjects()
+    const { getAllProjects, getProjectsByCategory, truncate, getProjectById } = useProjects()
     
     const currentFilter = ref('all')
     const currentPage = ref(1)
@@ -96,7 +96,12 @@ export default {
     }
 
     const goToProject = (id) => {
-      router.push(`/project/${id}`)
+      const project = getAllProjects().find(p => p.id === id)
+      if (project && project.category === 'website') {
+        router.push(`/website/${id}`)
+      } else {
+        router.push(`/project/${id}`)
+      }
     }
 
     const getYear = (date) => {
@@ -115,7 +120,8 @@ export default {
       setPage,
       goToProject,
       truncate,
-      getYear
+      getYear,
+      getAllProjects
     }
   }
 }
