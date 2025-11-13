@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { computed } from 'vue'
+import { computed, watch, nextTick } from 'vue'
 import { useRoute } from 'vue-router'
 import { useProjects } from '../composables/useProjects'
 import CompanyNavbar from '../components/CompanyNavbar.vue'
@@ -34,6 +34,14 @@ export default {
     
     const projectId = computed(() => route.params.id)
     const companyData = computed(() => getProjectById(projectId.value))
+    
+    // Auto scroll to top when route changes
+    watch(() => route.path, async (newPath, oldPath) => {
+      if (newPath !== oldPath) {
+        await nextTick()
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      }
+    }, { immediate: false })
     
     return {
       projectId,

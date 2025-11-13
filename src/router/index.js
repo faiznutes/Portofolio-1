@@ -207,6 +207,10 @@ const router = createRouter({
     if (savedPosition) {
       return savedPosition
     } else {
+      // For nested routes (company profile), always scroll to top
+      if (to.path !== from.path) {
+        return { top: 0, behavior: 'smooth' }
+      }
       return { top: 0, behavior: 'smooth' }
     }
   }
@@ -225,8 +229,10 @@ router.beforeEach((to, from, next) => {
     }
   }
   
-  // Scroll to top on route change
-  window.scrollTo({ top: 0, behavior: 'instant' })
+  // Scroll to top on route change (instant for better UX)
+  if (to.path !== from.path) {
+    window.scrollTo({ top: 0, behavior: 'instant' })
+  }
   
   // Update document title
   const title = typeof to.meta.title === 'function' ? to.meta.title(to) : (to.meta.title || 'Faiznute - Portfolio')
