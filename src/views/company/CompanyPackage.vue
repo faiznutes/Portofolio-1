@@ -357,6 +357,15 @@ export default {
   cursor: pointer;
 }
 
+/* Button primary di section putih harus lebih kontras - sama seperti Home */
+.section:not(.package-hero):not(.cta-section) .btn-primary {
+  background: linear-gradient(135deg, #f4d03f 0%, #d4af37 100%);
+  color: #0a1a2f;
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.4);
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  font-weight: 700;
+}
+
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 32px rgba(212, 175, 55, 0.4);
