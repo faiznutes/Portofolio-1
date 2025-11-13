@@ -1,0 +1,134 @@
+🕋 Brand Name & Konsep
+
+Nama: Barokah Journey
+Tagline: "Perjalanan Suci Menuju Baitullah dengan Tenang & Terpercaya"
+
+Karakter brand:
+
+Warna utama: kombinasi emas lembut (#d4af37) dan biru tua kehitaman (#0a1a2f)
+
+Nuansa: elegan, islami, profesional, penuh ketenangan
+
+Tone visual: gambar Masjidil Haram, jemaah, pemandu ramah, dan pesawat
+
+⚙️ Prompt Lengkap untuk Build (contoh untuk Cursor / ChatGPT / Framer / Vercel AI / dll)
+
+Prompt:
+
+Buatkan landing page company profile modern dan elegan untuk perusahaan travel Umroh bernama Barokah Journey.
+Gunakan React + TailwindCSS dengan layout profesional, smooth animation (Framer Motion), dan SEO-friendly structure.
+
+Detail:
+
+Warna utama: #0a1a2f (biru tua) dan aksen emas #d4af37
+
+Font: Inter (untuk teks), Playfair Display (untuk judul arabic-style)
+
+Resolusi: Full HD (1920×1080)
+
+Struktur halaman & route:
+
+/ → Landing Page utama
+
+/about → Tentang perusahaan
+
+/package → Paket Umroh & Haji
+
+/gallery → Galeri perjalanan
+
+/contact → Hubungi kami / form pendaftaran
+
+Landing page section order:
+
+Navbar sticky (logo + nav + tombol "Daftar Sekarang")
+
+Hero section:
+
+Headline: "Perjalanan Suci Bersama Barokah Journey"
+
+Subtext: "Bimbingan Umroh & Haji dengan layanan terpercaya dan nyaman."
+
+CTA: tombol “Lihat Paket” dan “Konsultasi Gratis”
+
+Background: gambar kabah blur lembut + overlay biru gelap transparan
+
+Keunggulan (Why Choose Us):
+
+Ikon 4 kolom: Pembimbing Berpengalaman, Akomodasi Nyaman, Jadwal Fleksibel, Harga Transparan
+
+Tentang Kami (About):
+
+Gambar tim dan teks pendek visi-misi
+
+Paket Umroh:
+
+Card grid 3 kolom (Umroh Regular, Umroh Plus Turki, Haji Khusus)
+
+Tombol “Lihat Detail”
+
+Testimoni:
+
+Carousel ulasan jemaah dengan foto kecil dan nama
+
+Galeri:
+
+Masonry layout gambar perjalanan
+
+CTA Section besar:
+
+“Daftar Sekarang untuk Keberangkatan Terdekat”
+
+Footer:
+
+Kontak, alamat, sosial media, copyright
+
+Tambahan:
+
+Gunakan animasi masuk lembut (fade-in + slide-up)
+
+Optimalkan untuk mobile
+
+Gunakan meta tag SEO (title, desc, og:image)
+
+Pastikan semua teks editable agar bisa dipakai ulang untuk portofolio lain
+
+🧱 Struktur Folder
+/src
+  /components
+    Navbar.jsx
+    Hero.jsx
+    Features.jsx
+    About.jsx
+    Packages.jsx
+    Testimonials.jsx
+    Gallery.jsx
+    CTASection.jsx
+    Footer.jsx
+  /pages
+    index.jsx
+    about.jsx
+    package.jsx
+    gallery.jsx
+    contact.jsx
+  /assets
+    /images
+  App.jsx
+  main.jsx
+  tailwind.config.js
+
+💡 Saran Improve untuk Portofolio
+
+Tambahkan Mode Gelap (Dark Mode)
+Biar tampak modern dan menunjukkan skill UI interaktif.
+
+Integrasi Form WhatsApp API atau EmailJS
+Supaya tombol "Hubungi Kami" benar-benar berfungsi kirim pesan.
+
+Tambahkan Animasi Logo & Scroll Smooth Effect
+Menunjukkan kamu paham microinteraction.
+
+Buat versi bahasa Inggris opsional
+→ menunjukkan kemampuan i18n (internationalization).
+
+Tambahkan Page Admin Dummy (misal /admin)
+untuk pamer kemampuan layout dashboard di portofolio.

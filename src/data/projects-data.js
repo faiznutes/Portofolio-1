@@ -148,6 +148,24 @@ export const staticProjectsData = [
       { type: "image", title: "Solusi Bisnis", src: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&auto=format&fit=crop" },
       { type: "image", title: "Server & Infrastructure", src: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&fit=crop" }
     ]
+  },
+  {
+    id: "barokah-journey-umroh",
+    title: "Barokah Journey",
+    category: "umroh",
+    theme: "barokah",
+    image: "https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=800&auto=format&fit=crop",
+    description: "Perjalanan Suci Menuju Baitullah dengan Tenang & Terpercaya. Bimbingan Umroh & Haji dengan layanan terpercaya dan nyaman.",
+    longDescription: "Barokah Journey adalah biro perjalanan umroh dan haji yang menghadirkan pengalaman perjalanan suci yang bermakna. Dengan tagline 'Perjalanan Suci Menuju Baitullah dengan Tenang & Terpercaya', kami berkomitmen memberikan layanan terbaik untuk setiap jamaah.\n\nKami menyediakan berbagai paket umroh dan haji dengan pembimbing berpengalaman, akomodasi nyaman, jadwal fleksibel, dan harga transparan. Setiap detail perjalanan dirancang untuk memberikan kenyamanan dan ketenangan hati bagi jamaah.",
+    date: "1/6/2024",
+    tools: ["Vue.js", "Vite", "CSS3"],
+    tags: ["Website", "Company Profile", "Umroh", "Travel", "Barokah"],
+    gallery: [
+      { type: "image", title: "Masjidil Haram", src: "https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=800&auto=format&fit=crop" },
+      { type: "image", title: "Paket Umroh", src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format&fit=crop" },
+      { type: "image", title: "Jemaah Umroh", src: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&auto=format&fit=crop" },
+      { type: "image", title: "Perjalanan Suci", src: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&auto=format&fit=crop" }
+    ]
   }
 ]
 

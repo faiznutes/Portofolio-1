@@ -114,6 +114,46 @@
   transform: translateY(-4px);
 }
 
+/* Barokah Journey - Umroh (Elegant, Gold & Dark Blue) */
+.company-profile-wrapper[data-theme="barokah"] {
+  --cp-primary: #d4af37;
+  --cp-secondary: #f4d03f;
+  --cp-accent: #d4af37;
+  --cp-accent-hover: #b8941f;
+  --cp-bg-primary: #ffffff;
+  --cp-bg-secondary: #faf9f6;
+  --cp-text-primary: #0a1a2f;
+  --cp-text-secondary: #4a5568;
+  --cp-border: rgba(212, 175, 55, 0.2);
+  --cp-gradient: linear-gradient(135deg, #0a1a2f 0%, #1a2a3f 50%, #0a1a2f 100%);
+  --cp-shadow: rgba(10, 26, 47, 0.15);
+  --cp-card-shadow: 0 4px 20px rgba(10, 26, 47, 0.08);
+  --cp-section-spacing: 100px;
+}
+
+.company-profile-wrapper[data-theme="barokah"] .hero-overlay {
+  background: linear-gradient(135deg, rgba(10, 26, 47, 0.92) 0%, rgba(26, 42, 63, 0.92) 100%);
+}
+
+.company-profile-wrapper[data-theme="barokah"] .btn-primary {
+  background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+  color: #0a1a2f;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.company-profile-wrapper[data-theme="barokah"] .card {
+  background: #ffffff;
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  box-shadow: 0 4px 20px rgba(10, 26, 47, 0.08);
+  transition: all 0.3s ease;
+}
+
+.company-profile-wrapper[data-theme="barokah"] .card:hover {
+  box-shadow: 0 8px 30px rgba(10, 26, 47, 0.12);
+  transform: translateY(-4px);
+  border-color: #d4af37;
+}
+
 /* Apply theme colors to components */
 .company-profile-wrapper[data-theme] .btn-primary {
   background: var(--cp-gradient);
