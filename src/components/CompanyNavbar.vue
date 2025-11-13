@@ -1,5 +1,5 @@
 <template>
-  <nav class="company-navbar" :class="{ 'mobile-open': menuOpen }">
+  <nav class="company-navbar" :class="{ 'mobile-open': menuOpen }" :data-theme="theme">
     <div class="navbar-container">
       <div class="navbar-brand">
         <router-link :to="`/website/${projectId}`" class="brand-link">
@@ -46,6 +46,10 @@ export default {
     logo: {
       type: String,
       default: ''
+    },
+    theme: {
+      type: String,
+      default: 'default'
     }
   },
   data() {
@@ -78,6 +82,32 @@ export default {
   top: 0;
   z-index: 1000;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.company-navbar[data-theme="futuristic"] {
+  background: rgba(10, 14, 39, 0.95);
+  border-bottom-color: rgba(0, 102, 255, 0.3);
+}
+
+.company-navbar[data-theme="traditional"] {
+  background: rgba(255, 248, 240, 0.95);
+  border-bottom-color: rgba(139, 69, 19, 0.2);
+}
+
+.company-navbar[data-theme="cozy"] {
+  background: rgba(250, 250, 250, 0.95);
+  border-bottom-color: rgba(135, 206, 235, 0.3);
+}
+
+.company-navbar[data-theme="adventure"] {
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom-color: rgba(45, 80, 22, 0.2);
+}
+
+.company-navbar[data-theme="spiritual"] {
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom-color: rgba(34, 139, 34, 0.2);
 }
 
 .navbar-container {
@@ -99,7 +129,7 @@ export default {
 
 .brand-link {
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--cp-text-primary, var(--text-color));
   font-weight: 700;
   font-size: 22px;
   transition: color 0.3s ease;
@@ -107,7 +137,15 @@ export default {
 }
 
 .brand-link:hover {
-  color: var(--accent-color);
+  color: var(--cp-accent, var(--accent-color));
+}
+
+.company-navbar[data-theme] .brand-link {
+  color: var(--cp-text-primary);
+}
+
+.company-navbar[data-theme] .brand-link:hover {
+  color: var(--cp-accent);
 }
 
 .brand-name {
@@ -125,7 +163,7 @@ export default {
 }
 
 .navbar-menu li a {
-  color: var(--text-color);
+  color: var(--cp-text-primary, var(--text-color));
   text-decoration: none;
   font-size: 15px;
   font-weight: 500;
@@ -136,7 +174,7 @@ export default {
 
 .navbar-menu li a:hover,
 .navbar-menu li a.router-link-active {
-  color: var(--accent-color);
+  color: var(--cp-accent, var(--accent-color));
 }
 
 .navbar-menu li a.router-link-active::after {
@@ -146,8 +184,21 @@ export default {
   left: 0;
   width: 100%;
   height: 2px;
-  background: var(--accent-color);
+  background: var(--cp-accent, var(--accent-color));
   border-radius: 2px;
+}
+
+.company-navbar[data-theme] .navbar-menu li a {
+  color: var(--cp-text-primary);
+}
+
+.company-navbar[data-theme] .navbar-menu li a:hover,
+.company-navbar[data-theme] .navbar-menu li a.router-link-active {
+  color: var(--cp-accent);
+}
+
+.company-navbar[data-theme] .navbar-menu li a.router-link-active::after {
+  background: var(--cp-accent);
 }
 
 .mobile-toggle {
@@ -214,21 +265,26 @@ export default {
   align-items: center;
   gap: 8px;
   padding: 10px 20px;
-  background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+  background: var(--cp-gradient, linear-gradient(135deg, var(--accent-color), var(--accent-hover)));
   color: #fff;
   text-decoration: none;
   border-radius: 25px;
   font-size: 14px;
   font-weight: 600;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(91, 143, 199, 0.3);
+  box-shadow: 0 2px 8px var(--cp-shadow, rgba(91, 143, 199, 0.3));
   white-space: nowrap;
 }
 
 .back-to-home-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(91, 143, 199, 0.4);
-  background: linear-gradient(135deg, var(--accent-hover), var(--accent-color));
+  box-shadow: 0 4px 12px var(--cp-shadow, rgba(91, 143, 199, 0.4));
+  opacity: 0.9;
+}
+
+.company-navbar[data-theme] .back-to-home-btn {
+  background: var(--cp-gradient);
+  box-shadow: 0 2px 8px var(--cp-shadow);
 }
 
 .back-to-home-btn i {

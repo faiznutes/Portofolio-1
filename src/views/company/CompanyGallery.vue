@@ -107,11 +107,13 @@ export default {
     const getGalleryDescription = () => {
       const category = props.companyData?.category || 'general'
       if (category === 'fnb') {
-        return 'Our gallery showcases our culinary creations, restaurant ambiance, and memorable events we\'ve catered. Each photo tells a story of quality, passion, and dedication to excellence in food and service.'
+        return 'Galeri kami menampilkan kreasi kuliner, suasana restoran, dan acara-acara tak terlupakan yang telah kami layani. Setiap foto menceritakan kisah tentang kualitas, passion, dan dedikasi terhadap keunggulan dalam makanan dan layanan.'
       } else if (category === 'umroh' || category === 'travel') {
-        return 'Explore our gallery of travel experiences, religious journeys, and beautiful destinations. These photos capture the moments and memories we\'ve helped create for our valued travelers.'
+        return 'Jelajahi galeri pengalaman perjalanan, perjalanan religi, dan destinasi indah kami. Foto-foto ini mengabadikan momen dan kenangan yang telah kami bantu ciptakan untuk traveler terhormat kami.'
+      } else if (category === 'it') {
+        return 'Galeri kami menampilkan project IT, infrastruktur teknologi, dan pencapaian tim kami. Setiap gambar merepresentasikan komitmen kami terhadap inovasi teknologi dan keunggulan dalam solusi digital.'
       }
-      return 'Our gallery features our projects, achievements, and the impact we\'ve made for our clients. Each image represents our commitment to excellence and innovation.'
+      return 'Galeri kami menampilkan project, pencapaian, dan dampak yang telah kami buat untuk klien. Setiap gambar merepresentasikan komitmen kami terhadap keunggulan dan inovasi.'
     }
     
     const galleryItems = computed(() => {
@@ -136,9 +138,16 @@ export default {
           { src: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&auto=format&fit=crop', title: 'Group Tour', detail: 'Organized group travel experience' }
         ]
       }
+      } else if (category === 'it') {
+        return [
+          { src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&auto=format&fit=crop', title: 'Konsultasi IT', detail: 'Sesi konsultasi dengan klien untuk solusi teknologi' },
+          { src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop', title: 'Tim Development', detail: 'Kolaborasi tim dalam pengembangan project' },
+          { src: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&fit=crop', title: 'Infrastruktur Server', detail: 'Setup dan maintenance server infrastructure' }
+        ]
+      }
       return [
-        { src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&auto=format&fit=crop', title: 'Business Meeting', detail: 'Client consultation session' },
-        { src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop', title: 'Team Work', detail: 'Collaborative project delivery' }
+        { src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&auto=format&fit=crop', title: 'Pertemuan Bisnis', detail: 'Sesi konsultasi dengan klien' },
+        { src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop', title: 'Kerja Tim', detail: 'Pengiriman project kolaboratif' }
       ]
     })
     
@@ -146,17 +155,22 @@ export default {
       const category = props.companyData?.category || 'general'
       if (category === 'fnb') {
         return [
-          { title: 'Grand Opening Event', description: 'Our restaurant grand opening was a memorable event with hundreds of guests enjoying our signature dishes.', location: 'Main Restaurant', date: '2024' },
-          { title: 'Corporate Catering', description: 'Successfully catered a 500-person corporate event with custom menu and professional service.', location: 'Convention Center', date: '2024' }
+          { title: 'Acara Grand Opening', description: 'Grand opening restoran kami adalah acara yang tak terlupakan dengan ratusan tamu menikmati hidangan signature kami.', location: 'Restoran Utama', date: '2024' },
+          { title: 'Catering Korporat', description: 'Berhasil melayani acara korporat 500 orang dengan menu custom dan layanan profesional.', location: 'Convention Center', date: '2024' }
         ]
       } else if (category === 'umroh' || category === 'travel') {
         return [
-          { title: 'Umroh Journey 2024', description: 'Guided 50 jamaah on a meaningful umroh journey with complete support and spiritual guidance.', location: 'Makkah & Madinah', date: '2024' },
-          { title: 'Group Tour Experience', description: 'Organized a 30-person group tour to beautiful destinations with expert guides.', location: 'Multiple Destinations', date: '2024' }
+          { title: 'Perjalanan Umroh 2024', description: 'Memandu 50 jamaah dalam perjalanan umroh yang bermakna dengan dukungan lengkap dan bimbingan spiritual.', location: 'Makkah & Madinah', date: '2024' },
+          { title: 'Pengalaman Group Tour', description: 'Mengorganisir group tour 30 orang ke destinasi indah dengan pemandu ahli.', location: 'Berbagai Destinasi', date: '2024' }
+        ]
+      } else if (category === 'it') {
+        return [
+          { title: 'Project Cloud Migration', description: 'Berhasil membantu klien melakukan migrasi ke cloud dengan downtime minimal dan performa optimal.', location: 'Kantor Klien', date: '2024' },
+          { title: 'Launch Aplikasi Mobile', description: 'Meluncurkan aplikasi mobile yang sukses dengan 10.000+ download dalam bulan pertama.', location: 'App Store & Play Store', date: '2024' }
         ]
       }
       return [
-        { title: 'Client Success Story', description: 'Helped a client achieve 300% growth through our strategic consulting services.', location: 'Client Office', date: '2024' }
+        { title: 'Kisah Sukses Klien', description: 'Membantu klien mencapai pertumbuhan 300% melalui layanan konsultasi strategis kami.', location: 'Kantor Klien', date: '2024' }
       ]
     })
     

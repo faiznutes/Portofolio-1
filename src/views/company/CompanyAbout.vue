@@ -161,6 +161,9 @@ export default {
       } else if (category === 'umroh' || category === 'travel') {
         return 'Kami melayani individu, keluarga, dan kelompok yang mencari pengalaman perjalanan yang bermakna. Layanan kami dirancang untuk mereka yang merencanakan perjalanan religi, liburan, atau perjalanan bisnis yang menghargai keandalan dan kualitas layanan.'
       }
+      } else if (category === 'it') {
+        return 'Kami melayani bisnis dari startup hingga enterprise yang ingin mengoptimalkan operasional melalui teknologi. Layanan kami dirancang untuk perusahaan yang ingin beradaptasi dengan era digital dan memanfaatkan teknologi untuk pertumbuhan bisnis.'
+      }
       return 'Kami melayani bisnis dari berbagai ukuran yang ingin tumbuh, meningkatkan efisiensi, dan mencapai tujuan mereka. Layanan kami disesuaikan untuk perusahaan yang menghargai profesionalisme, inovasi, dan hasil.'
     }
     
@@ -187,6 +190,14 @@ export default {
         { icon: 'fas fa-chart-line', title: 'Hasil Terbukti', description: 'Rekam jejak memberikan hasil bisnis yang terukur' },
         { icon: 'fas fa-handshake', title: 'Pendekatan Kemitraan', description: 'Kami bekerja sebagai mitra Anda, bukan hanya penyedia layanan' }
       ]
+      } else if (category === 'it') {
+        return [
+          { icon: 'fas fa-code', title: 'Pengembangan Custom', description: 'Tim developer berpengalaman dengan teknologi terkini' },
+          { icon: 'fas fa-cloud', title: 'Cloud Solutions', description: 'Solusi cloud yang scalable dan cost-effective' },
+          { icon: 'fas fa-shield-alt', title: 'Keamanan Data', description: 'Prioritas utama pada keamanan dan privasi data' },
+          { icon: 'fas fa-rocket', title: 'Inovasi Teknologi', description: 'Terus mengadopsi teknologi terbaru untuk solusi terbaik' }
+        ]
+      }
     })
     
     const teamMembers = [

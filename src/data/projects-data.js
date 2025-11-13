@@ -61,82 +61,92 @@ export const staticProjectsData = [
   },
   {
     id: "resto-nusantara-fnb",
-    title: "Resto Nusantara - F&B Company Profile",
-    category: "website",
+    title: "Resto Nusantara",
+    category: "fnb",
+    theme: "traditional",
     image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&fit=crop",
-    description: "Company profile website untuk Resto Nusantara, restoran yang menyajikan berbagai hidangan nusantara dengan cita rasa autentik. Website ini menampilkan menu, layanan catering, dan informasi lengkap tentang restoran.",
-    longDescription: "Resto Nusantara adalah restoran yang mengkhususkan diri pada hidangan nusantara dengan cita rasa autentik. Kami menyajikan berbagai menu tradisional Indonesia yang dibuat dengan bahan-bahan berkualitas tinggi dan resep turun temurun.\n\nWebsite company profile ini dirancang untuk memberikan informasi lengkap tentang restoran, menu yang tersedia, layanan catering, dan cara menghubungi kami. Dengan desain yang modern dan user-friendly, pengunjung dapat dengan mudah menjelajahi semua informasi yang mereka butuhkan.",
+    description: "Restoran yang menyajikan berbagai hidangan nusantara dengan cita rasa autentik. Menampilkan menu tradisional Indonesia, layanan catering, dan pengalaman kuliner yang hangat dan ramah.",
+    longDescription: "Resto Nusantara adalah restoran yang mengkhususkan diri pada hidangan nusantara dengan cita rasa autentik. Kami menyajikan berbagai menu tradisional Indonesia yang dibuat dengan bahan-bahan berkualitas tinggi dan resep turun temurun.\n\nDengan suasana yang hangat dan tradisional, Resto Nusantara menghadirkan pengalaman kuliner yang mengingatkan pada cita rasa rumah. Setiap hidangan disajikan dengan penuh cinta dan dedikasi untuk memberikan pengalaman terbaik bagi pelanggan kami.",
     date: "1/1/2024",
     tools: ["Vue.js", "Vite", "CSS3"],
-    tags: ["Website", "Company Profile", "F&B", "Restaurant"],
+    tags: ["Website", "Company Profile", "F&B", "Restaurant", "Traditional"],
     gallery: [
-      { type: "image", title: "Homepage", src: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&fit=crop" },
-      { type: "image", title: "Menu Section", src: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&auto=format&fit=crop" },
-      { type: "image", title: "Catering Services", src: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&auto=format&fit=crop" }
+      { type: "image", title: "Makanan Khas Nusantara", src: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&fit=crop" },
+      { type: "image", title: "Menu Tradisional", src: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&auto=format&fit=crop" },
+      { type: "image", title: "Layanan Catering", src: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&auto=format&fit=crop" },
+      { type: "image", title: "Suasana Restoran", src: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&auto=format&fit=crop" }
     ]
   },
   {
     id: "cafe-harmony-fnb",
-    title: "Cafe Harmony - F&B Company Profile",
-    category: "website",
+    title: "Cafe Harmony",
+    category: "fnb",
+    theme: "cozy",
     image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&auto=format&fit=crop",
-    description: "Website company profile untuk Cafe Harmony, kafe modern yang menyajikan kopi berkualitas dan makanan ringan. Website menampilkan menu, event space, dan informasi kontak.",
-    longDescription: "Cafe Harmony adalah kafe modern yang menghadirkan pengalaman kopi terbaik dengan suasana yang nyaman dan cozy. Kami menyajikan berbagai jenis kopi pilihan, makanan ringan, dan juga menyediakan space untuk berbagai acara.\n\nWebsite ini dirancang dengan tema yang hangat dan mengundang, mencerminkan suasana kafe yang cozy. Pengunjung dapat melihat menu lengkap, informasi tentang event space, dan cara memesan untuk acara mereka.",
+    description: "Kafe modern yang menyajikan kopi berkualitas dan makanan ringan dengan suasana santai dan cozy. Tempat yang sempurna untuk bersantai, bekerja, atau berkumpul dengan teman.",
+    longDescription: "Cafe Harmony adalah kafe modern yang menghadirkan pengalaman kopi terbaik dengan suasana yang nyaman dan cozy. Kami menyajikan berbagai jenis kopi pilihan, makanan ringan, dan juga menyediakan space untuk berbagai acara.\n\nDengan desain interior yang hangat, pencahayaan lembut, dan tanaman hijau yang menghiasi setiap sudut, Cafe Harmony menciptakan suasana yang sempurna untuk bersantai, bekerja, atau sekadar menikmati waktu berkualitas bersama teman dan keluarga.",
     date: "1/2/2024",
     tools: ["Vue.js", "Vite", "CSS3"],
-    tags: ["Website", "Company Profile", "F&B", "Cafe"],
+    tags: ["Website", "Company Profile", "F&B", "Cafe", "Cozy"],
     gallery: [
-      { type: "image", title: "Cafe Interior", src: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&auto=format&fit=crop" },
-      { type: "image", title: "Coffee Menu", src: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&auto=format&fit=crop" },
-      { type: "image", title: "Event Space", src: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&auto=format&fit=crop" }
+      { type: "image", title: "Interior Cafe", src: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&auto=format&fit=crop" },
+      { type: "image", title: "Menu Kopi", src: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&auto=format&fit=crop" },
+      { type: "image", title: "Event Space", src: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&auto=format&fit=crop" },
+      { type: "image", title: "Suasana Santai", src: "https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=800&auto=format&fit=crop" }
     ]
   },
   {
     id: "baitul-hikmah-umroh",
-    title: "Baitul Hikmah - Umroh Travel Company Profile",
-    category: "website",
+    title: "Baitul Hikmah",
+    category: "umroh",
+    theme: "spiritual",
     image: "https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=800&auto=format&fit=crop",
-    description: "Website company profile untuk Baitul Hikmah, biro perjalanan umroh yang menyediakan paket umroh lengkap dengan layanan terpercaya. Website menampilkan paket umroh, hajj services, dan informasi lengkap.",
-    longDescription: "Baitul Hikmah adalah biro perjalanan umroh yang telah berpengalaman melayani jamaah umroh dengan layanan terpercaya dan profesional. Kami menyediakan berbagai paket umroh yang dapat disesuaikan dengan kebutuhan jamaah.\n\nWebsite company profile ini memberikan informasi lengkap tentang paket umroh yang tersedia, layanan hajj, proses pendaftaran, dan testimoni dari jamaah yang telah berangkat. Dengan desain yang elegan dan informatif, jamaah dapat dengan mudah menemukan informasi yang mereka butuhkan untuk perjalanan spiritual mereka.",
+    description: "Biro perjalanan umroh yang menyediakan paket umroh lengkap dengan layanan terpercaya dan profesional. Menghadirkan pengalaman spiritual yang bermakna dengan bimbingan yang tepat.",
+    longDescription: "Baitul Hikmah adalah biro perjalanan umroh yang telah berpengalaman melayani jamaah umroh dengan layanan terpercaya dan profesional. Kami menyediakan berbagai paket umroh yang dapat disesuaikan dengan kebutuhan jamaah.\n\nDengan komitmen untuk memberikan pengalaman spiritual yang bermakna, kami memastikan setiap detail perjalanan diatur dengan baik. Dari proses visa, akomodasi, hingga bimbingan ibadah, semua dirancang untuk memberikan kenyamanan dan ketenangan hati bagi jamaah.",
     date: "1/3/2024",
     tools: ["Vue.js", "Vite", "CSS3"],
-    tags: ["Website", "Company Profile", "Umroh", "Travel"],
+    tags: ["Website", "Company Profile", "Umroh", "Travel", "Spiritual"],
     gallery: [
-      { type: "image", title: "Umroh Package", src: "https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=800&auto=format&fit=crop" },
-      { type: "image", title: "Hajj Services", src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format&fit=crop" },
-      { type: "image", title: "Religious Tour", src: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&auto=format&fit=crop" }
+      { type: "image", title: "Paket Umroh", src: "https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=800&auto=format&fit=crop" },
+      { type: "image", title: "Layanan Haji", src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format&fit=crop" },
+      { type: "image", title: "Wisata Religi", src: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&auto=format&fit=crop" },
+      { type: "image", title: "Suasana Ibadah", src: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&auto=format&fit=crop" }
     ]
   },
   {
     id: "wisata-nusantara-travel",
-    title: "Wisata Nusantara - Travel Company Profile",
-    category: "website",
+    title: "Wisata Nusantara",
+    category: "travel",
+    theme: "adventure",
     image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&auto=format&fit=crop",
-    description: "Website company profile untuk Wisata Nusantara, biro perjalanan yang menyediakan paket wisata domestik dan internasional. Website menampilkan destinasi, paket tour, dan booking system.",
-    longDescription: "Wisata Nusantara adalah biro perjalanan yang mengkhususkan diri pada paket wisata domestik dan internasional. Kami menyediakan berbagai pilihan destinasi menarik dengan harga yang kompetitif dan layanan yang memuaskan.\n\nWebsite ini dirancang untuk memudahkan calon wisatawan dalam menjelajahi berbagai destinasi yang tersedia, melihat paket tour yang menarik, dan melakukan booking dengan mudah. Dengan desain yang modern dan responsif, website ini dapat diakses dengan nyaman dari berbagai device.",
+    description: "Biro perjalanan yang menyediakan paket wisata domestik dan internasional dengan berbagai destinasi menarik. Menghadirkan pengalaman petualangan yang tak terlupakan di berbagai penjuru dunia.",
+    longDescription: "Wisata Nusantara adalah biro perjalanan yang mengkhususkan diri pada paket wisata domestik dan internasional. Kami menyediakan berbagai pilihan destinasi menarik dengan harga yang kompetitif dan layanan yang memuaskan.\n\nDari pegunungan yang menjulang tinggi hingga pantai yang memukau, dari hutan tropis hingga kota metropolitan, kami menghadirkan berbagai pengalaman wisata yang akan mengisi album kenangan Anda. Setiap perjalanan dirancang dengan detail untuk memberikan pengalaman yang tak terlupakan.",
     date: "1/4/2024",
     tools: ["Vue.js", "Vite", "CSS3"],
-    tags: ["Website", "Company Profile", "Travel", "Tourism"],
+    tags: ["Website", "Company Profile", "Travel", "Tourism", "Adventure"],
     gallery: [
-      { type: "image", title: "Tour Packages", src: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&auto=format&fit=crop" },
-      { type: "image", title: "Destinations", src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format&fit=crop" },
-      { type: "image", title: "Hotel Booking", src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&auto=format&fit=crop" }
+      { type: "image", title: "Paket Wisata", src: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&auto=format&fit=crop" },
+      { type: "image", title: "Destinasi Wisata", src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format&fit=crop" },
+      { type: "image", title: "Pemesanan Hotel", src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&auto=format&fit=crop" },
+      { type: "image", title: "Petualangan Alam", src: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&auto=format&fit=crop" }
     ]
   },
   {
     id: "tech-solutions-company",
-    title: "Tech Solutions - IT Company Profile",
-    category: "website",
+    title: "Tech Solutions",
+    category: "it",
+    theme: "futuristic",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&auto=format&fit=crop",
-    description: "Website company profile untuk Tech Solutions, perusahaan IT yang menyediakan solusi teknologi untuk bisnis. Website menampilkan layanan, portfolio, dan informasi perusahaan.",
-    longDescription: "Tech Solutions adalah perusahaan IT yang berfokus pada penyediaan solusi teknologi untuk berbagai kebutuhan bisnis. Kami menawarkan layanan konsultasi IT, pengembangan aplikasi, dan dukungan teknis yang komprehensif.\n\nWebsite company profile ini dirancang dengan tema modern dan profesional, mencerminkan identitas perusahaan yang inovatif dan terpercaya. Website menampilkan berbagai layanan yang ditawarkan, portfolio project, dan cara menghubungi tim kami untuk konsultasi.",
+    description: "Perusahaan IT yang menyediakan solusi teknologi inovatif untuk bisnis. Menghadirkan layanan konsultasi IT, pengembangan aplikasi, dan dukungan teknis yang komprehensif dengan pendekatan modern dan futuristik.",
+    longDescription: "Tech Solutions adalah perusahaan IT yang berfokus pada penyediaan solusi teknologi untuk berbagai kebutuhan bisnis. Kami menawarkan layanan konsultasi IT, pengembangan aplikasi, dan dukungan teknis yang komprehensif.\n\nDengan tim ahli yang berpengalaman dan teknologi terkini, kami membantu bisnis mengoptimalkan operasional mereka melalui solusi digital yang inovatif. Dari cloud computing hingga artificial intelligence, kami menghadirkan teknologi masa depan untuk bisnis Anda hari ini.",
     date: "1/5/2024",
     tools: ["Vue.js", "Vite", "CSS3"],
-    tags: ["Website", "Company Profile", "IT", "Technology"],
+    tags: ["Website", "Company Profile", "IT", "Technology", "Futuristic"],
     gallery: [
-      { type: "image", title: "IT Services", src: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&auto=format&fit=crop" },
-      { type: "image", title: "Team Work", src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop" },
-      { type: "image", title: "Business Solutions", src: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&auto=format&fit=crop" }
+      { type: "image", title: "Layanan IT", src: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&auto=format&fit=crop" },
+      { type: "image", title: "Tim Kerja", src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop" },
+      { type: "image", title: "Solusi Bisnis", src: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&auto=format&fit=crop" },
+      { type: "image", title: "Server & Infrastructure", src: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&fit=crop" }
     ]
   }
 ]

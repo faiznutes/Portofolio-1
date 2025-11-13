@@ -222,40 +222,79 @@ export default {
       } else if (category === 'travel') {
         return [
           {
-            title: 'Tour Packages',
-            description: 'Carefully curated tour packages to amazing destinations around the world. From budget-friendly to luxury experiences, we have something for everyone.',
+            title: 'Paket Wisata',
+            description: 'Paket wisata yang dipilih dengan cermat ke destinasi menakjubkan di seluruh dunia. Dari pengalaman budget-friendly hingga mewah, kami punya sesuatu untuk semua orang.',
             image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&auto=format&fit=crop',
             benefits: [
-              'Best destinations',
-              'Value for money',
-              'Hassle-free planning',
-              'Memorable experiences'
+              'Destinasi terbaik',
+              'Nilai terbaik untuk uang',
+              'Perencanaan tanpa repot',
+              'Pengalaman tak terlupakan'
             ],
-            features: ['Best destinations', 'Flexible itineraries', 'Group discounts', 'Expert planning', '24/7 support']
+            features: ['Destinasi terbaik', 'Itinerary fleksibel', 'Diskon grup', 'Perencanaan ahli', 'Dukungan 24/7']
           },
           {
-            title: 'Hotel Booking',
-            description: 'Book quality hotels at the best prices for your travel needs. We partner with trusted hotels worldwide to offer you the best deals.',
+            title: 'Pemesanan Hotel',
+            description: 'Pesan hotel berkualitas dengan harga terbaik untuk kebutuhan perjalanan Anda. Kami bermitra dengan hotel terpercaya di seluruh dunia untuk menawarkan penawaran terbaik.',
             image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&auto=format&fit=crop',
             benefits: [
-              'Best price guarantee',
-              'Quality accommodations',
-              'Easy booking process',
-              'Flexible cancellation'
+              'Jaminan harga terbaik',
+              'Akomodasi berkualitas',
+              'Proses pemesanan mudah',
+              'Pembatalan fleksibel'
             ],
-            features: ['Best prices', 'Quality hotels', 'Easy booking', '24/7 support', 'Price match guarantee']
+            features: ['Harga terbaik', 'Hotel berkualitas', 'Pemesanan mudah', 'Dukungan 24/7', 'Jaminan harga']
           },
           {
-            title: 'Travel Consultation',
-            description: 'Get expert advice on planning your perfect trip. Our travel consultants help you create the ideal itinerary based on your preferences and budget.',
+            title: 'Konsultasi Perjalanan',
+            description: 'Dapatkan saran ahli untuk merencanakan perjalanan sempurna Anda. Konsultan perjalanan kami membantu Anda membuat itinerary ideal berdasarkan preferensi dan budget Anda.',
             image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&auto=format&fit=crop',
             benefits: [
-              'Personalized recommendations',
-              'Budget optimization',
-              'Time-saving planning',
-              'Expert local knowledge'
+              'Rekomendasi personal',
+              'Optimasi budget',
+              'Perencanaan hemat waktu',
+              'Pengetahuan lokal ahli'
             ],
-            features: ['Personalized planning', 'Budget optimization', 'Travel tips', 'Destination guides', 'Free consultation']
+            features: ['Perencanaan personal', 'Optimasi budget', 'Tips perjalanan', 'Panduan destinasi', 'Konsultasi gratis']
+          }
+        ]
+      } else if (category === 'it') {
+        return [
+          {
+            title: 'Pengembangan Software',
+            description: 'Layanan pengembangan aplikasi custom untuk berbagai platform. Dari web application hingga mobile app, kami menghadirkan solusi teknologi yang sesuai kebutuhan bisnis Anda.',
+            image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&auto=format&fit=crop',
+            benefits: [
+              'Aplikasi sesuai kebutuhan',
+              'Teknologi terkini',
+              'Skalabilitas tinggi',
+              'Maintenance berkelanjutan'
+            ],
+            features: ['Web development', 'Mobile app development', 'API integration', 'Database design', 'Testing & QA']
+          },
+          {
+            title: 'IT Support & Maintenance',
+            description: 'Layanan dukungan IT 24/7 dan maintenance untuk memastikan sistem Anda berjalan lancar. Tim ahli kami siap membantu kapan saja Anda membutuhkan.',
+            image: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?w=600&auto=format&fit=crop',
+            benefits: [
+              'Dukungan 24/7',
+              'Respon cepat',
+              'Maintenance preventif',
+              'Tim ahli berpengalaman'
+            ],
+            features: ['Helpdesk support', 'System monitoring', 'Regular maintenance', 'Quick response', 'SLA guarantee']
+          },
+          {
+            title: 'Cloud & Infrastructure',
+            description: 'Layanan cloud computing dan infrastruktur IT untuk mengoptimalkan operasional bisnis Anda. Dari migrasi cloud hingga optimasi server, kami siap membantu.',
+            image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&auto=format&fit=crop',
+            benefits: [
+              'Skalabilitas tinggi',
+              'Biaya efisien',
+              'Keamanan terjamin',
+              'Backup & recovery'
+            ],
+            features: ['Cloud migration', 'Server optimization', 'Data backup', 'Security management', 'Disaster recovery']
           }
         ]
       }
@@ -263,40 +302,40 @@ export default {
       // Default services
       return [
         {
-          title: 'Consulting Services',
-          description: 'Expert business consulting to help you achieve your goals. We provide strategic advice and actionable solutions.',
+          title: 'Layanan Konsultasi',
+          description: 'Konsultasi bisnis ahli untuk membantu Anda mencapai tujuan. Kami menyediakan saran strategis dan solusi yang dapat ditindaklanjuti.',
           image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&auto=format&fit=crop',
           benefits: [
-            'Strategic insights',
-            'Expert guidance',
-            'Customized solutions',
-            'Proven methodologies'
+            'Wawasan strategis',
+            'Bimbingan ahli',
+            'Solusi yang disesuaikan',
+            'Metodologi terbukti'
           ],
-          features: ['Strategic planning', 'Business analysis', 'Expert advice', 'Custom solutions', 'Ongoing support']
+          features: ['Perencanaan strategis', 'Analisis bisnis', 'Saran ahli', 'Solusi custom', 'Dukungan berkelanjutan']
         },
         {
-          title: 'Custom Solutions',
-          description: 'Tailored solutions designed specifically for your business needs. We create unique approaches that fit your requirements.',
+          title: 'Solusi Custom',
+          description: 'Solusi yang dirancang khusus untuk kebutuhan bisnis Anda. Kami menciptakan pendekatan unik yang sesuai dengan persyaratan Anda.',
           image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop',
           benefits: [
-            'Tailored to your needs',
-            'Scalable solutions',
-            'Future-proof design',
-            'Competitive advantage'
+            'Disesuaikan dengan kebutuhan',
+            'Solusi yang dapat diskalakan',
+            'Desain future-proof',
+            'Keunggulan kompetitif'
           ],
-          features: ['Custom development', 'Integration services', 'Ongoing support', 'Scalable solutions', 'Training provided']
+          features: ['Pengembangan custom', 'Layanan integrasi', 'Dukungan berkelanjutan', 'Solusi scalable', 'Pelatihan disediakan']
         },
         {
-          title: 'Support & Maintenance',
-          description: '24/7 support and maintenance services to keep your business running smoothly. We are here when you need us.',
+          title: 'Dukungan & Maintenance',
+          description: 'Layanan dukungan dan maintenance 24/7 untuk menjaga bisnis Anda berjalan lancar. Kami siap membantu kapan saja Anda membutuhkan.',
           image: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?w=600&auto=format&fit=crop',
           benefits: [
-            'Peace of mind',
-            'Quick problem resolution',
-            'Preventive maintenance',
-            'Expert technical support'
+            'Ketenteraman pikiran',
+            'Resolusi masalah cepat',
+            'Maintenance preventif',
+            'Dukungan teknis ahli'
           ],
-          features: ['24/7 support', 'Regular maintenance', 'Quick response', 'Expert team', 'SLA guarantee']
+          features: ['Dukungan 24/7', 'Maintenance rutin', 'Respon cepat', 'Tim ahli', 'Jaminan SLA']
         }
       ]
     })

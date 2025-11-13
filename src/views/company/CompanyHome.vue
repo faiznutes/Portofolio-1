@@ -117,6 +117,8 @@ export default {
         return 'Kami menyediakan layanan makanan dan minuman berkualitas tinggi, mulai dari fine dining hingga catering untuk acara besar. Setiap hidangan dibuat dengan bahan-bahan segar dan resep yang telah teruji.'
       } else if (category === 'umroh' || category === 'travel') {
         return 'Kami menawarkan paket perjalanan lengkap untuk umroh, haji, dan wisata religi. Dengan pengalaman bertahun-tahun, kami memastikan perjalanan spiritual Anda berjalan lancar dan bermakna.'
+      } else if (category === 'it') {
+        return 'Kami menyediakan solusi teknologi inovatif untuk transformasi digital bisnis Anda. Dari pengembangan aplikasi custom hingga cloud computing, kami menghadirkan teknologi masa depan untuk bisnis Anda hari ini.'
       }
       return 'Kami menyediakan solusi profesional yang dirancang khusus untuk membantu bisnis Anda tumbuh dan berkembang. Dari konsultasi strategis hingga implementasi teknis, kami siap mendukung kesuksesan Anda.'
     }
@@ -127,6 +129,8 @@ export default {
         return 'Kami melayani individu, keluarga, klien korporat, dan penyelenggara acara yang mencari pengalaman kuliner istimewa. Layanan kami cocok untuk mereka yang menghargai kualitas, rasa, dan pelayanan profesional.'
       } else if (category === 'umroh' || category === 'travel') {
         return 'Kami melayani individu, keluarga, dan kelompok yang ingin melakukan perjalanan spiritual atau wisata. Layanan kami dirancang untuk mereka yang merencanakan umroh, haji, atau perjalanan wisata yang membutuhkan bimbingan profesional.'
+      } else if (category === 'it') {
+        return 'Kami melayani bisnis dari startup hingga enterprise yang ingin mengoptimalkan operasional melalui teknologi. Layanan kami dirancang untuk perusahaan yang ingin beradaptasi dengan era digital dan memanfaatkan teknologi untuk pertumbuhan bisnis.'
       }
       return 'Kami melayani bisnis dari berbagai ukuran yang ingin berkembang, meningkatkan efisiensi, dan mencapai tujuan mereka. Layanan kami cocok untuk perusahaan yang menghargai profesionalisme, inovasi, dan hasil yang terukur.'
     }
@@ -137,6 +141,8 @@ export default {
         return 'Kami membantu dengan menyediakan menu berkualitas, perencanaan acara yang detail, staf profesional, dan layanan lengkap dari persiapan hingga pembersihan. Tim kami akan memastikan acara Anda berjalan sempurna.'
       } else if (category === 'umroh' || category === 'travel') {
         return 'Kami membantu dengan mengurus visa, tiket pesawat, akomodasi hotel, pemandu yang berpengalaman, dan dukungan 24/7 selama perjalanan. Kami memastikan semua detail terorganisir dengan baik.'
+      } else if (category === 'it') {
+        return 'Kami membantu dengan pengembangan aplikasi custom, migrasi ke cloud, optimasi infrastruktur IT, dan dukungan teknis 24/7. Tim developer dan engineer kami akan bekerja sama dengan Anda untuk mengimplementasikan solusi teknologi yang tepat.'
       }
       return 'Kami membantu dengan memberikan konsultasi strategis, solusi yang disesuaikan, dukungan teknis, dan pendampingan berkelanjutan. Tim ahli kami akan bekerja sama dengan Anda untuk mencapai tujuan bisnis.'
     }
@@ -147,6 +153,8 @@ export default {
         return 'Kami melayani berbagai lokasi dengan beberapa cabang restoran dan layanan delivery yang mencakup area perkotaan. Kami juga menyediakan layanan catering untuk acara di berbagai kota besar.'
       } else if (category === 'umroh' || category === 'travel') {
         return 'Kami melayani klien dari seluruh Indonesia dengan kantor pusat di Jakarta. Kami juga memiliki jaringan mitra di berbagai kota untuk memudahkan akses informasi dan pendaftaran.'
+      } else if (category === 'it') {
+        return 'Kami melayani klien secara global dengan kantor pusat di Jakarta. Dengan teknologi cloud dan remote support, kami dapat memberikan layanan IT untuk klien di seluruh dunia, 24 jam sehari, 7 hari seminggu.'
       }
       return 'Kami melayani klien secara nasional dengan kantor pusat di Jakarta. Kami juga menyediakan layanan konsultasi online untuk klien di seluruh Indonesia dan luar negeri.'
     }
@@ -164,6 +172,12 @@ export default {
           { icon: 'fas fa-plane', text: 'Mitra Perjalanan Terpercaya' },
           { icon: 'fas fa-users', text: '10.000+ Jamaah Bahagia' },
           { icon: 'fas fa-globe', text: 'Jangkauan Luas' }
+        ]
+      } else if (category === 'it') {
+        return [
+          { icon: 'fas fa-server', text: 'Infrastruktur Modern' },
+          { icon: 'fas fa-code', text: 'Pengembangan Custom' },
+          { icon: 'fas fa-shield-alt', text: 'Keamanan Terjamin' }
         ]
       }
       return [
@@ -188,6 +202,13 @@ export default {
           { icon: '🕌', title: 'Perjalanan Religi', description: 'Pengalaman perjalanan religi yang autentik dan bermakna' },
           { icon: '🏨', title: 'Hotel Berkualitas', description: 'Akomodasi yang nyaman dan strategis untuk kenyamanan Anda' },
           { icon: '👥', title: 'Pemandu Ahli', description: 'Pemandu yang berpengalaman, ramah, dan berpengetahuan luas' }
+        ]
+      } else if (category === 'it') {
+        return [
+          { icon: '💻', title: 'Teknologi Terkini', description: 'Menggunakan teknologi terbaru dan inovatif untuk solusi terbaik' },
+          { icon: '⚡', title: 'Respon Cepat', description: 'Tim ahli yang siap membantu dengan respon yang cepat' },
+          { icon: '🔒', title: 'Keamanan Terjamin', description: 'Prioritas utama kami adalah keamanan data dan sistem Anda' },
+          { icon: '🚀', title: 'Inovasi Berkelanjutan', description: 'Terus berinovasi untuk memberikan solusi masa depan' }
         ]
       }
       return [

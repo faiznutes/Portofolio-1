@@ -1,9 +1,10 @@
 <template>
-  <div class="company-profile-wrapper">
+  <div class="company-profile-wrapper" :data-theme="companyData?.theme || 'default'">
     <CompanyNavbar 
       :project-id="projectId" 
       :company-name="companyData?.title || 'Company'"
       :logo="companyData?.image"
+      :theme="companyData?.theme || 'default'"
     />
     <div class="company-content">
       <router-view v-if="companyData" :company-data="companyData" />
@@ -43,6 +44,7 @@ export default {
 
 <style>
 @import '../styles/company-profile.css';
+@import '../styles/company-themes.css';
 </style>
 
 <style scoped>
