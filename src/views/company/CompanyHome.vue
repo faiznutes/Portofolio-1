@@ -336,7 +336,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(10, 26, 47, 0.88) 0%, rgba(26, 42, 63, 0.88) 100%);
+  background: linear-gradient(135deg, rgba(10, 26, 47, 0.75) 0%, rgba(26, 42, 63, 0.75) 100%);
   z-index: 1;
 }
 
@@ -356,7 +356,7 @@ export default {
   color: #ffffff;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-subtitle {
@@ -367,8 +367,8 @@ export default {
   margin-left: auto;
   margin-right: auto;
   line-height: 1.7;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
-  font-weight: 500;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 600;
 }
 
 .hero-buttons {
