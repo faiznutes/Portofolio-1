@@ -17,12 +17,12 @@
     <section class="mission-vision section section-alt">
       <div class="container">
         <div class="mv-wrapper">
-          <div class="mission-box card">
+          <div class="mission-box">
             <div class="mv-icon">🎯</div>
             <h2>Misi Kami</h2>
             <p>Memberikan nilai dan kualitas layanan yang luar biasa yang melebihi harapan klien kami sambil mempertahankan standar profesionalisme dan integritas tertinggi. Kami berkomitmen untuk membangun hubungan jangka panjang dan menciptakan dampak positif dalam segala hal yang kami lakukan.</p>
           </div>
-          <div class="vision-box card">
+          <div class="vision-box">
             <div class="mv-icon">👁️</div>
             <h2>Visi Kami</h2>
             <p>Menjadi perusahaan terdepan di industri kami, diakui karena inovasi, kualitas, dan kepuasan pelanggan. Kami membayangkan masa depan di mana layanan kami menjadi standar keunggulan dan menginspirasi yang lain di industri.</p>
@@ -55,8 +55,8 @@
     <section class="values-section section section-alt">
       <div class="container">
         <h2 class="section-title">Nilai-Nilai Inti Kami</h2>
-        <div class="values-grid">
-          <div class="value-item card" v-for="(value, index) in values" :key="index">
+        <div class="values-wrapper">
+          <div class="value-item" v-for="(value, index) in values" :key="index">
             <div class="value-number">{{ String(index + 1).padStart(2, '0') }}</div>
             <div class="value-icon">{{ value.icon }}</div>
             <h3>{{ value.title }}</h3>
@@ -98,8 +98,8 @@
       <div class="container">
         <h2 class="section-title">Tim Kami</h2>
         <p class="section-subtitle">Kenali para profesional berdedikasi di balik kesuksesan kami</p>
-        <div class="team-grid">
-          <div class="team-member card" v-for="(member, index) in teamMembers" :key="index">
+        <div class="team-wrapper">
+          <div class="team-member" v-for="(member, index) in teamMembers" :key="index">
             <div class="member-avatar">{{ member.avatar }}</div>
             <h3>{{ member.name }}</h3>
             <p class="member-role">{{ member.role }}</p>
@@ -335,13 +335,17 @@ export default {
 }
 
 .mv-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 32px;
+  justify-content: center;
 }
 
 .mission-box,
 .vision-box {
+  flex: 1 1 400px;
+  min-width: 300px;
+  max-width: 500px;
   padding: 48px 40px;
   text-align: center;
   background: var(--cp-bg-primary, #ffffff);
@@ -383,13 +387,16 @@ export default {
 }
 
 .story-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 64px;
   align-items: center;
 }
 
 .story-image {
+  flex: 1 1 300px;
+  min-width: 300px;
+  max-width: 400px;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: var(--cp-card-shadow, 0 4px 20px rgba(13, 148, 136, 0.08));
@@ -399,6 +406,11 @@ export default {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.story-content {
+  flex: 1 1 400px;
+  min-width: 300px;
 }
 
 .section-title {
@@ -422,13 +434,17 @@ export default {
   background: var(--cp-bg-secondary, #f0fdfa);
 }
 
-.values-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+.values-wrapper {
+  display: flex;
+  flex-wrap: wrap;
   gap: 32px;
+  justify-content: center;
 }
 
 .value-item {
+  flex: 1 1 280px;
+  min-width: 280px;
+  max-width: 350px;
   padding: 48px 32px;
   text-align: center;
   position: relative;
@@ -553,13 +569,17 @@ export default {
   line-height: 1.7;
 }
 
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+.team-wrapper {
+  display: flex;
+  flex-wrap: wrap;
   gap: 32px;
+  justify-content: center;
 }
 
 .team-member {
+  flex: 1 1 280px;
+  min-width: 280px;
+  max-width: 350px;
   text-align: center;
   padding: 48px 32px;
   background: var(--cp-bg-primary, #ffffff);
@@ -686,8 +706,15 @@ export default {
   
   .mv-wrapper,
   .story-wrapper {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 40px;
+  }
+  
+  .mission-box,
+  .vision-box,
+  .story-image,
+  .story-content {
+    max-width: 100%;
   }
 }
 
@@ -704,10 +731,15 @@ export default {
     font-size: 32px;
   }
 
-  .values-grid,
-  .team-grid {
-    grid-template-columns: 1fr;
+  .values-wrapper,
+  .team-wrapper {
+    flex-direction: column;
     gap: 24px;
+  }
+  
+  .value-item,
+  .team-member {
+    max-width: 100%;
   }
 
   .advantage-item {

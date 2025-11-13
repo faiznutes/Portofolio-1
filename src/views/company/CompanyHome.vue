@@ -38,7 +38,7 @@
           <h2 class="section-title">Tentang Kami</h2>
           <p class="section-description">Menghadirkan pengalaman spiritual yang bermakna dengan layanan terpercaya dan profesional</p>
         </div>
-        <div class="about-grid">
+        <div class="about-wrapper">
           <div class="about-card" v-for="(item, index) in aboutItems" :key="index">
             <div class="about-icon">
               <i :class="item.icon"></i>
@@ -57,7 +57,7 @@
           <h2 class="section-title">Mengapa Memilih Kami?</h2>
           <p class="section-description">Keunggulan yang membuat perjalanan spiritual Anda lebih bermakna</p>
         </div>
-        <div class="features-grid">
+        <div class="features-wrapper">
           <div class="feature-card" v-for="(feature, index) in features" :key="index">
             <div class="feature-icon">{{ feature.icon }}</div>
             <h3>{{ feature.title }}</h3>
@@ -168,15 +168,7 @@ export default {
   width: 100%;
 }
 
-/* Section Base */
-.section {
-  padding: var(--cp-section-spacing, 100px) 0;
-}
-
-.section-alt {
-  background: var(--cp-bg-secondary, #f0fdfa);
-}
-
+/* Container */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -199,10 +191,15 @@ export default {
   .container {
     padding: 0 20px;
   }
-  
-  .section {
-    padding: 60px 0;
-  }
+}
+
+/* Section Base */
+.section {
+  padding: 100px 0;
+}
+
+.section-alt {
+  background: var(--cp-bg-secondary, #f0fdfa);
 }
 
 /* Hero Section */
@@ -244,6 +241,7 @@ export default {
 .hero-content {
   position: relative;
   z-index: 2;
+  width: 100%;
   text-align: center;
   color: #fff;
   padding: 80px 0;
@@ -266,15 +264,15 @@ export default {
   margin-left: auto;
   margin-right: auto;
   line-height: 1.7;
-  font-weight: 400;
 }
 
 .hero-info {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 48px;
   margin-bottom: 48px;
-  flex-wrap: wrap;
 }
 
 .info-item {
@@ -288,14 +286,14 @@ export default {
 
 .info-item i {
   font-size: 20px;
-  opacity: 0.9;
 }
 
 .hero-buttons {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  align-items: center;
   flex-wrap: wrap;
+  gap: 20px;
 }
 
 .btn-primary, .btn-secondary {
@@ -304,7 +302,7 @@ export default {
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 10px;
   font-size: 16px;
@@ -331,7 +329,6 @@ export default {
 
 .btn-secondary:hover {
   background: rgba(255, 255, 255, 0.1);
-  border-color: #fff;
 }
 
 .btn-large {
@@ -367,13 +364,17 @@ export default {
   background: var(--cp-bg-primary, #ffffff);
 }
 
-.about-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+.about-wrapper {
+  display: flex;
+  flex-wrap: wrap;
   gap: 32px;
+  justify-content: center;
 }
 
 .about-card {
+  flex: 1 1 260px;
+  min-width: 260px;
+  max-width: 300px;
   text-align: center;
   padding: 40px 30px;
   background: var(--cp-bg-primary, #ffffff);
@@ -420,13 +421,17 @@ export default {
   background: var(--cp-bg-secondary, #f0fdfa);
 }
 
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+.features-wrapper {
+  display: flex;
+  flex-wrap: wrap;
   gap: 32px;
+  justify-content: center;
 }
 
 .feature-card {
+  flex: 1 1 280px;
+  min-width: 280px;
+  max-width: 350px;
   text-align: center;
   padding: 48px 32px;
   background: var(--cp-bg-primary, #ffffff);
@@ -502,6 +507,10 @@ export default {
   .cta-content h2 {
     font-size: 40px;
   }
+  
+  .section {
+    padding: 80px 0;
+  }
 }
 
 @media (max-width: 768px) {
@@ -514,8 +523,8 @@ export default {
   }
 
   .hero-info {
-    gap: 24px;
     flex-direction: column;
+    gap: 24px;
   }
 
   .section-title {
@@ -534,10 +543,14 @@ export default {
     font-size: 16px;
   }
 
-  .about-grid,
-  .features-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
+  .about-wrapper,
+  .features-wrapper {
+    flex-direction: column;
+  }
+  
+  .about-card,
+  .feature-card {
+    max-width: 100%;
   }
   
   .hero-buttons {
@@ -549,6 +562,10 @@ export default {
   .btn-secondary {
     width: 100%;
     justify-content: center;
+  }
+  
+  .section {
+    padding: 60px 0;
   }
 }
 </style>
