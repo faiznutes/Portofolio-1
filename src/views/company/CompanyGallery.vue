@@ -3,8 +3,8 @@
     <!-- Hero Section -->
     <section class="gallery-hero section">
       <div class="container">
-        <h1 class="page-title">Gallery</h1>
-        <p class="page-subtitle">Explore our work, achievements, and visual stories</p>
+        <h1 class="page-title">Galeri</h1>
+        <p class="page-subtitle">Jelajahi karya, pencapaian, dan cerita visual kami</p>
       </div>
     </section>
 
@@ -12,7 +12,7 @@
     <section class="gallery-intro section section-alt">
       <div class="container">
         <div class="intro-content">
-          <h2>Our Visual Story</h2>
+          <h2>Cerita Visual Kami</h2>
           <p>{{ getGalleryDescription() }}</p>
         </div>
       </div>
@@ -23,7 +23,7 @@
       <div class="container">
         <div class="gallery-grid" v-if="galleryItems.length > 0">
           <div class="gallery-item" v-for="(item, index) in galleryItems" :key="index" @click="openLightbox(index)">
-            <img :src="item.src" :alt="item.title || `Gallery ${index + 1}`" loading="lazy">
+            <img :src="optimizeImageUrl(item.src, 800)" :alt="item.title || `Galeri ${index + 1}`" loading="lazy">
             <div class="gallery-overlay">
               <div class="gallery-info">
                 <span class="gallery-title">{{ item.title || `Image ${index + 1}` }}</span>
@@ -34,7 +34,7 @@
         </div>
         <div v-else class="no-gallery">
           <i class="fas fa-images"></i>
-          <p>No gallery items available</p>
+          <p>Tidak ada item galeri tersedia</p>
         </div>
       </div>
     </section>
@@ -42,7 +42,7 @@
     <!-- Story Behind Photos -->
     <section class="gallery-stories section section-alt" v-if="galleryStories.length > 0">
       <div class="container">
-        <h2 class="section-title">Stories Behind the Photos</h2>
+        <h2 class="section-title">Cerita di Balik Foto</h2>
         <div class="stories-grid">
           <div class="story-card card" v-for="(story, index) in galleryStories" :key="index">
             <h3>{{ story.title }}</h3>
@@ -60,10 +60,10 @@
     <section class="cta-section section">
       <div class="container">
         <div class="cta-content">
-          <h2>Want to See More?</h2>
-          <p>Contact us to learn more about our work and services.</p>
+          <h2>Ingin Melihat Lebih Banyak?</h2>
+          <p>Hubungi kami untuk mengetahui lebih lanjut tentang karya dan layanan kami.</p>
           <router-link :to="`/website/${projectId}/contact`" class="btn-primary btn-large">
-            <i class="fas fa-envelope"></i> Get In Touch
+            <i class="fas fa-envelope"></i> Hubungi Kami
           </router-link>
         </div>
       </div>
@@ -88,6 +88,7 @@
 <script>
 import { ref, computed, watch } from 'vue'
 import { useRoute } from 'vue-router'
+import { optimizeImageUrl } from '../../composables/useImageOptimizer'
 
 export default {
   name: 'CompanyGallery',

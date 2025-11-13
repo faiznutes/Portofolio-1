@@ -3,8 +3,8 @@
     <!-- Hero Section -->
     <section class="terms-hero section">
       <div class="container">
-        <h1 class="page-title">Terms & Conditions</h1>
-        <p class="page-subtitle">Please read our terms and conditions carefully before using our services</p>
+        <h1 class="page-title">Syarat & Ketentuan</h1>
+        <p class="page-subtitle">Harap baca syarat dan ketentuan kami dengan seksama sebelum menggunakan layanan kami</p>
       </div>
     </section>
 
@@ -12,7 +12,7 @@
     <section class="terms-content section section-alt">
       <div class="container">
         <div class="terms-intro">
-          <p>By accessing and using this website and our services, you accept and agree to be bound by the terms and provisions of this agreement. If you do not agree to these terms, please do not use our services.</p>
+          <p>Dengan mengakses dan menggunakan website dan layanan kami, Anda menerima dan menyetujui untuk terikat oleh syarat dan ketentuan perjanjian ini. Jika Anda tidak setuju dengan syarat-syarat ini, harap jangan menggunakan layanan kami.</p>
         </div>
 
         <div class="terms-sections">
@@ -27,9 +27,9 @@
 
         <!-- Privacy Policy Section -->
         <div class="privacy-section">
-          <h2 class="section-title">Privacy Policy</h2>
+          <h2 class="section-title">Kebijakan Privasi</h2>
           <div class="privacy-content card">
-            <p>We respect your privacy and are committed to protecting your personal information. This privacy policy explains how we collect, use, and safeguard your data when you use our website and services.</p>
+            <p>Kami menghormati privasi Anda dan berkomitmen untuk melindungi informasi pribadi Anda. Kebijakan privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi data Anda ketika Anda menggunakan website dan layanan kami.</p>
             <ul>
               <li>We collect information that you provide directly to us</li>
               <li>We use cookies and similar technologies to enhance your experience</li>
@@ -42,9 +42,9 @@
 
         <!-- Cookies Policy -->
         <div class="cookies-section">
-          <h2 class="section-title">Cookies Policy</h2>
+          <h2 class="section-title">Kebijakan Cookies</h2>
           <div class="cookies-content card">
-            <p>Our website uses cookies to improve your browsing experience and provide personalized content. By continuing to use our website, you consent to our use of cookies.</p>
+            <p>Website kami menggunakan cookies untuk meningkatkan pengalaman menjelajah Anda dan menyediakan konten yang dipersonalisasi. Dengan melanjutkan penggunaan website kami, Anda menyetujui penggunaan cookies oleh kami.</p>
             <ul>
               <li><strong>Essential Cookies:</strong> Required for the website to function properly</li>
               <li><strong>Analytics Cookies:</strong> Help us understand how visitors interact with our website</li>
@@ -56,7 +56,7 @@
 
         <!-- Legal Information -->
         <div class="legal-section">
-          <h2 class="section-title">Legal Information</h2>
+          <h2 class="section-title">Informasi Legal</h2>
           <div class="legal-content card">
             <div class="legal-item">
               <strong>Company Name:</strong> {{ companyData?.title || 'Company Name' }}
@@ -73,10 +73,10 @@
         <!-- Contact for Questions -->
         <div class="terms-cta">
           <div class="cta-card card">
-            <h3>Questions About Our Terms?</h3>
-            <p>If you have any questions about these terms and conditions, please don't hesitate to contact us.</p>
+            <h3>Pertanyaan Tentang Syarat Kami?</h3>
+            <p>Jika Anda memiliki pertanyaan tentang syarat dan ketentuan ini, jangan ragu untuk menghubungi kami.</p>
             <router-link :to="`/website/${projectId}/contact`" class="btn-primary">
-              <i class="fas fa-envelope"></i> Contact Us
+              <i class="fas fa-envelope"></i> Hubungi Kami
             </router-link>
           </div>
         </div>

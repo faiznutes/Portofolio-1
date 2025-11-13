@@ -1,49 +1,63 @@
 <template>
   <div class="company-about">
-    <!-- Hero Section -->
-    <section class="about-hero section">
-      <div class="container">
-        <h1 class="page-title">About Us</h1>
-        <p class="page-subtitle">Learn more about our company, mission, and values</p>
+    <!-- Header dengan Background -->
+    <section class="about-header section">
+      <div class="header-background">
+        <div class="header-overlay"></div>
+      </div>
+      <div class="header-content">
+        <div class="container">
+          <h1 class="page-title">Tentang Kami</h1>
+          <p class="page-subtitle">Kenali lebih dekat perusahaan kami, visi misi, dan nilai-nilai yang kami pegang</p>
+        </div>
       </div>
     </section>
 
-    <!-- Mission & Vision -->
-    <section class="mission-section section section-alt">
+    <!-- Misi & Visi dalam Layout Berbeda -->
+    <section class="mission-vision section section-alt">
       <div class="container">
-        <div class="mission-grid">
-          <div class="mission-card card">
-            <div class="mission-icon">🎯</div>
-            <h2>Our Mission</h2>
-            <p>To deliver exceptional value and service quality that exceeds our clients' expectations while maintaining the highest standards of professionalism and integrity. We are committed to building lasting relationships and creating positive impact in everything we do.</p>
+        <div class="mv-wrapper">
+          <div class="mission-box card">
+            <div class="mv-icon">🎯</div>
+            <h2>Misi Kami</h2>
+            <p>Memberikan nilai dan kualitas layanan yang luar biasa yang melebihi harapan klien kami sambil mempertahankan standar profesionalisme dan integritas tertinggi. Kami berkomitmen untuk membangun hubungan jangka panjang dan menciptakan dampak positif dalam segala hal yang kami lakukan.</p>
           </div>
-          <div class="mission-card card">
-            <div class="mission-icon">👁️</div>
-            <h2>Our Vision</h2>
-            <p>To become a leading company in our industry, recognized for innovation, quality, and customer satisfaction. We envision a future where our services set the standard for excellence and inspire others in the industry.</p>
+          <div class="vision-box card">
+            <div class="mv-icon">👁️</div>
+            <h2>Visi Kami</h2>
+            <p>Menjadi perusahaan terdepan di industri kami, diakui karena inovasi, kualitas, dan kepuasan pelanggan. Kami membayangkan masa depan di mana layanan kami menjadi standar keunggulan dan menginspirasi yang lain di industri.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Our Story -->
+    <!-- Cerita Perusahaan -->
     <section class="story-section section">
       <div class="container">
-        <div class="story-content">
-          <h2 class="section-title">Our Story</h2>
-          <div class="story-text">
-            <p>{{ companyData?.longDescription || companyData?.description || 'We are a dedicated company committed to providing excellent services to our clients. Our journey began with a simple vision: to deliver quality and value in everything we do.' }}</p>
+        <div class="story-wrapper">
+          <div class="story-image">
+            <img :src="optimizeImageUrl(companyData?.image || defaultImage, 600)" 
+                 :alt="companyData?.title" 
+                 loading="lazy">
+          </div>
+          <div class="story-content">
+            <h2 class="section-title">Cerita Kami</h2>
+            <div class="story-text">
+              <p>{{ companyData?.longDescription || companyData?.description || 'Kami adalah perusahaan yang berdedikasi untuk memberikan layanan terbaik kepada klien kami. Perjalanan kami dimulai dengan visi sederhana: memberikan kualitas dan nilai dalam segala hal yang kami lakukan.' }}</p>
+              <p>Sejak didirikan, kami telah tumbuh dan berkembang dengan fokus pada kepuasan pelanggan dan inovasi berkelanjutan. Setiap langkah yang kami ambil didasarkan pada komitmen untuk memberikan yang terbaik.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Core Values -->
+    <!-- Nilai-Nilai Inti -->
     <section class="values-section section section-alt">
       <div class="container">
-        <h2 class="section-title">Our Core Values</h2>
+        <h2 class="section-title">Nilai-Nilai Inti Kami</h2>
         <div class="values-grid">
-          <div class="value-card card" v-for="(value, index) in values" :key="index">
+          <div class="value-item card" v-for="(value, index) in values" :key="index">
+            <div class="value-number">{{ String(index + 1).padStart(2, '0') }}</div>
             <div class="value-icon">{{ value.icon }}</div>
             <h3>{{ value.title }}</h3>
             <p>{{ value.description }}</p>
@@ -52,53 +66,61 @@
       </div>
     </section>
 
-    <!-- Target Market & Advantages -->
+    <!-- Target Market & Keunggulan -->
     <section class="market-section section">
       <div class="container">
-        <div class="market-content">
-          <h2 class="section-title">Who We Serve</h2>
-          <p class="section-description">{{ getTargetMarket() }}</p>
+        <div class="market-wrapper">
+          <div class="market-box">
+            <h2 class="section-title">Siapa yang Kami Layani?</h2>
+            <p class="market-description">{{ getTargetMarket() }}</p>
+          </div>
           
-          <h2 class="section-title" style="margin-top: 60px;">Our Advantages</h2>
-          <div class="advantages-grid">
-            <div class="advantage-item" v-for="(advantage, index) in advantages" :key="index">
-              <i :class="advantage.icon"></i>
-              <h3>{{ advantage.title }}</h3>
-              <p>{{ advantage.description }}</p>
+          <div class="advantages-box">
+            <h2 class="section-title">Keunggulan Kami</h2>
+            <div class="advantages-list">
+              <div class="advantage-item" v-for="(advantage, index) in advantages" :key="index">
+                <div class="advantage-icon">
+                  <i :class="advantage.icon"></i>
+                </div>
+                <div class="advantage-content">
+                  <h3>{{ advantage.title }}</h3>
+                  <p>{{ advantage.description }}</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Team Section -->
+    <!-- Tim Kami -->
     <section class="team-section section section-alt">
       <div class="container">
-        <h2 class="section-title">Our Team</h2>
-        <p class="section-description">Meet the dedicated professionals behind our success</p>
+        <h2 class="section-title">Tim Kami</h2>
+        <p class="section-subtitle">Kenali para profesional berdedikasi di balik kesuksesan kami</p>
         <div class="team-grid">
-          <div class="team-card card" v-for="(member, index) in teamMembers" :key="index">
-            <div class="team-avatar">{{ member.avatar }}</div>
+          <div class="team-member card" v-for="(member, index) in teamMembers" :key="index">
+            <div class="member-avatar">{{ member.avatar }}</div>
             <h3>{{ member.name }}</h3>
-            <p class="team-role">{{ member.role }}</p>
-            <p class="team-bio">{{ member.bio }}</p>
+            <p class="member-role">{{ member.role }}</p>
+            <p class="member-bio">{{ member.bio }}</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- CTA -->
     <section class="cta-section section">
       <div class="container">
-        <div class="cta-content">
-          <h2>Want to Know More?</h2>
-          <p>Discover our services and see how we can help you achieve your goals.</p>
+        <div class="cta-box">
+          <h2>Ingin Tahu Lebih Banyak?</h2>
+          <p>Jelajahi layanan kami dan lihat bagaimana kami dapat membantu Anda mencapai tujuan.</p>
           <div class="cta-buttons">
             <router-link :to="`/website/${projectId}/services`" class="btn-primary">
-              <i class="fas fa-briefcase"></i> View Services
+              <i class="fas fa-briefcase"></i> Lihat Layanan
             </router-link>
             <router-link :to="`/website/${projectId}/contact`" class="btn-secondary">
-              <i class="fas fa-envelope"></i> Contact Us
+              <i class="fas fa-envelope"></i> Hubungi Kami
             </router-link>
           </div>
         </div>
@@ -110,6 +132,7 @@
 <script>
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
+import { optimizeImageUrl } from '../../composables/useImageOptimizer'
 
 export default {
   name: 'CompanyAbout',
@@ -122,72 +145,75 @@ export default {
   setup(props) {
     const route = useRoute()
     const projectId = computed(() => route.params.id)
+    const defaultImage = 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&auto=format&fit=crop'
     
     const values = [
-      { icon: '🎯', title: 'Excellence', description: 'We strive for excellence in everything we do, setting high standards and continuously improving.' },
-      { icon: '🤝', title: 'Integrity', description: 'Honesty and transparency guide all our actions and business relationships.' },
-      { icon: '💡', title: 'Innovation', description: 'We embrace new ideas and technologies to stay ahead and deliver better solutions.' },
-      { icon: '❤️', title: 'Customer Focus', description: 'Our customers are at the heart of everything we do, and their success is our priority.' }
+      { icon: '🎯', title: 'Keunggulan', description: 'Kami berusaha untuk keunggulan dalam segala hal yang kami lakukan, menetapkan standar tinggi dan terus meningkatkan kualitas.' },
+      { icon: '🤝', title: 'Integritas', description: 'Kejujuran dan transparansi memandu semua tindakan dan hubungan bisnis kami.' },
+      { icon: '💡', title: 'Inovasi', description: 'Kami merangkul ide dan teknologi baru untuk tetap unggul dan memberikan solusi yang lebih baik.' },
+      { icon: '❤️', title: 'Fokus Pelanggan', description: 'Pelanggan kami berada di pusat segala hal yang kami lakukan, dan kesuksesan mereka adalah prioritas kami.' }
     ]
     
     const getTargetMarket = () => {
       const category = props.companyData?.category || 'general'
       if (category === 'fnb') {
-        return 'We serve individuals, families, corporate clients, and event organizers looking for exceptional food and beverage experiences. Our services cater to those who value quality, taste, and professional service.'
+        return 'Kami melayani individu, keluarga, klien korporat, dan penyelenggara acara yang mencari pengalaman kuliner istimewa. Layanan kami melayani mereka yang menghargai kualitas, rasa, dan pelayanan profesional.'
       } else if (category === 'umroh' || category === 'travel') {
-        return 'We serve individuals, families, and groups seeking meaningful travel experiences. Our services are designed for those planning religious journeys, vacations, or business trips who value reliability and quality service.'
+        return 'Kami melayani individu, keluarga, dan kelompok yang mencari pengalaman perjalanan yang bermakna. Layanan kami dirancang untuk mereka yang merencanakan perjalanan religi, liburan, atau perjalanan bisnis yang menghargai keandalan dan kualitas layanan.'
       }
-      return 'We serve businesses of all sizes looking to grow, improve efficiency, and achieve their goals. Our services are tailored for companies that value professionalism, innovation, and results.'
+      return 'Kami melayani bisnis dari berbagai ukuran yang ingin tumbuh, meningkatkan efisiensi, dan mencapai tujuan mereka. Layanan kami disesuaikan untuk perusahaan yang menghargai profesionalisme, inovasi, dan hasil.'
     }
     
     const advantages = computed(() => {
       const category = props.companyData?.category || 'general'
       if (category === 'fnb') {
         return [
-          { icon: 'fas fa-leaf', title: 'Fresh Ingredients', description: 'We source only the finest, freshest ingredients for our dishes' },
-          { icon: 'fas fa-award', title: 'Award-Winning', description: 'Recognized for excellence in food quality and service' },
-          { icon: 'fas fa-clock', title: 'Fast Service', description: 'Quick preparation and delivery without compromising quality' },
-          { icon: 'fas fa-heart', title: 'Passionate Team', description: 'Our chefs and staff are passionate about creating memorable experiences' }
+          { icon: 'fas fa-leaf', title: 'Bahan Segar', description: 'Kami hanya menggunakan bahan-bahan terbaik dan terbaru untuk hidangan kami' },
+          { icon: 'fas fa-award', title: 'Berprestasi', description: 'Diakui karena keunggulan dalam kualitas makanan dan layanan' },
+          { icon: 'fas fa-clock', title: 'Layanan Cepat', description: 'Persiapan dan pengiriman cepat tanpa mengorbankan kualitas' },
+          { icon: 'fas fa-heart', title: 'Tim Berdedikasi', description: 'Chef dan staf kami berdedikasi untuk menciptakan pengalaman yang tak terlupakan' }
         ]
       } else if (category === 'umroh' || category === 'travel') {
         return [
-          { icon: 'fas fa-certificate', title: 'Licensed & Certified', description: 'Fully licensed travel agency with certified guides' },
-          { icon: 'fas fa-shield-alt', title: 'Trusted Partner', description: 'Years of experience serving thousands of satisfied travelers' },
-          { icon: 'fas fa-handshake', title: 'Best Prices', description: 'Competitive pricing with no hidden fees' },
-          { icon: 'fas fa-headset', title: '24/7 Support', description: 'Round-the-clock assistance during your journey' }
+          { icon: 'fas fa-certificate', title: 'Berlisensi & Bersertifikat', description: 'Agen perjalanan berlisensi penuh dengan pemandu bersertifikat' },
+          { icon: 'fas fa-shield-alt', title: 'Mitra Terpercaya', description: 'Bertahun-tahun pengalaman melayani ribuan traveler yang puas' },
+          { icon: 'fas fa-handshake', title: 'Harga Terbaik', description: 'Harga kompetitif tanpa biaya tersembunyi' },
+          { icon: 'fas fa-headset', title: 'Dukungan 24/7', description: 'Bantuan sepanjang waktu selama perjalanan Anda' }
         ]
       }
       return [
-        { icon: 'fas fa-users', title: 'Expert Team', description: 'Experienced professionals with proven track records' },
-        { icon: 'fas fa-rocket', title: 'Innovative Solutions', description: 'Cutting-edge approaches to solve your business challenges' },
-        { icon: 'fas fa-chart-line', title: 'Proven Results', description: 'Track record of delivering measurable business outcomes' },
-        { icon: 'fas fa-handshake', title: 'Partnership Approach', description: 'We work as your partner, not just a service provider' }
+        { icon: 'fas fa-users', title: 'Tim Ahli', description: 'Profesional berpengalaman dengan rekam jejak terbukti' },
+        { icon: 'fas fa-rocket', title: 'Solusi Inovatif', description: 'Pendekatan mutakhir untuk menyelesaikan tantangan bisnis Anda' },
+        { icon: 'fas fa-chart-line', title: 'Hasil Terbukti', description: 'Rekam jejak memberikan hasil bisnis yang terukur' },
+        { icon: 'fas fa-handshake', title: 'Pendekatan Kemitraan', description: 'Kami bekerja sebagai mitra Anda, bukan hanya penyedia layanan' }
       ]
     })
     
     const teamMembers = [
       {
         avatar: '👤',
-        name: 'Leadership Team',
-        role: 'Management',
-        bio: 'Experienced professionals leading our company with vision and dedication.'
+        name: 'Tim Kepemimpinan',
+        role: 'Manajemen',
+        bio: 'Profesional berpengalaman yang memimpin perusahaan kami dengan visi dan dedikasi.'
       },
       {
         avatar: '👥',
-        name: 'Expert Staff',
-        role: 'Operations',
-        bio: 'Skilled team members committed to delivering exceptional service.'
+        name: 'Staf Ahli',
+        role: 'Operasional',
+        bio: 'Anggota tim terampil yang berkomitmen untuk memberikan layanan terbaik.'
       },
       {
         avatar: '💼',
-        name: 'Support Team',
-        role: 'Customer Service',
-        bio: 'Dedicated to ensuring your satisfaction and success.'
+        name: 'Tim Dukungan',
+        role: 'Layanan Pelanggan',
+        bio: 'Berdedikasi untuk memastikan kepuasan dan kesuksesan Anda.'
       }
     ]
     
     return {
       projectId,
+      optimizeImageUrl,
+      defaultImage,
       values,
       getTargetMarket,
       advantages,
@@ -203,11 +229,37 @@ export default {
   min-height: 100vh;
 }
 
-.about-hero {
+.about-header {
+  position: relative;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: #fff;
   text-align: center;
-  padding: 100px 0;
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+.header-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.1;
+  background-image: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="white"/></svg>');
+}
+
+.header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
 }
 
 .page-title {
@@ -220,35 +272,40 @@ export default {
 .page-subtitle {
   font-size: 20px;
   color: rgba(255, 255, 255, 0.95);
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-.mission-section {
+.mission-vision {
   background: #f8f9fa;
 }
 
-.mission-grid {
+.mv-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: 1fr 1fr;
   gap: 40px;
 }
 
-.mission-card {
-  text-align: center;
+.mission-box,
+.vision-box {
   padding: 50px 40px;
+  text-align: center;
 }
 
-.mission-icon {
+.mv-icon {
   font-size: 64px;
   margin-bottom: 25px;
 }
 
-.mission-card h2 {
+.mission-box h2,
+.vision-box h2 {
   font-size: 28px;
   color: #1a1a1a;
   margin-bottom: 20px;
 }
 
-.mission-card p {
+.mission-box p,
+.vision-box p {
   color: #6c757d;
   line-height: 1.8;
   font-size: 16px;
@@ -258,16 +315,36 @@ export default {
   background: #ffffff;
 }
 
-.story-content {
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
+.story-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.story-image {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.story-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.story-content h2 {
+  font-size: 36px;
+  color: #1a1a1a;
+  margin-bottom: 25px;
 }
 
 .story-text p {
   font-size: 18px;
   line-height: 1.8;
   color: #6c757d;
+  margin-bottom: 20px;
 }
 
 .values-section {
@@ -280,9 +357,19 @@ export default {
   gap: 30px;
 }
 
-.value-card {
-  text-align: center;
+.value-item {
   padding: 40px 30px;
+  text-align: center;
+  position: relative;
+}
+
+.value-number {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 48px;
+  font-weight: 700;
+  color: rgba(37, 99, 235, 0.1);
 }
 
 .value-icon {
@@ -290,13 +377,13 @@ export default {
   margin-bottom: 20px;
 }
 
-.value-card h3 {
+.value-item h3 {
   font-size: 22px;
   color: #1a1a1a;
   margin-bottom: 15px;
 }
 
-.value-card p {
+.value-item p {
   color: #6c757d;
   line-height: 1.6;
 }
@@ -305,35 +392,55 @@ export default {
   background: #ffffff;
 }
 
-.market-content {
-  text-align: center;
+.market-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
 }
 
-.advantages-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+.market-description {
+  font-size: 18px;
+  color: #6c757d;
+  line-height: 1.8;
+  max-width: 900px;
+}
+
+.advantages-list {
+  display: flex;
+  flex-direction: column;
   gap: 30px;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .advantage-item {
-  text-align: center;
-  padding: 30px 20px;
+  display: flex;
+  gap: 25px;
+  align-items: flex-start;
+  padding: 30px;
+  background: #f8f9fa;
+  border-radius: 12px;
 }
 
-.advantage-item i {
-  font-size: 40px;
-  color: #2563eb;
-  margin-bottom: 20px;
+.advantage-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  border-radius: 12px;
+  font-size: 24px;
+  flex-shrink: 0;
 }
 
-.advantage-item h3 {
-  font-size: 20px;
+.advantage-content h3 {
+  font-size: 22px;
   color: #1a1a1a;
   margin-bottom: 10px;
 }
 
-.advantage-item p {
+.advantage-content p {
   color: #6c757d;
   line-height: 1.6;
 }
@@ -342,37 +449,43 @@ export default {
   background: #f8f9fa;
 }
 
+.section-subtitle {
+  text-align: center;
+  font-size: 18px;
+  color: #6c757d;
+  margin-bottom: 50px;
+}
+
 .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
-  margin-top: 40px;
 }
 
-.team-card {
+.team-member {
   text-align: center;
   padding: 40px 30px;
 }
 
-.team-avatar {
+.member-avatar {
   font-size: 64px;
   margin-bottom: 20px;
 }
 
-.team-card h3 {
+.team-member h3 {
   font-size: 22px;
   color: #1a1a1a;
   margin-bottom: 5px;
 }
 
-.team-role {
+.member-role {
   color: #2563eb;
   font-weight: 600;
   margin-bottom: 15px;
   font-size: 16px;
 }
 
-.team-bio {
+.member-bio {
   color: #6c757d;
   line-height: 1.6;
   font-size: 15px;
@@ -384,13 +497,18 @@ export default {
   text-align: center;
 }
 
-.cta-content h2 {
+.cta-box {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-box h2 {
   font-size: 42px;
   margin-bottom: 20px;
   color: #fff;
 }
 
-.cta-content p {
+.cta-box p {
   font-size: 18px;
   margin-bottom: 30px;
   color: rgba(255, 255, 255, 0.95);
@@ -403,22 +521,31 @@ export default {
   flex-wrap: wrap;
 }
 
+@media (max-width: 1024px) {
+  .mv-wrapper,
+  .story-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
 @media (max-width: 768px) {
   .page-title {
     font-size: 36px;
-  }
-
-  .mission-grid {
-    grid-template-columns: 1fr;
   }
 
   .section-title {
     font-size: 32px;
   }
 
-  .advantages-grid,
+  .values-grid,
   .team-grid {
     grid-template-columns: 1fr;
+  }
+
+  .advantage-item {
+    flex-direction: column;
+    text-align: center;
   }
 }
 </style>

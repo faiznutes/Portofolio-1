@@ -3,8 +3,8 @@
     <!-- Hero Section -->
     <section class="contact-hero section">
       <div class="container">
-        <h1 class="page-title">Contact Us</h1>
-        <p class="page-subtitle">Get in touch with us - We're here to help</p>
+        <h1 class="page-title">Hubungi Kami</h1>
+        <p class="page-subtitle">Hubungi kami - Kami siap membantu Anda</p>
       </div>
     </section>
 
@@ -13,8 +13,8 @@
       <div class="container">
         <div class="contact-grid">
           <div class="contact-info">
-            <h2>Get in Touch</h2>
-            <p>We'd love to hear from you. Send us a message and we'll respond as soon as possible. Our team is ready to assist you with any questions or inquiries.</p>
+            <h2>Hubungi Kami</h2>
+            <p>Kami senang mendengar dari Anda. Kirimkan pesan kepada kami dan kami akan merespons secepat mungkin. Tim kami siap membantu Anda dengan pertanyaan atau permintaan apa pun.</p>
             
             <div class="info-items">
               <div class="info-item card">
@@ -22,7 +22,7 @@
                   <i class="fas fa-map-marker-alt"></i>
                 </div>
                 <div>
-                  <h3>Address</h3>
+                  <h3>Alamat</h3>
                   <p>123 Business Street<br>City, Country 12345</p>
                 </div>
               </div>
@@ -32,7 +32,7 @@
                   <i class="fas fa-phone"></i>
                 </div>
                 <div>
-                  <h3>Phone</h3>
+                  <h3>Telepon</h3>
                   <p><a href="tel:+621234567890">+62 123 456 7890</a></p>
                 </div>
               </div>
@@ -52,43 +52,43 @@
                   <i class="fas fa-clock"></i>
                 </div>
                 <div>
-                  <h3>Business Hours</h3>
-                  <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM<br>Sunday: Closed</p>
+                  <h3>Jam Operasional</h3>
+                  <p>Senin - Jumat: 09:00 - 18:00<br>Sabtu: 10:00 - 16:00<br>Minggu: Tutup</p>
                 </div>
               </div>
             </div>
           </div>
           
           <div class="contact-form-wrapper card">
-            <h2>Send Us a Message</h2>
+            <h2>Kirimkan Pesan kepada Kami</h2>
             <form class="contact-form" @submit.prevent="handleSubmit">
               <div class="form-group">
-                <label for="name">Name *</label>
-                <input type="text" id="name" v-model="form.name" required placeholder="Your full name">
+                <label for="name">Nama *</label>
+                <input type="text" id="name" v-model="form.name" required placeholder="Nama lengkap Anda">
               </div>
               
               <div class="form-group">
                 <label for="email">Email *</label>
-                <input type="email" id="email" v-model="form.email" required placeholder="your.email@example.com">
+                <input type="email" id="email" v-model="form.email" required placeholder="email@contoh.com">
               </div>
               
               <div class="form-group">
-                <label for="phone">Phone</label>
+                <label for="phone">Telepon</label>
                 <input type="tel" id="phone" v-model="form.phone" placeholder="+62 123 456 7890">
               </div>
               
               <div class="form-group">
-                <label for="subject">Subject *</label>
-                <input type="text" id="subject" v-model="form.subject" required placeholder="What is this regarding?">
+                <label for="subject">Subjek *</label>
+                <input type="text" id="subject" v-model="form.subject" required placeholder="Mengenai apa?">
               </div>
               
               <div class="form-group">
-                <label for="message">Message *</label>
-                <textarea id="message" v-model="form.message" rows="5" required placeholder="Tell us how we can help you..."></textarea>
+                <label for="message">Pesan *</label>
+                <textarea id="message" v-model="form.message" rows="5" required placeholder="Beritahu kami bagaimana kami dapat membantu Anda..."></textarea>
               </div>
               
               <button type="submit" class="btn-submit">
-                <i class="fas fa-paper-plane"></i> Send Message
+                <i class="fas fa-paper-plane"></i> Kirim Pesan
               </button>
             </form>
           </div>
@@ -114,10 +114,10 @@
     <section class="cta-section section section-alt">
       <div class="container">
         <div class="cta-content">
-          <h2>Prefer to Call?</h2>
-          <p>Our team is available during business hours to assist you.</p>
+          <h2>Lebih Suka Menelepon?</h2>
+          <p>Tim kami tersedia selama jam operasional untuk membantu Anda.</p>
           <a href="tel:+621234567890" class="btn-primary btn-large">
-            <i class="fas fa-phone"></i> Call Us Now
+            <i class="fas fa-phone"></i> Hubungi Kami Sekarang
           </a>
         </div>
       </div>
@@ -144,7 +144,7 @@ export default {
     })
     
     const handleSubmit = () => {
-      alert('Thank you for your message! We will get back to you soon.')
+      alert('Terima kasih atas pesan Anda! Kami akan segera menghubungi Anda kembali.')
       form.value = {
         name: '',
         email: '',

@@ -3,8 +3,8 @@
     <!-- Hero Section -->
     <section class="services-hero section">
       <div class="container">
-        <h1 class="page-title">Our Services</h1>
-        <p class="page-subtitle">Comprehensive solutions tailored to your needs</p>
+        <h1 class="page-title">Layanan Kami</h1>
+        <p class="page-subtitle">Solusi lengkap yang disesuaikan dengan kebutuhan Anda</p>
       </div>
     </section>
 
@@ -19,13 +19,13 @@
             </div>
             <div class="service-body">
               <div class="service-image">
-                <img :src="service.image" :alt="service.title" loading="lazy">
+                <img :src="optimizeImageUrl(service.image, 600)" :alt="service.title" loading="lazy">
               </div>
               <div class="service-details">
                 <p class="service-description">{{ service.description }}</p>
                 
                 <div class="service-benefits">
-                  <h3>Benefits for You:</h3>
+                  <h3>Manfaat untuk Anda:</h3>
                   <ul class="benefits-list">
                     <li v-for="(benefit, bIndex) in service.benefits" :key="bIndex">
                       <i class="fas fa-check-circle"></i>
@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="service-features">
-                  <h3>What's Included:</h3>
+                  <h3>Yang Termasuk:</h3>
                   <ul class="features-list">
                     <li v-for="(feature, fIndex) in service.features" :key="fIndex">
                       <i class="fas fa-check"></i>
@@ -46,7 +46,7 @@
 
                 <div class="service-cta">
                   <router-link :to="`/website/${projectId}/contact`" class="btn-primary">
-                    <i class="fas fa-envelope"></i> Get Quote
+                    <i class="fas fa-envelope"></i> Dapatkan Penawaran
                   </router-link>
                 </div>
               </div>
@@ -59,7 +59,7 @@
     <!-- Testimonials Section -->
     <section class="testimonials-section section">
       <div class="container">
-        <h2 class="section-title">What Our Clients Say</h2>
+        <h2 class="section-title">Apa Kata Klien Kami</h2>
         <div class="testimonials-grid">
           <div class="testimonial-card card" v-for="(testimonial, index) in testimonials" :key="index">
             <div class="testimonial-rating">
@@ -78,7 +78,7 @@
     <!-- Success Metrics -->
     <section class="metrics-section section section-alt">
       <div class="container">
-        <h2 class="section-title">Our Success Metrics</h2>
+        <h2 class="section-title">Metrik Kesuksesan Kami</h2>
         <div class="metrics-grid">
           <div class="metric-card" v-for="(metric, index) in metrics" :key="index">
             <div class="metric-value">{{ metric.value }}</div>
@@ -91,15 +91,15 @@
     <!-- Additional Services / Cross-sell -->
     <section class="additional-section section">
       <div class="container">
-        <h2 class="section-title">Additional Services</h2>
-        <p class="section-description">Enhance your experience with these complementary services</p>
+        <h2 class="section-title">Layanan Tambahan</h2>
+        <p class="section-description">Tingkatkan pengalaman Anda dengan layanan pelengkap ini</p>
         <div class="additional-grid">
           <div class="additional-card card" v-for="(item, index) in additionalServices" :key="index">
             <i :class="item.icon"></i>
             <h3>{{ item.title }}</h3>
             <p>{{ item.description }}</p>
             <router-link :to="`/website/${projectId}/contact`" class="btn-secondary btn-small">
-              Learn More
+              Pelajari Lebih Lanjut
             </router-link>
           </div>
         </div>
@@ -110,10 +110,10 @@
     <section class="cta-section section section-alt">
       <div class="container">
         <div class="cta-content">
-          <h2>Ready to Get Started?</h2>
-          <p>Contact us today to discuss your needs and discover how our services can help you achieve your goals.</p>
+          <h2>Siap Memulai?</h2>
+          <p>Hubungi kami hari ini untuk membahas kebutuhan Anda dan temukan bagaimana layanan kami dapat membantu Anda mencapai tujuan.</p>
           <router-link :to="`/website/${projectId}/contact`" class="btn-primary btn-large">
-            <i class="fas fa-paper-plane"></i> Contact Us Now
+            <i class="fas fa-paper-plane"></i> Hubungi Kami Sekarang
           </router-link>
         </div>
       </div>
@@ -124,6 +124,7 @@
 <script>
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
+import { optimizeImageUrl } from '../../composables/useImageOptimizer'
 
 export default {
   name: 'CompanyServices',
