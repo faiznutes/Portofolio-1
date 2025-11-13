@@ -1,6 +1,6 @@
 <template>
   <div class="company-home">
-    <!-- Hero Section dengan Background Visual -->
+    <!-- Hero Section -->
     <section class="hero-section">
       <div class="hero-background">
         <img :src="optimizeImageUrl(companyData?.image || defaultImage)" 
@@ -9,8 +9,8 @@
              class="hero-bg-image">
         <div class="hero-overlay"></div>
       </div>
-      <div class="hero-content">
-        <div class="container">
+      <div class="container">
+        <div class="hero-content">
           <h1 class="hero-title">{{ companyData?.title }}</h1>
           <p class="hero-subtitle">{{ getHeroDescription() }}</p>
           <div class="hero-info">
@@ -31,39 +31,34 @@
       </div>
     </section>
 
-    <!-- Penjelasan Singkat -->
-    <section class="intro-section section">
+    <!-- About Section -->
+    <section class="about-section section">
       <div class="container">
-        <div class="intro-content">
+        <div class="section-header">
           <h2 class="section-title">Tentang Kami</h2>
-          <div class="intro-grid">
-            <div class="intro-text">
-              <h3>Apa yang Kami Tawarkan?</h3>
-              <p>{{ getOfferDescription() }}</p>
+          <p class="section-description">Menghadirkan pengalaman spiritual yang bermakna dengan layanan terpercaya dan profesional</p>
+        </div>
+        <div class="about-grid">
+          <div class="about-card" v-for="(item, index) in aboutItems" :key="index">
+            <div class="about-icon">
+              <i :class="item.icon"></i>
             </div>
-            <div class="intro-text">
-              <h3>Siapa Target Kami?</h3>
-              <p>{{ getTargetDescription() }}</p>
-            </div>
-            <div class="intro-text">
-              <h3>Bagaimana Kami Membantu?</h3>
-              <p>{{ getHelpDescription() }}</p>
-            </div>
-            <div class="intro-text">
-              <h3>Dimana Jangkauan Kami?</h3>
-              <p>{{ getLocationDescription() }}</p>
-            </div>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.description }}</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Fitur Unggulan -->
+    <!-- Features Section -->
     <section class="features-section section section-alt">
       <div class="container">
-        <h2 class="section-title">Mengapa Memilih Kami?</h2>
+        <div class="section-header">
+          <h2 class="section-title">Mengapa Memilih Kami?</h2>
+          <p class="section-description">Keunggulan yang membuat perjalanan spiritual Anda lebih bermakna</p>
+        </div>
         <div class="features-grid">
-          <div class="feature-card card" v-for="(feature, index) in features" :key="index">
+          <div class="feature-card" v-for="(feature, index) in features" :key="index">
             <div class="feature-icon">{{ feature.icon }}</div>
             <h3>{{ feature.title }}</h3>
             <p>{{ feature.description }}</p>
@@ -76,8 +71,8 @@
     <section class="cta-section section">
       <div class="container">
         <div class="cta-content">
-          <h2>Siap Memulai?</h2>
-          <p>Mari bekerja sama untuk mencapai tujuan Anda. Hubungi kami hari ini dan temukan bagaimana kami dapat membantu Anda.</p>
+          <h2>Siap Memulai Perjalanan Spiritual Anda?</h2>
+          <p>Mari bergabung dengan ribuan jamaah yang telah mempercayakan perjalanan mereka kepada kami. Hubungi kami hari ini untuk konsultasi gratis.</p>
           <router-link :to="`/website/${projectId}/contact`" class="btn-primary btn-large">
             <i class="fas fa-paper-plane"></i> Hubungi Kami Sekarang
           </router-link>
@@ -103,127 +98,55 @@ export default {
   setup(props) {
     const route = useRoute()
     const projectId = computed(() => route.params.id)
-    const defaultImage = 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1920&auto=format&fit=crop'
+    const defaultImage = 'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=1920&auto=format&fit=crop'
     
     const getHeroDescription = () => {
       const desc = props.companyData?.description || ''
-      const firstLine = desc.split('\n')[0] || 'Selamat datang di perusahaan kami'
+      const firstLine = desc.split('\n')[0] || 'Selamat datang di Baitul Hikmah'
       return firstLine.length > 150 ? firstLine.substring(0, 150) + '...' : firstLine
     }
     
-    const getOfferDescription = () => {
-      const category = props.companyData?.category || 'general'
-      if (category === 'fnb') {
-        return 'Kami menyediakan layanan makanan dan minuman berkualitas tinggi, mulai dari fine dining hingga catering untuk acara besar. Setiap hidangan dibuat dengan bahan-bahan segar dan resep yang telah teruji.'
-      } else if (category === 'umroh' || category === 'travel') {
-        return 'Kami menawarkan paket perjalanan lengkap untuk umroh, haji, dan wisata religi. Dengan pengalaman bertahun-tahun, kami memastikan perjalanan spiritual Anda berjalan lancar dan bermakna.'
-      } else if (category === 'it') {
-        return 'Kami menyediakan solusi teknologi inovatif untuk transformasi digital bisnis Anda. Dari pengembangan aplikasi custom hingga cloud computing, kami menghadirkan teknologi masa depan untuk bisnis Anda hari ini.'
-      }
-      return 'Kami menyediakan solusi profesional yang dirancang khusus untuk membantu bisnis Anda tumbuh dan berkembang. Dari konsultasi strategis hingga implementasi teknis, kami siap mendukung kesuksesan Anda.'
-    }
-    
-    const getTargetDescription = () => {
-      const category = props.companyData?.category || 'general'
-      if (category === 'fnb') {
-        return 'Kami melayani individu, keluarga, klien korporat, dan penyelenggara acara yang mencari pengalaman kuliner istimewa. Layanan kami cocok untuk mereka yang menghargai kualitas, rasa, dan pelayanan profesional.'
-      } else if (category === 'umroh' || category === 'travel') {
-        return 'Kami melayani individu, keluarga, dan kelompok yang ingin melakukan perjalanan spiritual atau wisata. Layanan kami dirancang untuk mereka yang merencanakan umroh, haji, atau perjalanan wisata yang membutuhkan bimbingan profesional.'
-      } else if (category === 'it') {
-        return 'Kami melayani bisnis dari startup hingga enterprise yang ingin mengoptimalkan operasional melalui teknologi. Layanan kami dirancang untuk perusahaan yang ingin beradaptasi dengan era digital dan memanfaatkan teknologi untuk pertumbuhan bisnis.'
-      }
-      return 'Kami melayani bisnis dari berbagai ukuran yang ingin berkembang, meningkatkan efisiensi, dan mencapai tujuan mereka. Layanan kami cocok untuk perusahaan yang menghargai profesionalisme, inovasi, dan hasil yang terukur.'
-    }
-    
-    const getHelpDescription = () => {
-      const category = props.companyData?.category || 'general'
-      if (category === 'fnb') {
-        return 'Kami membantu dengan menyediakan menu berkualitas, perencanaan acara yang detail, staf profesional, dan layanan lengkap dari persiapan hingga pembersihan. Tim kami akan memastikan acara Anda berjalan sempurna.'
-      } else if (category === 'umroh' || category === 'travel') {
-        return 'Kami membantu dengan mengurus visa, tiket pesawat, akomodasi hotel, pemandu yang berpengalaman, dan dukungan 24/7 selama perjalanan. Kami memastikan semua detail terorganisir dengan baik.'
-      } else if (category === 'it') {
-        return 'Kami membantu dengan pengembangan aplikasi custom, migrasi ke cloud, optimasi infrastruktur IT, dan dukungan teknis 24/7. Tim developer dan engineer kami akan bekerja sama dengan Anda untuk mengimplementasikan solusi teknologi yang tepat.'
-      }
-      return 'Kami membantu dengan memberikan konsultasi strategis, solusi yang disesuaikan, dukungan teknis, dan pendampingan berkelanjutan. Tim ahli kami akan bekerja sama dengan Anda untuk mencapai tujuan bisnis.'
-    }
-    
-    const getLocationDescription = () => {
-      const category = props.companyData?.category || 'general'
-      if (category === 'fnb') {
-        return 'Kami melayani berbagai lokasi dengan beberapa cabang restoran dan layanan delivery yang mencakup area perkotaan. Kami juga menyediakan layanan catering untuk acara di berbagai kota besar.'
-      } else if (category === 'umroh' || category === 'travel') {
-        return 'Kami melayani klien dari seluruh Indonesia dengan kantor pusat di Jakarta. Kami juga memiliki jaringan mitra di berbagai kota untuk memudahkan akses informasi dan pendaftaran.'
-      } else if (category === 'it') {
-        return 'Kami melayani klien secara global dengan kantor pusat di Jakarta. Dengan teknologi cloud dan remote support, kami dapat memberikan layanan IT untuk klien di seluruh dunia, 24 jam sehari, 7 hari seminggu.'
-      }
-      return 'Kami melayani klien secara nasional dengan kantor pusat di Jakarta. Kami juga menyediakan layanan konsultasi online untuk klien di seluruh Indonesia dan luar negeri.'
-    }
+    const aboutItems = computed(() => {
+      return [
+        {
+          icon: 'fas fa-hands-praying',
+          title: 'Layanan Terpercaya',
+          description: 'Pengalaman bertahun-tahun melayani jamaah dengan komitmen memberikan pelayanan terbaik'
+        },
+        {
+          icon: 'fas fa-certificate',
+          title: 'Berpengalaman',
+          description: 'Tim profesional yang telah mengantarkan ribuan jamaah dengan sukses'
+        },
+        {
+          icon: 'fas fa-shield-alt',
+          title: 'Aman & Nyaman',
+          description: 'Prioritas utama kami adalah keselamatan dan kenyamanan perjalanan Anda'
+        },
+        {
+          icon: 'fas fa-headset',
+          title: 'Dukungan 24/7',
+          description: 'Tim support siap membantu Anda kapan saja selama perjalanan'
+        }
+      ]
+    })
     
     const heroInfo = computed(() => {
-      const category = props.companyData?.category || 'general'
-      if (category === 'fnb') {
-        return [
-          { icon: 'fas fa-users', text: 'Melayani Ribuan Pelanggan' },
-          { icon: 'fas fa-map-marker-alt', text: 'Beberapa Lokasi' },
-          { icon: 'fas fa-star', text: 'Rating 5 Bintang' }
-        ]
-      } else if (category === 'umroh' || category === 'travel') {
-        return [
-          { icon: 'fas fa-plane', text: 'Mitra Perjalanan Terpercaya' },
-          { icon: 'fas fa-users', text: '10.000+ Jamaah Bahagia' },
-          { icon: 'fas fa-globe', text: 'Jangkauan Luas' }
-        ]
-      } else if (category === 'it') {
-        return [
-          { icon: 'fas fa-server', text: 'Infrastruktur Modern' },
-          { icon: 'fas fa-code', text: 'Pengembangan Custom' },
-          { icon: 'fas fa-shield-alt', text: 'Keamanan Terjamin' }
-        ]
-      }
       return [
-        { icon: 'fas fa-briefcase', text: 'Layanan Profesional' },
-        { icon: 'fas fa-clock', text: 'Dukungan 24/7' },
-        { icon: 'fas fa-trophy', text: 'Berprestasi' }
+        { icon: 'fas fa-plane', text: 'Mitra Perjalanan Terpercaya' },
+        { icon: 'fas fa-users', text: '10.000+ Jamaah Bahagia' },
+        { icon: 'fas fa-globe', text: 'Jangkauan Luas' }
       ]
     })
     
     const features = computed(() => {
-      const category = props.companyData?.category || 'general'
-      if (category === 'fnb') {
-        return [
-          { icon: '🍽️', title: 'Bahan Segar', description: 'Kami hanya menggunakan bahan-bahan terbaik dan terbaru untuk setiap hidangan' },
-          { icon: '👨‍🍳', title: 'Chef Berpengalaman', description: 'Tim chef kami memiliki pengalaman bertahun-tahun dalam menciptakan hidangan istimewa' },
-          { icon: '🚚', title: 'Pengiriman Cepat', description: 'Layanan pengiriman yang cepat dan dapat diandalkan untuk memastikan makanan tetap segar' },
-          { icon: '⭐', title: 'Kualitas Terjamin', description: 'Komitmen kami untuk memberikan pelayanan terbaik dan kepuasan pelanggan' },
-          { icon: '🎉', title: 'Menu Bervariasi', description: 'Beragam pilihan menu yang dapat disesuaikan dengan selera dan kebutuhan Anda' },
-          { icon: '💝', title: 'Pelayanan Ramah', description: 'Tim kami selalu siap melayani dengan senyuman dan keramahan yang tulus' }
-        ]
-      } else if (category === 'umroh' || category === 'travel') {
-        return [
-          { icon: '✈️', title: 'Paket Terbaik', description: 'Paket perjalanan yang dipilih dengan cermat untuk pengalaman terbaik' },
-          { icon: '🕌', title: 'Perjalanan Religi', description: 'Pengalaman perjalanan religi yang autentik dan bermakna' },
-          { icon: '🏨', title: 'Hotel Berkualitas', description: 'Akomodasi yang nyaman dan strategis untuk kenyamanan Anda' },
-          { icon: '👥', title: 'Pemandu Ahli', description: 'Pemandu yang berpengalaman, ramah, dan berpengetahuan luas' },
-          { icon: '📋', title: 'Dokumen Lengkap', description: 'Bantuan lengkap dalam pengurusan visa dan dokumen perjalanan' },
-          { icon: '🛡️', title: 'Keamanan Terjamin', description: 'Prioritas utama kami adalah keselamatan dan kenyamanan perjalanan Anda' }
-        ]
-      } else if (category === 'it') {
-        return [
-          { icon: '💻', title: 'Teknologi Terkini', description: 'Menggunakan teknologi terbaru dan inovatif untuk solusi terbaik' },
-          { icon: '⚡', title: 'Respon Cepat', description: 'Tim ahli yang siap membantu dengan respon yang cepat' },
-          { icon: '🔒', title: 'Keamanan Terjamin', description: 'Prioritas utama kami adalah keamanan data dan sistem Anda' },
-          { icon: '🚀', title: 'Inovasi Berkelanjutan', description: 'Terus berinovasi untuk memberikan solusi masa depan' },
-          { icon: '📊', title: 'Analisis Mendalam', description: 'Analisis kebutuhan bisnis yang detail untuk solusi yang tepat sasaran' },
-          { icon: '🤝', title: 'Dukungan Penuh', description: 'Dukungan teknis dan konsultasi berkelanjutan untuk kesuksesan Anda' }
-        ]
-      }
       return [
-        { icon: '💼', title: 'Profesional', description: 'Layanan profesional yang dapat Anda percaya' },
-        { icon: '⚡', title: 'Respon Cepat', description: 'Tanggapan cepat terhadap kebutuhan Anda' },
-        { icon: '🎯', title: 'Fokus Kualitas', description: 'Kami fokus pada kualitas dalam segala hal' },
-        { icon: '🤝', title: 'Mitra Terpercaya', description: 'Mitra bisnis terpercaya Anda' },
-        { icon: '📈', title: 'Hasil Terukur', description: 'Komitmen untuk memberikan hasil yang dapat diukur dan berdampak positif' },
-        { icon: '🌟', title: 'Pengalaman Luas', description: 'Tim berpengalaman dengan rekam jejak yang terbukti' }
+        { icon: '✈️', title: 'Paket Terbaik', description: 'Paket perjalanan yang dipilih dengan cermat untuk pengalaman terbaik' },
+        { icon: '🕌', title: 'Perjalanan Religi', description: 'Pengalaman perjalanan religi yang autentik dan bermakna' },
+        { icon: '🏨', title: 'Hotel Berkualitas', description: 'Akomodasi yang nyaman dan strategis untuk kenyamanan Anda' },
+        { icon: '👥', title: 'Pemandu Ahli', description: 'Pemandu yang berpengalaman, ramah, dan berpengetahuan luas' },
+        { icon: '📋', title: 'Dokumen Lengkap', description: 'Bantuan lengkap dalam pengurusan visa dan dokumen perjalanan' },
+        { icon: '🛡️', title: 'Keamanan Terjamin', description: 'Prioritas utama kami adalah keselamatan dan kenyamanan perjalanan Anda' }
       ]
     })
     
@@ -232,10 +155,7 @@ export default {
       optimizeImageUrl,
       defaultImage,
       getHeroDescription,
-      getOfferDescription,
-      getTargetDescription,
-      getHelpDescription,
-      getLocationDescription,
+      aboutItems,
       heroInfo,
       features
     }
@@ -248,10 +168,47 @@ export default {
   width: 100%;
 }
 
+/* Section Base */
+.section {
+  padding: var(--cp-section-spacing, 100px) 0;
+}
+
+.section-alt {
+  background: var(--cp-bg-secondary, #f0fdfa);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 200px;
+}
+
+@media (max-width: 1400px) {
+  .container {
+    padding: 0 100px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+  
+  .section {
+    padding: 60px 0;
+  }
+}
+
 /* Hero Section */
 .hero-section {
   position: relative;
-  min-height: 600px;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -280,55 +237,58 @@ export default {
   right: 0;
   bottom: 0;
   background: var(--cp-gradient);
-  opacity: 0.9;
+  opacity: 0.92;
   z-index: 1;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  width: 100%;
   text-align: center;
   color: #fff;
   padding: 80px 0;
 }
 
 .hero-title {
-  font-size: 56px;
+  font-size: 64px;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   color: #fff;
   line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .hero-subtitle {
   font-size: 22px;
-  margin-bottom: 40px;
+  margin-bottom: 48px;
   color: rgba(255, 255, 255, 0.95);
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.6;
+  line-height: 1.7;
+  font-weight: 400;
 }
 
 .hero-info {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  margin-bottom: 40px;
+  gap: 48px;
+  margin-bottom: 48px;
   flex-wrap: wrap;
 }
 
 .info-item {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   color: rgba(255, 255, 255, 0.95);
   font-size: 16px;
+  font-weight: 500;
 }
 
 .info-item i {
   font-size: 20px;
+  opacity: 0.9;
 }
 
 .hero-buttons {
@@ -340,7 +300,7 @@ export default {
 
 .btn-primary, .btn-secondary {
   padding: 16px 32px;
-  border-radius: 8px;
+  border-radius: 12px;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
@@ -348,98 +308,157 @@ export default {
   align-items: center;
   gap: 10px;
   font-size: 16px;
+  border: none;
+  cursor: pointer;
 }
 
 .btn-primary {
   background: #fff;
-  color: var(--cp-accent);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  color: var(--cp-accent, #0d9488);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
 }
 
 .btn-secondary {
   background: transparent;
   color: #fff;
-  border: 2px solid #fff;
+  border: 2px solid rgba(255, 255, 255, 0.9);
 }
 
 .btn-secondary:hover {
-  background: #fff;
-  color: var(--cp-accent);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
 }
 
-/* Intro Section */
-.intro-section {
-  background: #ffffff;
+.btn-large {
+  padding: 18px 40px;
+  font-size: 18px;
 }
 
-.intro-content {
+/* Section Header */
+.section-header {
   text-align: center;
+  margin-bottom: 64px;
 }
 
 .section-title {
-  font-size: 42px;
+  font-size: 48px;
   font-weight: 700;
-  color: var(--cp-text-primary, #1e293b);
-  margin-bottom: 50px;
+  color: var(--cp-text-primary, #134e4a);
+  margin-bottom: 16px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
-.intro-grid {
+.section-description {
+  font-size: 18px;
+  color: var(--cp-text-secondary, #64748b);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* About Section */
+.about-section {
+  background: var(--cp-bg-primary, #ffffff);
+}
+
+.about-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-  text-align: left;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
 }
 
-.intro-text h3 {
-  font-size: 24px;
-  color: var(--cp-text-primary, #1e293b);
-  margin-bottom: 15px;
+.about-card {
+  text-align: center;
+  padding: 40px 30px;
+  background: var(--cp-bg-primary, #ffffff);
+  border-radius: 16px;
+  border: 1px solid var(--cp-border, rgba(13, 148, 136, 0.15));
+  transition: all 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--cp-card-shadow, 0 4px 20px rgba(13, 148, 136, 0.08));
+  border-color: var(--cp-accent, #0d9488);
+}
+
+.about-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cp-gradient);
+  border-radius: 16px;
+  color: #fff;
+  font-size: 32px;
+}
+
+.about-card h3 {
+  font-size: 22px;
+  color: var(--cp-text-primary, #134e4a);
+  margin-bottom: 12px;
   font-weight: 600;
 }
 
-.intro-text p {
-  font-size: 16px;
+.about-card p {
+  font-size: 15px;
   color: var(--cp-text-secondary, #64748b);
-  line-height: 1.8;
+  line-height: 1.7;
+  margin: 0;
 }
 
 /* Features Section */
 .features-section {
-  background: #f8f9fa;
+  background: var(--cp-bg-secondary, #f0fdfa);
 }
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
 }
 
 .feature-card {
   text-align: center;
-  padding: 40px 30px;
+  padding: 48px 32px;
+  background: var(--cp-bg-primary, #ffffff);
+  border-radius: 16px;
+  border: 1px solid var(--cp-border, rgba(13, 148, 136, 0.15));
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--cp-card-shadow, 0 4px 20px rgba(13, 148, 136, 0.08));
+  border-color: var(--cp-accent, #0d9488);
 }
 
 .feature-icon {
-  font-size: 48px;
-  margin-bottom: 20px;
+  font-size: 56px;
+  margin-bottom: 24px;
+  line-height: 1;
 }
 
 .feature-card h3 {
   font-size: 22px;
-  color: var(--cp-text-primary, #1e293b);
-  margin-bottom: 15px;
+  color: var(--cp-text-primary, #134e4a);
+  margin-bottom: 16px;
   font-weight: 600;
 }
 
 .feature-card p {
-  color: var(--cp-text-secondary, #64748b);
-  line-height: 1.6;
   font-size: 15px;
+  color: var(--cp-text-secondary, #64748b);
+  line-height: 1.7;
+  margin: 0;
 }
 
 /* CTA Section */
@@ -449,29 +468,39 @@ export default {
   text-align: center;
 }
 
+.cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .cta-content h2 {
-  font-size: 42px;
-  margin-bottom: 20px;
+  font-size: 48px;
+  margin-bottom: 24px;
   color: #fff;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .cta-content p {
   font-size: 18px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   color: rgba(255, 255, 255, 0.95);
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  line-height: 1.7;
 }
 
-.btn-large {
-  padding: 18px 40px;
-  font-size: 18px;
-}
-
+/* Responsive */
 @media (max-width: 1024px) {
-  .intro-grid {
-    grid-template-columns: 1fr;
+  .hero-title {
+    font-size: 48px;
+  }
+  
+  .section-title {
+    font-size: 40px;
+  }
+  
+  .cta-content h2 {
+    font-size: 40px;
   }
 }
 
@@ -485,19 +514,41 @@ export default {
   }
 
   .hero-info {
-    gap: 20px;
+    gap: 24px;
+    flex-direction: column;
   }
 
   .section-title {
     font-size: 32px;
   }
+  
+  .section-description {
+    font-size: 16px;
+  }
 
   .cta-content h2 {
     font-size: 32px;
   }
+  
+  .cta-content p {
+    font-size: 16px;
+  }
 
+  .about-grid,
   .features-grid {
     grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
   }
 }
 </style>
