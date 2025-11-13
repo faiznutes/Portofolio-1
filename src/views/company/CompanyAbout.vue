@@ -196,7 +196,7 @@ export default {
 /* Hero Section */
 .about-hero {
   background: var(--cp-gradient);
-  color: #fff;
+  color: #ffffff !important;
   text-align: center;
   padding: 120px 0;
 }
@@ -445,7 +445,7 @@ export default {
 /* CTA Section */
 .cta-section {
   background: var(--cp-gradient);
-  color: #fff;
+  color: #ffffff !important;
   text-align: center;
 }
 
@@ -457,18 +457,21 @@ export default {
 .cta-content h2 {
   font-size: 48px;
   margin-bottom: 24px;
-  color: #fff;
+  color: #ffffff !important;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.9), 0 2px 4px rgba(0, 0, 0, 0.5);
+  opacity: 1 !important;
 }
 
 .cta-content p {
   font-size: 18px;
   margin-bottom: 40px;
-  color: #ffffff;
+  color: #ffffff !important;
   line-height: 1.7;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.9), 0 2px 6px rgba(0, 0, 0, 0.7), 0 0 2px rgba(0, 0, 0, 0.5);
+  opacity: 1 !important;
 }
 
 /* Button di CTA section dengan background gelap harus putih */

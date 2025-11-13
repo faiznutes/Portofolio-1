@@ -196,7 +196,7 @@ export default {
 /* Hero Section */
 .package-hero {
   background: var(--cp-gradient);
-  color: #fff;
+  color: #ffffff !important;
   text-align: center;
   padding: 120px 0;
 }
