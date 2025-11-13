@@ -396,7 +396,8 @@ export default {
       services,
       testimonials,
       metrics,
-      additionalServices
+      additionalServices,
+      optimizeImageUrl
     }
   }
 }

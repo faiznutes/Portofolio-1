@@ -160,7 +160,6 @@ export default {
         return 'Kami melayani individu, keluarga, klien korporat, dan penyelenggara acara yang mencari pengalaman kuliner istimewa. Layanan kami melayani mereka yang menghargai kualitas, rasa, dan pelayanan profesional.'
       } else if (category === 'umroh' || category === 'travel') {
         return 'Kami melayani individu, keluarga, dan kelompok yang mencari pengalaman perjalanan yang bermakna. Layanan kami dirancang untuk mereka yang merencanakan perjalanan religi, liburan, atau perjalanan bisnis yang menghargai keandalan dan kualitas layanan.'
-      }
       } else if (category === 'it') {
         return 'Kami melayani bisnis dari startup hingga enterprise yang ingin mengoptimalkan operasional melalui teknologi. Layanan kami dirancang untuk perusahaan yang ingin beradaptasi dengan era digital dan memanfaatkan teknologi untuk pertumbuhan bisnis.'
       }
@@ -183,13 +182,6 @@ export default {
           { icon: 'fas fa-handshake', title: 'Harga Terbaik', description: 'Harga kompetitif tanpa biaya tersembunyi' },
           { icon: 'fas fa-headset', title: 'Dukungan 24/7', description: 'Bantuan sepanjang waktu selama perjalanan Anda' }
         ]
-      }
-      return [
-        { icon: 'fas fa-users', title: 'Tim Ahli', description: 'Profesional berpengalaman dengan rekam jejak terbukti' },
-        { icon: 'fas fa-rocket', title: 'Solusi Inovatif', description: 'Pendekatan mutakhir untuk menyelesaikan tantangan bisnis Anda' },
-        { icon: 'fas fa-chart-line', title: 'Hasil Terbukti', description: 'Rekam jejak memberikan hasil bisnis yang terukur' },
-        { icon: 'fas fa-handshake', title: 'Pendekatan Kemitraan', description: 'Kami bekerja sebagai mitra Anda, bukan hanya penyedia layanan' }
-      ]
       } else if (category === 'it') {
         return [
           { icon: 'fas fa-code', title: 'Pengembangan Custom', description: 'Tim developer berpengalaman dengan teknologi terkini' },
