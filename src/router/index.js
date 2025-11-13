@@ -78,12 +78,20 @@ const routes = [
         component: CompanyHome,
         meta: {
           title: (route) => {
-            const project = getProjectById(route.params.id)
-            return project ? `${project.title} - Home` : 'Company Profile - Home'
+            try {
+              const project = getProjectById(route.params.id)
+              return project ? `${project.title} - Beranda` : 'Company Profile - Beranda'
+            } catch {
+              return 'Company Profile - Beranda'
+            }
           },
           description: (route) => {
-            const project = getProjectById(route.params.id)
-            return project ? `Welcome to ${project.title}. ${project.description?.split('\n')[0] || 'Professional services tailored to your needs.'}` : 'Company profile homepage'
+            try {
+              const project = getProjectById(route.params.id)
+              return project ? `Selamat datang di ${project.title}. ${project.description?.split('\n')[0] || 'Layanan profesional yang disesuaikan dengan kebutuhan Anda.'}` : 'Halaman beranda company profile'
+            } catch {
+              return 'Halaman beranda company profile'
+            }
           }
         }
       },
@@ -93,12 +101,20 @@ const routes = [
         component: CompanyAbout,
         meta: {
           title: (route) => {
-            const project = getProjectById(route.params.id)
-            return project ? `About - ${project.title}` : 'About - Company Profile'
+            try {
+              const project = getProjectById(route.params.id)
+              return project ? `Tentang - ${project.title}` : 'Tentang - Company Profile'
+            } catch {
+              return 'Tentang - Company Profile'
+            }
           },
           description: (route) => {
-            const project = getProjectById(route.params.id)
-            return project ? `Learn more about ${project.title} - our mission, vision, values, and team.` : 'About our company'
+            try {
+              const project = getProjectById(route.params.id)
+              return project ? `Pelajari lebih lanjut tentang ${project.title} - misi, visi, nilai-nilai, dan tim kami.` : 'Tentang perusahaan kami'
+            } catch {
+              return 'Tentang perusahaan kami'
+            }
           }
         }
       },
@@ -108,12 +124,20 @@ const routes = [
         component: CompanyServices,
         meta: {
           title: (route) => {
-            const project = getProjectById(route.params.id)
-            return project ? `Services - ${project.title}` : 'Services - Company Profile'
+            try {
+              const project = getProjectById(route.params.id)
+              return project ? `Layanan - ${project.title}` : 'Layanan - Company Profile'
+            } catch {
+              return 'Layanan - Company Profile'
+            }
           },
           description: (route) => {
-            const project = getProjectById(route.params.id)
-            return project ? `Our comprehensive services at ${project.title}. Discover how we can help you achieve your goals.` : 'Our services'
+            try {
+              const project = getProjectById(route.params.id)
+              return project ? `Layanan lengkap kami di ${project.title}. Temukan bagaimana kami dapat membantu Anda mencapai tujuan.` : 'Layanan kami'
+            } catch {
+              return 'Layanan kami'
+            }
           }
         }
       },
@@ -123,12 +147,20 @@ const routes = [
         component: CompanyGallery,
         meta: {
           title: (route) => {
-            const project = getProjectById(route.params.id)
-            return project ? `Gallery - ${project.title}` : 'Gallery - Company Profile'
+            try {
+              const project = getProjectById(route.params.id)
+              return project ? `Galeri - ${project.title}` : 'Galeri - Company Profile'
+            } catch {
+              return 'Galeri - Company Profile'
+            }
           },
           description: (route) => {
-            const project = getProjectById(route.params.id)
-            return project ? `Explore our gallery showcasing ${project.title}'s work, achievements, and visual stories.` : 'Our gallery'
+            try {
+              const project = getProjectById(route.params.id)
+              return project ? `Jelajahi galeri kami yang menampilkan karya, pencapaian, dan cerita visual dari ${project.title}.` : 'Galeri kami'
+            } catch {
+              return 'Galeri kami'
+            }
           }
         }
       },
@@ -138,12 +170,20 @@ const routes = [
         component: CompanyContact,
         meta: {
           title: (route) => {
-            const project = getProjectById(route.params.id)
-            return project ? `Contact - ${project.title}` : 'Contact - Company Profile'
+            try {
+              const project = getProjectById(route.params.id)
+              return project ? `Kontak - ${project.title}` : 'Kontak - Company Profile'
+            } catch {
+              return 'Kontak - Company Profile'
+            }
           },
           description: (route) => {
-            const project = getProjectById(route.params.id)
-            return project ? `Get in touch with ${project.title}. Contact us for inquiries, quotes, or support.` : 'Contact us'
+            try {
+              const project = getProjectById(route.params.id)
+              return project ? `Hubungi ${project.title}. Hubungi kami untuk pertanyaan, penawaran, atau dukungan.` : 'Hubungi kami'
+            } catch {
+              return 'Hubungi kami'
+            }
           }
         }
       },
@@ -153,10 +193,14 @@ const routes = [
         component: CompanyTerms,
         meta: {
           title: (route) => {
-            const project = getProjectById(route.params.id)
-            return project ? `Terms & Conditions - ${project.title}` : 'Terms & Conditions'
+            try {
+              const project = getProjectById(route.params.id)
+              return project ? `Syarat & Ketentuan - ${project.title}` : 'Syarat & Ketentuan'
+            } catch {
+              return 'Syarat & Ketentuan'
+            }
           },
-          description: 'Terms and conditions, privacy policy, and legal information.',
+          description: 'Syarat dan ketentuan, kebijakan privasi, dan informasi legal.',
           robots: 'noindex, nofollow'
         }
       }
@@ -188,8 +232,12 @@ const router = createRouter({
 
 // Update document title and meta tags on route change
 router.beforeEach((to, from, next) => {
+  // Scroll to top on route change
+  window.scrollTo({ top: 0, behavior: 'instant' })
+  
   // Update document title
-  document.title = to.meta.title || 'Faiznute - Portfolio'
+  const title = typeof to.meta.title === 'function' ? to.meta.title(to) : (to.meta.title || 'Faiznute - Portfolio')
+  document.title = title
   
   // Update meta description
   let metaDescription = document.querySelector('meta[name="description"]')
@@ -198,7 +246,8 @@ router.beforeEach((to, from, next) => {
     metaDescription.setAttribute('name', 'description')
     document.head.appendChild(metaDescription)
   }
-  metaDescription.setAttribute('content', to.meta.description || 'Portfolio Faiznute - Graphic Designer & Video Editor')
+  const description = typeof to.meta.description === 'function' ? to.meta.description(to) : (to.meta.description || 'Portfolio Faiznute - Graphic Designer & Video Editor')
+  metaDescription.setAttribute('content', description)
   
   // Update robots meta
   let metaRobots = document.querySelector('meta[name="robots"]')
@@ -220,9 +269,6 @@ router.beforeEach((to, from, next) => {
   }
   canonical.setAttribute('href', `https://portofolio-1-alpha.vercel.app${to.fullPath}`)
   
-  // Scroll to top on route change
-  window.scrollTo({ top: 0, behavior: 'instant' })
-  
   // Update Open Graph tags
   const updateOGTag = (property, content) => {
     let tag = document.querySelector(`meta[property="${property}"]`)
@@ -234,8 +280,8 @@ router.beforeEach((to, from, next) => {
     tag.setAttribute('content', content)
   }
   
-  updateOGTag('og:title', to.meta.title || document.title)
-  updateOGTag('og:description', to.meta.description || metaDescription.getAttribute('content'))
+  updateOGTag('og:title', title)
+  updateOGTag('og:description', description)
   updateOGTag('og:url', `https://portofolio-1-alpha.vercel.app${to.fullPath}`)
   
   next()

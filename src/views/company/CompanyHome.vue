@@ -3,7 +3,7 @@
     <!-- Hero Section dengan Background Visual -->
     <section class="hero-section">
       <div class="hero-background">
-        <img :src="companyData?.image || 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1920&auto=format&fit=crop'" 
+        <img :src="optimizeImageUrl(companyData?.image || defaultImage)" 
              :alt="companyData?.title" 
              loading="eager"
              class="hero-bg-image">
@@ -21,41 +21,65 @@
           </div>
           <div class="hero-buttons">
             <router-link :to="`/website/${projectId}/contact`" class="btn-primary">
-              <i class="fas fa-envelope"></i> Get In Touch
+              <i class="fas fa-envelope"></i> Hubungi Kami
             </router-link>
             <router-link :to="`/website/${projectId}/services`" class="btn-secondary">
-              <i class="fas fa-briefcase"></i> Our Services
+              <i class="fas fa-briefcase"></i> Layanan Kami
             </router-link>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- What We Offer Section -->
-    <section class="offer-section section">
+    <!-- Penjelasan Singkat -->
+    <section class="intro-section section">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">What We Offer</h2>
-          <p class="section-description">{{ getOfferDescription() }}</p>
+        <div class="intro-content">
+          <h2 class="section-title">Tentang Kami</h2>
+          <div class="intro-grid">
+            <div class="intro-text">
+              <h3>Apa yang Kami Tawarkan?</h3>
+              <p>{{ getOfferDescription() }}</p>
+            </div>
+            <div class="intro-text">
+              <h3>Siapa Target Kami?</h3>
+              <p>{{ getTargetDescription() }}</p>
+            </div>
+            <div class="intro-text">
+              <h3>Bagaimana Kami Membantu?</h3>
+              <p>{{ getHelpDescription() }}</p>
+            </div>
+            <div class="intro-text">
+              <h3>Dimana Jangkauan Kami?</h3>
+              <p>{{ getLocationDescription() }}</p>
+            </div>
+          </div>
         </div>
-        <div class="offer-grid">
-          <div class="offer-card card" v-for="(offer, index) in offers" :key="index">
-            <div class="offer-icon">{{ offer.icon }}</div>
-            <h3>{{ offer.title }}</h3>
-            <p>{{ offer.description }}</p>
+      </div>
+    </section>
+
+    <!-- Fitur Unggulan -->
+    <section class="features-section section section-alt">
+      <div class="container">
+        <h2 class="section-title">Mengapa Memilih Kami?</h2>
+        <div class="features-grid">
+          <div class="feature-card card" v-for="(feature, index) in features" :key="index">
+            <div class="feature-icon">{{ feature.icon }}</div>
+            <h3>{{ feature.title }}</h3>
+            <p>{{ feature.description }}</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section section section-alt">
+    <section class="cta-section section">
       <div class="container">
         <div class="cta-content">
-          <h2>Ready to Get Started?</h2>
-          <p>Let's work together to achieve your goals. Contact us today and discover how we can help you.</p>
+          <h2>Siap Memulai?</h2>
+          <p>Mari bekerja sama untuk mencapai tujuan Anda. Hubungi kami hari ini dan temukan bagaimana kami dapat membantu Anda.</p>
           <router-link :to="`/website/${projectId}/contact`" class="btn-primary btn-large">
-            <i class="fas fa-paper-plane"></i> Contact Us Now
+            <i class="fas fa-paper-plane"></i> Hubungi Kami Sekarang
           </router-link>
         </div>
       </div>
@@ -66,6 +90,7 @@
 <script>
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
+import { optimizeImageUrl } from '../../composables/useImageOptimizer'
 
 export default {
   name: 'CompanyHome',
@@ -78,76 +103,112 @@ export default {
   setup(props) {
     const route = useRoute()
     const projectId = computed(() => route.params.id)
+    const defaultImage = 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1920&auto=format&fit=crop'
     
     const getHeroDescription = () => {
       const desc = props.companyData?.description || ''
-      const firstLine = desc.split('\n')[0] || 'Welcome to our company'
+      const firstLine = desc.split('\n')[0] || 'Selamat datang di perusahaan kami'
       return firstLine.length > 150 ? firstLine.substring(0, 150) + '...' : firstLine
     }
     
     const getOfferDescription = () => {
       const category = props.companyData?.category || 'general'
       if (category === 'fnb') {
-        return 'We provide exceptional food and beverage services tailored to your needs, from fine dining to catering events.'
+        return 'Kami menyediakan layanan makanan dan minuman berkualitas tinggi, mulai dari fine dining hingga catering untuk acara besar. Setiap hidangan dibuat dengan bahan-bahan segar dan resep yang telah teruji.'
       } else if (category === 'umroh' || category === 'travel') {
-        return 'Experience unforgettable journeys with our carefully curated travel packages and professional services.'
+        return 'Kami menawarkan paket perjalanan lengkap untuk umroh, haji, dan wisata religi. Dengan pengalaman bertahun-tahun, kami memastikan perjalanan spiritual Anda berjalan lancar dan bermakna.'
       }
-      return 'We deliver comprehensive solutions designed to help your business grow and succeed.'
+      return 'Kami menyediakan solusi profesional yang dirancang khusus untuk membantu bisnis Anda tumbuh dan berkembang. Dari konsultasi strategis hingga implementasi teknis, kami siap mendukung kesuksesan Anda.'
+    }
+    
+    const getTargetDescription = () => {
+      const category = props.companyData?.category || 'general'
+      if (category === 'fnb') {
+        return 'Kami melayani individu, keluarga, klien korporat, dan penyelenggara acara yang mencari pengalaman kuliner istimewa. Layanan kami cocok untuk mereka yang menghargai kualitas, rasa, dan pelayanan profesional.'
+      } else if (category === 'umroh' || category === 'travel') {
+        return 'Kami melayani individu, keluarga, dan kelompok yang ingin melakukan perjalanan spiritual atau wisata. Layanan kami dirancang untuk mereka yang merencanakan umroh, haji, atau perjalanan wisata yang membutuhkan bimbingan profesional.'
+      }
+      return 'Kami melayani bisnis dari berbagai ukuran yang ingin berkembang, meningkatkan efisiensi, dan mencapai tujuan mereka. Layanan kami cocok untuk perusahaan yang menghargai profesionalisme, inovasi, dan hasil yang terukur.'
+    }
+    
+    const getHelpDescription = () => {
+      const category = props.companyData?.category || 'general'
+      if (category === 'fnb') {
+        return 'Kami membantu dengan menyediakan menu berkualitas, perencanaan acara yang detail, staf profesional, dan layanan lengkap dari persiapan hingga pembersihan. Tim kami akan memastikan acara Anda berjalan sempurna.'
+      } else if (category === 'umroh' || category === 'travel') {
+        return 'Kami membantu dengan mengurus visa, tiket pesawat, akomodasi hotel, pemandu yang berpengalaman, dan dukungan 24/7 selama perjalanan. Kami memastikan semua detail terorganisir dengan baik.'
+      }
+      return 'Kami membantu dengan memberikan konsultasi strategis, solusi yang disesuaikan, dukungan teknis, dan pendampingan berkelanjutan. Tim ahli kami akan bekerja sama dengan Anda untuk mencapai tujuan bisnis.'
+    }
+    
+    const getLocationDescription = () => {
+      const category = props.companyData?.category || 'general'
+      if (category === 'fnb') {
+        return 'Kami melayani berbagai lokasi dengan beberapa cabang restoran dan layanan delivery yang mencakup area perkotaan. Kami juga menyediakan layanan catering untuk acara di berbagai kota besar.'
+      } else if (category === 'umroh' || category === 'travel') {
+        return 'Kami melayani klien dari seluruh Indonesia dengan kantor pusat di Jakarta. Kami juga memiliki jaringan mitra di berbagai kota untuk memudahkan akses informasi dan pendaftaran.'
+      }
+      return 'Kami melayani klien secara nasional dengan kantor pusat di Jakarta. Kami juga menyediakan layanan konsultasi online untuk klien di seluruh Indonesia dan luar negeri.'
     }
     
     const heroInfo = computed(() => {
       const category = props.companyData?.category || 'general'
       if (category === 'fnb') {
         return [
-          { icon: 'fas fa-users', text: 'Serving Thousands' },
-          { icon: 'fas fa-map-marker-alt', text: 'Multiple Locations' },
-          { icon: 'fas fa-star', text: '5 Star Rated' }
+          { icon: 'fas fa-users', text: 'Melayani Ribuan Pelanggan' },
+          { icon: 'fas fa-map-marker-alt', text: 'Beberapa Lokasi' },
+          { icon: 'fas fa-star', text: 'Rating 5 Bintang' }
         ]
       } else if (category === 'umroh' || category === 'travel') {
         return [
-          { icon: 'fas fa-plane', text: 'Trusted Travel Partner' },
-          { icon: 'fas fa-users', text: '10,000+ Happy Travelers' },
-          { icon: 'fas fa-globe', text: 'Worldwide Coverage' }
+          { icon: 'fas fa-plane', text: 'Mitra Perjalanan Terpercaya' },
+          { icon: 'fas fa-users', text: '10.000+ Jamaah Bahagia' },
+          { icon: 'fas fa-globe', text: 'Jangkauan Luas' }
         ]
       }
       return [
-        { icon: 'fas fa-briefcase', text: 'Professional Service' },
-        { icon: 'fas fa-clock', text: '24/7 Support' },
-        { icon: 'fas fa-trophy', text: 'Award Winning' }
+        { icon: 'fas fa-briefcase', text: 'Layanan Profesional' },
+        { icon: 'fas fa-clock', text: 'Dukungan 24/7' },
+        { icon: 'fas fa-trophy', text: 'Berprestasi' }
       ]
     })
     
-    const offers = computed(() => {
+    const features = computed(() => {
       const category = props.companyData?.category || 'general'
       if (category === 'fnb') {
         return [
-          { icon: '🍽️', title: 'What We Serve', description: 'Delicious meals made with fresh, quality ingredients' },
-          { icon: '👥', title: 'Who We Serve', description: 'Individuals, families, and businesses of all sizes' },
-          { icon: '💡', title: 'How We Help', description: 'From menu planning to delivery, we handle everything' },
-          { icon: '📍', title: 'Where We Are', description: 'Serving customers across multiple locations' }
+          { icon: '🍽️', title: 'Bahan Segar', description: 'Kami hanya menggunakan bahan-bahan terbaik dan terbaru untuk setiap hidangan' },
+          { icon: '👨‍🍳', title: 'Chef Berpengalaman', description: 'Tim chef kami memiliki pengalaman bertahun-tahun dalam menciptakan hidangan istimewa' },
+          { icon: '🚚', title: 'Pengiriman Cepat', description: 'Layanan pengiriman yang cepat dan dapat diandalkan untuk memastikan makanan tetap segar' },
+          { icon: '⭐', title: 'Kualitas Terjamin', description: 'Komitmen kami untuk memberikan pelayanan terbaik dan kepuasan pelanggan' }
         ]
       } else if (category === 'umroh' || category === 'travel') {
         return [
-          { icon: '✈️', title: 'What We Offer', description: 'Complete travel packages and religious tours' },
-          { icon: '👥', title: 'Who We Serve', description: 'Individuals, families, and groups seeking spiritual journeys' },
-          { icon: '💡', title: 'How We Help', description: 'From visa processing to guided tours, we make it easy' },
-          { icon: '🌍', title: 'Where We Go', description: 'Destinations worldwide with trusted partners' }
+          { icon: '✈️', title: 'Paket Terbaik', description: 'Paket perjalanan yang dipilih dengan cermat untuk pengalaman terbaik' },
+          { icon: '🕌', title: 'Perjalanan Religi', description: 'Pengalaman perjalanan religi yang autentik dan bermakna' },
+          { icon: '🏨', title: 'Hotel Berkualitas', description: 'Akomodasi yang nyaman dan strategis untuk kenyamanan Anda' },
+          { icon: '👥', title: 'Pemandu Ahli', description: 'Pemandu yang berpengalaman, ramah, dan berpengetahuan luas' }
         ]
       }
       return [
-        { icon: '💼', title: 'What We Do', description: 'Professional services and solutions' },
-        { icon: '👥', title: 'Who We Serve', description: 'Businesses looking to grow and succeed' },
-        { icon: '💡', title: 'How We Help', description: 'Customized solutions tailored to your needs' },
-        { icon: '📍', title: 'Where We Operate', description: 'Serving clients globally' }
+        { icon: '💼', title: 'Profesional', description: 'Layanan profesional yang dapat Anda percaya' },
+        { icon: '⚡', title: 'Respon Cepat', description: 'Tanggapan cepat terhadap kebutuhan Anda' },
+        { icon: '🎯', title: 'Fokus Kualitas', description: 'Kami fokus pada kualitas dalam segala hal' },
+        { icon: '🤝', title: 'Mitra Terpercaya', description: 'Mitra bisnis terpercaya Anda' }
       ]
     })
     
     return {
       projectId,
+      optimizeImageUrl,
+      defaultImage,
       getHeroDescription,
       getOfferDescription,
+      getTargetDescription,
+      getHelpDescription,
+      getLocationDescription,
       heroInfo,
-      offers
+      features
     }
   }
 }
@@ -281,55 +342,71 @@ export default {
   color: #2563eb;
 }
 
-/* Offer Section */
-.offer-section {
+/* Intro Section */
+.intro-section {
   background: #ffffff;
 }
 
-.section-header {
+.intro-content {
   text-align: center;
-  margin-bottom: 60px;
 }
 
 .section-title {
   font-size: 42px;
   font-weight: 700;
   color: #1a1a1a;
-  margin-bottom: 15px;
+  margin-bottom: 50px;
 }
 
-.section-description {
-  font-size: 18px;
+.intro-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  text-align: left;
+}
+
+.intro-text h3 {
+  font-size: 24px;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.intro-text p {
+  font-size: 16px;
   color: #6c757d;
-  max-width: 700px;
-  margin: 0 auto;
   line-height: 1.8;
 }
 
-.offer-grid {
+/* Features Section */
+.features-section {
+  background: #f8f9fa;
+}
+
+.features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
 }
 
-.offer-card {
+.feature-card {
   text-align: center;
   padding: 40px 30px;
 }
 
-.offer-icon {
+.feature-icon {
   font-size: 48px;
   margin-bottom: 20px;
 }
 
-.offer-card h3 {
+.feature-card h3 {
   font-size: 22px;
   color: #1a1a1a;
   margin-bottom: 15px;
   font-weight: 600;
 }
 
-.offer-card p {
+.feature-card p {
   color: #6c757d;
   line-height: 1.6;
   font-size: 15px;
@@ -362,6 +439,12 @@ export default {
   font-size: 18px;
 }
 
+@media (max-width: 1024px) {
+  .intro-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-title {
     font-size: 36px;
@@ -383,7 +466,7 @@ export default {
     font-size: 32px;
   }
 
-  .offer-grid {
+  .features-grid {
     grid-template-columns: 1fr;
   }
 }
