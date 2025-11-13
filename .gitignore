@@ -26,3 +26,8 @@ dist-ssr
 *.sln
 *.sw?
 
+auto-push.bat
+CARA-EDIT-GIT-HOOK.md
+edit-git-hook.ps1
+push.ps1
+setup-auto-push.ps1

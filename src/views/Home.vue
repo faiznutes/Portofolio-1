@@ -1,7 +1,7 @@
 <template>
   <div class="home-page">
     <section class="profile-section">
-      <img src="/assets/images/1000121680.png" alt="Foto Profil" class="profile-photo">
+      <img src="/assets/images/1000121680.png" alt="Muhamad Faiz Abdurrahman - Graphic Designer & Video Editor" class="profile-photo" loading="eager" fetchpriority="high">
       <h2 class="profile-name">Muhamad Faiz Abdurrahman</h2>
       <h4 class="profile-job">Graphic Designer & Video Editor</h4>
       <p class="profile-bio">
@@ -14,7 +14,7 @@
       <h2 class="skills-title">Keahlian Saya</h2>
       <div class="skills-grid">
         <div class="skill-box" v-for="skill in skills" :key="skill.name">
-          <img :src="skill.icon" :alt="skill.name">
+          <img :src="skill.icon" :alt="skill.name" loading="lazy">
           <h3>{{ skill.name }}</h3>
           <p>{{ skill.description }}</p>
           <div class="skill-progress">
@@ -33,7 +33,7 @@
           :key="project.id"
           @click="goToProject(project.id)"
         >
-          <img :src="project.image" :alt="project.title" class="project-thumb">
+          <img :src="project.image" :alt="project.title" class="project-thumb" loading="lazy">
           <h3 class="project-name">{{ project.title }}</h3>
           <p class="project-desc">{{ truncate(project.description, 20) }}</p>
           <span class="project-tag">{{ capitalizeFirst(project.category) }}</span>

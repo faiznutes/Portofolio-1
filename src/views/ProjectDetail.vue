@@ -10,7 +10,7 @@
       </div>
 
       <div class="projects3-image">
-        <img :src="project.image || '/assets/images/project1.jpg'" :alt="project.title">
+        <img :src="project.image || '/assets/images/project1.jpg'" :alt="project.title" loading="eager" fetchpriority="high">
       </div>
 
       <div class="projects3-desc">
@@ -37,6 +37,7 @@
             :src="item.src" 
             :alt="item.title || `Image ${index + 1}`"
             class="gallery-image"
+            loading="lazy"
           >
         </div>
       </div>
@@ -53,7 +54,7 @@
 </template>
 
 <script>
-import { computed } from 'vue'
+import { computed, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { useProjects } from '../composables/useProjects'
 
@@ -71,6 +72,17 @@ export default {
     
     const projectId = props.id || route.params.id
     const project = getProjectById(projectId)
+    
+    // Update meta tags when project changes
+    watch(() => project, (newProject) => {
+      if (newProject) {
+        document.title = `${newProject.title} - Faiznute Portfolio`
+        let metaDescription = document.querySelector('meta[name="description"]')
+        if (metaDescription) {
+          metaDescription.setAttribute('content', newProject.description || 'Project detail Faiznute Portfolio')
+        }
+      }
+    }, { immediate: true })
 
     const projectYear = computed(() => {
       if (!project || !project.date) return ''

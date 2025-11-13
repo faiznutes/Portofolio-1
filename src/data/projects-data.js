@@ -17,8 +17,8 @@ export const staticProjectsData = [
     ]
   },
   {
-    id: "banner-pencalonan-bupati-lamongan",
-    title: "Banner Pencalonan Bupati Lamongan",
+    id: "pencalonan-bupati-lamongan",
+    title: "Pencalonan Bupati Lamongan",
     category: "design",
     image: "/assets/images/banner/Social.jpg",
     description: "Dalam proyek ini, saya bertanggung jawab mendesain berbagai kebutuhan visual untuk kampanye pencalonan Bupati Lamongan. Mulai dari pembuatan banner utama, banner untuk media sosial, hingga banner acara, semuanya dirancang dengan tujuan mendukung kelancaran dan kesuksesan kampanye. Desain yang saya buat mengutamakan pesan yang jelas, estetika yang menarik, serta kesesuaian dengan citra kandidat, sehingga mampu menarik perhatian dan meningkatkan engagement masyarakat. Dengan pendekatan kreatif dan strategis, saya memastikan setiap elemen desain berkontribusi pada penyampaian visi dan misi calon bupati secara efektif.",

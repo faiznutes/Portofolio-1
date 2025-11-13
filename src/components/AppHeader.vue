@@ -45,11 +45,13 @@ export default {
   position: sticky;
   top: 0;
   left: 0;
-  background-color: var(--section-bg);
+  background: linear-gradient(135deg, rgba(26, 35, 50, 0.95) 0%, rgba(15, 20, 25, 0.95) 100%);
+  backdrop-filter: blur(10px);
   box-shadow: 0 2px 6px var(--shadow-color);
   z-index: 1000;
   padding: 20px;
   max-width: 100vw;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .container {

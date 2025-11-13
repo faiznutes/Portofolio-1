@@ -11,6 +11,28 @@ export default defineConfig({
   },
   server: {
     port: 3000
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vue-vendor': ['vue', 'vue-router']
+        }
+      }
+    },
+    cssCodeSplit: true,
+    sourcemap: false,
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true
+      }
+    },
+    chunkSizeWarningLimit: 1000
+  },
+  optimizeDeps: {
+    include: ['vue', 'vue-router']
   }
 })
 

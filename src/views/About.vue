@@ -4,7 +4,7 @@
       <h2 class="skills-title">Tentang Saya</h2>
       <div class="about2-content">
         <div class="about2-image">
-          <img src="/assets/images/1000121680.png" alt="Foto Faiz Nute">
+          <img src="/assets/images/1000121680.png" alt="Muhamad Faiz Abdurrahman - Graphic Designer & Video Editor" loading="lazy">
         </div>
 
         <div class="about2-text">

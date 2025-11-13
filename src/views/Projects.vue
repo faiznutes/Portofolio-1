@@ -14,14 +14,14 @@
         </button>
       </div>
 
-      <div class="projects-grid" v-if="paginatedProjects.length > 0">
+      <div class="projects2-grid" v-if="paginatedProjects.length > 0">
         <div 
           class="project-card" 
           v-for="project in paginatedProjects" 
           :key="project.id"
           @click="goToProject(project.id)"
         >
-          <img :src="project.image || '/assets/images/project1.jpg'" :alt="project.title">
+          <img :src="project.image || '/assets/images/project1.jpg'" :alt="project.title" loading="lazy">
           <div class="project-info">
             <h3>{{ project.title }}</h3>
             <p>{{ truncate(project.description, 5) }}</p>
