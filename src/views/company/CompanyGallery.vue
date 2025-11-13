@@ -199,6 +199,7 @@ export default {
     
     return {
       projectId,
+      optimizeImageUrl,
       getGalleryDescription,
       galleryItems,
       galleryStories,
