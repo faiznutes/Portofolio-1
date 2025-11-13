@@ -296,7 +296,7 @@ export default {
 
 .package-duration {
   font-size: 16px;
-  color: var(--cp-text-secondary, #4a5568);
+  color: var(--cp-text-secondary, #334155);
   margin: 0;
 }
 
