@@ -232,6 +232,17 @@ const router = createRouter({
 
 // Update document title and meta tags on route change
 router.beforeEach((to, from, next) => {
+  // Redirect project website dari /project/{id} ke /website/{id}
+  if (to.name === 'ProjectDetail' && to.params.id) {
+    const project = getProjectById(to.params.id)
+    const websiteCategories = ['website', 'fnb', 'umroh', 'travel', 'it']
+    if (project && websiteCategories.includes(project.category)) {
+      // Redirect ke /website/{id} untuk project website
+      next({ path: `/website/${to.params.id}`, replace: true })
+      return
+    }
+  }
+  
   // Scroll to top on route change
   window.scrollTo({ top: 0, behavior: 'instant' })
   
