@@ -113,7 +113,7 @@ export default {
 .navbar-container {
   max-width: 100%;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -219,7 +219,23 @@ export default {
   transition: all 0.3s ease;
 }
 
+@media (max-width: 1400px) {
+  .navbar-container {
+    padding: 0 100px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .navbar-container {
+    padding: 0 40px;
+  }
+}
+
 @media (max-width: 768px) {
+  .navbar-container {
+    padding: 0 20px;
+  }
+  
   .mobile-toggle {
     display: flex;
   }

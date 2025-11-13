@@ -1,14 +1,14 @@
 /* Company Profile Theme - Modern, Simple, Elegant */
 :root {
   --cp-bg-primary: #ffffff;
-  --cp-bg-secondary: #f8f9fa;
-  --cp-text-primary: #1a1a1a;
-  --cp-text-secondary: #6c757d;
-  --cp-accent: #2563eb;
-  --cp-accent-hover: #1d4ed8;
-  --cp-border: #e5e7eb;
-  --cp-shadow: rgba(0, 0, 0, 0.1);
-  --cp-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --cp-bg-secondary: #f8fafc;
+  --cp-text-primary: #1e293b;
+  --cp-text-secondary: #64748b;
+  --cp-accent: #0ea5e9;
+  --cp-accent-hover: #0284c7;
+  --cp-border: #e2e8f0;
+  --cp-shadow: rgba(14, 165, 233, 0.1);
+  --cp-gradient: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
 }
 
 .company-profile-wrapper {
@@ -51,12 +51,12 @@
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 15px var(--cp-shadow);
 }
 
 .company-profile-wrapper .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 6px 20px rgba(14, 165, 233, 0.25);
 }
 
 .company-profile-wrapper .btn-secondary {
@@ -102,12 +102,18 @@
 
 /* Container - dengan batas tengah agar tidak terlalu lebar */
 .company-profile-wrapper .container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 60px;
+  padding: 0 200px;
 }
 
 /* Untuk layar lebih kecil, kurangi padding */
+@media (max-width: 1400px) {
+  .company-profile-wrapper .container {
+    padding: 0 100px;
+  }
+}
+
 @media (max-width: 1024px) {
   .company-profile-wrapper .container {
     max-width: 900px;

@@ -13,6 +13,12 @@
         <router-link to="/projects">Back to Projects</router-link>
       </div>
     </div>
+    <CompanyFooter 
+      v-if="companyData"
+      :project-id="projectId"
+      :company-name="companyData?.title || 'Company'"
+      :company-description="companyData?.description?.split('\n')[0] || 'Layanan profesional yang dapat Anda percaya.'"
+    />
   </div>
 </template>
 
@@ -21,11 +27,13 @@ import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { useProjects } from '../composables/useProjects'
 import CompanyNavbar from '../components/CompanyNavbar.vue'
+import CompanyFooter from '../components/CompanyFooter.vue'
 
 export default {
   name: 'CompanyProfile',
   components: {
-    CompanyNavbar
+    CompanyNavbar,
+    CompanyFooter
   },
   setup() {
     const route = useRoute()

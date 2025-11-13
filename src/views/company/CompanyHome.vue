@@ -194,28 +194,36 @@ export default {
           { icon: '🍽️', title: 'Bahan Segar', description: 'Kami hanya menggunakan bahan-bahan terbaik dan terbaru untuk setiap hidangan' },
           { icon: '👨‍🍳', title: 'Chef Berpengalaman', description: 'Tim chef kami memiliki pengalaman bertahun-tahun dalam menciptakan hidangan istimewa' },
           { icon: '🚚', title: 'Pengiriman Cepat', description: 'Layanan pengiriman yang cepat dan dapat diandalkan untuk memastikan makanan tetap segar' },
-          { icon: '⭐', title: 'Kualitas Terjamin', description: 'Komitmen kami untuk memberikan pelayanan terbaik dan kepuasan pelanggan' }
+          { icon: '⭐', title: 'Kualitas Terjamin', description: 'Komitmen kami untuk memberikan pelayanan terbaik dan kepuasan pelanggan' },
+          { icon: '🎉', title: 'Menu Bervariasi', description: 'Beragam pilihan menu yang dapat disesuaikan dengan selera dan kebutuhan Anda' },
+          { icon: '💝', title: 'Pelayanan Ramah', description: 'Tim kami selalu siap melayani dengan senyuman dan keramahan yang tulus' }
         ]
       } else if (category === 'umroh' || category === 'travel') {
         return [
           { icon: '✈️', title: 'Paket Terbaik', description: 'Paket perjalanan yang dipilih dengan cermat untuk pengalaman terbaik' },
           { icon: '🕌', title: 'Perjalanan Religi', description: 'Pengalaman perjalanan religi yang autentik dan bermakna' },
           { icon: '🏨', title: 'Hotel Berkualitas', description: 'Akomodasi yang nyaman dan strategis untuk kenyamanan Anda' },
-          { icon: '👥', title: 'Pemandu Ahli', description: 'Pemandu yang berpengalaman, ramah, dan berpengetahuan luas' }
+          { icon: '👥', title: 'Pemandu Ahli', description: 'Pemandu yang berpengalaman, ramah, dan berpengetahuan luas' },
+          { icon: '📋', title: 'Dokumen Lengkap', description: 'Bantuan lengkap dalam pengurusan visa dan dokumen perjalanan' },
+          { icon: '🛡️', title: 'Keamanan Terjamin', description: 'Prioritas utama kami adalah keselamatan dan kenyamanan perjalanan Anda' }
         ]
       } else if (category === 'it') {
         return [
           { icon: '💻', title: 'Teknologi Terkini', description: 'Menggunakan teknologi terbaru dan inovatif untuk solusi terbaik' },
           { icon: '⚡', title: 'Respon Cepat', description: 'Tim ahli yang siap membantu dengan respon yang cepat' },
           { icon: '🔒', title: 'Keamanan Terjamin', description: 'Prioritas utama kami adalah keamanan data dan sistem Anda' },
-          { icon: '🚀', title: 'Inovasi Berkelanjutan', description: 'Terus berinovasi untuk memberikan solusi masa depan' }
+          { icon: '🚀', title: 'Inovasi Berkelanjutan', description: 'Terus berinovasi untuk memberikan solusi masa depan' },
+          { icon: '📊', title: 'Analisis Mendalam', description: 'Analisis kebutuhan bisnis yang detail untuk solusi yang tepat sasaran' },
+          { icon: '🤝', title: 'Dukungan Penuh', description: 'Dukungan teknis dan konsultasi berkelanjutan untuk kesuksesan Anda' }
         ]
       }
       return [
         { icon: '💼', title: 'Profesional', description: 'Layanan profesional yang dapat Anda percaya' },
         { icon: '⚡', title: 'Respon Cepat', description: 'Tanggapan cepat terhadap kebutuhan Anda' },
         { icon: '🎯', title: 'Fokus Kualitas', description: 'Kami fokus pada kualitas dalam segala hal' },
-        { icon: '🤝', title: 'Mitra Terpercaya', description: 'Mitra bisnis terpercaya Anda' }
+        { icon: '🤝', title: 'Mitra Terpercaya', description: 'Mitra bisnis terpercaya Anda' },
+        { icon: '📈', title: 'Hasil Terukur', description: 'Komitmen untuk memberikan hasil yang dapat diukur dan berdampak positif' },
+        { icon: '🌟', title: 'Pengalaman Luas', description: 'Tim berpengalaman dengan rekam jejak yang terbukti' }
       ]
     })
     
@@ -271,7 +279,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.85) 0%, rgba(118, 75, 162, 0.85) 100%);
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.85) 0%, rgba(20, 184, 166, 0.85) 100%);
   z-index: 1;
 }
 
@@ -343,7 +351,7 @@ export default {
 
 .btn-primary {
   background: #fff;
-  color: #2563eb;
+  color: #0ea5e9;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -360,7 +368,7 @@ export default {
 
 .btn-secondary:hover {
   background: #fff;
-  color: #2563eb;
+  color: #0ea5e9;
 }
 
 /* Intro Section */
@@ -375,7 +383,7 @@ export default {
 .section-title {
   font-size: 42px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #1e293b;
   margin-bottom: 50px;
 }
 
@@ -388,14 +396,14 @@ export default {
 
 .intro-text h3 {
   font-size: 24px;
-  color: #1a1a1a;
+  color: #1e293b;
   margin-bottom: 15px;
   font-weight: 600;
 }
 
 .intro-text p {
   font-size: 16px;
-  color: #6c757d;
+  color: #64748b;
   line-height: 1.8;
 }
 
@@ -422,20 +430,20 @@ export default {
 
 .feature-card h3 {
   font-size: 22px;
-  color: #1a1a1a;
+  color: #1e293b;
   margin-bottom: 15px;
   font-weight: 600;
 }
 
 .feature-card p {
-  color: #6c757d;
+  color: #64748b;
   line-height: 1.6;
   font-size: 15px;
 }
 
 /* CTA Section */
 .cta-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
   color: #fff;
   text-align: center;
 }

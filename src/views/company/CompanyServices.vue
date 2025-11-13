@@ -373,21 +373,30 @@ export default {
       const category = props.companyData?.category || 'general'
       if (category === 'fnb') {
         return [
-          { icon: 'fas fa-birthday-cake', title: 'Special Events', description: 'Custom menus for birthdays, anniversaries, and celebrations' },
-          { icon: 'fas fa-utensils', title: 'Menu Consulting', description: 'Expert advice on menu planning and food presentation' },
-          { icon: 'fas fa-gift', title: 'Gift Cards', description: 'Perfect gift for food lovers - available in various denominations' }
+          { icon: 'fas fa-birthday-cake', title: 'Acara Khusus', description: 'Menu khusus untuk ulang tahun, pernikahan, dan perayaan lainnya' },
+          { icon: 'fas fa-utensils', title: 'Konsultasi Menu', description: 'Saran ahli untuk perencanaan menu dan penyajian makanan' },
+          { icon: 'fas fa-gift', title: 'Voucher Makanan', description: 'Hadiah sempurna untuk pecinta kuliner - tersedia dalam berbagai nominal' },
+          { icon: 'fas fa-calendar-alt', title: 'Catering Bulanan', description: 'Paket catering bulanan untuk kebutuhan kantor atau keluarga' },
+          { icon: 'fas fa-heart', title: 'Menu Khusus Diet', description: 'Menu khusus untuk kebutuhan diet, vegetarian, dan alergi makanan' },
+          { icon: 'fas fa-users', title: 'Katering Kelompok', description: 'Layanan catering untuk kelompok besar dengan harga spesial' }
         ]
       } else if (category === 'umroh' || category === 'travel') {
         return [
-          { icon: 'fas fa-passport', title: 'Visa Services', description: 'Assistance with visa applications and documentation' },
-          { icon: 'fas fa-suitcase', title: 'Travel Insurance', description: 'Comprehensive travel insurance for your peace of mind' },
-          { icon: 'fas fa-camera', title: 'Photography Services', description: 'Professional photography to capture your journey' }
+          { icon: 'fas fa-passport', title: 'Layanan Visa', description: 'Bantuan pengurusan visa dan dokumen perjalanan' },
+          { icon: 'fas fa-suitcase', title: 'Asuransi Perjalanan', description: 'Asuransi perjalanan komprehensif untuk ketenangan pikiran Anda' },
+          { icon: 'fas fa-camera', title: 'Jasa Fotografi', description: 'Fotografi profesional untuk mengabadikan perjalanan Anda' },
+          { icon: 'fas fa-book', title: 'Bimbingan Ibadah', description: 'Bimbingan ibadah dan panduan spiritual selama perjalanan' },
+          { icon: 'fas fa-plane', title: 'Pemesanan Tiket', description: 'Layanan pemesanan tiket pesawat dengan harga terbaik' },
+          { icon: 'fas fa-hotel', title: 'Reservasi Hotel', description: 'Bantuan reservasi hotel dengan akomodasi terbaik' }
         ]
       }
       return [
-        { icon: 'fas fa-graduation-cap', title: 'Training Programs', description: 'Comprehensive training for your team' },
-        { icon: 'fas fa-chart-bar', title: 'Analytics & Reporting', description: 'Detailed insights and performance metrics' },
-        { icon: 'fas fa-tools', title: 'Custom Integration', description: 'Seamless integration with your existing systems' }
+        { icon: 'fas fa-graduation-cap', title: 'Program Pelatihan', description: 'Pelatihan komprehensif untuk tim Anda' },
+        { icon: 'fas fa-chart-bar', title: 'Analisis & Laporan', description: 'Wawasan mendalam dan metrik kinerja terperinci' },
+        { icon: 'fas fa-tools', title: 'Integrasi Custom', description: 'Integrasi seamless dengan sistem yang sudah ada' },
+        { icon: 'fas fa-headset', title: 'Dukungan Teknis', description: 'Dukungan teknis 24/7 untuk semua kebutuhan Anda' },
+        { icon: 'fas fa-shield-alt', title: 'Keamanan Data', description: 'Layanan keamanan data dan backup otomatis' },
+        { icon: 'fas fa-sync-alt', title: 'Maintenance Rutin', description: 'Pemeliharaan rutin untuk menjaga performa optimal' }
       ]
     })
     
@@ -410,7 +419,7 @@ export default {
 }
 
 .services-hero {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
   color: #fff;
   text-align: center;
   padding: 100px 0;
@@ -444,7 +453,7 @@ export default {
 }
 
 .service-header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
   color: #fff;
   padding: 30px 40px;
   display: flex;
@@ -485,7 +494,7 @@ export default {
 
 .service-description {
   font-size: 18px;
-  color: #6c757d;
+  color: #64748b;
   line-height: 1.8;
   margin-bottom: 30px;
 }
@@ -498,8 +507,9 @@ export default {
 .service-benefits h3,
 .service-features h3 {
   font-size: 20px;
-  color: #1a1a1a;
+  color: #1e293b;
   margin-bottom: 15px;
+  font-weight: 600;
 }
 
 .benefits-list,
@@ -514,12 +524,12 @@ export default {
   align-items: flex-start;
   gap: 12px;
   padding: 10px 0;
-  color: #6c757d;
+  color: #64748b;
 }
 
 .benefits-list li i,
 .features-list li i {
-  color: #2563eb;
+  color: #0ea5e9;
   margin-top: 4px;
   flex-shrink: 0;
 }
@@ -551,7 +561,7 @@ export default {
 
 .testimonial-text {
   font-size: 16px;
-  color: #6c757d;
+  color: #64748b;
   line-height: 1.8;
   font-style: italic;
   margin-bottom: 20px;
@@ -564,12 +574,12 @@ export default {
 }
 
 .testimonial-author strong {
-  color: #1a1a1a;
+  color: #1e293b;
   font-size: 16px;
 }
 
 .testimonial-author span {
-  color: #6c757d;
+  color: #64748b;
   font-size: 14px;
 }
 
@@ -592,13 +602,13 @@ export default {
 .metric-value {
   font-size: 48px;
   font-weight: 700;
-  color: #2563eb;
+  color: #0ea5e9;
   margin-bottom: 10px;
 }
 
 .metric-label {
   font-size: 16px;
-  color: #6c757d;
+  color: #64748b;
   font-weight: 500;
 }
 
@@ -620,18 +630,18 @@ export default {
 
 .additional-card i {
   font-size: 48px;
-  color: #2563eb;
+  color: #0ea5e9;
   margin-bottom: 20px;
 }
 
 .additional-card h3 {
   font-size: 22px;
-  color: #1a1a1a;
+  color: #1e293b;
   margin-bottom: 15px;
 }
 
 .additional-card p {
-  color: #6c757d;
+  color: #64748b;
   line-height: 1.6;
   margin-bottom: 20px;
 }
@@ -642,7 +652,7 @@ export default {
 }
 
 .cta-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
   color: #fff;
   text-align: center;
 }

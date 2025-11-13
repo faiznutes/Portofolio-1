@@ -151,7 +151,9 @@ export default {
       { icon: '🎯', title: 'Keunggulan', description: 'Kami berusaha untuk keunggulan dalam segala hal yang kami lakukan, menetapkan standar tinggi dan terus meningkatkan kualitas.' },
       { icon: '🤝', title: 'Integritas', description: 'Kejujuran dan transparansi memandu semua tindakan dan hubungan bisnis kami.' },
       { icon: '💡', title: 'Inovasi', description: 'Kami merangkul ide dan teknologi baru untuk tetap unggul dan memberikan solusi yang lebih baik.' },
-      { icon: '❤️', title: 'Fokus Pelanggan', description: 'Pelanggan kami berada di pusat segala hal yang kami lakukan, dan kesuksesan mereka adalah prioritas kami.' }
+      { icon: '❤️', title: 'Fokus Pelanggan', description: 'Pelanggan kami berada di pusat segala hal yang kami lakukan, dan kesuksesan mereka adalah prioritas kami.' },
+      { icon: '🌱', title: 'Pertumbuhan Berkelanjutan', description: 'Kami berkomitmen untuk terus berkembang dan beradaptasi dengan perubahan zaman sambil menjaga nilai-nilai inti kami.' },
+      { icon: '🌟', title: 'Komitmen Kualitas', description: 'Setiap layanan yang kami berikan didasarkan pada komitmen untuk memberikan kualitas terbaik tanpa kompromi.' }
     ]
     
     const getTargetMarket = () => {
@@ -240,7 +242,7 @@ export default {
 
 .about-header {
   position: relative;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
   color: #fff;
   text-align: center;
   padding: 120px 0;
@@ -263,7 +265,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.9) 0%, rgba(20, 184, 166, 0.9) 100%);
 }
 
 .header-content {
@@ -309,13 +311,13 @@ export default {
 .mission-box h2,
 .vision-box h2 {
   font-size: 28px;
-  color: #1a1a1a;
+  color: #1e293b;
   margin-bottom: 20px;
 }
 
 .mission-box p,
 .vision-box p {
-  color: #6c757d;
+  color: #64748b;
   line-height: 1.8;
   font-size: 16px;
 }
@@ -345,14 +347,14 @@ export default {
 
 .story-content h2 {
   font-size: 36px;
-  color: #1a1a1a;
+  color: #1e293b;
   margin-bottom: 25px;
 }
 
 .story-text p {
   font-size: 18px;
   line-height: 1.8;
-  color: #6c757d;
+  color: #64748b;
   margin-bottom: 20px;
 }
 
@@ -378,7 +380,7 @@ export default {
   right: 20px;
   font-size: 48px;
   font-weight: 700;
-  color: rgba(37, 99, 235, 0.1);
+  color: rgba(14, 165, 233, 0.1);
 }
 
 .value-icon {
@@ -388,12 +390,12 @@ export default {
 
 .value-item h3 {
   font-size: 22px;
-  color: #1a1a1a;
+  color: #1e293b;
   margin-bottom: 15px;
 }
 
 .value-item p {
-  color: #6c757d;
+  color: #64748b;
   line-height: 1.6;
 }
 
@@ -409,7 +411,7 @@ export default {
 
 .market-description {
   font-size: 18px;
-  color: #6c757d;
+  color: #64748b;
   line-height: 1.8;
   max-width: 900px;
 }
@@ -436,7 +438,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
   color: #fff;
   border-radius: 12px;
   font-size: 24px;
@@ -445,12 +447,12 @@ export default {
 
 .advantage-content h3 {
   font-size: 22px;
-  color: #1a1a1a;
+  color: #1e293b;
   margin-bottom: 10px;
 }
 
 .advantage-content p {
-  color: #6c757d;
+  color: #64748b;
   line-height: 1.6;
 }
 
@@ -461,7 +463,7 @@ export default {
 .section-subtitle {
   text-align: center;
   font-size: 18px;
-  color: #6c757d;
+  color: #64748b;
   margin-bottom: 50px;
 }
 
@@ -483,7 +485,7 @@ export default {
 
 .team-member h3 {
   font-size: 22px;
-  color: #1a1a1a;
+  color: #1e293b;
   margin-bottom: 5px;
 }
 
@@ -495,13 +497,13 @@ export default {
 }
 
 .member-bio {
-  color: #6c757d;
+  color: #64748b;
   line-height: 1.6;
   font-size: 15px;
 }
 
 .cta-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
   color: #fff;
   text-align: center;
 }
