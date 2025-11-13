@@ -23,7 +23,6 @@ export default defineConfig({
     cssCodeSplit: true,
     sourcemap: false,
     minify: 'esbuild',
-    terserOptions: undefined,
     chunkSizeWarningLimit: 1000
   },
   optimizeDeps: {
