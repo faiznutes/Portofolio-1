@@ -486,16 +486,16 @@ export default {
   padding: 16px 32px;
   border-radius: 12px;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
   gap: 10px;
   font-size: 16px;
-  background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+  background: linear-gradient(135deg, #f4d03f 0%, #d4af37 100%);
   color: #0a1a2f;
-  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);
-  border: none;
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.4);
+  border: 2px solid rgba(212, 175, 55, 0.3);
   cursor: pointer;
 }
 

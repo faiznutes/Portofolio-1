@@ -401,6 +401,15 @@ export default {
   border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
+/* Button primary di section putih harus lebih kontras */
+.section:not(.hero-section):not(.cta-section) .btn-primary {
+  background: linear-gradient(135deg, #f4d03f 0%, #d4af37 100%);
+  color: #0a1a2f;
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.4);
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  font-weight: 700;
+}
+
 /* Button primary di hero section harus lebih terang dan kontras */
 .hero-section .btn-primary {
   background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
