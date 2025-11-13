@@ -288,7 +288,7 @@ export default {
         },
         {
           title: 'Support & Maintenance',
-          description: '24/7 support and maintenance services to keep your business running smoothly. We're here when you need us.',
+          description: '24/7 support and maintenance services to keep your business running smoothly. We are here when you need us.',
           image: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?w=600&auto=format&fit=crop',
           benefits: [
             'Peace of mind',
