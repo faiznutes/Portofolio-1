@@ -175,19 +175,7 @@ export default {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 200px;
-}
-
-@media (max-width: 1400px) {
-  .container {
-    padding: 0 100px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .container {
-    padding: 0 40px;
-  }
+  padding: 0 40px;
 }
 
 @media (max-width: 768px) {
