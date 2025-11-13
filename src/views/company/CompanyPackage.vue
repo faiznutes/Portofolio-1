@@ -212,10 +212,11 @@ export default {
 
 .page-subtitle {
   font-size: 22px;
-  color: rgba(255, 255, 255, 0.95);
+  color: #ffffff;
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.7;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Packages Section */
@@ -313,7 +314,7 @@ export default {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  color: var(--cp-text-secondary, #4a5568);
+  color: var(--cp-text-secondary, #334155);
   font-size: 15px;
   margin-bottom: 12px;
   line-height: 1.6;
@@ -419,7 +420,7 @@ export default {
 
 .info-card li {
   font-size: 15px;
-  color: var(--cp-text-secondary, #4a5568);
+  color: var(--cp-text-secondary, #334155);
   line-height: 1.8;
   margin-bottom: 12px;
   padding-left: 24px;
@@ -437,7 +438,7 @@ export default {
 
 .info-card p {
   font-size: 15px;
-  color: var(--cp-text-secondary, #4a5568);
+  color: var(--cp-text-secondary, #334155);
   line-height: 1.8;
   margin-bottom: 24px;
   text-align: center;

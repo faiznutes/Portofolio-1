@@ -336,8 +336,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--cp-gradient);
-  opacity: 0.85;
+  background: linear-gradient(135deg, rgba(10, 26, 47, 0.95) 0%, rgba(26, 42, 63, 0.95) 100%);
   z-index: 1;
 }
 
@@ -362,11 +361,12 @@ export default {
 .hero-subtitle {
   font-size: 22px;
   margin-bottom: 48px;
-  color: rgba(255, 255, 255, 0.95);
+  color: #ffffff;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.7;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .hero-buttons {
@@ -403,13 +403,15 @@ export default {
 }
 
 .btn-secondary {
-  background: transparent;
-  color: #fff;
-  border: 2px solid rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  backdrop-filter: blur(10px);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.25);
+  border-color: #ffffff;
 }
 
 .btn-large {
@@ -439,7 +441,7 @@ export default {
 
 .section-description {
   font-size: 18px;
-  color: var(--cp-text-secondary, #4a5568);
+  color: var(--cp-text-secondary, #334155);
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.7;
@@ -497,7 +499,7 @@ export default {
 
 .feature-card p {
   font-size: 15px;
-  color: var(--cp-text-secondary, #4a5568);
+  color: var(--cp-text-secondary, #334155);
   line-height: 1.7;
   margin: 0;
 }
@@ -536,7 +538,7 @@ export default {
 
 .about-content p {
   font-size: 18px;
-  color: var(--cp-text-secondary, #4a5568);
+  color: var(--cp-text-secondary, #334155);
   line-height: 1.8;
   margin-bottom: 32px;
 }
@@ -603,7 +605,7 @@ export default {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: var(--cp-text-secondary, #4a5568);
+  color: var(--cp-text-secondary, #334155);
   font-size: 15px;
 }
 
@@ -648,7 +650,7 @@ export default {
 
 .testimonial-text {
   font-size: 16px;
-  color: var(--cp-text-secondary, #4a5568);
+  color: var(--cp-text-secondary, #334155);
   line-height: 1.7;
   margin-bottom: 24px;
   font-style: italic;
@@ -684,7 +686,7 @@ export default {
 }
 
 .author-info span {
-  color: var(--cp-text-secondary, #4a5568);
+  color: var(--cp-text-secondary, #334155);
   font-size: 14px;
 }
 
@@ -776,8 +778,9 @@ export default {
 .cta-content p {
   font-size: 18px;
   margin-bottom: 40px;
-  color: rgba(255, 255, 255, 0.95);
+  color: #ffffff;
   line-height: 1.7;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Responsive */

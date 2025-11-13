@@ -245,10 +245,11 @@ export default {
 
 .page-subtitle {
   font-size: 22px;
-  color: rgba(255, 255, 255, 0.95);
+  color: #ffffff;
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.7;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Contact Section */
@@ -279,7 +280,7 @@ export default {
 
 .form-description {
   font-size: 16px;
-  color: var(--cp-text-secondary, #4a5568);
+  color: var(--cp-text-secondary, #334155);
   margin-bottom: 32px;
   line-height: 1.7;
 }
@@ -406,7 +407,7 @@ export default {
 }
 
 .info-content p {
-  color: var(--cp-text-secondary, #4a5568);
+  color: var(--cp-text-secondary, #334155);
   font-size: 16px;
   line-height: 1.7;
   margin: 0;

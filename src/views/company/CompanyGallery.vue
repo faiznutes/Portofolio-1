@@ -172,10 +172,11 @@ export default {
 
 .page-subtitle {
   font-size: 22px;
-  color: rgba(255, 255, 255, 0.95);
+  color: #ffffff;
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.7;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Gallery Section */
@@ -255,7 +256,7 @@ export default {
 .no-gallery {
   text-align: center;
   padding: 100px 20px;
-  color: var(--cp-text-secondary, #4a5568);
+  color: var(--cp-text-secondary, #334155);
 }
 
 .no-gallery i {
