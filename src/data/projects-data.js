@@ -58,6 +58,22 @@ export const staticProjectsData = [
       { type: "image", title: "", src: "/assets/images/ayam lepas/29.png" }
     ],
     status: "pending"
+  },
+  {
+    id: "next-level-properti-grand-opening-video",
+    title: "Ide Konsep Video Next Level Property",
+    category: "video",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&auto=format&fit=crop",
+    description: "Konsep video grand opening untuk Next Level Properti - Branch HR Muhammad 86A. Video cinematic elegan 2-3 menit yang mengabadikan momen bersejarah Grand Opening dengan visual premium, storytelling yang kuat, dan editing modern dengan tone elegan, ceria, dan modern dalam color mood Navy-Gold-White.",
+    longDescription: "🎯 Tujuan Video\n\n• Mengabadikan momen bersejarah Grand Opening\n• Menampilkan citra perusahaan yang elegan, modern, dan terpercaya\n• Memperkuat brand Next Level Properti sebagai agen properti next level\n• Menarik perhatian calon mitra, investor, dan publik melalui konten premium\n\n🎨 Arah Visual & Mood\n\nTone: Elegan • Ceria • Modern • Premium\nColor mood: Navy – Gold – White dengan sentuhan pastel\nStyle: Cinematic highlight, clean aesthetic, warm lighting\nMusik: Upbeat elegant (slow build-up saat prosesi Grand Opening)\n\n🎬 Konsep Alur Video (Highlight 2–3 Menit)\n\nVideo akan dirancang sebagai storytelling visual yang menampilkan perjalanan acara dari awal hingga akhir dengan atmosfer elegan dan penuh optimisme.\n\n1. Opening – Establishing Image\n• Tampilan gedung & signage kantor HR Muhammad 86A\n• Suasana tamu datang & registrasi\n• Detail dekorasi dan ambience acara\n\n2. Opening Ceremony\n• MC membuka acara\n• Penerbangan balon & prosesi gunting pita (sebagai momen puncak yang dibuat cinematic)\n• Ekspresi tamu & tepuk tangan yang hangat\n\n3. Sambutan & Company Highlight\n• Cuplikan visi and mission dari Pimpinan\n• Potongan inspiratif perjalanan Next Level Properti\n• B-roll kantor dan tim untuk memperkuat citra profesional\n\n4. Prosesi Grand Opening & Photo Session\n• Puncak acara dengan slow motion elegan\n• Foto bersama VIP dan seluruh tim (moment celebratory)\n\n5. Doa & Harapan\n• Momen syahdu dan penuh makna, tone lebih warm dan intimate\n\n6. Office Tour / Branch Experience\n• Tamu diajak melihat area kerja, fasilitas modern, dan keunggulan branch baru\n• Interaksi antara tim dengan tamu untuk menunjukkan budaya positif\n\n7. Penutup\n• Cuplikan networking ringan\n• Shot ruangan yang lively & optimis\n• Closing logo + tagline \"Elevate Your Property Journey\"\n\n🎞 Output Video\n\n✔ Highlight video 2–3 menit (format cinematic elegan)\n✔ Optional: versi Reels/Shorts 30–45 detik untuk social media\n\n⭐ Nilai Jual Utama\n\n• Visual elegan yang meningkatkan brand perception\n• Storytelling yang membuat acara lebih hidup & memorable\n• Editing modern dengan transisi halus & ambience premium\n• Menunjukkan profesionalitas Next Level sebagai agen properti level tinggi\n• Bisa dijadikan materi social media, company profile, dan marketing jangka panjang",
+    date: "1/1/2025",
+    tools: ["Adobe Premiere Pro", "After Effects", "Color Grading"],
+    tags: ["Video", "Grand Opening", "Property", "Cinematic", "Corporate Video"],
+    gallery: [
+      { type: "image", title: "Konsep Video Grand Opening", src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&auto=format&fit=crop" },
+      { type: "image", title: "Color Mood Navy-Gold-White", src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format&fit=crop" },
+      { type: "image", title: "Corporate Event", src: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop" }
+    ]
   }
 ]
 
