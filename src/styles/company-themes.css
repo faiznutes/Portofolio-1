@@ -24,7 +24,7 @@
   border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
-/* Resto Nusantara - Traditional F&B (Warm, Orange) */
+/* Traditional F&B Theme (Warm, Orange) */
 .company-profile-wrapper[data-theme="traditional"] {
   --cp-primary: #f97316;
   --cp-secondary: #fb923c;
