@@ -747,6 +747,23 @@ main {
   font-size: 16px;
 }
 
+.projects3-desc p.desc-title {
+  font-weight: 700;
+  color: var(--text-color);
+  font-size: 18px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.projects3-desc p.desc-title:first-child {
+  margin-top: 0;
+}
+
+.projects3-desc p.desc-title strong {
+  font-weight: 700;
+  color: var(--text-color);
+}
+
 .projects3-gallery {
   margin-bottom: 40px;
 }

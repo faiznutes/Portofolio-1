@@ -14,8 +14,9 @@
       </div>
 
       <div class="projects3-desc">
-        <p v-for="(paragraph, index) in descriptionParagraphs" :key="index">
-          {{ paragraph }}
+        <p v-for="(item, index) in processedParagraphs" :key="index" :class="{ 'desc-title': item.isTitle }">
+          <strong v-if="item.isTitle">{{ item.text }}</strong>
+          <template v-else>{{ item.text }}</template>
         </p>
       </div>
 
@@ -98,10 +99,58 @@ export default {
         .filter(p => p)
     })
 
+    // Function to detect if a paragraph is a title
+    // Titles typically start with emoji (🎯, 🎨, 🎬, etc.) or are short standalone lines
+    const isTitle = (text, index, paragraphs) => {
+      if (!text || text.length === 0) return false
+      
+      const trimmedText = text.trim()
+      
+      // Check if starts with emoji (most common case for titles)
+      // Covers wide range of emoji: 🎯, 🎨, 🎬, 🎞, ⭐, etc.
+      const emojiPattern = /^[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{1F600}-\u{1F64F}]/u
+      if (emojiPattern.test(trimmedText)) {
+        return true
+      }
+      
+      // Exclude lines that are clearly not titles
+      const hasBullet = /^[•\-\*]\s/.test(trimmedText)
+      const hasNumber = /^\d+\.\s/.test(trimmedText)
+      const hasCheckmark = /^[✔✓]\s/.test(trimmedText)
+      
+      if (hasBullet || hasNumber || hasCheckmark) {
+        return false
+      }
+      
+      // Check for short standalone lines that might be section headers
+      // But only if they don't look like regular content
+      if (trimmedText.length < 100 && trimmedText.length > 3) {
+        // Simple heuristic: if it's short and next line exists with content, might be a title
+        const nextParagraph = paragraphs[index + 1]
+        if (nextParagraph && nextParagraph.trim().length > 0) {
+          // If next line starts with bullet or is much longer, current line might be a title
+          if (/^[•\-\*]/.test(nextParagraph.trim()) || nextParagraph.trim().length > trimmedText.length * 1.5) {
+            return true
+          }
+        }
+      }
+      
+      return false
+    }
+
+    const processedParagraphs = computed(() => {
+      const paragraphs = descriptionParagraphs.value
+      return paragraphs.map((text, index) => ({
+        text,
+        isTitle: isTitle(text, index, paragraphs)
+      }))
+    })
+
     return {
       project,
       projectYear,
-      descriptionParagraphs
+      descriptionParagraphs,
+      processedParagraphs
     }
   }
 }
