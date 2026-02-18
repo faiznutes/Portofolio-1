@@ -3,6 +3,7 @@ import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Projects from '../views/Projects.vue'
 import ProjectDetail from '../views/ProjectDetail.vue'
+import LandingPageView from '../views/LandingPageView.vue'
 import Login from '../views/Login.vue'
 import CompanyProfile from '../views/CompanyProfile.vue'
 import CompanyHome from '../views/company/CompanyHome.vue'
@@ -54,6 +55,17 @@ const routes = [
       title: 'Project Detail - Faiznute Portfolio',
       description: 'Detail project portfolio Faiznute',
       keywords: 'project detail, portfolio'
+    }
+  },
+  {
+    path: '/landing/:id',
+    name: 'LandingPageView',
+    component: LandingPageView,
+    props: true,
+    meta: {
+      title: 'Landing Page - Faiznute Portfolio',
+      description: 'Landing Page Project - Faiznute Portfolio',
+      keywords: 'landing page, portfolio, websites'
     }
   },
   {
