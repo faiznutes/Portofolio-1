@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangalexzz Dimsum | Snack Premium Indonesia</title>
+    <meta name="description" content="Dimsum premium berkualitas dengan berbagai varian menarik. Dimsum Mentai, Dimsum Goreng Keju, Dimsum Udang. Pesan sekarang via WhatsApp!">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+        @keyframes slideInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.6); }
+        }
+        .animate-slide-down { animation: slideInDown 0.6s ease-out; }
+        .animate-fade-up { animation: fadeInUp 0.8s ease-out; }
+        .pulse-glow { animation: pulse-glow 3s infinite; }
+        .grid-pattern { background-image: linear-gradient(45deg, #f0f9ff 25%, transparent 25%, transparent 75%, #f0f9ff 75%, #f0f9ff), linear-gradient(45deg, #f0f9ff 25%, transparent 25%, transparent 75%, #f0f9ff 75%, #f0f9ff); background-size: 60px 60px; background-position: 0 0, 30px 30px; }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white border-b border-blue-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-3 animate-slide-down">
+                    <span class="text-3xl">🥟</span>
+                    <div>
+                        <h1 class="text-2xl font-black text-blue-900">Bangalexzz</h1>
+                        <p class="text-xs text-blue-600 font-bold">DIMSUM PREMIUM</p>
+                    </div>
+                </div>
+                <div class="hidden lg:flex items-center gap-12">
+                    <a href="#menu" class="text-gray-700 hover:text-blue-600 font-semibold transition">Menu</a>
+                    <a href="#why-us" class="text-gray-700 hover:text-blue-600 font-semibold transition">Kenapa Kami</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 font-semibold transition">Kontak</a>
+                </div>
+                <a href="https://wa.me/6285155043133?text=Halo%20Bangalexzz!" target="_blank" class="bg-blue-600 text-white px-6 py-3 rounded-full font-bold hover:bg-blue-700 transition">
+                    Pesan Sekarang
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-50 py-24">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-30 -z-10"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="flex-1 animate-fade-up">
+                    <span class="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-bold mb-6">
+                        ✨ Snack Premium Terbaik
+                    </span>
+                    <h1 class="text-6xl lg:text-7xl font-black text-gray-900 mb-6 leading-tight">
+                        Dimsum <span class="text-blue-600">Yang Bikin Nagih</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 max-w-xl leading-relaxed">
+                        Nikmati kelezatan dimsum premium dengan berbagai varian pilihan. Dari mentai yang gurih hingga goreng keju yang creamy, semua dibuat fresh setiap hari.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://wa.me/6285155043133?text=Saya%20ingin%20pesan%20dimsum!" target="_blank" class="bg-blue-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-700 transition transform hover:scale-105 text-center">
+                            💬 Pesan via WhatsApp
+                        </a>
+                        <a href="#menu" class="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-full font-bold hover:bg-blue-50 transition text-center">
+                            Lihat Menu
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="flex-1 flex justify-center">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center animate-fade-up" style="animation-delay: 0.1s;">
+                            <div class="w-24 h-24 mx-auto mb-3 bg-blue-100 rounded-xl flex items-center justify-center overflow-hidden shadow-md">
+                                <img src="https://images.unsplash.com/photo-1563299796-17596ed3889e?w=200&h=200&fit=crop" alt="Dimsum Mentai" class="w-full h-full object-cover">
+                            </div>
+                            <p class="font-bold text-gray-900">Dimsum Mentai</p>
+                        </div>
+                        <div class="text-center animate-fade-up" style="animation-delay: 0.2s;">
+                            <div class="w-24 h-24 mx-auto mb-3 bg-yellow-100 rounded-xl flex items-center justify-center overflow-hidden shadow-md">
+                                <img src="https://images.unsplash.com/photo-1671353537227-472b3d5b3980?w=200&h=200&fit=crop" alt="Dimsum Keju" class="w-full h-full object-cover">
+                            </div>
+                            <p class="font-bold text-gray-900">Dimsum Keju</p>
+                        </div>
+                        <div class="text-center animate-fade-up" style="animation-delay: 0.3s;">
+                            <div class="w-24 h-24 mx-auto mb-3 bg-red-100 rounded-xl flex items-center justify-center overflow-hidden shadow-md">
+                                <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=200&h=200&fit=crop" alt="Dimsum Udang" class="w-full h-full object-cover">
+                            </div>
+                            <p class="font-bold text-gray-900">Dimsum Udang</p>
+                        </div>
+                        <div class="text-center animate-fade-up" style="animation-delay: 0.4s;">
+                            <div class="w-24 h-24 mx-auto mb-3 bg-orange-100 rounded-xl flex items-center justify-center overflow-hidden shadow-md">
+                                <img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=200&h=200&fit=crop" alt="Dimsum Pedas" class="w-full h-full object-cover">
+                            </div>
+                            <p class="font-bold text-gray-900">Dimsum Pedas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-white border-y border-blue-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div>
+                    <div class="text-4xl font-black text-blue-600">850+</div>
+                    <p class="text-gray-600 mt-2 font-semibold">Dimsum Terjual Setiap Hari</p>
+                </div>
+                <div>
+                    <div class="text-4xl font-black text-blue-600">8 Varian</div>
+                    <p class="text-gray-600 mt-2 font-semibold">Pilihan Warna Rasa</p>
+                </div>
+                <div>
+                    <div class="text-4xl font-black text-blue-600">5⭐</div>
+                    <p class="text-gray-600 mt-2 font-semibold">Rating Sempurna</p>
+                </div>
+                <div>
+                    <div class="text-4xl font-black text-blue-600">2 Jam</div>
+                    <p class="text-gray-600 mt-2 font-semibold">Pengiriman Terjamin</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section id="why-us" class="py-24 bg-gradient-to-br from-blue-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-5xl font-black text-center text-gray-900 mb-16">Mengapa Pilih Kami?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-8 border-2 border-blue-100 hover:border-blue-600 hover:shadow-xl transition">
+                    <div class="text-6xl mb-4">🎯</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Bahan Pilihan</h3>
+                    <p class="text-gray-600 leading-relaxed">Semua bahan dipilih dengan teliti dari supplier terpercaya untuk kualitas terbaik.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-8 border-2 border-blue-100 hover:border-blue-600 hover:shadow-xl transition">
+                    <div class="text-6xl mb-4">⚡</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Fresh & Cepat</h3>
+                    <p class="text-gray-600 leading-relaxed">Dimsum dibuat fresh setiap pesan. Dijamin panas dan lezat saat tiba di tangan Anda.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-8 border-2 border-blue-100 hover:border-blue-600 hover:shadow-xl transition">
+                    <div class="text-6xl mb-4">💚</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Sehat & Bersih</h3>
+                    <p class="text-gray-600 leading-relaxed">Proses produksi higienis dengan standar keamanan pangan internasional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-5xl font-black text-center text-gray-900 mb-4">Menu Pilihan</h2>
+            <p class="text-center text-gray-600 text-lg mb-12">Berbagai varian dimsum dengan cita rasa istimewa</p>
+
+            <!-- Filter Buttons -->
+            <div class="flex justify-center gap-3 mb-12 flex-wrap">
+                <button onclick="filterMenu('all')" class="filter-btn px-6 py-3 rounded-full font-bold transition bg-blue-600 text-white" data-filter="all">
+                    Semua Varian
+                </button>
+                <button onclick="filterMenu('mentai')" class="filter-btn px-6 py-3 rounded-full font-bold transition bg-gray-200 text-gray-800 hover:bg-gray-300" data-filter="mentai">
+                    Mentai
+                </button>
+                <button onclick="filterMenu('keju')" class="filter-btn px-6 py-3 rounded-full font-bold transition bg-gray-200 text-gray-800 hover:bg-gray-300" data-filter="keju">
+                    Keju
+                </button>
+                <button onclick="filterMenu('premium')" class="filter-btn px-6 py-3 rounded-full font-bold transition bg-gray-200 text-gray-800 hover:bg-gray-300" data-filter="premium">
+                    Premium
+                </button>
+            </div>
+
+            <!-- Menu Grid -->
+            <div id="menuGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Menu items will be rendered here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-blue-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="text-center text-white">
+                    <div class="text-6xl mb-4">📱</div>
+                    <h3 class="text-2xl font-bold mb-3">WhatsApp</h3>
+                    <a href="https://wa.me/6285155043133" target="_blank" class="text-2xl font-bold hover:text-blue-200 transition">0851-5504-3133</a>
+                </div>
+                <div class="text-center text-white">
+                    <div class="text-6xl mb-4">📍</div>
+                    <h3 class="text-2xl font-bold mb-3">Lokasi</h3>
+                    <p class="text-xl">Surabaya, Jawa Timur</p>
+                </div>
+                <div class="text-center text-white">
+                    <div class="text-6xl mb-4">⏰</div>
+                    <h3 class="text-2xl font-bold mb-3">Jam Kerja</h3>
+                    <p class="text-xl">10:00 - 20:00 Setiap Hari</p>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="https://wa.me/6285155043133?text=Saya%20ingin%20pesan%20dimsum" target="_blank" class="inline-block bg-white text-blue-600 px-10 py-4 rounded-full font-bold text-lg hover:shadow-xl transition transform hover:scale-105">
+                    💬 Pesan Sekarang
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex items-center gap-3">
+                    <span class="text-4xl">🥟</span>
+                    <div>
+                        <h3 class="text-2xl font-black">Bangalexzz Dimsum</h3>
+                        <p class="text-gray-400">Snack Premium Indonesia</p>
+                    </div>
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400">&copy; 2026 Bangalexzz. Dibuat dengan ❤️ untuk Anda.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuItems = [
+            { id: 1, category: 'mentai', name: 'Dimsum Mentai Original', desc: 'Mentai segar dengan kulit tipis yang lembut', price: 'Rp 24.000', image: 'https://images.unsplash.com/photo-1563299796-17596ed3889e?w=300&h=300&fit=crop', badge: 'Bestseller' },
+            { id: 2, category: 'mentai', name: 'Dimsum Mentai Jumbo', desc: 'Ukuran jumbo dengan isi mentai berlimpah', price: 'Rp 32.000', image: 'https://images.unsplash.com/photo-1615521471454-8fc23e6461ad?w=300&h=300&fit=crop', badge: 'Premium' },
+            { id: 3, category: 'keju', name: 'Dimsum Goreng Keju', desc: 'Dimsum goreng dengan keju mozzarella premium', price: 'Rp 28.000', image: 'https://images.unsplash.com/photo-1671353537227-472b3d5b3980?w=300&h=300&fit=crop' },
+            { id: 4, category: 'keju', name: 'Dimsum Keju Cheddar', desc: 'Keju cheddar asli dengan rasa gurih', price: 'Rp 30.000', image: 'https://images.unsplash.com/photo-1452895917715-33fbf92c7729?w=300&h=300&fit=crop' },
+            { id: 5, category: 'premium', name: 'Dimsum Udang Lada Hitam', desc: 'Udang premium dengan bumbu lada hitam', price: 'Rp 35.000', image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=300&h=300&fit=crop', badge: 'Mewah' },
+            { id: 6, category: 'premium', name: 'Dimsum Wagyu Mentai', desc: 'Daging wagyu dengan mentai eksklusif', price: 'Rp 45.000', image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=300&h=300&fit=crop', badge: 'Eksklusif' },
+            { id: 7, category: 'mentai', name: 'Dimsum Mentai Pedas', desc: 'Mentai dengan sambel pedas khas', price: 'Rp 26.000', image: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=300&h=300&fit=crop' },
+            { id: 8, category: 'premium', name: 'Dimsum Truffle Keju', desc: 'Keju dengan aroma truffle kelas atas', price: 'Rp 50.000', image: 'https://images.unsplash.com/photo-1585238341710-7b38b6c7d4af?w=300&h=300&fit=crop', badge: 'Limited' },
+        ];
+
+        function filterMenu(category) {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'text-white');
+                btn.classList.add('bg-gray-200', 'text-gray-800');
+            });
+            document.querySelector(`[data-filter="${category}"]`).classList.add('bg-blue-600', 'text-white');
+            document.querySelector(`[data-filter="${category}"]`).classList.remove('bg-gray-200', 'text-gray-800');
+            
+            const container = document.getElementById('menuGrid');
+            const filtered = category === 'all' ? menuItems : menuItems.filter(item => item.category === category);
+            
+            container.innerHTML = filtered.map(item => `
+                <div class="bg-white border-2 border-blue-100 rounded-2xl p-6 hover:shadow-xl hover:border-blue-600 transition flex flex-col h-full">
+                    <div class="w-full h-40 rounded-lg overflow-hidden mb-4 bg-blue-100">
+                        <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover hover:scale-110 transition">
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-bold text-gray-900 flex-grow">${item.name}</h3>
+                        ${item.badge ? `<span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap ml-2">${item.badge}</span>` : ''}
+                    </div>
+                    <p class="text-sm text-gray-600 mb-4 flex-grow">${item.desc}</p>
+                    <div class="flex justify-between items-center mt-auto pt-4 border-t border-gray-200">
+                        <span class="text-2xl font-black text-blue-600">${item.price}</span>
+                        <a href="https://wa.me/6285155043133?text=Saya%20ingin%20pesan%20${encodeURIComponent(item.name)}" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-blue-700 transition transform hover:scale-110">
+                            +
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+        }
+        filterMenu('all');
+    </script>
+</body>
+</html>
