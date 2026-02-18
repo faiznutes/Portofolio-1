@@ -98,13 +98,16 @@ export default {
 
     const goToProject = (id) => {
       const project = getAllProjects().find(p => p.id === id)
-      // Project dengan category fnb, umroh, travel, it adalah website company profile
-      const websiteCategories = ['website', 'fnb', 'umroh', 'travel', 'it']
+      // Landing pages → direct ke fullscreen
       if (project && project.category === 'landing-page') {
-        router.push(`/landing/${id}`)
-      } else if (project && websiteCategories.includes(project.category)) {
+        window.location.href = project.landingPageUrl
+      } 
+      // Website company profile (fnb, umroh, travel, it)
+      else if (project && ['website', 'fnb', 'umroh', 'travel', 'it'].includes(project.category)) {
         router.push(`/website/${id}`)
-      } else {
+      } 
+      // Design & Video → project detail review
+      else {
         router.push(`/project/${id}`)
       }
     }
