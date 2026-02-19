@@ -163,7 +163,9 @@ export default {
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 100%;
 }
 
 .projects2-filters button {
@@ -244,8 +246,11 @@ export default {
   color: #ffffff;
   margin: 0 0 8px 0;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 
 .project-info p {
@@ -255,6 +260,7 @@ export default {
   line-height: 1.4;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -318,7 +324,7 @@ export default {
 
 @media (max-width: 768px) {
   .projects2-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 16px;
   }
 
@@ -356,8 +362,11 @@ export default {
   }
 
   .projects2-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 12px;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .projects2-title {
