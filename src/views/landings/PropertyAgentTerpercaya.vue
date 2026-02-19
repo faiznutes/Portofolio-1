@@ -107,7 +107,7 @@
           <div class="bg-white rounded-2xl overflow-hidden border border-blue-200 hover:border-blue-600 hover:shadow-xl transition-all">
             <div class="relative aspect-[4/3] overflow-hidden bg-blue-100">
               <span class="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold z-10">TERSEDIA</span>
-              <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&auto=format&fit=crop" alt="Rumah keluarga modern" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700"/>
+              <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&auto=format&crop=center" alt="Rumah keluarga modern" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700"/>
             </div>
             <div class="p-6">
               <h3 class="text-lg font-bold text-blue-950 mb-2">Rumah Keluarga Aman Bintaro</h3>
@@ -123,7 +123,7 @@
           <div class="bg-white rounded-2xl overflow-hidden border border-blue-200 hover:border-blue-600 hover:shadow-xl transition-all">
             <div class="relative aspect-[4/3] overflow-hidden bg-blue-100">
               <span class="absolute top-4 left-4 bg-indigo-600 text-white px-3 py-1 rounded-full text-xs font-bold z-10">BEST DEAL</span>
-              <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&auto=format&fit=crop" alt="Apartemen nyaman" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700"/>
+              <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&h=600&auto=format&crop=center" alt="Apartemen nyaman" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700"/>
             </div>
             <div class="p-6">
               <h3 class="text-lg font-bold text-blue-950 mb-2">Apartemen Modern Kemayoran</h3>
@@ -139,7 +139,7 @@
           <div class="bg-white rounded-2xl overflow-hidden border border-blue-200 hover:border-blue-600 hover:shadow-xl transition-all">
             <div class="relative aspect-[4/3] overflow-hidden bg-blue-100">
               <span class="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold z-10">INVESTASI</span>
-              <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&auto=format&fit=crop" alt="Townhouse premium" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700"/>
+              <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&auto=format&crop=center" alt="Townhouse premium" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700"/>
             </div>
             <div class="p-6">
               <h3 class="text-lg font-bold text-blue-950 mb-2">Townhouse Premium Puri</h3>

@@ -94,7 +94,7 @@
             <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow border border-slate-100 group">
               <div class="relative aspect-[4/3] overflow-hidden">
                 <span class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full z-10">DIJUAL</span>
-                <img alt="Luxury modern house" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://images.unsplash.com/photo-1560079748-8cc5b8b3859b?w=600&auto=format&fit=crop"/>
+                <img alt="Luxury modern house" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://images.unsplash.com/photo-1560079748-8cc5b8b3859b?w=800&h=600&auto=format&crop=center"/>
               </div>
               <div class="p-5">
                 <h3 class="text-lg font-bold text-slate-900 mb-2">Rumah Modern Menteng</h3>
@@ -109,7 +109,7 @@
             <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow border border-slate-100 group">
               <div class="relative aspect-[4/3] overflow-hidden">
                 <span class="absolute top-4 left-4 bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-full z-10">DISEWA</span>
-                <img alt="Tropical villa" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://images.unsplash.com/photo-1570129477492-45c003ed2338?w=600&auto=format&fit=crop"/>
+                <img alt="Tropical villa" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://images.unsplash.com/photo-1570129477492-45c003ed2338?w=800&h=600&auto=format&crop=center"/>
               </div>
               <div class="p-5">
                 <h3 class="text-lg font-bold text-slate-900 mb-2">Villa Tropis Bali</h3>
@@ -124,7 +124,7 @@
             <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow border border-slate-100 group">
               <div class="relative aspect-[4/3] overflow-hidden">
                 <span class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full z-10">DIJUAL</span>
-                <img alt="Modern apartment" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&auto=format&fit=crop"/>
+                <img alt="Modern apartment" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600&auto=format&crop=center"/>
               </div>
               <div class="p-5">
                 <h3 class="text-lg font-bold text-slate-900 mb-2">Apartemen Sky View</h3>

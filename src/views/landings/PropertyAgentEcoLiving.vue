@@ -112,7 +112,7 @@
           <div class="group bg-white rounded-2xl overflow-hidden border border-emerald-100 hover:border-emerald-400 hover:shadow-2xl transition-all">
             <div class="relative aspect-[4/3] overflow-hidden">
               <div class="absolute top-4 left-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-xs font-bold z-10">TERSEDIA</div>
-              <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&auto=format&fit=crop" alt="Eco modern home" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
+              <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&h=600&auto=format&crop=center" alt="Eco modern home" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold text-slate-900 mb-2">Rumah Eco-Modern Jakarta</h3>
@@ -128,7 +128,7 @@
           <div class="group bg-white rounded-2xl overflow-hidden border border-emerald-100 hover:border-emerald-400 hover:shadow-2xl transition-all">
             <div class="relative aspect-[4/3] overflow-hidden">
               <div class="absolute top-4 left-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-xs font-bold z-10">TERSEDIA</div>
-              <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&auto=format&fit=crop" alt="Villa dengan taman hijau" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
+              <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&h=600&auto=format&crop=center" alt="Solar home design" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold text-slate-900 mb-2">Villa Elite Surabaya</h3>
@@ -144,7 +144,7 @@
           <div class="group bg-white rounded-2xl overflow-hidden border border-emerald-100 hover:border-emerald-400 hover:shadow-2xl transition-all">
             <div class="relative aspect-[4/3] overflow-hidden">
               <div class="absolute top-4 left-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-xs font-bold z-10">TERSEDIA</div>
-              <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&auto=format&fit=crop" alt="Apartemen hijau" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
+              <img src="https://images.unsplash.com/photo-1560518099-ce7a7c2c32ca?w=800&h=600&auto=format&crop=center" alt="Garden living space" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold text-slate-900 mb-2">Apartemen Green Living</h3>
