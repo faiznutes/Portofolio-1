@@ -22,7 +22,9 @@ export default {
   },
   setup() {
     const route = useRoute()
-    const isCompanyProfile = computed(() => route.path.startsWith('/website/'))
+    const isCompanyProfile = computed(() => 
+      route.path.startsWith('/website/') || route.path.startsWith('/landing-pages/')
+    )
     
     return {
       isCompanyProfile
