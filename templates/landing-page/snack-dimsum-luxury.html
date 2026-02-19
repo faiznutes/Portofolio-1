@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimsum Luxury - Surabaya</title>
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --accent: #d4af37;
+            --bg-dark: #2a2a2a;
+            --bg-light: #0f0f0f;
+            --text-light: #e5e5e5;
+            --border: #333333;
+            --spacing-xs: 8px;
+            --spacing-sm: 12px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --spacing-2xl: 48px;
+            --spacing-3xl: 64px;
+            --radius: 12px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 8px rgba(0,0,0,0.4);
+            --shadow-lg: 0 8px 16px rgba(212,175,55,0.15);
+            --transition: 0.3s ease;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text-light); line-height: 1.6; background: var(--primary); }
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 var(--spacing-lg); }
+        .flex { display: flex; }
+        .flex-col { flex-direction: column; }
+        .flex-center { align-items: center; justify-content: center; }
+        .gap-lg { gap: var(--spacing-lg); }
+        header { background: var(--primary); padding: var(--spacing-lg) 0; box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--accent); }
+        .header-content { display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--accent); text-decoration: none; letter-spacing: 1px; }
+        .header-contact { display: flex; gap: var(--spacing-xl); align-items: center; font-size: 0.95rem; }
+        .header-contact span { color: var(--text-light); }
+        .card { background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-dark) 100%); border-radius: var(--radius); padding: var(--spacing-lg); border: 1px solid var(--accent); box-shadow: var(--shadow-lg); transition: all var(--transition); }
+        .card:hover { box-shadow: 0 8px 20px rgba(212,175,55,0.2); transform: translateY(-2px); }
+        h1, h2, h3 { font-weight: 700; color: var(--accent); }
+        h1 { font-size: clamp(2rem, 5vw, 3rem); letter-spacing: 1px; }
+        h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
+        h3 { font-size: 1.25rem; }
+        p { color: var(--text-light); }
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: var(--spacing-sm) var(--spacing-lg); border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; border: 1px solid var(--accent); cursor: pointer; transition: all var(--transition); background: transparent; color: var(--accent); }
+        .btn-primary { background: var(--accent); color: var(--primary); }
+        .btn-primary:hover { background: transparent; color: var(--accent); transform: scale(1.05); }
+        section { padding: var(--spacing-3xl) 0; }
+        .section-header { text-align: center; margin-bottom: var(--spacing-2xl); }
+        .hero { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-2xl); align-items: center; padding: var(--spacing-3xl) 0; }
+        .hero h1 { margin-bottom: var(--spacing-lg); }
+        .hero p { color: var(--text-light); font-size: 1.1rem; }
+        .hero-emoji { font-size: 6rem; text-align: center; line-height: 1; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--spacing-lg); }
+        .grid-2x2 { grid-template-columns: repeat(2, 1fr); }
+        .collection-card { text-align: center; padding: var(--spacing-2xl) var(--spacing-lg); }
+        .collection-emoji { font-size: 4rem; margin-bottom: var(--spacing-lg); }
+        .experience-card { display: flex; flex-direction: column; gap: var(--spacing-md); text-align: center; }
+        .experience-emoji { font-size: 2.5rem; }
+        .testimonial { text-align: center; padding: var(--spacing-lg) 0; }
+        .testimonial-text { font-style: italic; color: var(--text-light); font-size: 1rem; margin-bottom: var(--spacing-md); }
+        .testimonial-author { font-weight: 700; color: var(--accent); }
+        footer { background: var(--bg-light); padding: var(--spacing-2xl) 0; border-top: 1px solid var(--accent); }
+        .footer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-lg); }
+        .footer-grid h4 { color: var(--accent); margin-bottom: var(--spacing-md); }
+        .back-button { position: fixed; bottom: var(--spacing-lg); right: var(--spacing-lg); width: 48px; height: 48px; background: var(--accent); color: var(--primary); border: none; border-radius: 50%; font-size: 1.5rem; cursor: pointer; box-shadow: var(--shadow-lg); display: flex; align-items: center; justify-content: center; transition: all var(--transition); z-index: 50; }
+        .back-button:hover { transform: scale(1.1); }
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .hero { grid-template-columns: 1fr; }
+            .grid-2x2 { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .hero-emoji { font-size: 4rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">✨ DIMSUM LUXURY</a>
+                <div class="header-contact">
+                    <span style="color: var(--accent);">📍 Surabaya</span>
+                    <a href="tel:085155043133" style="color: var(--accent); font-weight: 600; text-decoration: none;">📱 085155043133</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <div class="container">
+                <div class="hero">
+                    <div>
+                        <h1>DIMSUM LUXURY</h1>
+                        <p style="margin-top: var(--spacing-lg);">Pengalaman kuliner premium dengan dimsum eksklusif dan presentasi yang elegan. Setiap hidangan dirancang untuk memberikan kesan mewah dan berkesan.</p>
+                        <a href="https://wa.me/6285155043133?text=Saya%20ingin%20memesan%20dimsum%20luxury" class="btn btn-primary" style="margin-top: var(--spacing-lg);">Pesan Sekarang</a>
+                    </div>
+                    <div class="hero-emoji">👑</div>
+                </div>
+            </div>
+        </section>
+
+        <section style="background: var(--bg-dark);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Koleksi Eksklusif</h2>
+                </div>
+                <div class="grid grid-2x2">
+                    <div class="card collection-card">
+                        <div class="collection-emoji">🦐</div>
+                        <h3>Caviar Gold</h3>
+                        <p style="color: var(--text-light); margin-top: var(--spacing-md);">Dimsum premium dengan telur caviar dan emas 24 karat.</p>
+                        <div style="color: var(--accent); font-weight: 700; font-size: 1.2rem; margin-top: var(--spacing-md);">Rp 85K</div>
+                        <a href="https://wa.me/6285155043133?text=Saya%20pesan%20Caviar%20Gold" class="btn btn-primary" style="margin-top: var(--spacing-lg); width: 100%; justify-content: center;">Pesan</a>
+                    </div>
+                    <div class="card collection-card">
+                        <div class="collection-emoji">🐂</div>
+                        <h3>Truffle Wagyu</h3>
+                        <p style="color: var(--text-light); margin-top: var(--spacing-md);">Dimsum berisi daging wagyu A5 dengan truffle black.</p>
+                        <div style="color: var(--accent); font-weight: 700; font-size: 1.2rem; margin-top: var(--spacing-md);">Rp 95K</div>
+                        <a href="https://wa.me/6285155043133?text=Saya%20pesan%20Truffle%20Wagyu" class="btn btn-primary" style="margin-top: var(--spacing-lg); width: 100%; justify-content: center;">Pesan</a>
+                    </div>
+                    <div class="card collection-card">
+                        <div class="collection-emoji">🔥</div>
+                        <h3>Sous Vide Prime</h3>
+                        <p style="color: var(--text-light); margin-top: var(--spacing-md);">Dimsum prime cut yang dimasak sous vide sempurna.</p>
+                        <div style="color: var(--accent); font-weight: 700; font-size: 1.2rem; margin-top: var(--spacing-md);">Rp 88K</div>
+                        <a href="https://wa.me/6285155043133?text=Saya%20pesan%20Sous%20Vide%20Prime" class="btn btn-primary" style="margin-top: var(--spacing-lg); width: 100%; justify-content: center;">Pesan</a>
+                    </div>
+                    <div class="card collection-card">
+                        <div class="collection-emoji">🍖</div>
+                        <h3>Foie Gras Deluxe</h3>
+                        <p style="color: var(--text-light); margin-top: var(--spacing-md);">Dimsum mewah dengan foie gras dan saus reduksi khusus.</p>
+                        <div style="color: var(--accent); font-weight: 700; font-size: 1.2rem; margin-top: var(--spacing-md);">Rp 105K</div>
+                        <a href="https://wa.me/6285155043133?text=Saya%20pesan%20Foie%20Gras%20Deluxe" class="btn btn-primary" style="margin-top: var(--spacing-lg); width: 100%; justify-content: center;">Pesan</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="section-header">
+                    <h2>Pengalaman Luxury</h2>
+                </div>
+                <div class="grid">
+                    <div class="card experience-card">
+                        <div class="experience-emoji">🎨</div>
+                        <h3>Presentasi Elegan</h3>
+                        <p>Setiap hidangan disajikan dengan presentasi yang dirancang khusus oleh chef berpengalaman internasional.</p>
+                    </div>
+                    <div class="card experience-card">
+                        <div class="experience-emoji">👨‍🍳</div>
+                        <h3>Chef Bersertifikat</h3>
+                        <p>Tim chef dengan pengalaman lebih dari 20 tahun dan sertifikasi internasional Michelin.</p>
+                    </div>
+                    <div class="card experience-card">
+                        <div class="experience-emoji">🏆</div>
+                        <h3>Quality Premium</h3>
+                        <p>Bahan-bahan pilihan terbaik dari supplier premium internasional yang tersertifikasi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="background: var(--bg-dark);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Testimoni Eksklusif</h2>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-lg);">
+                    <div class="testimonial">
+                        <p class="testimonial-text">"Pengalaman dimsum terbaik yang pernah saya miliki. Setiap detail sempurna dan cita rasanya luar biasa!"</p>
+                        <p class="testimonial-author">⭐⭐⭐⭐⭐ Mr. Sato - Tokyo</p>
+                    </div>
+                    <div class="testimonial">
+                        <p class="testimonial-text">"Dimsum luxury yang truly world-class. Saya akan merekomendasikan ke semua teman bisnis saya."</p>
+                        <p class="testimonial-author">⭐⭐⭐⭐⭐ Mrs. Chen - Singapore</p>
+                    </div>
+                    <div class="testimonial">
+                        <p class="testimonial-text">"Kualitas dan pelayanan yang istimewa. Ini adalah standar baru untuk dimsum premium di Indonesia."</p>
+                        <p class="testimonial-author">⭐⭐⭐⭐⭐ Dr. Wijaya - Jakarta</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container" style="max-width: 600px;">
+                <div class="section-header">
+                    <h2>Hubungi Kami</h2>
+                </div>
+                <div style="text-align: center;">
+                    <p style="font-size: 1.1rem; margin-bottom: var(--spacing-lg);">Untuk reservasi dan pemesanan eksklusif terbatas.</p>
+                    <a href="https://wa.me/6285155043133?text=Saya%20ingin%20reservasi%20dimsum%20luxury" class="btn btn-primary" style="padding: var(--spacing-md) var(--spacing-2xl);">Chat WhatsApp Eksklusif</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>DIMSUM LUXURY</h4>
+                    <p>Pengalaman kuliner premium dan eksklusif untuk momen spesial Anda. Dimsum dengan kualitas bintang lima.</p>
+                </div>
+                <div>
+                    <h4>Jam Operasional</h4>
+                    <p>Senin - Minggu<br>17:00 - 23:00<br><span style="font-size: 0.9rem; color: var(--text-light);">(Reservasi sejak pukul 15:00)</span></p>
+                </div>
+                <div>
+                    <h4>Kontak Eksklusif</h4>
+                    <p><a href="https://wa.me/6285155043133" style="color: var(--accent); text-decoration: none; font-weight: 600;">WhatsApp: 085155043133</a><br>VIP Line: Khusus reservasi eksklusif</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: var(--spacing-2xl); padding-top: var(--spacing-xl); border-top: 1px solid var(--accent); color: var(--text-light); font-size: 0.9rem;">
+                <p>&copy; 2024 Dimsum Luxury Bangalexzz. Elite Culinary Experience.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-button" onclick="window.history.back()" title="Kembali">←</button>
+</body>
+</html>

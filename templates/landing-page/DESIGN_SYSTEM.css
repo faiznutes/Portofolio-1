@@ -1,0 +1,598 @@
+/**
+ * BANGALEXZZ DESIGN SYSTEM v1.0
+ * Unified CSS for all landing pages
+ * Based on: Flexbox + Card System + 8px Spacing Scale
+ */
+
+/* ============================================
+   1. ROOT VARIABLES & RESET
+   ============================================ */
+
+:root {
+    /* Spacing Scale (8px base) */
+    --spacing-2xs: 4px;
+    --spacing-xs: 8px;
+    --spacing-sm: 12px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    --spacing-3xl: 64px;
+    
+    /* Container */
+    --container-max: 1200px;
+    --container-md: 900px;
+    --container-sm: 600px;
+    
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    
+    /* Shadow System */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.15);
+    --shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.15);
+    
+    /* Transitions */
+    --transition-fast: 150ms ease-in-out;
+    --transition-normal: 300ms ease-in-out;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background: #ffffff;
+}
+
+/* ============================================
+   2. CONTAINER & LAYOUT SYSTEM
+   ============================================ */
+
+.container {
+    width: 100%;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.container-md {
+    width: 100%;
+    max-width: var(--container-md);
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+    .container,
+    .container-md {
+        padding: 0 var(--spacing-md);
+    }
+}
+
+/* ============================================
+   3. FLEXBOX UTILITIES
+   ============================================ */
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-start {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.flex-gap-sm {
+    gap: var(--spacing-sm);
+}
+
+.flex-gap-md {
+    gap: var(--spacing-md);
+}
+
+.flex-gap-lg {
+    gap: var(--spacing-lg);
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+/* ============================================
+   4. CARD SYSTEM
+   ============================================ */
+
+.card {
+    background: #ffffff;
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+}
+
+.card-dense {
+    padding: var(--spacing-md);
+}
+
+.card-large {
+    padding: var(--spacing-xl);
+}
+
+.card-image-top {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    margin: -var(--spacing-lg) -var(--spacing-lg) var(--spacing-md) -var(--spacing-lg);
+}
+
+.card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    color: #1a1a1a;
+}
+
+.card-text {
+    font-size: 0.9375rem;
+    color: #666;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.5;
+    flex: 1;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--spacing-md);
+    border-top: 1px solid #f0f0f0;
+}
+
+/* ============================================
+   5. GRID SYSTEM (Card Wrapper)
+   ============================================ */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.grid-2col {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3col {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 768px) {
+    .grid,
+    .grid-2col {
+        grid-template-columns: 1fr;
+    }
+    
+    .grid-3col {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ============================================
+   6. SECTION PADDING
+   ============================================ */
+
+.section {
+    padding: var(--spacing-3xl) 0;
+}
+
+.section-lg {
+    padding: var(--spacing-3xl) 0;
+}
+
+.section-md {
+    padding: var(--spacing-xl) 0;
+}
+
+.section-sm {
+    padding: var(--spacing-lg) 0;
+}
+
+@media (max-width: 768px) {
+    .section,
+    .section-lg {
+        padding: var(--spacing-2xl) 0;
+    }
+}
+
+/* ============================================
+   7. TYPOGRAPHY
+   ============================================ */
+
+h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
+}
+
+h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: var(--spacing-lg);
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+}
+
+.text-sm {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.text-muted {
+    color: #666;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ============================================
+   8. BUTTONS
+   ============================================ */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    border: none;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-decoration: none;
+    white-space: nowrap;
+    gap: var(--spacing-xs);
+}
+
+.btn-primary {
+    background-color: #d97706;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #b85e0c;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+    background-color: white;
+    color: #d97706;
+    border: 2px solid #d97706;
+}
+
+.btn-secondary:hover {
+    background-color: #fff5f0;
+    transform: translateY(-2px);
+}
+
+.btn-small {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.8125rem;
+}
+
+.btn-block {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* ============================================
+   9. HELPER CLASSES
+   ============================================ */
+
+.mb-xs { margin-bottom: var(--spacing-xs); }
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+.mb-xl { margin-bottom: var(--spacing-xl); }
+
+.mt-xs { margin-top: var(--spacing-xs); }
+.mt-sm { margin-top: var(--spacing-sm); }
+.mt-md { margin-top: var(--spacing-md); }
+.mt-lg { margin-top: var(--spacing-lg); }
+.mt-xl { margin-top: var(--spacing-xl); }
+
+.px-md { padding: 0 var(--spacing-md); }
+.py-md { padding: var(--spacing-md) 0; }
+.p-md { padding: var(--spacing-md); }
+
+.gap-sm { gap: var(--spacing-sm); }
+.gap-md { gap: var(--spacing-md); }
+.gap-lg { gap: var(--spacing-lg); }
+
+/* ============================================
+   10. NAVIGATION
+   ============================================ */
+
+nav {
+    background: white;
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md) var(--spacing-lg);
+}
+
+nav a {
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+nav a:hover {
+    color: #d97706;
+}
+
+/* ============================================
+   11. HERO SECTION
+   ============================================ */
+
+.hero {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xl);
+    padding: var(--spacing-3xl) 0;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 150px;
+    line-height: 1;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        padding: var(--spacing-2xl) 0;
+    }
+    
+    .hero-image {
+        font-size: 100px;
+    }
+}
+
+/* ============================================
+   12. TESTIMONIAL CARD
+   ============================================ */
+
+.testimonial {
+    display: flex;
+    gap: var(--spacing-lg);
+    align-items: center;
+}
+
+.testimonial-avatar {
+    min-width: 60px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.testimonial-content {
+    flex: 1;
+}
+
+.testimonial-text {
+    font-size: 1rem;
+    font-style: italic;
+    color: #1a1a1a;
+    margin-bottom: var(--spacing-sm);
+}
+
+.testimonial-author {
+    font-weight: 600;
+    font-size: 0.9375rem;
+}
+
+.testimonial-role {
+    font-size: 0.8125rem;
+    color: #666;
+}
+
+/* ============================================
+   13. FOOTER
+   ============================================ */
+
+footer {
+    background: #1a1a1a;
+    color: #fff;
+    padding: var(--spacing-3xl) 0 var(--spacing-lg);
+}
+
+footer .grid {
+    margin-bottom: var(--spacing-xl);
+}
+
+footer h3 {
+    color: white;
+    margin-bottom: var(--spacing-md);
+}
+
+footer a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+footer a:hover {
+    color: white;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer li {
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.9375rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: var(--spacing-xl);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.8125rem;
+    color: #999;
+}
+
+/* ============================================
+   14. BACK BUTTON
+   ============================================ */
+
+.back-button {
+    position: fixed;
+    bottom: var(--spacing-lg);
+    right: var(--spacing-lg);
+    z-index: 1000;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #d97706;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-fast);
+}
+
+.back-button:hover {
+    background: #b85e0c;
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 768px) {
+    .back-button {
+        width: 44px;
+        height: 44px;
+        font-size: 1.25rem;
+    }
+}
+
+/* ============================================
+   15. RESPONSIVE IMAGES & MEDIA
+   ============================================ */
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ============================================
+   16. UTILITY ANIMATIONS
+   ============================================ */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}

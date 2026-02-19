@@ -1,0 +1,538 @@
+[
+  {
+    "valid": true,
+    "owner": "shuding",
+    "repo": "nextra",
+    "url": "https://github.com/shuding/nextra",
+    "description": "Simple, powerful and flexible site generation framework with everything you love from Next.js.",
+    "license": {
+      "valid": true,
+      "name": "MIT",
+      "status": "✅"
+    },
+    "stars": {
+      "count": 13615,
+      "valid": true,
+      "status": "✅"
+    },
+    "update": {
+      "date": "17 Feb 2026",
+      "days_since": 0,
+      "valid": true,
+      "status": "✅"
+    },
+    "issues": {
+      "open": 0,
+      "valid": true,
+      "status": "✅"
+    },
+    "language": "TypeScript",
+    "topics": [
+      "markdown",
+      "mdx",
+      "nextjs",
+      "nextra",
+      "react",
+      "static-site-generator"
+    ],
+    "forks": 1414,
+    "watchers": 13615
+  },
+  {
+    "valid": false,
+    "error": "Tidak bisa ambil data repository"
+  },
+  {
+    "valid": false,
+    "error": "Tidak bisa ambil data repository"
+  },
+  {
+    "valid": true,
+    "owner": "bagisto",
+    "repo": "bagisto",
+    "url": "https://github.com/bagisto/bagisto",
+    "description": "Free and open source laravel eCommerce platform",
+    "license": {
+      "valid": true,
+      "name": "MIT",
+      "status": "✅"
+    },
+    "stars": {
+      "count": 25567,
+      "valid": true,
+      "status": "✅"
+    },
+    "update": {
+      "date": "17 Feb 2026",
+      "days_since": 1,
+      "valid": true,
+      "status": "✅"
+    },
+    "issues": {
+      "open": 0,
+      "valid": true,
+      "status": "✅"
+    },
+    "language": "PHP",
+    "topics": [
+      "b2b-ecommerce",
+      "blockchain-ecommerce",
+      "ecommerce",
+      "ecommerce-framework",
+      "ecommerce-platform",
+      "hacktoberfest",
+      "headless-commerce",
+      "laravel",
+      "laravel-application",
+      "laravel-ecommerce",
+      "laravel-package",
+      "multi-tenancy-plugin",
+      "multi-tenant",
+      "multi-vendor-ecommerce",
+      "multivendor-ecommerce",
+      "nft-marketplace",
+      "open-source",
+      "opensource-ecommerce",
+      "php",
+      "php-ecommerce"
+    ],
+    "forks": 2975,
+    "watchers": 25567
+  },
+  {
+    "valid": true,
+    "owner": "medusajs",
+    "repo": "medusa",
+    "url": "https://github.com/medusajs/medusa",
+    "description": "The world's most flexible commerce platform.",
+    "license": {
+      "valid": true,
+      "name": "MIT",
+      "status": "✅"
+    },
+    "stars": {
+      "count": 32069,
+      "valid": true,
+      "status": "✅"
+    },
+    "update": {
+      "date": "18 Feb 2026",
+      "days_since": 0,
+      "valid": true,
+      "status": "✅"
+    },
+    "issues": {
+      "open": 0,
+      "valid": true,
+      "status": "✅"
+    },
+    "language": "TypeScript",
+    "topics": [
+      "commerce",
+      "e-commerce",
+      "ecommerce",
+      "framework",
+      "javascript",
+      "medusa",
+      "nodejs",
+      "react",
+      "typescript"
+    ],
+    "forks": 4067,
+    "watchers": 32069
+  },
+  {
+    "valid": true,
+    "owner": "saleor",
+    "repo": "saleor",
+    "url": "https://github.com/saleor/saleor",
+    "description": "Saleor Core: the high performance, composable, headless commerce API.",
+    "license": {
+      "valid": true,
+      "name": "BSD 3-Clause \"New\" or \"Revised\" License",
+      "status": "✅"
+    },
+    "stars": {
+      "count": 22601,
+      "valid": true,
+      "status": "✅"
+    },
+    "update": {
+      "date": "18 Feb 2026",
+      "days_since": 0,
+      "valid": true,
+      "status": "✅"
+    },
+    "issues": {
+      "open": 0,
+      "valid": true,
+      "status": "✅"
+    },
+    "language": "Python",
+    "topics": [
+      "cart",
+      "checkout",
+      "commerce",
+      "composable",
+      "e-commerce",
+      "ecommerce",
+      "graphql",
+      "headless",
+      "headless-commerce",
+      "multichannel",
+      "oms",
+      "order-management",
+      "payments",
+      "pim",
+      "python",
+      "shop",
+      "shopping-cart",
+      "store"
+    ],
+    "forks": 5921,
+    "watchers": 22601
+  },
+  {
+    "valid": true,
+    "owner": "vercel",
+    "repo": "commerce",
+    "url": "https://github.com/vercel/commerce",
+    "description": "Next.js Commerce",
+    "license": {
+      "valid": true,
+      "name": "MIT",
+      "status": "✅"
+    },
+    "stars": {
+      "count": 13892,
+      "valid": true,
+      "status": "✅"
+    },
+    "update": {
+      "date": "02 Feb 2026",
+      "days_since": 16,
+      "valid": true,
+      "status": "✅"
+    },
+    "issues": {
+      "open": 0,
+      "valid": true,
+      "status": "✅"
+    },
+    "language": "TypeScript",
+    "topics": [
+      "ecommerce",
+      "nextjs",
+      "react",
+      "shopify"
+    ],
+    "forks": 5325,
+    "watchers": 13892
+  },
+  {
+    "valid": true,
+    "owner": "filamentphp",
+    "repo": "filament",
+    "url": "https://github.com/filamentphp/filament",
+    "description": "A powerful open source UI framework for Laravel • Build and ship admin panels & apps fast with Livewire",
+    "license": {
+      "valid": true,
+      "name": "MIT",
+      "status": "✅"
+    },
+    "stars": {
+      "count": 29287,
+      "valid": true,
+      "status": "✅"
+    },
+    "update": {
+      "date": "17 Feb 2026",
+      "days_since": 1,
+      "valid": true,
+      "status": "✅"
+    },
+    "issues": {
+      "open": 0,
+      "valid": true,
+      "status": "✅"
+    },
+    "language": "PHP",
+    "topics": [
+      "admin",
+      "alpine-js",
+      "builder",
+      "cms",
+      "filament",
+      "forms",
+      "laravel",
+      "laravel-admin-panel",
+      "livewire",
+      "tables",
+      "tailwind-css",
+      "tall-stack"
+    ],
+    "forks": 4085,
+    "watchers": 29287
+  },
+  {
+    "valid": true,
+    "owner": "filamentphp",
+    "repo": "demo",
+    "url": "https://github.com/filamentphp/demo",
+    "description": "Source code for the demo.filamentphp.com website.",
+    "license": {
+      "valid": true,
+      "name": "MIT",
+      "status": "✅"
+    },
+    "stars": {
+      "count": 1174,
+      "valid": true,
+      "status": "✅"
+    },
+    "update": {
+      "date": "16 Feb 2026",
+      "days_since": 1,
+      "valid": true,
+      "status": "✅"
+    },
+    "issues": {
+      "open": 0,
+      "valid": true,
+      "status": "✅"
+    },
+    "language": "PHP",
+    "topics": [],
+    "forks": 548,
+    "watchers": 1174
+  },
+  {
+    "valid": true,
+    "owner": "adminkit",
+    "repo": "adminkit",
+    "url": "https://github.com/adminkit/adminkit",
+    "description": "AdminKit is a free & open-source HTML dashboard & admin template based on Bootstrap 5",
+    "license": {
+      "valid": true,
+      "name": "MIT",
+      "status": "✅"
+    },
+    "stars": {
+      "count": 1633,
+      "valid": true,
+      "status": "✅"
+    },
+    "update": {
+      "date": "07 Feb 2026",
+      "days_since": 11,
+      "valid": true,
+      "status": "✅"
+    },
+    "issues": {
+      "open": 0,
+      "valid": true,
+      "status": "✅"
+    },
+    "language": "HTML",
+    "topics": [
+      "admin",
+      "admin-dashboard",
+      "admin-template",
+      "admin-theme",
+      "boilerplate-template",
+      "bootstrap",
+      "bootstrap-5",
+      "bootstrap-5-admin-panel",
+      "bootstrap-5-template",
+      "bootstrap-template",
+      "bootstrap-theme",
+      "bootstrap5",
+      "html",
+      "javascript",
+      "no-jquery",
+      "sass",
+      "scss",
+      "ui-kit",
+      "vanilla-javascript",
+      "webpack"
+    ],
+    "forks": 308,
+    "watchers": 1633
+  },
+  {
+    "valid": true,
+    "owner": "estevanmaito",
+    "repo": "windmill-dashboard",
+    "url": "https://github.com/estevanmaito/windmill-dashboard",
+    "description": "📊 A multi theme, completely accessible, ready for production dashboard.",
+    "license": {
+      "valid": true,
+      "name": "MIT",
+      "status": "✅"
+    },
+    "stars": {
+      "count": 3022,
+      "valid": true,
+      "status": "✅"
+    },
+    "update": {
+      "date": "28 Feb 2024",
+      "days_since": 721,
+      "valid": true,
+      "status": "✅"
+    },
+    "issues": {
+      "open": 0,
+      "valid": true,
+      "status": "✅"
+    },
+    "language": "HTML",
+    "topics": [],
+    "forks": 488,
+    "watchers": 3022
+  },
+  {
+    "valid": false,
+    "owner": "directus",
+    "repo": "directus",
+    "url": "https://github.com/directus/directus",
+    "description": "The flexible backend for all your projects 🐰 Turn your DB into a headless CMS, admin panels, or apps with a custom UI, instant APIs, auth & more.",
+    "license": {
+      "valid": false,
+      "name": "Other",
+      "status": "❌"
+    },
+    "stars": {
+      "count": 34240,
+      "valid": true,
+      "status": "✅"
+    },
+    "update": {
+      "date": "18 Feb 2026",
+      "days_since": 0,
+      "valid": true,
+      "status": "✅"
+    },
+    "issues": {
+      "open": 0,
+      "valid": true,
+      "status": "✅"
+    },
+    "language": "TypeScript",
+    "topics": [
+      "api",
+      "app",
+      "cms",
+      "composable",
+      "data-visualization",
+      "database",
+      "directus",
+      "graphql",
+      "headless-cms",
+      "javascript",
+      "mariadb",
+      "mssql",
+      "mysql",
+      "no-code",
+      "node",
+      "postgresql",
+      "sql",
+      "sqlite",
+      "typescript",
+      "vue"
+    ],
+    "forks": 4569,
+    "watchers": 34240
+  },
+  {
+    "valid": false,
+    "owner": "strapi",
+    "repo": "strapi",
+    "url": "https://github.com/strapi/strapi",
+    "description": "🚀 Strapi is the leading open-source headless CMS. It’s 100% JavaScript/TypeScript, fully customizable, and developer-first.",
+    "license": {
+      "valid": false,
+      "name": "Other",
+      "status": "❌"
+    },
+    "stars": {
+      "count": 71332,
+      "valid": true,
+      "status": "✅"
+    },
+    "update": {
+      "date": "18 Feb 2026",
+      "days_since": 0,
+      "valid": true,
+      "status": "✅"
+    },
+    "issues": {
+      "open": 0,
+      "valid": true,
+      "status": "✅"
+    },
+    "language": "TypeScript",
+    "topics": [
+      "api",
+      "cms",
+      "cms-framework",
+      "content-management",
+      "content-management-system",
+      "customizable",
+      "dashboard",
+      "graphql",
+      "hacktoberfest",
+      "headless-cms",
+      "jamstack",
+      "javascript",
+      "koa",
+      "koa2",
+      "mysql",
+      "no-code",
+      "nodejs",
+      "rest",
+      "strapi",
+      "typescript"
+    ],
+    "forks": 9486,
+    "watchers": 71332
+  },
+  {
+    "valid": true,
+    "owner": "wagtail",
+    "repo": "wagtail",
+    "url": "https://github.com/wagtail/wagtail",
+    "description": "A Django content management system focused on flexibility and user experience",
+    "license": {
+      "valid": true,
+      "name": "BSD 3-Clause \"New\" or \"Revised\" License",
+      "status": "✅"
+    },
+    "stars": {
+      "count": 20154,
+      "valid": true,
+      "status": "✅"
+    },
+    "update": {
+      "date": "18 Feb 2026",
+      "days_since": 0,
+      "valid": true,
+      "status": "✅"
+    },
+    "issues": {
+      "open": 0,
+      "valid": true,
+      "status": "✅"
+    },
+    "language": "Python",
+    "topics": [
+      "cms",
+      "django",
+      "hacktoberfest",
+      "python",
+      "wagtail"
+    ],
+    "forks": 4432,
+    "watchers": 20154
+  }
+]

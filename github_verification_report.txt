@@ -1,0 +1,36 @@
+
+======================================================================
+📋 LAPORAN VERIFIKASI REPOSITORY
+======================================================================
+
+✅ PASSED (10):
+----------------------------------------------------------------------
+  • shuding/nextra
+    ⭐ 13615 | 📜 MIT | 📅 17 Feb 2026
+  • bagisto/bagisto
+    ⭐ 25567 | 📜 MIT | 📅 17 Feb 2026
+  • medusajs/medusa
+    ⭐ 32069 | 📜 MIT | 📅 18 Feb 2026
+  • saleor/saleor
+    ⭐ 22601 | 📜 BSD 3-Clause "New" or "Revised" License | 📅 18 Feb 2026
+  • vercel/commerce
+    ⭐ 13892 | 📜 MIT | 📅 02 Feb 2026
+  • filamentphp/filament
+    ⭐ 29287 | 📜 MIT | 📅 17 Feb 2026
+  • filamentphp/demo
+    ⭐ 1174 | 📜 MIT | 📅 16 Feb 2026
+  • adminkit/adminkit
+    ⭐ 1633 | 📜 MIT | 📅 07 Feb 2026
+  • estevanmaito/windmill-dashboard
+    ⭐ 3022 | 📜 MIT | 📅 28 Feb 2024
+  • wagtail/wagtail
+    ⭐ 20154 | 📜 BSD 3-Clause "New" or "Revised" License | 📅 18 Feb 2026
+
+❌ FAILED (4):
+----------------------------------------------------------------------
+  • unknown/unknown: Tidak bisa ambil data repository
+  • unknown/unknown: Tidak bisa ambil data repository
+  • directus/directus: Lisensi: Other
+  • strapi/strapi: Lisensi: Other
+
+======================================================================

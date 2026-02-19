@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimsum Playful - Surabaya</title>
+    <style>
+        :root {
+            --primary: #ec4899;
+            --secondary: #fbbf24;
+            --accent: #ff6b35;
+            --bg-light: #fafafa;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --border: #e5e7eb;
+            --spacing-xs: 8px;
+            --spacing-sm: 12px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --spacing-2xl: 48px;
+            --spacing-3xl: 64px;
+            --radius: 12px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 8px rgba(0,0,0,0.12);
+            --shadow-lg: 0 8px 16px rgba(0,0,0,0.15);
+            --transition: 0.3s ease;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text); line-height: 1.6; background: white; }
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 var(--spacing-lg); }
+        .flex { display: flex; }
+        .flex-col { flex-direction: column; }
+        .flex-center { align-items: center; justify-content: center; }
+        .gap-lg { gap: var(--spacing-lg); }
+        header { background: white; padding: var(--spacing-lg) 0; box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 100; }
+        .header-content { display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-size: 1.5rem; font-weight: 700; background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+        .header-contact { display: flex; gap: var(--spacing-xl); align-items: center; font-size: 0.95rem; }
+        .header-contact span { color: var(--text-light); }
+        .card { background: white; border-radius: var(--radius); padding: var(--spacing-lg); border: 1px solid var(--border); box-shadow: var(--shadow-sm); transition: all var(--transition); }
+        .card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+        h1, h2, h3 { font-weight: 700; color: var(--text); }
+        h1 { font-size: clamp(2rem, 5vw, 3rem); color: var(--primary); }
+        h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
+        h3 { font-size: 1.25rem; color: var(--primary); }
+        p { color: var(--text-light); }
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: var(--spacing-sm) var(--spacing-lg); border-radius: 20px; font-weight: 600; font-size: 0.95rem; text-decoration: none; border: none; cursor: pointer; transition: all var(--transition); }
+        .btn-primary { background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); color: white; }
+        .btn-primary:hover { transform: scale(1.05); }
+        section { padding: var(--spacing-3xl) 0; }
+        .section-header { text-align: center; margin-bottom: var(--spacing-2xl); }
+        .hero { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-2xl); align-items: center; padding: var(--spacing-3xl) 0; }
+        .hero h1 { margin-bottom: var(--spacing-lg); }
+        .hero-emoji { font-size: 6rem; text-align: center; line-height: 1; animation: bounce 2s infinite; }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--spacing-lg); }
+        .grid-4col { grid-template-columns: repeat(4, 1fr); }
+        .feature-card { background: linear-gradient(135deg, rgba(236,72,153,0.1) 0%, rgba(255,107,53,0.1) 100%); border: 2px solid var(--border); }
+        .feature-emoji { font-size: 2.5rem; margin-bottom: var(--spacing-md); }
+        .menu-item { background: linear-gradient(135deg, rgba(236,72,153,0.05) 0%, rgba(255,107,53,0.05) 100%); border: 2px solid var(--primary); }
+        .menu-emoji { font-size: 3rem; text-align: center; margin-bottom: var(--spacing-md); }
+        .menu-name { font-weight: 600; color: var(--primary); margin-bottom: var(--spacing-xs); }
+        .menu-price { font-weight: 700; color: var(--accent); font-size: 1.1rem; }
+        footer { background: var(--bg-light); padding: var(--spacing-2xl) 0; border-top: 1px solid var(--border); }
+        .footer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-lg); }
+        .back-button { position: fixed; bottom: var(--spacing-lg); right: var(--spacing-lg); width: 48px; height: 48px; background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); color: white; border: none; border-radius: 50%; font-size: 1.5rem; cursor: pointer; box-shadow: var(--shadow-lg); display: flex; align-items: center; justify-content: center; transition: all var(--transition); z-index: 50; }
+        .back-button:hover { transform: scale(1.1); }
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .hero { grid-template-columns: 1fr; }
+            .grid-4col { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">🎉 Dimsum Playful</a>
+                <div class="header-contact">
+                    <span>📍 Surabaya</span>
+                    <a href="tel:085155043133" style="color: var(--primary); font-weight: 600; text-decoration: none;">📱 085155043133</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <div class="container">
+                <div class="hero">
+                    <div>
+                        <h1>Dimsum Playful</h1>
+                        <p style="font-size: 1.1rem; margin-top: var(--spacing-lg);">Dimsum yang ceria, warna-warni, dan penuh dengan rasa! Setiap gigitan membawa kebahagiaan untuk seluruh keluarga Anda.</p>
+                        <a href="https://wa.me/6285155043133?text=Saya%20ingin%20memesan%20dimsum%20playful" class="btn btn-primary" style="margin-top: var(--spacing-lg);">Pesan Sekarang</a>
+                    </div>
+                    <div class="hero-emoji">🎨</div>
+                </div>
+            </div>
+        </section>
+
+        <section style="background: var(--bg-light);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Fitur Spesial Kami</h2>
+                </div>
+                <div class="grid grid-4col">
+                    <div class="card feature-card">
+                        <div class="feature-emoji">🎨</div>
+                        <h3>Warna-Warni</h3>
+                        <p style="font-size: 0.95rem;">Dimsum dibuat dengan warna-warna cerah yang menarik mata.</p>
+                    </div>
+                    <div class="card feature-card">
+                        <div class="feature-emoji">😋</div>
+                        <h3>Lezat & Segar</h3>
+                        <p style="font-size: 0.95rem;">Dibuat fresh setiap hari dengan bahan berkualitas.</p>
+                    </div>
+                    <div class="card feature-card">
+                        <div class="feature-emoji">👨‍👩‍👧‍👦</div>
+                        <h3>Cocok Keluarga</h3>
+                        <p style="font-size: 0.95rem;">Aman dan disuka oleh semua anggota keluarga.</p>
+                    </div>
+                    <div class="card feature-card">
+                        <div class="feature-emoji">⚡</div>
+                        <h3>Pengiriman Cepat</h3>
+                        <p style="font-size: 0.95rem;">Dikirim dalam kondisi hangat dan lezat.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="section-header">
+                    <h2>Menu Dimsum Playful</h2>
+                </div>
+                <div class="grid">
+                    <div class="card menu-item">
+                        <div class="menu-emoji">🎨</div>
+                        <div class="menu-name">Shumai Rainbow</div>
+                        <p style="font-size: 0.95rem; margin-bottom: var(--spacing-md);">Shumai dengan warna-warna cerah dan berbagai rasa.</p>
+                        <div class="menu-price">Rp 18K</div>
+                        <a href="https://wa.me/6285155043133?text=Saya%20pesan%20Shumai%20Rainbow" class="btn btn-primary" style="width: 100%; margin-top: var(--spacing-md); justify-content: center;">Pesan</a>
+                    </div>
+                    <div class="card menu-item">
+                        <div class="menu-emoji">🌸</div>
+                        <div class="menu-name">Dimsum Bunga</div>
+                        <p style="font-size: 0.95rem; margin-bottom: var(--spacing-md);">Dimsum dengan bentuk bunga yang indah dan rasa autentik.</p>
+                        <div class="menu-price">Rp 16K</div>
+                        <a href="https://wa.me/6285155043133?text=Saya%20pesan%20Dimsum%20Bunga" class="btn btn-primary" style="width: 100%; margin-top: var(--spacing-md); justify-content: center;">Pesan</a>
+                    </div>
+                    <div class="card menu-item">
+                        <div class="menu-emoji">🦄</div>
+                        <div class="menu-name">Har Gow Magic</div>
+                        <p style="font-size: 0.95rem; margin-bottom: var(--spacing-md);">Har Gow dengan sentuhan magical cita rasa.</p>
+                        <div class="menu-price">Rp 20K</div>
+                        <a href="https://wa.me/6285155043133?text=Saya%20pesan%20Har%20Gow%20Magic" class="btn btn-primary" style="width: 100%; margin-top: var(--spacing-md); justify-content: center;">Pesan</a>
+                    </div>
+                    <div class="card menu-item">
+                        <div class="menu-emoji">🎪</div>
+                        <div class="menu-name">Char Siu Bao Plus</div>
+                        <p style="font-size: 0.95rem; margin-bottom: var(--spacing-md);">Char Siu Bao dengan topping yang berbeda.</p>
+                        <div class="menu-price">Rp 14K</div>
+                        <a href="https://wa.me/6285155043133?text=Saya%20pesan%20Char%20Siu%20Bao" class="btn btn-primary" style="width: 100%; margin-top: var(--spacing-md); justify-content: center;">Pesan</a>
+                    </div>
+                    <div class="card menu-item">
+                        <div class="menu-emoji">🎭</div>
+                        <div class="menu-name">Onion Cake Spicy</div>
+                        <p style="font-size: 0.95rem; margin-bottom: var(--spacing-md);">Onion cake dengan sentuhan pedas yang pas.</p>
+                        <div class="menu-price">Rp 12K</div>
+                        <a href="https://wa.me/6285155043133?text=Saya%20pesan%20Onion%20Cake" class="btn btn-primary" style="width: 100%; margin-top: var(--spacing-md); justify-content: center;">Pesan</a>
+                    </div>
+                    <div class="card menu-item">
+                        <div class="menu-emoji">🎊</div>
+                        <div class="menu-name">Dimsum Mystery</div>
+                        <p style="font-size: 0.95rem; margin-bottom: var(--spacing-md);">Dimsum kejutan pilihan chef hari ini!</p>
+                        <div class="menu-price">Rp 22K</div>
+                        <a href="https://wa.me/6285155043133?text=Saya%20pesan%20Dimsum%20Mystery" class="btn btn-primary" style="width: 100%; margin-top: var(--spacing-md); justify-content: center;">Pesan</a>
+                    </div>
+                    <div class="card menu-item">
+                        <div class="menu-emoji">🌈</div>
+                        <div class="menu-name">Paket Pelangi</div>
+                        <p style="font-size: 0.95rem; margin-bottom: var(--spacing-md);">Paket hemat dengan berbagai macam dimsum.</p>
+                        <div class="menu-price">Rp 60K</div>
+                        <a href="https://wa.me/6285155043133?text=Saya%20pesan%20Paket%20Pelangi" class="btn btn-primary" style="width: 100%; margin-top: var(--spacing-md); justify-content: center;">Pesan</a>
+                    </div>
+                    <div class="card menu-item">
+                        <div class="menu-emoji">🎉</div>
+                        <div class="menu-name">Paket Party</div>
+                        <p style="font-size: 0.95rem; margin-bottom: var(--spacing-md);">Paket besar untuk acara spesial Anda.</p>
+                        <div class="menu-price">Rp 120K</div>
+                        <a href="https://wa.me/6285155043133?text=Saya%20pesan%20Paket%20Party" class="btn btn-primary" style="width: 100%; margin-top: var(--spacing-md); justify-content: center;">Pesan</a>
+                    </div>
+                    <div class="card menu-item">
+                        <div class="menu-emoji">✨</div>
+                        <div class="menu-name">Premium Combo</div>
+                        <p style="font-size: 0.95rem; margin-bottom: var(--spacing-md);">Kombinasi premium semua dimsum favorit.</p>
+                        <div class="menu-price">Rp 85K</div>
+                        <a href="https://wa.me/6285155043133?text=Saya%20pesan%20Premium%20Combo" class="btn btn-primary" style="width: 100%; margin-top: var(--spacing-md); justify-content: center;">Pesan</a>
+                    </div>
+                    <div class="card menu-item">
+                        <div class="menu-emoji">💝</div>
+                        <div class="menu-name">Dimsum Spesial</div>
+                        <p style="font-size: 0.95rem; margin-bottom: var(--spacing-md);">Dimsum spesial dengan resep rahasia kami.</p>
+                        <div class="menu-price">Rp 25K</div>
+                        <a href="https://wa.me/6285155043133?text=Saya%20pesan%20Dimsum%20Spesial" class="btn btn-primary" style="width: 100%; margin-top: var(--spacing-md); justify-content: center;">Pesan</a>
+                    </div>
+                    <div class="card menu-item">
+                        <div class="menu-emoji">🎈</div>
+                        <div class="menu-name">Fun Dimsum Box</div>
+                        <p style="font-size: 0.95rem; margin-bottom: var(--spacing-md);">Box sampel untuk mencoba semua rasa.</p>
+                        <div class="menu-price">Rp 45K</div>
+                        <a href="https://wa.me/6285155043133?text=Saya%20pesan%20Fun%20Dimsum%20Box" class="btn btn-primary" style="width: 100%; margin-top: var(--spacing-md); justify-content: center;">Pesan</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="background: var(--bg-light);">
+            <div class="container" style="max-width: 600px; text-align: center;">
+                <div class="section-header">
+                    <h2>Pesan Sekarang!</h2>
+                </div>
+                <p style="font-size: 1.1rem; margin-bottom: var(--spacing-xl);">Jangan lewatkan promo spesial dan diskon menarik setiap hari!</p>
+                <a href="https://wa.me/6285155043133?text=Saya%20ingin%20memesan%20dimsum%20playful" class="btn btn-primary" style="padding: var(--spacing-md) var(--spacing-2xl);">Chat WhatsApp</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4 style="color: var(--primary);">Dimsum Playful</h4>
+                    <p>Dimsum yang ceria dan penuh warna untuk semua kalangan.</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary);">Jam Operasional</h4>
+                    <p>Senin - Minggu<br>10:00 - 21:00</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary);">Hubungi</h4>
+                    <p><a href="https://wa.me/6285155043133" style="color: var(--primary); text-decoration: none; font-weight: 600;">WhatsApp: 085155043133</a></p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: var(--spacing-2xl); padding-top: var(--spacing-xl); border-top: 1px solid var(--border); color: var(--text-light); font-size: 0.9rem;">
+                <p>&copy; 2024 Dimsum Playful Bangalexzz. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-button" onclick="window.history.back()" title="Kembali">←</button>
+</body>
+</html>

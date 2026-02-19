@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasi Campur - Surabaya</title>
+    <style>
+        :root {
+            --primary: #ff4500;
+            --dark: #e63946;
+            --bg-light: #fafafa;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --border: #e5e7eb;
+            --spacing-xs: 8px;
+            --spacing-sm: 12px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --spacing-2xl: 48px;
+            --spacing-3xl: 64px;
+            --radius: 12px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 8px rgba(0,0,0,0.12);
+            --shadow-lg: 0 8px 16px rgba(0,0,0,0.15);
+            --transition: 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text); line-height: 1.6; background: white; }
+        .container { width:100%; max-width: 1200px; margin: 0 auto; padding: 0 var(--spacing-lg); }
+        .flex { display: flex; }
+        .flex-col { flex-direction: column; }
+        .flex-center { align-items: center; justify-content: center; }
+        .flex-between { align-items: center; justify-content: space-between; }
+        .gap-md { gap: var(--spacing-md); }
+        .gap-lg { gap: var(--spacing-lg); }
+        header { background: white; padding: var(--spacing-lg) 0; box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 100; }
+        .header-content { display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+        .header-contact { display: flex; gap: var(--spacing-xl); align-items: center; font-size: 0.95rem; }
+        .header-contact span { color: var(--text-light); }
+        .card { background: white; border-radius: var(--radius); padding: var(--spacing-lg); border: 1px solid var(--border); box-shadow: var(--shadow-sm); transition: all var(--transition); }
+        .card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+        h1, h2, h3 { font-weight: 700; color: var(--text); }
+        h1 { font-size: clamp(2rem, 5vw, 3rem); }
+        h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
+        h3 { font-size: 1.25rem; }
+        p { color: var(--text-light); }
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: var(--spacing-sm) var(--spacing-lg); border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; border: none; cursor: pointer; transition: all var(--transition); }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: var(--dark); transform: scale(1.05); }
+        section { padding: var(--spacing-3xl) 0; }
+        section.alt { background: var(--bg-light); }
+        .section-header { text-align: center; margin-bottom: var(--spacing-2xl); }
+        .hero { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: var(--spacing-lg); padding: var(--spacing-3xl) 0; background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%); color: white; min-height: 500px; }
+        .hero h1 { color: white; margin-bottom: var(--spacing-lg); }
+        .hero p { color: rgba(255,255,255,0.95); max-width: 600px; }
+        .hero-emoji { font-size: 6rem; line-height: 1; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--spacing-lg); }
+        .grid-2col { grid-template-columns: repeat(2, 1fr); }
+        .menu-item { display: flex; flex-direction: column; gap: var(--spacing-md); }
+        .menu-emoji { font-size: 3rem; text-align: center; }
+        .menu-price { font-weight: 700; color: var(--primary); font-size: 1.2rem; }
+        .why-card { display: flex; flex-direction: column; gap: var(--spacing-md); text-align: center; }
+        .why-icon { font-size: 2.5rem; }
+        footer { background: var(--bg-light); padding: var(--spacing-2xl) 0; border-top: 1px solid var(--border); }
+        .footer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-lg); }
+        .back-button { position: fixed; bottom: var(--spacing-lg); right: var(--spacing-lg); width: 48px; height: 48px; background: var(--primary); color: white; border: none; border-radius: 50%; font-size: 1.5rem; cursor: pointer; box-shadow: var(--shadow-lg); display: flex; align-items: center; justify-content: center; transition: all var(--transition); z-index: 50; }
+        .back-button:hover { background: var(--dark); transform: scale(1.1); }
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .grid, .grid-2col { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .hero { min-height: 400px; }
+            section { padding: var(--spacing-2xl) 0; }
+        }
+    </style>
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: var(--color-text);
+            line-height: 1.6;
+            background: #fff;
+        }
+
+        /* Utilities */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .flex-center {
+            align-items: center;
+            justify-content: center;
+        }
+
+        .flex-between {
+            justify-content: space-between;
+        }
+
+        .flex-wrap {
+            flex-wrap: wrap;
+        }
+
+        .gap-xs { gap: var(--spacing-xs); }
+        .gap-sm { gap: var(--spacing-sm); }
+        .gap-md { gap: var(--spacing-md); }
+        .gap-lg { gap: var(--spacing-lg); }
+        .gap-xl { gap: var(--spacing-xl); }
+
+        .text-center { text-align: center; }
+        .text-white { color: white; }
+        .text-primary { color: var(--color-primary); }
+
+        /* Header & Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-md) 0;
+            border-bottom: 1px solid var(--color-border);
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .logo {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        .nav {
+            display: flex;
+            gap: var(--spacing-lg);
+            align-items: center;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav a:hover {
+            color: var(--color-primary);
+        }
+
+        .back-button {
+            background: transparent;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: var(--spacing-xs);
+            color: var(--color-primary);
+            transition: var(--transition);
+        }
+
+        .back-button:hover {
+            transform: translateX(-4px);
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-lg);
+            padding: var(--spacing-3xl) var(--spacing-md);
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: white;
+            text-align: center;
+            min-height: 500px;
+        }
+
+        .hero-emoji {
+            font-size: clamp(3rem, 12vw, 6rem);
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero h1 {
+            font-size: clamp(1.5rem, 5vw, 3rem);
+            margin: var(--spacing-md) 0;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 3vw, 1.25rem);
+            opacity: 0.95;
+            max-width: 600px;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-xs);
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-secondary);
+            transform: translateY(-2px);
+        }
+
+        /* Card */
+        .card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 1px solid var(--color-border);
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-8px);
+        }
+
+        /* Menu Section */
+        .menu {
+            padding: var(--spacing-3xl) var(--spacing-md);
+        }
+
+        .section-title {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            text-align: center;
+            margin-bottom: var(--spacing-2xl);
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .menu-item {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+            padding: var(--spacing-lg);
+            background: white;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .menu-item:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-8px);
+        }
+
+        .menu-emoji {
+            font-size: 3rem;
+            text-align: center;
+        }
+
+        .menu-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        .menu-desc {
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+        }
+
+        .menu-price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            padding: var(--spacing-3xl) var(--spacing-md);
+            background: var(--color-secondary);
+        }
+
+        .why-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-lg);
+            justify-content: center;
+        }
+
+        .why-card {
+            flex: 1;
+            min-width: 250px;
+            max-width: 400px;
+            padding: var(--spacing-xl);
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .why-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-8px);
+        }
+
+        .why-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .why-card h3 {
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: var(--spacing-3xl) var(--spacing-md);
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+            margin: var(--spacing-2xl) 0;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-lg);
+            background: var(--color-secondary);
+            border-radius: var(--border-radius);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-text);
+            color: white;
+            padding: var(--spacing-2xl) var(--spacing-md);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .footer-section h4 {
+            margin-bottom: var(--spacing-md);
+            color: var(--color-primary);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: var(--color-primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--spacing-lg);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: var(--spacing-md);
+            }
+
+            .nav {
+                flex-direction: column;
+                gap: var(--spacing-md);
+            }
+
+            .hero {
+                min-height: 400px;
+                padding: var(--spacing-2xl) var(--spacing-md);
+            }
+
+            .why-grid {
+                flex-direction: column;
+            }
+
+            .why-card {
+                max-width: 100%;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">🍚 Nasi Campur</a>
+                <div class="header-contact">
+                    <span>📍 Surabaya</span>
+                    <a href="tel:085155043133" style="color: var(--primary); font-weight: 600; text-decoration: none;">📱 085155043133</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container flex flex-col flex-center" style="text-align: center;">
+                <div class="hero-emoji">🍚</div>
+                <h1>Nasi Campur Legendaris</h1>
+                <p>Cita rasa autentik Indonesia dengan bahan berkualitas premium</p>
+                <a href="https://wa.me/6285155043133?text=Halo%20Nasi%20Campur,%20saya%20ingin%20memesan" class="btn btn-primary">Pesan Sekarang</a>
+            </div>
+        </section>
+
+        <!-- Menu -->
+        <section>
+            <div class="container">
+                <div class="section-header">
+                    <h2>Menu Pilihan</h2>
+                </div>
+                <div class="grid">
+                    <div class="card menu-item">
+                        <div class="menu-emoji">🍚</div>
+                        <h3>Nasi Campur Spesial</h3>
+                        <p>Ayam goreng, telur mata sapi, perkedel, dan sambal pedas</p>
+                        <div class="menu-price">Rp 22K</div>
+                        <a href="https://wa.me/6285155043133?text=Saya%20pesan%20Nasi%20Campur%20Spesial" class="btn btn-primary">Pesan</a>
+                    </div>
+                    <div class="card menu-item">
+                        <div class="menu-emoji">🐔</div>
+                        <h3>Nasi Ayam Goreng Crispy</h3>
+                        <p>Ayam goreng renyah dengan nasi, acar, dan kuah kaldu</p>
+                        <div class="menu-price">Rp 25K</div>
+                        <a href="https://wa.me/6285155043133?text=Saya%20pesan%20Nasi%20Ayam%20Goreng" class="btn btn-primary">Pesan</a>
+                    </div>
+                    <div class="card menu-item">
+                        <div class="menu-emoji">🥓</div>
+                        <h3>Nasi Daging Rendang</h3>
+                        <p>Daging sapi rendang, telur, ubi, dan sambal cabai</p>
+                        <div class="menu-price">Rp 28K</div>
+                        <a href="https://wa.me/6285155043133?text=Saya%20pesan%20Nasi%20Daging%20Rendang" class="btn btn-primary">Pesan</a>
+                    </div>
+                    <div class="card menu-item">
+                        <div class="menu-emoji">🦐</div>
+                        <h3>Nasi Udang Masak Kuning</h3>
+                        <p>Udang segar masak kuning dengan rempah dan sayuran</p>
+                        <div class="menu-price">Rp 30K</div>
+                        <a href="https://wa.me/6285155043133?text=Saya%20pesan%20Nasi%20Udang" class="btn btn-primary">Pesan</a>
+                    </div>
+                    <div class="card menu-item">
+                        <div class="menu-emoji">🐟</div>
+                        <h3>Nasi Ikan Bakar Terasi</h3>
+                        <p>Ikan bakar bumbu terasi, sambal, dan nasi gurih</p>
+                        <div class="menu-price">Rp 27K</div>
+                        <a href="https://wa.me/6285155043133?text=Saya%20pesan%20Nasi%20Ikan%20Bakar" class="btn btn-primary">Pesan</a>
+                    </div>
+                    <div class="card menu-item">
+                        <div class="menu-emoji">🥬</div>
+                        <h3>Nasi Sayuran Segar</h3>
+                        <p>Tumisan sayur pucuk, jamur, telur, dan bawang goreng</p>
+                        <div class="menu-price">Rp 18K</div>
+                        <a href="https://wa.me/6285155043133?text=Saya%20pesan%20Nasi%20Sayuran" class="btn btn-primary">Pesan</a>
+                    </div>
+                    <div class="card menu-item">
+                        <div class="menu-emoji">🍳</div>
+                        <h3>Nasi Goreng Spesial</h3>
+                        <p>Nasi goreng ayam, telur, sayur dengan bumbu spesial</p>
+                        <div class="menu-price">Rp 20K</div>
+                        <a href="https://wa.me/6285155043133?text=Saya%20pesan%20Nasi%20Goreng" class="btn btn-primary">Pesan</a>
+                    </div>
+                    <div class="card menu-item">
+                        <div class="menu-emoji">🌶️</div>
+                        <h3>Paket Pedas Istimewa</h3>
+                        <p>Nasi dengan lauk paling pedas dan sambal level tinggi</p>
+                        <div class="menu-price">Rp 24K</div>
+                        <a href="https://wa.me/6285155043133?text=Saya%20pesan%20Paket%20Pedas" class="btn btn-primary">Pesan</a>
+                    </div>
+                    <div class="card menu-item">
+                        <div class="menu-emoji">👨‍🍳</div>
+                        <h3>Chef's Choice</h3>
+                        <p>Pilihan chef dengan berbagai lauk eksklusif</p>
+                        <div class="menu-price">Rp 32K</div>
+                        <a href="https://wa.me/6285155043133?text=Saya%20pesan%20Chef%27s%20Choice" class="btn btn-primary">Pesan</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Mengapa Pilih Kami?</h2>
+                </div>
+                <div class="grid-2col">
+                    <div class="card why-card">
+                        <div class="why-icon">✨</div>
+                        <h3>Bahan Premium</h3>
+                        <p>Kami menggunakan bahan berkualitas tinggi yang segar setiap hari.</p>
+                    </div>
+                    <div class="card why-card">
+                        <div class="why-icon">👨‍🍳</div>
+                        <h3>Chef Berpengalaman</h3>
+                        <p>Tim chef berpengalaman lebih dari 15 tahun memasak cita rasa autentik.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section>
+            <div class="container" style="max-width: 600px; text-align: center;">
+                <div class="section-header">
+                    <h2>Hubungi Kami</h2>
+                </div>
+                <div class="flex flex-col gap-lg" style="align-items: center;">
+                    <p>Pesan makanan favorit Anda sekarang! Kami siap melayani dengan sepenuh hati.</p>
+                    <div class="card flex flex-col  gap-md" style="width: 100%;">
+                        <strong>📱 WhatsApp</strong>
+                        <a href="https://wa.me/6285155043133" class="btn btn-primary" style="width: 100%; justify-content: center;">Chat di WhatsApp</a>
+                    </div>
+                    <div class="card">
+                        <p><strong>📍 Lokasi:</strong> Jl. Merdeka No. 42, Jakarta</p>
+                        <p style="margin-top: var(--spacing-md);"><strong>🕐 Jam:</strong> Senin-Jumat 10:00-21:00<br>Sabtu-Minggu 10:00-22:00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>Nasi Campur</h4>
+                    <p>Cita rasa autentik Indonesia dengan kualitas premium dan resep turun-temurun.</p>
+                </div>
+                <div>
+                    <h4>Menu Utama</h4>
+                    <p>Nasi Campur Spesial<br>Ayam Goreng Crispy<br>Daging Rendang<br>Ikan Bakar Terasi</p>
+                </div>
+                <div>
+                    <h4>Kontak</h4>
+                    <p><a href="https://wa.me/6285155043133" style="color: var(--primary); text-decoration: none;">WhatsApp: 085155043133</a><br><a href="#" style="color: var(--primary); text-decoration: none;">Lokasi Kami</a></p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: var(--spacing-2xl); padding-top: var(--spacing-xl); border-top: 1px solid var(--border); color: var(--text-light); font-size: 0.9rem;">
+                <p>&copy; 2024 Nasi Campur. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-button" onclick="window.history.back()" title="Kembali">←</button>
+</body>
+</html>
+                <div class="why-card">
+                    <div class="why-icon">👨‍🍳</div>
+                    <h3>Chef Berpengalaman</h3>
+                    <p>Tim chef kami memiliki pengalaman lebih dari 15 tahun memasak nasi campur dengan cita rasa autentik.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">⚡</div>
+                    <h3>Pengiriman Cepat</h3>
+                    <p>Kami menjamin pengiriman dalam kondisi hangat dan cepat langsung ke pintu rumah Anda.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">💰</div>
+                    <h3>Harga Terjangkau</h3>
+                    <p>Dengan kualitas premium, kami menawarkan harga yang sangat kompetitif dan terjangkau untuk semua kalangan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container contact-content">
+            <h2 class="section-title">Hubungi Kami</h2>
+            <p style="color: var(--color-text-light); margin-bottom: var(--spacing-xl);">
+                Pesan makanan favorit Anda sekarang juga! Kami siap melayani dengan sepenuh hati.
+            </p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>📱 WhatsApp</strong>
+                    <a href="https://wa.me/6285155043133?text=Halo%20Nasi%20Campur%20Legendaris" class="btn btn-primary" style="width: 100%; justify-content: center;">Chat di WhatsApp</a>
+                </div>
+                <div class="contact-item">
+                    <strong>📍 Lokasi</strong>
+                    <p>Jalan Merdeka No. 42, Jakarta Pusat 12190</p>
+                </div>
+                <div class="contact-item">
+                    <strong>🕐 Jam Operasional</strong>
+                    <p>Senin - Jumat: 10:00 - 21:00<br>Sabtu - Minggu: 10:00 - 22:00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Tentang Kami</h4>
+                    <p style="color: rgba(255, 255, 255, 0.8);">Nasi Campur Legendaris menghadirkan cita rasa autentik Indonesia dengan bahan berkualitas premium dan resep turun-temurun yang telah dipercaya selama puluhan tahun.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Menu Utama</h4>
+                    <ul>
+                        <li><a href="#menu">Nasi Campur Spesial</a></li>
+                        <li><a href="#menu">Nasi Ayam Goreng Crispy</a></li>
+                        <li><a href="#menu">Nasi Daging Rendang</a></li>
+                        <li><a href="#menu">Nasi Udang Masak Kuning</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Kontak & Info</h4>
+                    <ul>
+                        <li><a href="https://wa.me/6285155043133">WhatsApp: 085155043133</a></li>
+                        <li><a href="#contact">Lokasi & Jam</a></li>
+                        <li><a href="#why">Tentang Layanan</a></li>
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Nasi Campur Legendaris. Semua hak dilindungi. Pesan sekarang dan nikmati kelezatan autentik!</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
