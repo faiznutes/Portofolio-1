@@ -6,115 +6,103 @@
     <title>Mie Ayam Bangalexzz - Surabaya</title>
     <style>
         :root {
-            --primary-color: #d97706;
+            --primary: #d97706;
             --primary-dark: #b45309;
-            --text-dark: #1f2937;
+            --accent: #f59e0b;
+            --text: #1f2937;
             --text-light: #6b7280;
-            --text-muted: #9ca3af;
-            --bg-light: #fafafa;
-            --border-color: #e5e7eb;
-            --spacing-xs: 8px;
-            --spacing-sm: 12px;
-            --spacing-md: 16px;
-            --spacing-lg: 24px;
-            --spacing-xl: 32px;
-            --spacing-2xl: 48px;
-            --spacing-3xl: 64px;
-            --radius-sm: 4px;
-            --radius-md: 8px;
-            --radius-lg: 12px;
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
-            --shadow-md: 0 4px 8px rgba(0,0,0,0.12);
-            --shadow-lg: 0 8px 16px rgba(0,0,0,0.15);
+            --border: #e5e7eb;
+            --spacing: 8px;
+            --radius: 12px;
+            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --shadow-hover: 0 8px 24px rgba(217,119,6,0.15);
             --transition: 0.3s ease;
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text-dark); line-height: 1.6; background: white; }
-        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 var(--spacing-lg); }
-
-        .flex { display: flex; }
-        .flex-col { flex-direction: column; }
-        .flex-wrap { flex-wrap: wrap; }
-        .flex-center { align-items: center; justify-content: center; }
-        .flex-between { align-items: center; justify-content: space-between; }
-        .gap-sm { gap: var(--spacing-sm); }
-        .gap-md { gap: var(--spacing-md); }
-        .gap-lg { gap: var(--spacing-lg); }
-
-        header { background: white; padding: var(--spacing-lg) 0; box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 100; }
-        .header-content { display: flex; align-items: center; justify-content: space-between; }
-        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary-color); text-decoration: none; }
-        .header-contact { display: flex; gap: var(--spacing-xl); align-items: center; font-size: 0.95rem; }
-        .header-contact span { color: var(--text-light); }
-
-        .card { background: white; border-radius: var(--radius-lg); padding: var(--spacing-lg); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); transition: all var(--transition); }
-        .card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); border-color: var(--primary-color); }
-        .card-body { display: flex; flex-direction: column; gap: var(--spacing-md); }
-
-        h1, h2, h3, h4 { font-weight: 700; color: var(--text-dark); }
-        h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.2; }
-        h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); line-height: 1.3; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text); line-height: 1.6; background: #fafafa; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 calc(var(--spacing) * 2); }
+        
+        header { background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); padding: calc(var(--spacing) * 2) 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(217,119,6,0.1); }
+        .header-content { display: flex; align-items: center; justify-content: space-between; color: white; }
+        .logo { font-size: 1.5rem; font-weight: 700; text-decoration: none; color: white; }
+        .header-contact { display: flex; gap: calc(var(--spacing) * 4); align-items: center; font-size: 0.95rem; }
+        .header-contact a { color: white; text-decoration: none; font-weight: 600; }
+        
+        h1, h2, h3 { color: var(--text); font-weight: 700; }
+        h1 { font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.1; }
+        h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: calc(var(--spacing) * 3); }
         h3 { font-size: 1.25rem; }
-        p { color: var(--text-light); line-height: 1.6; }
-        .text-muted { color: var(--text-muted); font-size: 0.95rem; }
-
-        .btn { display: inline-flex; align-items: center; justify-content: center; padding: var(--spacing-sm) var(--spacing-lg); border-radius: var(--radius-md); font-weight: 600; font-size: 0.95rem; text-decoration: none; border: none; cursor: pointer; transition: all var(--transition); white-space: nowrap; }
-        .btn-primary { background-color: var(--primary-color); color: white; }
-        .btn-primary:hover { background-color: var(--primary-dark); transform: scale(1.05); }
-        .btn-secondary { background-color: var(--bg-light); color: var(--text-dark); border: 1px solid var(--border-color); }
-        .btn-secondary:hover { background-color: white; border-color: var(--primary-color); color: var(--primary-color); }
-
-        section { padding: var(--spacing-3xl) 0; }
-        section.alt { background-color: var(--bg-light); }
-        .section-header { text-align: center; margin-bottom: var(--spacing-2xl); }
-        .section-header h2 { margin-bottom: var(--spacing-md); }
-
-        .hero { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-2xl); align-items: center; padding: var(--spacing-3xl) 0; }
-        .hero-text h1 { margin-bottom: var(--spacing-lg); color: var(--primary-color); }
-        .hero-content { display: flex; flex-direction: column; gap: var(--spacing-md); }
-        .hero-buttons { display: flex; gap: var(--spacing-md); margin-top: var(--spacing-lg); }
-        .hero-emoji { font-size: 8rem; text-align: center; line-height: 1; }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--spacing-lg); }
-        .grid-3col { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
-        .grid-2col { grid-template-columns: repeat(2, 1fr); }
-
-        .menu-item { display: flex; flex-direction: column; }
-        .menu-emoji { font-size: 3rem; margin-bottom: var(--spacing-md); text-align: center; line-height: 1; }
-        .menu-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: var(--spacing-sm); }
-        .menu-header h3 { margin: 0; }
-        .menu-price { font-weight: 700; color: var(--primary-color); font-size: 1.1rem; white-space: nowrap; margin-left: var(--spacing-md); }
-        .menu-description { flex-grow: 1; margin-bottom: var(--spacing-md); color: var(--text-light); }
-
-        .testimonial { display: flex; flex-direction: column; gap: var(--spacing-md); text-align: center; }
-        .testimonial-text { font-style: italic; color: var(--text-light); font-size: 1rem; }
-        .testimonial-author { font-weight: 700; color: var(--primary-color); font-size: 0.95rem; }
-
-        .location-item { display: flex; flex-direction: column; gap: var(--spacing-md); }
-        .location-emoji { font-size: 2.5rem; line-height: 1; }
-        .location-item h3 { margin: 0; }
-
-        footer { background-color: var(--bg-light); padding: var(--spacing-2xl) 0; border-top: 1px solid var(--border-color); }
-        .footer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-xl); }
-        .footer-section h4 { margin-bottom: var(--spacing-md); }
-        .footer-section p { margin-bottom: var(--spacing-sm); font-size: 0.95rem; }
-
-        .back-button { position: fixed; bottom: var(--spacing-lg); right: var(--spacing-lg); width: 48px; height: 48px; background-color: var(--primary-color); color: white; border: none; border-radius: 50%; font-size: 1.5rem; cursor: pointer; box-shadow: var(--shadow-lg); display: flex; align-items: center; justify-content: center; transition: all var(--transition); z-index: 50; line-height: 1; }
-        .back-button:hover { background-color: var(--primary-dark); transform: scale(1.1); }
-
+        p { color: var(--text-light); }
+        
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 3); border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; border: none; cursor: pointer; transition: all var(--transition); white-space: nowrap; }
+        .btn-primary { background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; box-shadow: 0 4px 12px rgba(217,119,6,0.2); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(217,119,6,0.3); }
+        .btn-secondary { background: white; color: var(--primary); border: 2px solid var(--primary); }
+        .btn-secondary:hover { background: var(--primary); color: white; }
+        
+        section { padding: calc(var(--spacing) * 8) 0; }
+        section.light-bg { background: white; }
+        
+        .hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: calc(var(--spacing) * 4); align-items: center; }
+        .hero-text h1 { color: var(--primary); margin-bottom: calc(var(--spacing) * 2); }
+        .hero-text p { font-size: 1.1rem; margin-bottom: calc(var(--spacing) * 3); }
+        .hero-buttons { display: flex; gap: calc(var(--spacing) * 2); }
+        .hero-emoji { font-size: 10rem; text-align: center; animation: bounce 2s ease-in-out infinite; }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        
+        .section-title { position: relative; display: inline-block; margin-bottom: calc(var(--spacing) * 4); }
+        .section-title::after { content: ''; position: absolute; bottom: -8px; left: 0; width: 80px; height: 4px; background: linear-gradient(90deg, var(--primary), var(--accent)); border-radius: 2px; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: calc(var(--spacing) * 2); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        
+        .card { background: white; border-radius: var(--radius); padding: calc(var(--spacing) * 2.5); border: 1px solid var(--border); box-shadow: var(--shadow); transition: all var(--transition); cursor: pointer; }
+        .card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--primary); }
+        .card-emoji { font-size: 3rem; margin-bottom: calc(var(--spacing) * 2); display: block; }
+        .card h3 { margin-bottom: calc(var(--spacing) * 1.5); }
+        .card p { margin-bottom: calc(var(--spacing) * 2); }
+        
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: calc(var(--spacing) * 2); }
+        .menu-card { background: white; border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; transition: all var(--transition); box-shadow: var(--shadow); }
+        .menu-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
+        .menu-card-image { font-size: 4rem; text-align: center; padding: calc(var(--spacing) * 2) 0; background: linear-gradient(135deg, rgba(217,119,6,0.05), rgba(245,158,11,0.05)); min-height: 140px; display: flex; align-items: center; justify-content: center; }
+        .menu-card-content { padding: calc(var(--spacing) * 2); }
+        .menu-card-name { font-weight: 700; font-size: 1.1rem; color: var(--text); margin-bottom: calc(var(--spacing) * 1); }
+        .menu-card-desc { font-size: 0.9rem; color: var(--text-light); margin-bottom: calc(var(--spacing) * 1.5); }
+        .menu-card-footer { display: flex; align-items: center; justify-content: space-between; }
+        .menu-price { font-weight: 700; font-size: 1.25rem; color: var(--primary); }
+        .menu-card .btn { padding: calc(var(--spacing) * 1) calc(var(--spacing) * 1.5); font-size: 0.85rem; }
+        
+        .testimonial { background: white; border-radius: var(--radius); padding: calc(var(--spacing) * 2.5); border-left: 4px solid var(--primary); box-shadow: var(--shadow); }
+        .testimonial-text { font-style: italic; margin-bottom: calc(var(--spacing) * 1.5); font-size: 1rem; }
+        .testimonial-author { font-weight: 700; color: var(--text); }
+        .testimonial-stars { color: var(--primary); margin-bottom: calc(var(--spacing) * 1); }
+        
+        .location-card { background: white; border-radius: var(--radius); padding: calc(var(--spacing) * 2.5); border: 2px solid var(--border); box-shadow: var(--shadow); transition: all var(--transition); }
+        .location-card:hover { border-color: var(--primary); box-shadow: var(--shadow-hover); }
+        .location-icon { font-size: 2.5rem; margin-bottom: calc(var(--spacing) * 1.5); }
+        .location-card h3 { margin-bottom: calc(var(--spacing) * 1); }
+        .location-card p { margin-bottom: calc(var(--spacing) * 1); }
+        
+        footer { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: calc(var(--spacing) * 4) 0 calc(var(--spacing) * 2); }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: calc(var(--spacing) * 2); margin-bottom: calc(var(--spacing) * 3); }
+        .footer-grid h4 { margin-bottom: calc(var(--spacing) * 1.5); }
+        .footer-grid p { color: rgba(255,255,255,0.9); font-size: 0.95rem; }
+        .footer-grid a { color: white; text-decoration: none; }
+        .footer-bottom { text-align: center; padding-top: calc(var(--spacing) * 2); border-top: 1px solid rgba(255,255,255,0.2); font-size: 0.9rem; }
+        
+        .back-button { position: fixed; bottom: calc(var(--spacing) * 2); right: calc(var(--spacing) * 2); width: 50px; height: 50px; background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; border: none; border-radius: 50%; font-size: 1.5rem; cursor: pointer; box-shadow: var(--shadow-hover); display: flex; align-items: center; justify-content: center; transition: all var(--transition); z-index: 50; }
+        .back-button:hover { transform: scale(1.1); }
+        
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
             h2 { font-size: 1.5rem; }
-            .hero, .grid-2col { grid-template-columns: 1fr; }
+            .hero { grid-template-columns: 1fr; }
+            .hero-emoji { font-size: 6rem; }
             .hero-buttons { flex-direction: column; }
-            .hero-emoji { font-size: 5rem; }
+            .hero-buttons .btn { width: 100%; }
             .footer-grid { grid-template-columns: 1fr; }
-            .header-contact { gap: var(--spacing-sm); font-size: 0.85rem; }
-            .menu-header { flex-direction: column; }
-            .menu-price { margin-left: 0; margin-top: var(--spacing-xs); }
-            section { padding: var(--spacing-2xl) 0; }
-            .section-header { margin-bottom: var(--spacing-xl); }
+            .header-contact { flex-direction: column; gap: calc(var(--spacing) * 1); }
         }
     </style>
 </head>
@@ -125,25 +113,22 @@
                 <a href="#" class="logo">🍜 Mie Ayam Bangalexzz</a>
                 <div class="header-contact">
                     <span>📍 Surabaya</span>
-                    <a href="tel:085155043133" style="color: var(--primary-color); font-weight: 600; text-decoration: none;">📱 085155043133</a>
+                    <a href="tel:085155043133">📱 085155043133</a>
                 </div>
             </div>
         </div>
     </header>
 
     <main>
-        <!-- Hero -->
         <section>
             <div class="container">
                 <div class="hero">
-                    <div class="hero-text">
+                    <div>
                         <h1>Mie Ayam Bangalexzz</h1>
-                        <div class="hero-content">
-                            <p>Mie Ayam lezat dengan cita rasa autentik Surabaya. Dibuat fresh setiap hari dengan bahan-bahan pilihan berkualitas tinggi.</p>
-                            <div class="hero-buttons">
-                                <a href="https://wa.me/6285155043133?text=Assalamu%20alaikum%20Mie%20Ayam%20Bangalexzz,%20saya%20ingin%20memesan" class="btn btn-primary">Pesan Sekarang</a>
-                                <button class="btn btn-secondary" onclick="document.querySelector('#menu').scrollIntoView({behavior: 'smooth'})">Lihat Menu</button>
-                            </div>
+                        <p style="font-size: 1.1rem;">Harumnya wedang santai, kuahnya yang gurih, dengan ayam kampung yang empuk. Cita rasa autentik Surabaya yang dijamin bikin ketagihan setiap hari.</p>
+                        <div class="hero-buttons">
+                            <a href="https://wa.me/6285155043133?text=Halo%20Mie%20Ayam%20Bangalexzz,%20saya%20ingin%20memesan" class="btn btn-primary">🛵 Pesan Sekarang</a>
+                            <button class="btn btn-secondary" onclick="document.querySelector('#menu').scrollIntoView({behavior: 'smooth'})">👀 Lihat Menu</button>
                         </div>
                     </div>
                     <div class="hero-emoji">🍜</div>
@@ -151,140 +136,150 @@
             </div>
         </section>
 
-        <!-- Why Choose Us -->
-        <section class="alt">
+        <section style="background: white;">
             <div class="container">
-                <div class="section-header">
-                    <h2>Kenapa Pilih Kami?</h2>
-                </div>
-                <div class="grid grid-3col">
-                    <div class="card card-body">
-                        <div style="font-size: 2.5rem; line-height: 1;">✨</div>
-                        <h3>Kualitas Premium</h3>
-                        <p>Bahan-bahan terbaik dipilih langsung untuk menghasilkan cita rasa terbaik setiap harinya.</p>
+                <h2 class="section-title">Kenapa Pilih Kami?</h2>
+                <div class="grid grid-3">
+                    <div class="card">
+                        <span class="card-emoji">✨</span>
+                        <h3>Bahan Premium Pilihan</h3>
+                        <p>Ayam kampung segar, bumbu tradisional, dan semua bahan berkualitas tinggi dari supplier terpercaya.</p>
                     </div>
-                    <div class="card card-body">
-                        <div style="font-size: 2.5rem; line-height: 1;">⚡</div>
-                        <h3>Cepat & Fresh</h3>
-                        <p>Disiapkan fresh setiap pesanan dengan layanan cepat dan ramah hati dari tim kami.</p>
+                    <div class="card">
+                        <span class="card-emoji">⚡</span>
+                        <h3>Disiapkan Fresh</h3>
+                        <p>Setiap pesanan dibuat fresh on-demand. Mie selalu panas, kuah selalu gurih, ayam selalu empuk.</p>
                     </div>
-                    <div class="card card-body">
-                        <div style="font-size: 2.5rem; line-height: 1;">💰</div>
+                    <div class="card">
+                        <span class="card-emoji">💰</span>
                         <h3>Harga Terjangkau</h3>
-                        <p>Cita rasa premium dengan harga bersahabat untuk semua kalangan masyarakat Surabaya.</p>
+                        <p>Cita rasa premium dengan harga bersahabat. Kami percaya makanan enak harus terjangkau untuk semua.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Menu -->
         <section id="menu">
             <div class="container">
-                <div class="section-header">
-                    <h2>Menu Pilihan</h2>
-                </div>
-                <div class="grid">
-                    <div class="card menu-item">
-                        <div class="menu-emoji">🍜</div>
-                        <div class="menu-header">
-                            <h3>Mie Ayam Spesial</h3>
-                            <div class="menu-price">Rp 18K</div>
+                <h2 class="section-title">Menu Pilihan Kami</h2>
+                <div class="menu-grid">
+                    <div class="menu-card">
+                        <div class="menu-card-image">🍜</div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-name">Mie Ayam Spesial</div>
+                            <div class="menu-card-desc">Mie kuning dengan potongan ayam kampung, kuah gurih, bumbu sempurna.</div>
+                            <div class="menu-card-footer">
+                                <span class="menu-price">Rp 18K</span>
+                                <a href="https://wa.me/6285155043133?text=Pesan%20Mie%20Ayam%20Spesial" class="btn btn-primary" style="font-size: 0.8rem; padding: 6px 12px;">Pesan</a>
+                            </div>
                         </div>
-                        <p class="menu-description">Mie kuning dengan potongan ayam kampung, kuah hangat, dan bumbu sempurna.</p>
-                        <a href="https://wa.me/6285155043133?text=Saya%20pesan%20Mie%20Ayam%20Spesial" class="btn btn-primary">Pesan</a>
                     </div>
-                    <div class="card menu-item">
-                        <div class="menu-emoji">🥚</div>
-                        <div class="menu-header">
-                            <h3>Mie Ayam + Telur</h3>
-                            <div class="menu-price">Rp 22K</div>
+                    <div class="menu-card">
+                        <div class="menu-card-image">🥚</div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-name">Mie Ayam + Telur</div>
+                            <div class="menu-card-desc">Paket lengkap dengan telur rebus premium dan cakwe yang renyah.</div>
+                            <div class="menu-card-footer">
+                                <span class="menu-price">Rp 22K</span>
+                                <a href="https://wa.me/6285155043133?text=Pesan%20Mie%20Ayam%20Plus%20Telur" class="btn btn-primary" style="font-size: 0.8rem; padding: 6px 12px;">Pesan</a>
+                            </div>
                         </div>
-                        <p class="menu-description">Paket lengkap dengan telur ayam rebus premium dan cakwe yang renyah.</p>
-                        <a href="https://wa.me/6285155043133?text=Saya%20pesan%20Mie%20Ayam%20Plus%20Telur" class="btn btn-primary">Pesan</a>
                     </div>
-                    <div class="card menu-item">
-                        <div class="menu-emoji">🌶️</div>
-                        <div class="menu-header">
-                            <h3>Mie Ayam Pedas</h3>
-                            <div class="menu-price">Rp 19K</div>
+                    <div class="menu-card">
+                        <div class="menu-card-image">🌶️</div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-name">Mie Ayam Pedas</div>
+                            <div class="menu-card-desc">Untuk penggemar pedas! Dengan sambal khas yang menggugah selera.</div>
+                            <div class="menu-card-footer">
+                                <span class="menu-price">Rp 19K</span>
+                                <a href="https://wa.me/6285155043133?text=Pesan%20Mie%20Ayam%20Pedas" class="btn btn-primary" style="font-size: 0.8rem; padding: 6px 12px;">Pesan</a>
+                            </div>
                         </div>
-                        <p class="menu-description">Untuk penggemar pedas! Dengan sambal khas yang menggugah selera.</p>
-                        <a href="https://wa.me/6285155043133?text=Saya%20pesan%20Mie%20Ayam%20Pedas" class="btn btn-primary">Pesan</a>
                     </div>
-                    <div class="card menu-item">
-                        <div class="menu-emoji">🍲</div>
-                        <div class="menu-header">
-                            <h3>Bakso Ayam</h3>
-                            <div class="menu-price">Rp 20K</div>
+                    <div class="menu-card">
+                        <div class="menu-card-image">🍲</div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-name">Bakso Ayam</div>
+                            <div class="menu-card-desc">Bakso ayam homemade dalam kuah gurih dengan mie yang lembut.</div>
+                            <div class="menu-card-footer">
+                                <span class="menu-price">Rp 20K</span>
+                                <a href="https://wa.me/6285155043133?text=Pesan%20Bakso%20Ayam" class="btn btn-primary" style="font-size: 0.8rem; padding: 6px 12px;">Pesan</a>
+                            </div>
                         </div>
-                        <p class="menu-description">Bakso ayam homemade dalam kuah gurih dengan mie lembut.</p>
-                        <a href="https://wa.me/6285155043133?text=Saya%20pesan%20Bakso%20Ayam" class="btn btn-primary">Pesan</a>
                     </div>
-                    <div class="card menu-item">
-                        <div class="menu-emoji">☕</div>
-                        <div class="menu-header">
-                            <h3>Teh Manis Hangat</h3>
-                            <div class="menu-price">Rp 5K</div>
+                    <div class="menu-card">
+                        <div class="menu-card-image">☕</div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-name">Teh Manis Hangat</div>
+                            <div class="menu-card-desc">Teh manis segar, minuman sempurna untuk menemani makan mie.</div>
+                            <div class="menu-card-footer">
+                                <span class="menu-price">Rp 5K</span>
+                                <a href="https://wa.me/6285155043133?text=Pesan%20Teh%20Manis" class="btn btn-primary" style="font-size: 0.8rem; padding: 6px 12px;">Pesan</a>
+                            </div>
                         </div>
-                        <p class="menu-description">Teh manis segar, minuman sempurna untuk menemani makan mie.</p>
-                        <a href="https://wa.me/6285155043133?text=Saya%20pesan%20Teh%20Manis" class="btn btn-primary">Pesan</a>
                     </div>
-                    <div class="card menu-item">
-                        <div class="menu-emoji">🥤</div>
-                        <div class="menu-header">
-                            <h3>Es Jeruk Segar</h3>
-                            <div class="menu-price">Rp 6K</div>
+                    <div class="menu-card">
+                        <div class="menu-card-image">🥤</div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-name">Es Jeruk Segar</div>
+                            <div class="menu-card-desc">Es jeruk perasan asli, penyegarkan dan nikmat di musim panas.</div>
+                            <div class="menu-card-footer">
+                                <span class="menu-price">Rp 6K</span>
+                                <a href="https://wa.me/6285155043133?text=Pesan%20Es%20Jeruk" class="btn btn-primary" style="font-size: 0.8rem; padding: 6px 12px;">Pesan</a>
+                            </div>
                         </div>
-                        <p class="menu-description">Es jeruk dengan perasan jeruk asli, penyegarkan dan lezat di musim panas.</p>
-                        <a href="https://wa.me/6285155043133?text=Saya%20pesan%20Es%20Jeruk" class="btn btn-primary">Pesan</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Testimonials -->
-        <section class="alt">
+        <section style="background: white;">
             <div class="container">
-                <div class="section-header">
-                    <h2>Testimoni Pelanggan</h2>
-                </div>
-                <div class="grid grid-3col">
-                    <div class="card testimonial">
-                        <p class="testimonial-text">"Mie ayamnya enak banget! Bumbu pas, ayamnya empuk, harganya terjangkau. Rekomen!"</p>
-                        <p class="testimonial-author">⭐⭐⭐⭐⭐ Siti Nurhaliza</p>
+                <h2 class="section-title">Testimoni Pelanggan</h2>
+                <div class="grid grid-3">
+                    <div class="testimonial">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"Mie ayamnya enak banget! Bumbu pas, ayamnya empuk, harganya terjangkau. Super rekomen!"</p>
+                        <p class="testimonial-author">Siti Nurhaliza</p>
                     </div>
-                    <div class="card testimonial">
-                        <p class="testimonial-text">"Pelayanan cepat, mie selalu panas, dan rasa konsisten. Saya sudah pelanggan setia!"</p>
-                        <p class="testimonial-author">⭐⭐⭐⭐⭐ Budi Santoso</p>
+                    <div class="testimonial">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"Pelayanan cepat, mie selalu panas, rasa konsisten. Saya sudah pelanggan setia 3 bulan!"</p>
+                        <p class="testimonial-author">Budi Santoso</p>
                     </div>
-                    <div class="card testimonial">
+                    <div class="testimonial">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
                         <p class="testimonial-text">"Cakwenya renyah, kuahnya gurih. Ini tempat terbaik untuk mie ayam di Surabaya!"</p>
-                        <p class="testimonial-author">⭐⭐⭐⭐⭐ Dewi Lestari</p>
+                        <p class="testimonial-author">Dewi Lestari</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Locations -->
         <section>
             <div class="container">
-                <div class="section-header">
-                    <h2>Lokasi Kami</h2>
-                </div>
-                <div class="grid grid-2col">
-                    <div class="card location-item">
-                        <div class="location-emoji">📍</div>
+                <h2 class="section-title">Lokasi & Layanan Kami</h2>
+                <div class="grid grid-3" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                    <div class="location-card">
+                        <div class="location-icon">📍</div>
                         <h3>Lokasi Utama</h3>
-                        <p>Jl. Raya Kraton No. 123, Surabaya, Jawa Timur 60000</p>
-                        <p class="text-muted">Buka: 07:00 - 22:00 (Senin-Minggu)</p>
-                        <a href="https://wa.me/6285155043133" class="btn btn-primary">Hubungi</a>
+                        <p><strong>Jl. Raya Kraton No. 123</strong><br>Surabaya, Jawa Timur 60000</p>
+                        <p style="color: var(--text-light); font-size: 0.95rem;">⏰ Buka: 07:00 - 22:00 (Senin-Minggu)</p>
+                        <a href="https://wa.me/6285155043133" class="btn btn-primary" style="margin-top: calc(var(--spacing) * 2); width: 100%; justify-content: center;">Chat WhatsApp</a>
                     </div>
-                    <div class="card location-item">
-                        <div class="location-emoji">🛵</div>
+                    <div class="location-card">
+                        <div class="location-icon">🛵</div>
                         <h3>Layanan Delivery</h3>
                         <p>Kami melayani pengiriman untuk area Surabaya dengan jangkauan luas dan cepat.</p>
-                        <p class="text-muted">Gratis ongkir untuk minimal pembelian Rp50K</p>
-                        <a href="https://wa.me/6285155043133?text=Saya%20ingin%20delivery" class="btn btn-primary">Pesan Delivery</a>
+                        <p style="color: var(--primary); font-weight: 600; font-size: 0.95rem;">✓ Gratis ongkir untuk pembelian Rp50K+</p>
+                        <a href="https://wa.me/6285155043133?text=Saya%20ingin%20delivery" class="btn btn-primary" style="margin-top: calc(var(--spacing) * 2); width: 100%; justify-content: center;">Pesan Delivery</a>
+                    </div>
+                    <div class="location-card">
+                        <div class="location-icon">📱</div>
+                        <h3>Chat Kami</h3>
+                        <p>Tanya-tanya tentang menu, harga, atau kebutuhan khusus Anda.</p>
+                        <p style="color: var(--text-light); font-size: 0.95rem;">Respons cepat dalam 1-5 menit</p>
+                        <a href="https://wa.me/6285155043133" class="btn btn-primary" style="margin-top: calc(var(--spacing) * 2); width: 100%; justify-content: center;">Chat Sekarang</a>
                     </div>
                 </div>
             </div>
@@ -294,22 +289,22 @@
     <footer>
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-section">
+                <div>
                     <h4>🍜 Mie Ayam Bangalexzz</h4>
-                    <p>Mie ayam lezat dengan cita rasa autentik Surabaya. Dibuat fresh setiap hari untuk Anda.</p>
+                    <p>Mie ayam lezat dengan cita rasa autentik Surabaya. Dibuat fresh setiap hari dengan bahan berkualitas.</p>
                 </div>
-                <div class="footer-section">
+                <div>
                     <h4>Jam Operasional</h4>
                     <p>Senin - Minggu<br>07:00 - 22:00</p>
-                    <p class="text-muted">Batas order delivery pukul 21:00</p>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">Batas order delivery pukul 21:00</p>
                 </div>
-                <div class="footer-section">
+                <div>
                     <h4>Hubungi Kami</h4>
-                    <p><strong>Telepon:</strong><br><a href="tel:085155043133" style="color: var(--primary-color); text-decoration: none;">085155043133</a></p>
-                    <p><strong>WhatsApp:</strong><br><a href="https://wa.me/6285155043133" style="color: var(--primary-color); text-decoration: none;">Pesan Sekarang</a></p>
+                    <p><strong>Telepon/WhatsApp</strong><br><a href="tel:085155043133">085155043133</a></p>
+                    <p><strong>Chat Cepat:</strong> <a href="https://wa.me/6285155043133">Tanya Menu & Pesan</a></p>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: var(--spacing-2xl); padding-top: var(--spacing-xl); border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.9rem;">
+            <div class="footer-bottom">
                 <p>&copy; 2024 Mie Ayam Bangalexzz. Semua hak cipta dilindungi.</p>
             </div>
         </div>

@@ -8,72 +8,97 @@
         :root {
             --primary: #1a1a1a;
             --accent: #dc2626;
-            --bg-light: #fafafa;
-            --text: #1f2937;
+            --accent-light: #ef4444;
+            --bg: #ffffff;
+            --bg-light: #f9fafb;
+            --text: #111827;
             --text-light: #6b7280;
             --border: #e5e7eb;
-            --spacing-xs: 8px;
-            --spacing-sm: 12px;
-            --spacing-md: 16px;
-            --spacing-lg: 24px;
-            --spacing-xl: 32px;
-            --spacing-2xl: 48px;
-            --spacing-3xl: 64px;
+            --spacing: 8px;
             --radius: 12px;
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
-            --shadow-md: 0 4px 8px rgba(0,0,0,0.12);
-            --shadow-lg: 0 8px 16px rgba(0,0,0,0.15);
+            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --shadow-lg: 0 8px 24px rgba(220,38,38,0.12);
             --transition: 0.3s ease;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text); line-height: 1.6; background: white; }
-        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 var(--spacing-lg); }
-        .flex { display: flex; }
-        .flex-col { flex-direction: column; }
-        .flex-center { align-items: center; justify-content: center; }
-        .flex-between { align-items: center; justify-content: space-between; }
-        .gap-lg { gap: var(--spacing-lg); }
-        header { background: white; padding: var(--spacing-lg) 0; box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 100; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text); line-height: 1.6; background: var(--bg); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 calc(var(--spacing) * 2); }
+        
+        header { background: linear-gradient(135deg, var(--primary) 0%, #2d2d2d 100%); color: white; padding: calc(var(--spacing) * 2) 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
         .header-content { display: flex; align-items: center; justify-content: space-between; }
-        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); text-decoration: none; }
-        .header-contact { display: flex; gap: var(--spacing-xl); align-items: center; font-size: 0.95rem; }
-        .header-contact span { color: var(--text-light); }
-        .card { background: white; border-radius: var(--radius); padding: var(--spacing-lg); border: 1px solid var(--border); box-shadow: var(--shadow-sm); transition: all var(--transition); }
-        .card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
-        h1, h2, h3 { font-weight: 700; color: var(--primary); }
-        h1 { font-size: clamp(2rem, 5vw, 3rem); }
-        h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
-        h3 { font-size: 1.25rem; }
+        .logo { font-size: 1.5rem; font-weight: 700; text-decoration: none; color: white; letter-spacing: 0.5px; }
+        .header-contact { display: flex; gap: calc(var(--spacing) * 4); align-items: center; font-size: 0.95rem; }
+        .header-contact a { color: white; text-decoration: none; font-weight: 600; }
+        
+        h1, h2, h3 { font-weight: 700; }
+        h1 { font-size: clamp(2.5rem, 6vw, 3.5rem); line-height: 1.1; color: var(--primary); }
+        h2 { font-size: clamp(2rem, 5vw, 2.75rem); margin-bottom: calc(var(--spacing) * 3); color: var(--text); position: relative; display: inline-block; }
+        h2::after { content: ''; position: absolute; bottom: -12px; left: 0; width: 60px; height: 3px; background: var(--accent); border-radius: 2px; }
+        h3 { font-size: 1.2rem; color: var(--text); }
         p { color: var(--text-light); }
-        .btn { display: inline-flex; align-items: center; justify-content: center; padding: var(--spacing-sm) var(--spacing-lg); border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; border: none; cursor: pointer; transition: all var(--transition); }
-        .btn-primary { background: var(--primary); color: white; }
-        .btn-primary:hover { background: var(--accent); transform: scale(1.05); }
-        section { padding: var(--spacing-3xl) 0; }
-        .section-header { text-align: center; margin-bottom: var(--spacing-2xl); }
-        .hero { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-2xl); align-items: center; padding: var(--spacing-3xl) 0; }
-        .hero-text h1 { color: var(--primary); margin-bottom: var(--spacing-lg); }
-        .hero-emoji { font-size: 6rem; text-align: center; line-height: 1; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--spacing-lg); }
-        .menu-list { display: flex; flex-direction: column; gap: var(--spacing-md); }
-        .menu-item { display: flex; justify-content: space-between; align-items: center; padding-bottom: var(--spacing-md); border-bottom: 1px solid var(--border); }
-        .menu-item:last-child { border-bottom: none; }
-        .menu-emoji { font-size: 1.5rem; margin-right: var(--spacing-md); }
-        .menu-info { flex-grow: 1; }
-        .menu-name { font-weight: 600; color: var(--text); }
-        .menu-price { font-weight: 700; color: var(--accent); white-space: nowrap; }
-        .testimonial { text-align: center; padding: var(--spacing-lg) 0; }
-        .testimonial-text { font-style: italic; color: var(--text-light); font-size: 1rem; margin-bottom: var(--spacing-md); }
-        .testimonial-author { font-weight: 700; color: var(--primary); }
-        footer { background: var(--bg-light); padding: var(--spacing-2xl) 0; border-top: 1px solid var(--border); }
-        .footer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-lg); }
-        .back-button { position: fixed; bottom: var(--spacing-lg); right: var(--spacing-lg); width: 48px; height: 48px; background: var(--primary); color: white; border: none; border-radius: 50%; font-size: 1.5rem; cursor: pointer; box-shadow: var(--shadow-lg); display: flex; align-items: center; justify-content: center; transition: all var(--transition); z-index: 50; }
-        .back-button:hover { background: var(--accent); transform: scale(1.1); }
+        
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 3); border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; border: none; cursor: pointer; transition: all var(--transition); white-space: nowrap; }
+        .btn-primary { background: var(--accent); color: white; box-shadow: 0 4px 12px rgba(220,38,38,0.2); }
+        .btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(220,38,38,0.3); }
+        
+        section { padding: calc(var(--spacing) * 8) 0; }
+        section.light { background: var(--bg-light); }
+        
+        .hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: calc(var(--spacing) * 3); align-items: center; }
+        .hero h1 { margin-bottom: calc(var(--spacing) * 2); }
+        .hero p { font-size: 1.1rem; margin-bottom: calc(var(--spacing) * 2); }
+        .hero-emoji { font-size: 9rem; text-align: center; animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-15px); } }
+        
+        .section-title { margin-bottom: calc(var(--spacing) * 4); }
+        
+        .grid { display: grid; gap: calc(var(--spacing) * 2.5); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .grid-4 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+        
+        .feature-card { background: white; border-radius: var(--radius); padding: calc(var(--spacing) * 2.5); border: 1px solid var(--border); box-shadow: var(--shadow); transition: all var(--transition); text-align: center; }
+        .feature-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
+        .feature-icon { font-size: 3.5rem; margin-bottom: calc(var(--spacing) * 1.5); display: block; }
+        .feature-card h3 { margin-bottom: calc(var(--spacing) * 1); }
+        .feature-card p { font-size: 0.95rem; }
+        
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: calc(var(--spacing) * 2.5); }
+        .menu-item { background: white; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); transition: all var(--transition); }
+        .menu-item:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
+        .menu-image { font-size: 3.5rem; padding: calc(var(--spacing) * 2.5) 0; text-align: center; background: linear-gradient(135deg, rgba(220,38,38,0.05), rgba(239,68,68,0.05)); min-height: 130px; display: flex; align-items: center; justify-content: center; }
+        .menu-body { padding: calc(var(--spacing) * 2); }
+        .menu-name { font-weight: 700; font-size: 1.1rem; margin-bottom: calc(var(--spacing) * 0.5); }
+        .menu-desc { font-size: 0.85rem; color: var(--text-light); margin-bottom: calc(var(--spacing) * 1); }
+        .menu-footer { display: flex; align-items: center; justify-content: space-between; margin-top: calc(var(--spacing) * 1.5); padding-top: calc(var(--spacing) * 1.5); border-top: 1px solid var(--border); }
+        .menu-price { font-weight: 700; font-size: 1.2rem; color: var(--accent); }
+        .menu-item .btn { padding: calc(var(--spacing) * 1) calc(var(--spacing) * 1.5); font-size: 0.85rem; }
+        
+        .testimonial { background: white; border-radius: var(--radius); padding: calc(var(--spacing) * 2.5); border-left: 4px solid var(--accent); box-shadow: var(--shadow); }
+        .testimonial-stars { color: var(--accent); margin-bottom: calc(var(--spacing) * 1); font-size: 1.1rem; }
+        .testimonial-text { font-style: italic; font-size: 0.95rem; margin-bottom: calc(var(--spacing) * 1.5); color: var(--text-light); }
+        .testimonial-author { font-weight: 700; color: var(--text); }
+        
+        footer { background: linear-gradient(135deg, var(--primary) 0%, #2d2d2d 100%); color: white; padding: calc(var(--spacing) * 4) 0 calc(var(--spacing) * 2); }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: calc(var(--spacing) * 3); margin-bottom: calc(var(--spacing) * 3); }
+        .footer-grid h4 { margin-bottom: calc(var(--spacing) * 1.5); }
+        .footer-grid p { color: rgba(255,255,255,0.9); font-size: 0.95rem; }
+        .footer-grid a { color: #fbbf24; text-decoration: none; }
+        .footer-bottom { text-align: center; padding-top: calc(var(--spacing) * 2); border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; }
+        
+        .cta-section { background: linear-gradient(135deg, var(--primary) 0%, #2d2d2d 100%); color: white; border-radius: var(--radius); padding: calc(var(--spacing) * 4); text-align: center; }
+        .cta-section h3 { color: white; font-size: 1.75rem; margin-bottom: calc(var(--spacing) * 1.5); }
+        .cta-section p { color: rgba(255,255,255,0.9); margin-bottom: calc(var(--spacing) * 2); }
+        
+        .back-button { position: fixed; bottom: calc(var(--spacing) * 2); right: calc(var(--spacing) * 2); width: 50px; height: 50px; background: var(--accent); color: white; border: none; border-radius: 50%; font-size: 1.5rem; cursor: pointer; box-shadow: var(--shadow-lg); display: flex; align-items: center; justify-content: center; transition: all var(--transition); z-index: 50; }
+        .back-button:hover { transform: scale(1.1); }
+        
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
             h2 { font-size: 1.5rem; }
             .hero { grid-template-columns: 1fr; }
+            .hero-emoji { font-size: 6rem; }
             .footer-grid { grid-template-columns: 1fr; }
-            .hero-emoji { font-size: 4rem; }
+            .header-contact { flex-direction: column; gap: calc(var(--spacing) * 1); }
         }
     </style>
 </head>
@@ -84,7 +109,7 @@
                 <a href="#" class="logo">✨ Dimsum Modern</a>
                 <div class="header-contact">
                     <span>📍 Surabaya</span>
-                    <a href="tel:085155043133" style="color: var(--accent); font-weight: 600; text-decoration: none;">📱 085155043133</a>
+                    <a href="tel:085155043133">📱 085155043133</a>
                 </div>
             </div>
         </div>
@@ -94,104 +119,143 @@
         <section>
             <div class="container">
                 <div class="hero">
-                    <div class="hero-text">
+                    <div>
                         <h1>Dimsum Modern</h1>
-                        <p>Cita rasa tradisional dengan sentuhan modern. Setiap gigitan adalah pengalaman kuliner yang tak terlupakan.</p>
-                        <a href="https://wa.me/6285155043133?text=Saya%20ingin%20memesan%20dimsum" class="btn btn-primary" style="margin-top: var(--spacing-lg);">Pesan Sekarang</a>
+                        <p>Cita rasa tradisional bertemu inovasi kontemporer. Setiap gigitan adalah perpaduan sempurna antara tekstur lembut, rasa autentik, dan presentasi modern yang memukau.</p>
+                        <a href="https://wa.me/6285155043133?text=Halo%20Dimsum%20Modern,%20saya%20ingin%20memesan" class="btn btn-primary">🛵 Pesan Sekarang</a>
                     </div>
                     <div class="hero-emoji">🥡</div>
                 </div>
             </div>
         </section>
 
-        <section style="background: var(--bg-light);">
+        <section class="light">
             <div class="container">
-                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                    <h2>Tentang Kami</h2>
-                    <p style="font-size: 1.1rem; margin-top: var(--spacing-lg); line-height: 1.8;">Dimsum Modern menghadirkan kategori baru dalam dunia dimsum. Kami menggabungkan resep tradisional dengan presentasi modern dan inovasi cita rasa yang menggugah selera. Setiap porsi dimsum kami dibuat fresh dengan bahan-bahan pilihan premium.</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="container">
-                <div class="section-header">
-                    <h2>Menu Dimsum</h2>
-                </div>
-                <div style="max-width: 600px; margin: 0 auto;">
-                    <div class="menu-list">
-                        <div class="menu-item">
-                            <span class="menu-emoji">🥟</span>
-                            <div class="menu-info">
-                                <div class="menu-name">Shumai Udang</div>
-                            </div>
-                            <span class="menu-price">Rp 15K</span>
-                        </div>
-                        <div class="menu-item">
-                            <span class="menu-emoji">🥟</span>
-                            <div class="menu-info">
-                                <div class="menu-name">Dimsum Ayam Jamur</div>
-                            </div>
-                            <span class="menu-price">Rp 14K</span>
-                        </div>
-                        <div class="menu-item">
-                            <span class="menu-emoji">🍤</span>
-                            <div class="menu-info">
-                                <div class="menu-name">Har Gow (Udang)</div>
-                            </div>
-                            <span class="menu-price">Rp 18K</span>
-                        </div>
-                        <div class="menu-item">
-                            <span class="menu-emoji">🥟</span>
-                            <div class="menu-info">
-                                <div class="menu-name">Char Siu Bao</div>
-                            </div>
-                            <span class="menu-price">Rp 12K</span>
-                        </div>
-                        <div class="menu-item">
-                            <span class="menu-emoji">🧅</span>
-                            <div class="menu-info">
-                                <div class="menu-name">Onion Cake Dimsum</div>
-                            </div>
-                            <span class="menu-price">Rp 10K</span>
-                        </div>
-                        <div class="menu-item">
-                            <span class="menu-emoji">🥡</span>
-                            <div class="menu-info">
-                                <div class="menu-name">Paket Hemat (4 porsi)</div>
-                            </div>
-                            <span class="menu-price">Rp 50K</span>
-                        </div>
+                <h2 class="section-title">Keunggulan Kami</h2>
+                <div class="grid grid-3">
+                    <div class="feature-card">
+                        <span class="feature-icon">👨‍🍳</span>
+                        <h3>Chef Berpengalaman</h3>
+                        <p>Tim chef profesional dengan pengalaman puluhan tahun membuat dimsum berkualitas tinggi.</p>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section style="background: var(--bg-light);">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Testimoni</h2>
-                </div>
-                <div class="grid" style="grid-template-columns: 1fr;">
-                    <div class="testimonial">
-                        <p class="testimonial-text">"Dimsum Modern yang sangat menggugah selera. Cita rasanya autentik dengan presentasi yang elegant."</p>
-                        <p class="testimonial-author">⭐⭐⭐⭐⭐ Rini Kusuma</p>
+                    <div class="feature-card">
+                        <span class="feature-icon">🌾</span>
+                        <h3>Bahan Premium</h3>
+                        <p>Bahan pilihan terbaik dipilih langsung untuk menjamin kualitas rasa dan kesegaran.</p>
                     </div>
-                    <div class="testimonial">
-                        <p class="testimonial-text">"Setiap dimsum dibuat dengan detail yang sempurna. Ini adalah pengalaman dimsum terbaik saya!"</p>
-                        <p class="testimonial-author">⭐⭐⭐⭐⭐ Ahmad Hidayat</p>
+                    <div class="feature-card">
+                        <span class="feature-icon">⚡</span>
+                        <h3>Fresh & Cepat</h3>
+                        <p>Setiap pesanan dibuat fresh on-demand dengan layanan kilat dan ramah hati.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section>
-            <div class="container" style="max-width: 600px; text-align: center;">
-                <div class="section-header">
-                    <h2>Pesan Sekarang</h2>
+            <div class="container">
+                <h2 class="section-title">Menu Dimsum Favorit</h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-image">🥟</div>
+                        <div class="menu-body">
+                            <div class="menu-name">Shumai Udang</div>
+                            <div class="menu-desc">Udang premium dengan telur ikan yang nikmat</div>
+                            <div class="menu-footer">
+                                <span class="menu-price">Rp 15K</span>
+                                <a href="https://wa.me/6285155043133?text=Pesan%20Shumai%20Udang" class="btn btn-primary">Pesan</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-image">🥟</div>
+                        <div class="menu-body">
+                            <div class="menu-name">Dimsum Ayam Jamur</div>
+                            <div class="menu-desc">Ayam juicy dengan jamur pinus pilihan</div>
+                            <div class="menu-footer">
+                                <span class="menu-price">Rp 14K</span>
+                                <a href="https://wa.me/6285155043133?text=Pesan%20Dimsum%20Ayam%20Jamur" class="btn btn-primary">Pesan</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-image">🍤</div>
+                        <div class="menu-body">
+                            <div class="menu-name">Har Gow (Udang)</div>
+                            <div class="menu-desc">Kulit transparan lembut dengan isi udang segar</div>
+                            <div class="menu-footer">
+                                <span class="menu-price">Rp 18K</span>
+                                <a href="https://wa.me/6285155043133?text=Pesan%20Har%20Gow" class="btn btn-primary">Pesan</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-image">🥟</div>
+                        <div class="menu-body">
+                            <div class="menu-name">Char Siu Bao</div>
+                            <div class="menu-desc">Bao lembut dengan isi daging babi asap nikmat</div>
+                            <div class="menu-footer">
+                                <span class="menu-price">Rp 12K</span>
+                                <a href="https://wa.me/6285155043133?text=Pesan%20Char%20Siu%20Bao" class="btn btn-primary">Pesan</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-image">🧅</div>
+                        <div class="menu-body">
+                            <div class="menu-name">Onion Cake Dimsum</div>
+                            <div class="menu-desc">Kue bawang renyah dengan aroma sedap</div>
+                            <div class="menu-footer">
+                                <span class="menu-price">Rp 10K</span>
+                                <a href="https://wa.me/6285155043133?text=Pesan%20Onion%20Cake" class="btn btn-primary">Pesan</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-image">🥡</div>
+                        <div class="menu-body">
+                            <div class="menu-name">Paket Hemat (4 porsi)</div>
+                            <div class="menu-desc">Pilihan dimsum populer dalam satu paket</div>
+                            <div class="menu-footer">
+                                <span class="menu-price">Rp 50K</span>
+                                <a href="https://wa.me/6285155043133?text=Pesan%20Paket%20Hemat" class="btn btn-primary">Pesan</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <p style="margin-bottom: var(--spacing-lg);">Hubungi kami untuk memesan dimsum favorit Anda.</p>
-                <a href="https://wa.me/6285155043133?text=Saya%20ingin%20memesan%20dimsum%20modern" class="btn btn-primary">Chat WhatsApp</a>
+            </div>
+        </section>
+
+        <section class="light">
+            <div class="container">
+                <h2 class="section-title">Testimoni Pelanggan</h2>
+                <div class="grid grid-3">
+                    <div class="testimonial">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"Dimsum Modern yang sangat menggugah selera. Cita rasanya autentik dengan presentasi elegant. Best dimsum ever!"</p>
+                        <p class="testimonial-author">Rini Kusuma</p>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"Setiap dimsum dibuat dengan detail yang sempurna. Kulit transparan, isi juicy, harganya worth it banget!"</p>
+                        <p class="testimonial-author">Ahmad Hidayat</p>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"Ini adalah pengalaman dimsum terbaik saya di Surabaya. Texturenya perfect, rasa yang kompleks. Rekomen berat!"</p>
+                        <p class="testimonial-author">Sophia Chen</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="cta-section">
+                    <h3>Pesan Dimsum Modern Sekarang</h3>
+                    <p>Nikmati kelezatan dimsum authentic dengan sentuhan modern. Pesan via WhatsApp, kami siap melayani Anda!</p>
+                    <a href="https://wa.me/6285155043133?text=Halo%20Dimsum%20Modern,%20saya%20ingin%20memesan%20dimsum" class="btn btn-primary" style="background: white; color: var(--accent);">💬 Chat WhatsApp</a>
+                </div>
             </div>
         </section>
     </main>
@@ -200,20 +264,22 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <h4 style="color: var(--primary);">Dimsum Modern</h4>
-                    <p>Dimsum tradisional dengan sentuhan modern dan inovasi cita rasa yang menggugah.</p>
+                    <h4>✨ Dimsum Modern</h4>
+                    <p>Dimsum authentic dengan inovasi modern. Setiap gigitan adalah pengalaman kuliner yang tak terlupakan.</p>
                 </div>
                 <div>
-                    <h4 style="color: var(--primary);">Jam Operasional</h4>
-                    <p>Senin - Minggu<br>10:00 - 21:00</p>
+                    <h4>Jam Operasional</h4>
+                    <p><strong>Senin - Minggu</strong><br>10:00 - 21:00</p>
+                    <p style="font-size: 0.85rem;">Pesan sebelum jam 20:00 untuk jaminan ketersediaan</p>
                 </div>
                 <div>
-                    <h4 style="color: var(--primary);">Kontak</h4>
-                    <p><a href="https://wa.me/6285155043133" style="color: var(--accent); text-decoration: none;">WhatsApp: 085155043133</a></p>
+                    <h4>Hubungi Kami</h4>
+                    <p><strong>WhatsApp/Telepon</strong><br><a href="tel:085155043133">085155043133</a></p>
+                    <p><strong>Chat Sekarang:</strong> <a href="https://wa.me/6285155043133">Pesan Menu</a></p>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: var(--spacing-2xl); padding-top: var(--spacing-xl); border-top: 1px solid var(--border); color: var(--text-light); font-size: 0.9rem;">
-                <p>&copy; 2024 Dimsum Modern Bangalexzz. Semua hak dilindungi.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Dimsum Modern Bangalexzz. Semua hak cipta dilindungi.</p>
             </div>
         </div>
     </footer>
