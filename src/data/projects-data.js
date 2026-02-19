@@ -156,20 +156,60 @@ export const staticProjectsData = [
     landingPageUrl: "/landing-pages/dimsum-luxury"
   },
   {
-    id: "bangalexzz-property-agent-landing",
-    title: "Bangalexzz Property Agent Landing Page",
+    id: "property-agent-classic",
+    title: "Agent Properti - Solusi Properti Terpercaya",
     category: "landing-page",
     image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&auto=format&fit=crop",
     thumb: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&auto=format&fit=crop",
-    description: "Landing page profesional untuk Bangalexzz Property Agent dengan tema blue-cyan corporate. Menampilkan 6 services, 6 property types, testimonial, dan design modern untuk real estate marketing.",
-    longDescription: "Landing Page Real Estate - Professional Corporate Theme\n\n✨ Fitur Lengkap:\n• Tema Blue-Cyan gradient (trustworthy & professional)\n• Navigasi sticky dengan WhatsApp CTA\n• Hero section split layout responsif\n• Stats section: 500+ properti terjual, 2000+ klien\n• 6 service cards dengan icons & descriptions\n• 6 property type cards dengan gradients\n\n🏢 Services Offered:\n• Pencarian Properti (Search)\n• Konsultasi Gratis (Consultation)\n• Pengurusan Dokumen (Documentation)\n• Fasilitasi Transaksi (Transaction)\n• Solusi Pembiayaan (Financing)\n• Support 24/7 (24/7 Support)\n\n🏠 Property Types:\n• Rumah Tinggal\n• Apartemen Modern\n• Tanah Siap Bangun\n• Ruko Komersial\n• Properti Komersial\n• Premium Homes\n\n🎨 Corporate Design:\n• Blue-Cyan gradient theme (professional)\n• Clean card layouts dengan flex optimized\n• 4 Why Us feature cards\n• 3 testimonial dari satisfied clients\n• Responsive grid: sm:1 md:2 lg:3\n\n📊 Key Statistics:\n• 500+ properti berhasil dijual\n• 2000+ klien puas\n• 8+ tahun pengalaman\n• Support 24/7 siap membantu\n\n📱 Fully responsive untuk semua devices dengan professional tone",
+    description: "Landing page Agen Properti dengan tema profesional blue corporate. Menampilkan 3 keunggulan (Legalitas, Negosiasi, Support), property listings, dan CTA WhatsApp untuk konsultasi.",
+    longDescription: "Property Agent Landing Page - Professional Blue Theme\n\n✨ Fitur Utama:\n• Tema Blue gradient professional (#0066cc)\n• Header sticky dengan navigation responsive\n• Hero section dengan search bar landing\n• 3 Why Us cards: Legalitas Terjamin, Negosiasi Terbaik, Layanan 24/7\n• Featured properties grid (3 cards dengan images & specs)\n• WhatsApp CTA section\n• Contact & location information\n\n🏠 Featured Properties:\n• Rumah Modern Menteng - Rp 15 Miliar\n• Villa Tropis Bali - Rp 350 Juta/tahun rental\n• Apartemen Sky View - Rp 2.1 Miliar\n\n📊 Key Features:\n• Property search functionality\n• Detailed property cards dengan room count & square meters\n• Verified legal documents messaging\n• Professional agent consultation\n• WhatsApp integration\n• Location maps & contact details\n\n🎨 Design:\n• Blue corporate color scheme\n• Clean & organized layout\n• Responsive grid design\n• Modern card components\n• Professional imagery\n\n📱 Fully responsive untuk desktop, tablet, & mobile",
     date: "1/1/2026",
-    tools: ["HTML5", "Tailwind CSS", "JavaScript"],
-    tags: ["Landing Page", "Real Estate", "Property", "Corporate"],
-    gallery: [
-      { type: "link", title: "Buka Landing Page", src: "/landing-pages/property-agent-landing.html" }
-    ],
-    landingPageUrl: "/landing-pages/property-agent"
+    tools: ["Vue 3", "Tailwind CSS", "Vue Router"],
+    tags: ["Landing Page", "Real Estate", "Property", "Professional"],
+    gallery: [],
+    landingPageUrl: "/landing-pages/property-agent-classic"
+  },
+  {
+    id: "property-agent-eco-living",
+    title: "Eco-Living Pro - Properti Berkelanjutan",
+    category: "landing-page",
+    image: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&auto=format&fit=crop",
+    thumb: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&auto=format&fit=crop",
+    description: "Landing page Eco-Living dengan tema hijau sustainable. Fokus pada properti ramah lingkungan, teknologi hemat energi, sistem konservasi air, dan komunitas sehat untuk keluarga modern.",
+    longDescription: "Eco-Living Property Landing Page - Green Sustainability Theme\n\n✨ Fitur Utama:\n• Tema Emerald gradient sustainable (#10b981)\n• Header dengan eco icon & nature-focused messaging\n• Hero section dengan blob shapes & environmental positioning\n• 4 keunggulan eco features:\n  - Hemat Energi (solar panels, 80% savings)\n  - Konservasi Air (rainwater harvesting)\n  - Ruang Hijau (community gardens, vertical gardens)\n  - Sehat & Aman (eco-friendly materials, natural ventilation)\n• Featured eco-properties (3 units dengan green features)\n• Environmental impact messaging\n• Concierge service CTA\n• Statistics: 50+ properti, 2.5K keluarga puas, 7+ kota\n\n🌱 Eco-Properties Featured:\n• Rumah Eco-Modern Jakarta - Rp 1.8M\n• Villa Elite Surabaya - Rp 3.2M\n• Apartemen Green Living - Rp 850K\n\n📊 Green Features Highlighted:\n• Solar power integration\n• Water conservation systems\n• Organic material sourcing\n• Energy-efficient smart homes\n• Community environmental programs\n\n🎨 Design:\n• Green & teal gradient theme\n• Nature-inspired illustrations\n• Sustainable messaging throughout\n• Eco-friendly color palette\n• Floating leaf animations\n\n💚 Sustainability Focus:\n• Environmental impact reduction\n• Health & wellness community\n• Long-term investment value\n• Government green building certifications\n\n📱 Fully responsive dengan eco-conscious messaging",
+    date: "1/1/2026",
+    tools: ["Vue 3", "Tailwind CSS", "Vue Router"],
+    tags: ["Landing Page", "Real Estate", "Eco-Friendly", "Sustainable"],
+    gallery: [],
+    landingPageUrl: "/landing-pages/property-agent-eco"
+  },
+  {
+    id: "property-agent-urban",
+    title: "Urban Properti - Investasi Cerdas Jakarta",
+    category: "landing-page",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&auto=format&fit=crop",
+    thumb: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&auto=format&fit=crop",
+    description: "Landing page Urban Properti dengan tema orange bold. Fokus pada investasi properti ROI tinggi di Jakarta, Surabaya, & Bandung. Bold messaging, yield analysis, dan investor-focused benefits.",
+    longDescription: "Urban Properti Landing Page - Bold Investment Theme\n\n✨ Fitur Utama:\n• Tema Orange bold (#f27f0d) dengan dark background\n• Header dengan apartment icon & aggressive CTA\n• Hero section dengan bold headline: \"INVESTASI CERDAS\"\n• ROI-focused messaging dengan statistics:\n  - 1000+ unit terjual\n  - 98% kepuasan klien\n  - 15+ tahun pengalaman\n• 4 keunggulan urban investing:\n  - Yield Tinggi (12-18% annual ROI)\n  - Lokasi Prime (commercial areas, high traffic)\n  - Legalitas Jelas (verified legal documents)\n  - Support 24/7 (professional investment management)\n• Featured projects showcase (2 large cards):\n  - Jakarta Premium Tower\n  - Surabaya Business Hub\n• Performance metrics & statistics\n• Time-sensitive investment CTA (limited units)\n\n🏙️ Featured Investments:\n• Jakarta Premium Tower - Rp 5.2 Miliar (3 bed, 250m²)\n• Surabaya Business Hub - Rp 2.8 Miliar (2 bed, 180m²)\n\n📊 Investment Focus:\n• Consistent ROI tracking (12-18% annually)\n• Property appreciation analysis\n• Rental yield potential\n• Long-term value growth\n• Institutional investor confidence\n\n🎨 Design:\n• Orange bold color scheme (#f27f0d)\n• Dark slate background (sophisticated)\n• High-contrast CTAs\n• Data visualization elements\n• News ticker of sold properties\n\n💰 Investment Messaging:\n• Aggressive ROI promises\n• Scarcity messaging (limited units)\n• Investor testimonials\n• Performance charts\n• WhatsApp investment consulting\n\n📱 Fully responsive dengan aggressive investment focus",
+    date: "1/1/2026",
+    tools: ["Vue 3", "Tailwind CSS", "Vue Router"],
+    tags: ["Landing Page", "Real Estate", "Investment", "ROI"],
+    gallery: [],
+    landingPageUrl: "/landing-pages/property-agent-urban"
+  },
+  {
+    id: "property-agent-terpercaya",
+    title: "Properti Terpercaya - Panduan Beli Rumah Aman",
+    category: "landing-page",
+    image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&auto=format&fit=crop",
+    thumb: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&auto=format&fit=crop",
+    description: "Landing page Properti Terpercaya dengan theme educational blue. 4-step buying guide (Konsultasi→Verifikasi→Negosiasi→Serah Terima), FAQ section, trusted agents, dan transparent pricing.",
+    longDescription: "Properti Terpercaya Landing Page - Educational Trust Theme\n\n✨ Fitur Utama:\n• Tema Blue corporate (#1e40af) dengan light background\n• Header dengan home_work icon & guide messaging\n• Hero section dengan trust badge \"Terpercaya 12 Tahun\"\n• 4-Step comprehensive buying guide:\n  - Step 1: Konsultasi Kebutuhan (understand requirements)\n  - Step 2: Verifikasi Dokumen (legal document verification)\n  - Step 3: Negosiasi Harga (price negotiation support)\n  - Step 4: Serah Terima (safe handover process)\n• Featured properties (3 cards dengan different price points):\n  - Budget friendly entry\n  - Mid-range family home\n  - Investment properties\n• FAQ section dengan accordion (6 common questions)\n• Trust statistics\n• Transparent pricing messaging\n\n🏠 Featured Properties:\n• Rumah Keluarga Aman Bintaro - Rp 890 Juta\n• Apartemen Modern Kemayoran - Rp 475 Juta\n• Townhouse Premium Puri - Rp 1.2 Miliar\n\n📚 Educational Content:\n• Step-by-step buying process\n• Legal document requirements\n• KPR (mortgage) explanation\n• Transparent fee breakdown\n• Common mistakes to avoid\n• Fraud prevention tips\n\n📊 Trust Building:\n• 12+ years experience messaging\n• Customer testimonials with detailed reviews\n• Certified documents emphasis\n• Professional team credentials\n• Transparent pricing (no hidden costs)\n\n🎨 Design:\n• Blue professional theme\n• Clean & organized step layout\n• Evidence-based trust elements\n• FAQ accordion patterns\n• Educational tone throughout\n\n🤝 Service Philosophy:\n• Education-first approach\n• Transparent communication\n• Customer-centric process\n• Fraud prevention\n• Complete hand-holding\n\n📱 Fully responsive dengan emphasis on trust & education",
+    date: "1/1/2026",
+    tools: ["Vue 3", "Tailwind CSS", "Vue Router"],
+    tags: ["Landing Page", "Real Estate", "Education", "Trust"],
+    gallery: [],
+    landingPageUrl: "/landing-pages/property-agent-terpercaya"
   }
 ]
 

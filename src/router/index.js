@@ -17,6 +17,10 @@ import PropertyAgentLanding from '../views/landings/PropertyAgentLanding.vue'
 import DimsuModernLanding from '../views/landings/DimsuModernLanding.vue'
 import DimsuPlayfulLanding from '../views/landings/DimsuPlayfulLanding.vue'
 import DimsuLuxuryLanding from '../views/landings/DimsuLuxuryLanding.vue'
+import PropertyAgentClassic from '../views/landings/PropertyAgentClassic.vue'
+import PropertyAgentEcoLiving from '../views/landings/PropertyAgentEcoLiving.vue'
+import PropertyAgentUrban from '../views/landings/PropertyAgentUrban.vue'
+import PropertyAgentTerpercaya from '../views/landings/PropertyAgentTerpercaya.vue'
 import { useProjects } from '../composables/useProjects'
 
 const { getProjectById } = useProjects()
@@ -132,6 +136,46 @@ const routes = [
       title: 'Dimsum Luxury - Premium Dimsum Masterpiece Collection',
       description: 'Bangalexzz Dimsum Luxury - Pengalaman fine dining dengan koleksi dimsum premium. Bahan pilihan dan chef berpengalaman untuk kepuasan maksimal.',
       keywords: 'dimsum luxury, dimsum premium, fine dining, surabaya, masterpiece, exclusive'
+    }
+  },
+  {
+    path: '/landing-pages/property-agent-classic',
+    name: 'PropertyAgentClassic',
+    component: PropertyAgentClassic,
+    meta: {
+      title: 'Agent Properti - Solusi Properti Terpercaya',
+      description: 'Layanan profesional jual-beli properti dengan harga terbaik dan proses legal yang aman. Ratusan klien puas di seluruh Indonesia.',
+      keywords: 'agent properti, rumah, jual beli, properti terpercaya, harga terbaik'
+    }
+  },
+  {
+    path: '/landing-pages/property-agent-eco',
+    name: 'PropertyAgentEcoLiving',
+    component: PropertyAgentEcoLiving,
+    meta: {
+      title: 'Eco-Living Pro - Properti Berkelanjutan & Ramah Lingkungan',
+      description: 'Properti ramah lingkungan dengan teknologi hijau, hemat energi, dan komunitas sehat. Investasi properti yang menguntungkan sekaligus menjaga lingkungan.',
+      keywords: 'eco-living, properti hijau, sustainable, teknologi hemat energi, rumah ramah lingkungan'
+    }
+  },
+  {
+    path: '/landing-pages/property-agent-urban',
+    name: 'PropertyAgentUrban',
+    component: PropertyAgentUrban,
+    meta: {
+      title: 'Urban Properti - Investasi Cerdas Jakarta Surabaya',
+      description: 'Properti premium di lokasi strategis dengan ROI tinggi. Ribuan investor telah merasakan peningkatan nilai aset hingga 300% dengan Urban Properti.',
+      keywords: 'urban properti, investasi properti, jakarta, surabaya, ROI tinggi, investasi cerdas'
+    }
+  },
+  {
+    path: '/landing-pages/property-agent-terpercaya',
+    name: 'PropertyAgentTerpercaya',
+    component: PropertyAgentTerpercaya,
+    meta: {
+      title: 'Properti Terpercaya - Panduan Lengkap Beli Rumah Aman',
+      description: 'Panduan lengkap membeli rumah dengan proses aman, transparan, dan terpercaya. Tim ahli kami siap membantu 12 tahun pengalaman melayani ribuan keluarga.',
+      keywords: 'properti terpercaya, beli rumah, panduan properti, edukasi properti, konsultasi gratis'
     }
   },
   {
