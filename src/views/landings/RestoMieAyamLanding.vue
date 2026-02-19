@@ -26,7 +26,7 @@
               <div class="absolute -inset-2 bg-gradient-to-r from-primary to-yellow-400 rounded-2xl opacity-30 blur-2xl group-hover:opacity-50 transition duration-1000"></div>
               <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <img alt="Mie Ayam" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
-                  src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&h=600&auto=format&crop=center" />
+                  src="https://images.unsplash.com/photo-1569562211093-4ed0d0758f12?w=800&h=600&auto=format&crop=center" />
               </div>
               <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-xl flex items-center gap-3 animate-bounce" style="animation-duration: 3s;">
                 <div class="bg-yellow-100 p-2 rounded-full text-yellow-600">
@@ -94,7 +94,7 @@
             <!-- Menu Item 1 -->
             <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
               <div class="aspect-video overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1555126634-323283e090fa?w=800&h=600&auto=format&crop=center" 
+                <img src="https://images.unsplash.com/photo-1569562211093-4ed0d0758f12?w=800&h=600&auto=format&crop=center" 
                   class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt="Mie Ayam Spesial" />
               </div>
               <div class="p-4">
@@ -107,7 +107,7 @@
             <!-- Menu Item 2 -->
             <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
               <div class="aspect-video overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1591814468924-caf88d1232e1?w=800&h=600&auto=format&crop=center" 
+                <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?w=800&h=600&auto=format&crop=center" 
                   class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt="Mie Ayam Premium" />
               </div>
               <div class="p-4">
@@ -120,7 +120,7 @@
             <!-- Menu Item 3 -->
             <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
               <div class="aspect-video overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800&h=600&auto=format&crop=center" 
+                <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=800&h=600&auto=format&crop=center" 
                   class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt="Paket Bundling Mie Ayam" />
               </div>
               <div class="p-4">

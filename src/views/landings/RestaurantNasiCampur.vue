@@ -108,7 +108,7 @@
           <div class="md:col-span-2 md:row-span-2 relative group rounded-2xl overflow-hidden cursor-pointer">
             <img alt="Beef Rendang"
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800&h=800&auto=format&fit=crop" />
+              src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&h=800&auto=format&fit=crop" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 flex flex-col justify-end">
               <span class="bg-primary text-text-main text-xs font-bold px-2 py-1 rounded w-fit mb-2">Spesialisasi</span>
               <h3 class="text-white text-2xl font-bold">Rendang Daging</h3>
@@ -118,7 +118,7 @@
           <div class="md:col-span-1 md:row-span-1 relative group rounded-2xl overflow-hidden cursor-pointer">
             <img alt="Sate Ayam"
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              src="https://images.unsplash.com/photo-1529563021893-cc83c992d75d?w=800&h=800&auto=format&fit=crop" />
+              src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=800&h=800&auto=format&fit=crop" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-4 flex flex-col justify-end">
               <h3 class="text-white text-lg font-bold">Sate Ayam</h3>
               <p class="text-gray-300 text-xs">Tusuk ayam panggang.</p>
