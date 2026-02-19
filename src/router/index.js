@@ -11,6 +11,7 @@ import CompanyAbout from '../views/company/CompanyAbout.vue'
 import CompanyPackage from '../views/company/CompanyPackage.vue'
 import CompanyGallery from '../views/company/CompanyGallery.vue'
 import CompanyContact from '../views/company/CompanyContact.vue'
+import RestaurantNasiCampur from '../views/landings/RestaurantNasiCampur.vue'
 import { useProjects } from '../composables/useProjects'
 
 const { getProjectById } = useProjects()
@@ -66,6 +67,16 @@ const routes = [
       title: 'Landing Page - Faiznute Portfolio',
       description: 'Landing Page Project - Faiznute Portfolio',
       keywords: 'landing page, portfolio, websites'
+    }
+  },
+  {
+    path: '/landing-pages/resto-nasi-campur',
+    name: 'RestaurantNasiCampur',
+    component: RestaurantNasiCampur,
+    meta: {
+      title: 'Nasi Campur Bangalexzz - Hidangan Indonesia Modern',
+      description: 'Bangalexzz Nasi Campur - Cita rasa autentik Indonesia dengan sentuhan modern di Surabaya. Interactive menu builder dengan customizable toppings.',
+      keywords: 'nasi campur, bangalexzz, restoran surabaya, hidangan indonesia, menu customizable'
     }
   },
   {
