@@ -1,314 +1,423 @@
+<!-- Dimsum Luxury Landing Page - Indonesian -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dimsum Luxury - Bangalexzz Premium Surabaya</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Dimsum Luxury - Bangalexzz</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13eca4",
+                        "luxury-dark": "#0f1419",
+                        "luxury-gold": "#d4af37",
+                        "luxury-light": "#f5f5f5",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
     <style>
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-        }
-        @keyframes fadeInLeft {
-            from { opacity: 0; transform: translateX(-40px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes fadeInRight {
-            from { opacity: 0; transform: translateX(40px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        .float { animation: float 4s ease-in-out infinite; }
-        .animate-fade-left { animation: fadeInLeft 0.8s ease-out; }
-        .animate-fade-right { animation: fadeInRight 0.8s ease-out; }
-        body { background-color: #0f172a; }
-        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .gold-text { color: #fbbf24; }
-        .back-btn {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-            color: black;
-            border: none;
-            border-radius: 8px;
-            font-size: 24px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-            z-index: 100;
-            box-shadow: 0 4px 12px rgba(251, 191, 36, 0.4);
-        }
-        .back-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 16px rgba(251, 191, 36, 0.6);
-        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%); }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: rgba(212, 175, 55, 0.1); }
+        ::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #e5c158; }
+        @keyframes shimmer { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        .animate-gold-shimmer { animation: shimmer 3s ease-in-out infinite; }
     </style>
 </head>
-<body class="bg-gradient-to-br from-slate-950 via-black to-slate-950 text-white">
-    <!-- Navigation -->
-    <nav class="sticky top-0 z-50 glass border-b">
-        <div class="max-w-7xl mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center gap-4 animate-fade-left">
-                    <span class="text-3xl">👑</span>
-                    <h1 class="text-2xl font-black gold-text">DIMSUM LUXURY</h1>
-                </div>
-                <div class="hidden md:flex items-center gap-8">
-                    <a href="#collections" class="text-gray-300 hover:text-amber-400 font-semibold transition">Koleksi</a>
-                    <a href="#experience" class="text-gray-300 hover:text-amber-400 font-semibold transition">Pengalaman</a>
-                    <a href="#contact" class="text-gray-300 hover:text-amber-400 font-semibold transition">Kontak</a>
-                </div>
-                <button onclick="whatsappChat('Saya ingin mereserve dimsum luxury')" class="bg-amber-600 hover:bg-amber-700 text-black px-6 py-3 rounded-lg font-bold transition shadow-lg shadow-amber-600/50">
-                    Reserve
-                </button>
-            </div>
-        </div>
-    </nav>
+<body class="text-gray-100 overflow-x-hidden antialiased">
+<div class="relative flex min-h-screen w-full flex-col group/design-root">
 
-    <!-- Hero Section -->
-    <section class="relative overflow-hidden py-32 px-4">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-amber-600/10 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-red-900/10 rounded-full blur-3xl"></div>
-        
-        <div class="max-w-7xl mx-auto relative z-10">
-            <div class="flex flex-col lg:flex-row items-center gap-16">
-                <div class="flex-1 animate-fade-left">
-                    <span class="inline-block border border-amber-600 text-amber-400 px-6 py-2 rounded-full text-sm font-bold mb-6">
-                        ✦ GOURMET EXCELLENCE ✦
-                    </span>
-                    <h1 class="text-7xl lg:text-8xl font-black mb-8 leading-tight">
-                        Dimsum <span class="gold-text">Mewah</span> Premium
-                    </h1>
-                    <p class="text-xl text-gray-400 mb-10 leading-relaxed max-w-xl">
-                        Koleksi eksklusif dimsum dengan bahan terbaik dunia dan presentasi yang memukau. Setiap gigitan adalah perjalanan kuliner yang tak terlupakan.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-6">
-                        <button onclick="whatsappChat('Saya ingin mereserve koleksi dimsum luxury')" class="bg-gradient-to-r from-amber-600 to-red-600 text-white px-10 py-4 rounded-lg font-bold text-lg hover:shadow-2xl hover:shadow-amber-600/50 transition">
-                            Reserve Sekarang
-                        </button>
-                        <a href="#collections" class="border-2 border-amber-600 text-amber-400 px-10 py-4 rounded-lg font-bold hover:bg-amber-600/10 transition text-center">
-                            Lihat Koleksi
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="flex-1 animate-fade-right">
-                    <div class="relative">
-                        <div class="absolute inset-0 bg-gradient-to-r from-amber-600 to-red-600 rounded-2xl blur-2xl opacity-30"></div>
-                        <div class="relative bg-black rounded-2xl p-8 border border-amber-600/50">
-                            <div class="grid grid-cols-2 gap-6 text-center">
-                                <div class="float">
-                                    <div class="text-6xl mb-3">🥟</div>
-                                    <p class="font-bold text-amber-400 text-sm">Mentai Premium</p>
-                                </div>
-                                <div class="float" style="animation-delay: 0.5s;">
-                                    <div class="text-6xl mb-3">🧀</div>
-                                    <p class="font-bold text-amber-400 text-sm">Truffle Keju</p>
-                                </div>
-                                <div class="float" style="animation-delay: 1s;">
-                                    <div class="text-6xl mb-3">🍤</div>
-                                    <p class="font-bold text-amber-400 text-sm">Udang Wagyu</p>
-                                </div>
-                                <div class="float" style="animation-delay: 1.5s;">
-                                    <div class="text-6xl mb-3">✨</div>
-                                    <p class="font-bold text-amber-400 text-sm">Sous Vide</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Navbar -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-luxury-gold/20 bg-luxury-dark/80 backdrop-blur-xl px-6 py-4 lg:px-20 shadow-2xl shadow-luxury-gold/10">
+<div class="flex items-center gap-4 text-luxury-gold">
+<div class="relative flex size-10 items-center justify-center rounded border border-luxury-gold text-luxury-gold">
+<span class="material-symbols-outlined !text-xl font-bold">restaurant_2</span>
+</div>
+<div>
+<h2 class="text-gray-100 text-sm font-bold uppercase tracking-[0.2em]">Bangalexzz</h2>
+<p class="text-luxury-gold text-xs font-light tracking-wider">Dimsum Prestige</p>
+</div>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-12">
+<nav class="flex items-center gap-12">
+<a class="text-gray-400 hover:text-luxury-gold text-xs font-bold uppercase tracking-[0.15em] transition-colors border-b-2 border-transparent hover:border-luxury-gold" href="#">Koleksi</a>
+<a class="text-gray-400 hover:text-luxury-gold text-xs font-bold uppercase tracking-[0.15em] transition-colors border-b-2 border-transparent hover:border-luxury-gold" href="#">Warisan</a>
+<a class="text-gray-400 hover:text-luxury-gold text-xs font-bold uppercase tracking-[0.15em] transition-colors border-b-2 border-transparent hover:border-luxury-gold" href="#">Reservasi</a>
+</nav>
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded border-2 border-luxury-gold text-luxury-gold hover:bg-luxury-gold/10 transition-all h-10 px-6 text-xs font-bold uppercase tracking-[0.15em]">
+Hubungi Kami
+</button>
+</div>
+<!-- Mobile Menu Icon -->
+<button class="md:hidden flex items-center justify-center text-luxury-gold">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
 
-    <!-- Stats Section -->
-    <section class="border-y border-amber-600/30 py-12 px-4">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div>
-                    <div class="text-5xl font-black gold-text">500+</div>
-                    <p class="text-gray-400 mt-2 font-semibold text-sm">Pelanggan Eksklusif</p>
-                </div>
-                <div>
-                    <div class="text-5xl font-black gold-text">8 Koleksi</div>
-                    <p class="text-gray-400 mt-2 font-semibold text-sm">Premium Tersedia</p>
-                </div>
-                <div>
-                    <div class="text-5xl font-black gold-text">5⭐</div>
-                    <p class="text-gray-400 mt-2 font-semibold text-sm">Rating Sempurna</p>
-                </div>
-                <div>
-                    <div class="text-5xl font-black gold-text">24/7</div>
-                    <p class="text-gray-400 mt-2 font-semibold text-sm">Concierge Service</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Hero Section -->
+<div class="w-full px-4 pt-8 pb-12 lg:px-20 lg:pt-12">
+<div class="relative flex min-h-[700px] flex-col lg:flex-row items-center justify-center overflow-hidden rounded-2xl px-6 lg:px-20 py-24 text-center lg:text-left">
+<!-- Background Pattern -->
+<div class="absolute inset-0 z-0 bg-gradient-to-br from-luxury-gold/5 via-luxury-dark to-luxury-dark"></div>
+<div class="absolute inset-0 z-0 opacity-20" style="background-image: linear-gradient(45deg, transparent 48%, #d4af37 49%, #d4af37 51%, transparent 52%); background-size: 60px 60px;"></div>
+<div class="absolute -top-40 -right-40 w-80 h-80 rounded-full border border-luxury-gold/30 blur-3xl"></div>
+<div class="absolute -bottom-20 -left-20 w-60 h-60 rounded-full border border-luxury-gold/20 blur-2xl"></div>
 
-    <!-- Experience Section -->
-    <section id="experience" class="py-24 px-4">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-6xl font-black text-center mb-16">
-                <span class="gold-text">Pengalaman</span> Kuliner Istimewa
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="glass rounded-2xl p-8 border border-amber-600/30 hover:border-amber-600/60 transition">
-                    <div class="text-6xl mb-6">🎨</div>
-                    <h3 class="text-2xl font-bold gold-text mb-3">Presentasi Elegant</h3>
-                    <p class="text-gray-400 leading-relaxed">Setiap dimsum dirancang dengan presisi untuk visual yang memukau dengan packaging premium eksklusif.</p>
-                </div>
-                <div class="glass rounded-2xl p-8 border border-amber-600/30 hover:border-amber-600/60 transition">
-                    <div class="text-6xl mb-6">👨‍🍳</div>
-                    <h3 class="text-2xl font-bold gold-text mb-3">Master Chef</h3>
-                    <p class="text-gray-400 leading-relaxed">Tim chef bersertifikat dengan pengalaman internasional. Setiap resep adalah karya seni kuliner.</p>
-                </div>
-                <div class="glass rounded-2xl p-8 border border-amber-600/30 hover:border-amber-600/60 transition">
-                    <div class="text-6xl mb-6">⭐</div>
-                    <h3 class="text-2xl font-bold gold-text mb-3">Kualitas Premium</h3>
-                    <p class="text-gray-400 leading-relaxed">Bahan pilihan dari supplier premium dunia. Setiap ingredien untuk kesempurnaan rasa.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Content -->
+<div class="relative z-10 max-w-2xl flex flex-col gap-8 lg:gap-12">
+<div class="space-y-4">
+<div class="flex items-center gap-2 lg:justify-start justify-center">
+<div class="w-12 h-0.5 bg-gradient-to-r from-luxury-gold/50 to-transparent"></div>
+<span class="text-luxury-gold text-xs font-bold uppercase tracking-[0.2em] whitespace-nowrap">Eksklusif Terbatas</span>
+<div class="w-12 h-0.5 bg-gradient-to-l from-luxury-gold/50 to-transparent"></div>
+</div>
+<h1 class="text-5xl lg:text-7xl font-black leading-tight tracking-tighter text-gray-100">
+DIMSUM<br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-luxury-gold via-yellow-300 to-luxury-gold">PRESTIGE</span>
+</h1>
+<p class="text-gray-400 text-lg lg:text-xl font-light max-w-md">
+Pengalaman kuliner kanton yang ditawarkan kepada segelintir orang. Setiap gigitan adalah karya seni dari chef terbaik kami.
+</p>
+</div>
 
-    <!-- Collections Section -->
-    <section id="collections" class="py-24 px-4">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-6xl font-black text-center mb-4">
-                <span class="gold-text">Koleksi</span> Eksklusif
-            </h2>
-            <p class="text-center text-gray-400 text-lg mb-16 max-w-2xl mx-auto">Rangkaian dimsum gourmet untuk penikmat sejati yang menghargai kualitas.</p>
+<!-- Stats -->
+<div class="flex flex-col sm:flex-row gap-6 lg:gap-12">
+<div class="flex flex-col gap-1 border-l-2 border-luxury-gold/50 pl-4">
+<span class="text-luxury-gold text-sm font-bold uppercase tracking-[0.15em]">Sejak 1987</span>
+<span class="text-gray-600 text-xs">Tradisi 37 Tahun</span>
+</div>
+<div class="flex flex-col gap-1 border-l-2 border-luxury-gold/50 pl-4">
+<span class="text-luxury-gold text-sm font-bold uppercase tracking-[0.15em]">5 Bintang</span>
+<span class="text-gray-600 text-xs">Michelin Guide Approved</span>
+</div>
+<div class="flex flex-col gap-1 border-l-2 border-luxury-gold/50 pl-4">
+<span class="text-luxury-gold text-sm font-bold uppercase tracking-[0.15em]">24/7</span>
+<span class="text-gray-600 text-xs">Layanan Concierge</span>
+</div>
+</div>
 
-            <!-- Filter Buttons -->
-            <div class="flex justify-center gap-4 mb-12 flex-wrap">
-                <button onclick="filterMenu3('all')" class="filter-btn3 px-6 py-3 rounded-lg font-bold transition bg-amber-600 text-black" data-filter="all">
-                    Semua Koleksi
-                </button>
-                <button onclick="filterMenu3('premium')" class="filter-btn3 px-6 py-3 rounded-lg font-bold transition glass text-gray-300 hover:text-amber-400" data-filter="premium">
-                    Premium
-                </button>
-                <button onclick="filterMenu3('luxury')" class="filter-btn3 px-6 py-3 rounded-lg font-bold transition glass text-gray-300 hover:text-amber-400" data-filter="luxury">
-                    Luxury
-                </button>
-                <button onclick="filterMenu3('limited')" class="filter-btn3 px-6 py-3 rounded-lg font-bold transition glass text-gray-300 hover:text-amber-400" data-filter="limited">
-                    Limited Edition
-                </button>
-            </div>
+<!-- CTA -->
+<div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+<button class="flex items-center justify-center gap-2 rounded border-2 border-luxury-gold text-luxury-gold hover:bg-luxury-gold/20 transition-all px-8 py-4 text-xs font-bold uppercase tracking-[0.15em] w-full sm:w-auto">
+Pesan Meja
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+<button class="flex items-center justify-center gap-2 rounded bg-luxury-gold/10 border-2 border-luxury-gold/30 text-gray-400 hover:text-luxury-gold hover:border-luxury-gold transition-all px-8 py-4 text-xs font-bold uppercase tracking-[0.15em] w-full sm:w-auto">
+Lihat Koleksi Lengkap
+</button>
+</div>
+</div>
 
-            <!-- Menu Grid -->
-            <div id="menuGrid3" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Items rendered here -->
-            </div>
-        </div>
-    </section>
+<!-- Image -->
+<div class="relative z-10 lg:flex-1 mt-8 lg:mt-0">
+<div class="relative aspect-square rounded-2xl overflow-hidden border border-luxury-gold/30 bg-gradient-to-br from-luxury-gold/10 to-transparent">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD0eUNnvzqUsQG1pTvf04ClGqtH29x0y-RgFLq8SH3Ymbx-sjnbs2FVha9NOheF5HvDWNgxu_UfL0ryT632AoSY_TrCighKlbuC7D-sz3gzPV1XTQTe4J74X_H0gmKBNj6mXB7oXUkOLdN-4UW-EWRLJ8wAxlAL_KdFa5k74FyO-XniDch0h0krUuXbqnusLO-GGS43rdNJ_ieCWQd9hMzeRrS0vfKfP9XDaaue2k41fQpD6XIJ_cSTjY22dp4QD9y9-A8fER7z5Mo');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-luxury-dark via-transparent to-transparent"></div>
+<!-- Floating Badge -->
+<div class="absolute bottom-6 left-6 rounded-lg bg-luxury-dark/80 border border-luxury-gold/50 px-4 py-3 backdrop-blur-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined !text-lg text-luxury-gold animate-gold-shimmer">diamond</span>
+<div>
+<p class="text-xs text-gray-400">Keahlian Kuliner</p>
+<p class="text-lg font-bold text-luxury-gold">Generasi 3</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 px-4 relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-r from-amber-900/20 to-red-900/20"></div>
-        <div class="max-w-7xl mx-auto relative z-10">
-            <div class="glass rounded-3xl p-12 border border-amber-600/50">
-                <h2 class="text-5xl font-black text-center mb-4">
-                    <span class="gold-text">Reserve Sekarang</span>
-                </h2>
-                <p class="text-center text-gray-300 text-lg mb-12">Hubungi concierge kami untuk pengalaman kuliner premium yang tak terlupakan.</p>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                    <button onclick="whatsappChat('Saya ingin mereserve dimsum luxury')" class="text-center group">
-                        <div class="text-6xl mb-4 group-hover:scale-110 transition">📱</div>
-                        <h3 class="text-2xl font-bold gold-text mb-2">WhatsApp</h3>
-                        <p class="text-gray-400 text-xl font-semibold group-hover:text-amber-400 transition">085155043133</p>
-                    </button>
-                    <div class="text-center">
-                        <div class="text-6xl mb-4">📍</div>
-                        <h3 class="text-2xl font-bold gold-text mb-2">Lokasi</h3>
-                        <p class="text-gray-400 text-xl font-semibold">Surabaya, Jawa Timur</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-6xl mb-4">⏰</div>
-                        <h3 class="text-2xl font-bold gold-text mb-2">Jam Layanan</h3>
-                        <p class="text-gray-400 text-xl font-semibold">10:00 - 20:00 WIB</p>
-                    </div>
-                </div>
+<!-- The Prestige Collection -->
+<section class="px-6 py-24 lg:px-20 bg-gradient-to-b from-luxury-dark via-neutral-900 to-luxury-dark">
+<div class="mx-auto max-w-[1200px]">
+<div class="mb-16 text-center lg:text-left">
+<h2 class="text-sm font-bold uppercase tracking-[0.2em] text-luxury-gold mb-4">Koleksi Eksklusif</h2>
+<h3 class="text-4xl lg:text-5xl font-black tracking-tight text-gray-100">MASTERPIECE DIMSUM KAMI</h3>
+</div>
 
-                <div class="text-center">
-                    <button onclick="whatsappChat('Saya ingin mereserve koleksi dimsum premium luxury')" class="inline-block bg-gradient-to-r from-amber-600 to-red-600 text-white px-12 py-4 rounded-lg font-bold text-xl hover:shadow-2xl hover:shadow-amber-600/50 transition">
-                        Reserve Dimsum Luxury
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Grid Collection -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Featured Item 1 -->
+<div class="group relative col-span-1 overflow-hidden rounded-xl border border-luxury-gold/30 bg-gradient-to-br from-luxury-gold/5 to-transparent hover:border-luxury-gold/60 hover:shadow-2xl hover:shadow-luxury-gold/20 transition-all duration-500 h-80">
+<div class="absolute inset-0 z-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD7qXyzTApM4U2HPi8_ISR1MjAHG0X6qTuxXYNSYug2tj5R-AbDwVcHMgQyKO2J-SCB1ltL6zbTL37NkKnY6BvWFofHU9OfEDjz7jXeG3_iH4x3EU7KKR9NPb9ptrbosvp7ulFIOPdNcdE2ysZmRopwC0BMrb4xV-yyJ_bTAWwjz5GcM6VuSsr-T4kN0z7_o6xZ_jbl2S_NRYmxm-rIzXU1sjRe81c55JgdP6DKD-BU_elSkCCU4u5gZqSaFtsODB5eRYuOF_Rdoxo');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-luxury-dark via-luxury-dark/40 to-transparent z-10"></div>
+<div class="absolute bottom-0 left-0 p-8 text-white z-20">
+<div class="mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined !text-base text-luxury-gold">diamond</span>
+<span class="text-xs font-bold uppercase tracking-[0.15em] text-luxury-gold">Masterpiece</span>
+</div>
+<h3 class="text-2xl font-bold mb-1">Xiao Long Bao Royal</h3>
+<p class="text-sm text-gray-300 mb-4">Kupuknya dipanggang dengan tangan, jus kepiting mahal dari Harim.</p>
+<div class="flex items-center justify-between">
+<span class="text-xl font-bold text-luxury-gold">Rp 250K</span>
+<span class="text-xs text-gray-400">Per 6 pcs</span>
+</div>
+</div>
+</div>
 
-    <!-- Footer -->
-    <footer class="border-t border-amber-600/30 py-12 px-4 text-center text-gray-500">
-        <div class="max-w-7xl mx-auto">
-            <h3 class="text-2xl font-black gold-text mb-2">👑 Dimsum Luxury Bangalexzz</h3>
-            <p class="text-amber-700 font-bold">Premium Gourmet Experience</p>
-            <p class="mt-4">&copy; 2026 Bangalexzz. Crafted dengan excellence untuk Anda.</p>
-        </div>
-    </footer>
+<!-- Featured Item 2 -->
+<div class="group relative col-span-1 overflow-hidden rounded-xl border border-luxury-gold/30 bg-gradient-to-br from-luxury-gold/5 to-transparent hover:border-luxury-gold/60 hover:shadow-2xl hover:shadow-luxury-gold/20 transition-all duration-500 h-80">
+<div class="absolute inset-0 z-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAy0mW4np5IU6ML0TGcJxADgqVkgvKSXV2AAn_1J4hcBbrS1FY2V_oQ-sdxNh0I_kW8-HuhNuacFCluhG_ziLd8IWFB8Zy3Zw2bjDG2mAZxR_LX-zqrKi2XVtIo9agUMbdKy8jEe_j_odebL8CIFLHNORPM5uOAS7wEgAXqFw8z-zyx53RX-9fBqTIaz3x4qc0szGamM7EOLbF0uS1k6fsJevC0B8KzdyEf15cwgNqIZVBhh64W8HlexTvXVslhBeXNoJQB_EB99xA');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-luxury-dark via-luxury-dark/40 to-transparent z-10"></div>
+<div class="absolute bottom-0 left-0 p-8 text-white z-20">
+<div class="mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined !text-base text-luxury-gold">diamond</span>
+<span class="text-xs font-bold uppercase tracking-[0.15em] text-luxury-gold">Edisi Terbatas</span>
+</div>
+<h3 class="text-2xl font-bold mb-1">Har Gow Prestige</h3>
+<p class="text-sm text-gray-300 mb-4">Kulit bening sempurna dengan udang tiger premium dari perairan dingin.</p>
+<div class="flex items-center justify-between">
+<span class="text-xl font-bold text-luxury-gold">Rp 220K</span>
+<span class="text-xs text-gray-400">Per 4 pcs</span>
+</div>
+</div>
+</div>
 
-    <!-- Back Button -->
-    <button class="back-btn" onclick="history.back()" title="Kembali">←</button>
+<!-- Item 3 -->
+<div class="group relative col-span-1 overflow-hidden rounded-xl border border-luxury-gold/30 bg-gradient-to-br from-luxury-gold/5 to-transparent hover:border-luxury-gold/60 hover:shadow-2xl hover:shadow-luxury-gold/20 transition-all duration-500 h-80">
+<div class="absolute inset-0 z-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB-tBWz7h6VwxCYFB0K2jLdmVqqpzs-B61x3LNYHpkRSqLi8W1lP3SmQT2L5FD_A5OQi9lVWWlL6hkFpWYWctgLmmCl_jVgVw2dD0hXL0vCEpGmVXMSYhqSMnlqfx8w3tN0YlD6sQEzAMvCXu_5u5JbYL_5hTArKCQqH63RfUdYzpWyYDr7wExB7b6DZJQ2BqJELohBTZDC8FjIz4_YgHwT7V_tM62FfCIkFz0TlHGS8LqA4c8xhvhxvO7J0PW_IHKGZ7rp0YFMxpw');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-luxury-dark via-luxury-dark/40 to-transparent z-10"></div>
+<div class="absolute bottom-0 left-0 p-8 text-white z-20">
+<div class="mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined !text-base text-luxury-gold">sentiment_satisfied_alt</span>
+<span class="text-xs font-bold uppercase tracking-[0.15em] text-luxury-gold">Chef's Choice</span>
+</div>
+<h3 class="text-2xl font-bold mb-1">Siu Mai Truffle Gold</h3>
+<p class="text-sm text-gray-300 mb-4">Daging babi kurobuta, kuning telur asli, truffle hitam premium.</p>
+<div class="flex items-center justify-between">
+<span class="text-xl font-bold text-luxury-gold">Rp 280K</span>
+<span class="text-xs text-gray-400">Per 4 pcs</span>
+</div>
+</div>
+</div>
 
-    <script>
-        const menuItems3 = [
-            { id: 1, category: 'premium', name: 'Mentai Eksklusif Original', desc: 'Mentai premium dengan isian mentai segar pilihan berkualitas tinggi', price: 'Rp 48.000', badge: 'PREMIUM' },
-            { id: 2, category: 'premium', name: 'Mentai Caviar Gold', desc: 'Mentai dengan topping caviar asli Russia yang eksklusif', price: 'Rp 65.000', badge: 'EKSKLUSIF' },
-            { id: 3, category: 'luxury', name: 'Truffle Keju Wagyu', desc: 'Keju truffel hitam dengan daging wagyu premium terbaik', price: 'Rp 85.000', badge: 'LUXURY' },
-            { id: 4, category: 'luxury', name: 'Sous Vide Saffron', desc: 'Proses sous vide dengan saffron Kashmir asli yang mewah', price: 'Rp 95.000', badge: 'LUXURY' },
-            { id: 5, category: 'limited', name: 'Udang Vannamei Premium', desc: 'Udang premium dengan bumbu lada hitam eksklusif istimewa', price: 'Rp 75.000', badge: 'LIMITED' },
-            { id: 6, category: 'limited', name: 'Foie Gras Mentai', desc: 'Kombinasi eksklusif foie gras dengan mentai premium terbaik', price: 'Rp 125.000', badge: 'LIMITED' },
-            { id: 7, category: 'premium', name: 'Goreng Keju Parmigiano', desc: 'Dimsum goreng dengan keju Parmigiano Reggiano asli italia', price: 'Rp 52.000', badge: 'PREMIUM' },
-            { id: 8, category: 'luxury', name: 'Black Garlic Dimsum', desc: 'Black garlic fermentasi dengan rasa umami mendalam eksklusif', price: 'Rp 79.000', badge: 'LUXURY' },
-        ];
+<!-- Item 4 -->
+<div class="group relative col-span-1 overflow-hidden rounded-xl border border-luxury-gold/30 bg-gradient-to-br from-luxury-gold/5 to-transparent hover:border-luxury-gold/60 hover:shadow-2xl hover:shadow-luxury-gold/20 transition-all duration-500 h-80">
+<div class="absolute inset-0 z-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBWwIkGpVjKIxUvuY5ULs6xQKRZ5sQzhf8xdB45LSfTHVgGJtxANbjqVvLLR_6LKYQtQWwH1F6hTKWqNlKvVgGKHLfI4TwQiS8vJVUnTekL95PYQwOe73v1-1bWPZKJXEVEGYV0xDphSWAv0rR7KVU4U6pf3wyEiDCKzqVX_F1SnNSf2gVGlNFwPURx7eFf-r8rJ8EWV4G2TqMGg5F3TTr3cJfvFxQW1chP_6B5rg4_nLaqQVLN0bAh40Rl6EQ5mFyFaDx98rg');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-luxury-dark via-luxury-dark/40 to-transparent z-10"></div>
+<div class="absolute bottom-0 left-0 p-8 text-white z-20">
+<div class="mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined !text-base text-luxury-gold">diamond</span>
+<span class="text-xs font-bold uppercase tracking-[0.15em] text-luxury-gold">Ultra Eksklusif</span>
+</div>
+<h3 class="text-2xl font-bold mb-1">Scallop Dimsum Mewah</h3>
+<p class="text-sm text-gray-300 mb-4">Kerang datalaran Hokkaido, butter ganache, kaviar Beluga.</p>
+<div class="flex items-center justify-between">
+<span class="text-xl font-bold text-luxury-gold">Rp 350K</span>
+<span class="text-xs text-gray-400">Per 3 pcs</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-        function filterMenu3(category) {
-            document.querySelectorAll('.filter-btn3').forEach(btn => {
-                btn.classList.remove('bg-amber-600', 'text-black');
-                btn.classList.add('glass', 'text-gray-300');
-            });
-            document.querySelector(`[data-filter="${category}"]`).classList.add('bg-amber-600', 'text-black');
-            document.querySelector(`[data-filter="${category}"]`).classList.remove('glass', 'text-gray-300');
-            
-            const container = document.getElementById('menuGrid3');
-            const filtered = category === 'all' ? menuItems3 : menuItems3.filter(item => item.category === category);
-            
-            container.innerHTML = filtered.map(item => `
-                <div class="glass rounded-2xl p-6 border border-amber-600/30 hover:border-amber-600/60 transition group flex flex-col h-full">
-                    <div class="w-full h-40 rounded-lg overflow-hidden mb-4 bg-amber-900/20 flex items-center justify-center text-5xl">
-                        🥟
-                    </div>
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-bold gold-text mb-2 flex-grow">${item.name}</h3>
-                        <span class="text-xs font-bold text-amber-400 border border-amber-600/50 px-3 py-1 rounded whitespace-nowrap ml-2">${item.badge}</span>
-                    </div>
-                    <p class="text-gray-400 text-sm mb-4 leading-relaxed flex-grow">${item.desc}</p>
-                    <div class="flex justify-between items-center mt-auto pt-4 border-t border-amber-600/30">
-                        <span class="text-2xl font-black gold-text">${item.price}</span>
-                        <button onclick="whatsappChat('Saya ingin mereserve ${item.name}')" class="bg-amber-600 text-black px-4 py-2 rounded-lg text-sm font-bold hover:bg-amber-500 transition group-hover:scale-110">
-                            Reserve
-                        </button>
-                    </div>
-                </div>
-            `).join('');
-        }
-        
-        function whatsappChat(message) {
-            const phoneNumber = '085155043133';
-            const encodedMessage = encodeURIComponent(message);
-            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-            window.open(whatsappUrl, '_blank');
-        }
-        
-        filterMenu3('all');
-    </script>
-</body>
-</html>
+<!-- Experience Section -->
+<section class="px-6 py-24 lg:px-20 border-t border-luxury-gold/20">
+<div class="mx-auto max-w-[1200px]">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+<!-- Text Content -->
+<div class="lg:col-span-1 space-y-6">
+<div class="space-y-4">
+<h2 class="text-sm font-bold uppercase tracking-[0.2em] text-luxury-gold">Pengalaman Makan</h2>
+<h3 class="text-3xl lg:text-4xl font-black tracking-tight text-gray-100">
+Tradisi Chef Keluarga Turun Temurun
+</h3>
+<p class="text-gray-400 font-light leading-relaxed">
+Dimsum bukan sekedar makanan bagi kami. Ini adalah warisan tiga generasi, dibuat dengan teknik kuno dan bahan-bahan pilihan terbaik. Setiap gigitan menceritakan kisah kedermawanan dan komitmen kami terhadap kesempurnaan.
+</p>
+</div>
+<button class="flex items-center gap-2 rounded border border-luxury-gold/50 text-luxury-gold hover:border-luxury-gold hover:bg-luxury-gold/10 transition-all px-6 py-3 text-xs font-bold uppercase tracking-[0.15em]">
+Baca Kisah Kami
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+
+<!-- Features Grid -->
+<div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-4">
+<div class="flex items-center justify-center size-12 rounded border border-luxury-gold/50 text-luxury-gold">
+<span class="material-symbols-outlined">shield_star</span>
+</div>
+<h4 class="text-lg font-bold text-gray-100">Jaminan Harga Purba</h4>
+<p class="text-sm text-gray-500">Kami memastikan setiap dimsum, tanpa terkecualian, mencapai standar Michelin sebelum sampai ke meja Anda.</p>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-center size-12 rounded border border-luxury-gold/50 text-luxury-gold">
+<span class="material-symbols-outlined">inventory_2</span>
+</div>
+<h4 class="text-lg font-bold text-gray-100">Persiapan Segar Setiap Hari</h4>
+<p class="text-sm text-gray-500">Pastry, filling, dan kuah dibuat fresh setiap pagi oleh tim chef kami dalam dapur terbuka.</p>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-center size-12 rounded border border-luxury-gold/50 text-luxury-gold">
+<span class="material-symbols-outlined">diamond</span>
+</div>
+<h4 class="text-lg font-bold text-gray-100">Bahan Impor Premium</h4>
+<p class="text-sm text-gray-500">Udang harimau dari perairan dingin, daging kurobuta Jepang, dan rempah-rempah pilihan dunia.</p>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-center size-12 rounded border border-luxury-gold/50 text-luxury-gold">
+<span class="material-symbols-outlined">workspace_premium</span>
+</div>
+<h4 class="text-lg font-bold text-gray-100">Peradaban Kuliner</h4>
+<p class="text-sm text-gray-500">Setiap presentasi adalah seni. Setiap rasa adalah simfoni. Setiap pengalaman adalah kenangan seumur hidup.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Testimonials -->
+<section class="px-6 py-24 lg:px-20 bg-gradient-to-b from-transparent via-luxury-gold/5 to-transparent border-y border-luxury-gold/10">
+<div class="mx-auto max-w-[1200px]">
+<h2 class="text-center text-sm font-bold uppercase tracking-[0.2em] text-luxury-gold mb-16">Pengakuan Prestige</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="rounded-lg border border-luxury-gold/30 bg-luxury-dark/50 p-8 backdrop-blur-sm hover:border-luxury-gold/60 hover:bg-luxury-dark/80 transition-all">
+<div class="flex items-center gap-2 mb-4">
+<span class="text-luxury-gold">★★★★★</span>
+</div>
+<p class="text-gray-400 text-sm mb-6 leading-relaxed italic">
+"Pengalaman yang mengubah perspektif saya tentang dimsum. Tidak ada yang dapat menyamai kesempurnaan ini."
+</p>
+<p class="text-gray-300 text-sm font-bold">James Chen</p>
+<p class="text-gray-600 text-xs">Food Critic - Singapore</p>
+</div>
+
+<!-- Testimonial 2 -->
+<div class="rounded-lg border border-luxury-gold/30 bg-luxury-dark/50 p-8 backdrop-blur-sm hover:border-luxury-gold/60 hover:bg-luxury-dark/80 transition-all">
+<div class="flex items-center gap-2 mb-4">
+<span class="text-luxury-gold">★★★★★</span>
+</div>
+<p class="text-gray-400 text-sm mb-6 leading-relaxed italic">
+"Dimsum Prestige Bangalexzz adalah standar baru bagi kelezatan masakan Kanton. Spektakuler dalam setiap cara!"
+</p>
+<p class="text-gray-300 text-sm font-bold">Maria Santoso</p>
+<p class="text-gray-600 text-xs">Head Chef - Jakarta</p>
+</div>
+
+<!-- Testimonial 3 -->
+<div class="rounded-lg border border-luxury-gold/30 bg-luxury-dark/50 p-8 backdrop-blur-sm hover:border-luxury-gold/60 hover:bg-luxury-dark/80 transition-all">
+<div class="flex items-center gap-2 mb-4">
+<span class="text-luxury-gold">★★★★★</span>
+</div>
+<p class="text-gray-400 text-sm mb-6 leading-relaxed italic">
+"Kualitas yang konsisten, layanan yang sempurna, dan cita rasa yang abadi. Bangalexzz meredefenisi keunggulan."
+</p>
+<p class="text-gray-300 text-sm font-bold">David Wijaya</p>
+<p class="text-gray-600 text-xs">Konglomerat Kuliner</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Reservation CTA -->
+<section class="relative px-6 py-24 lg:px-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute top-0 right-0 w-96 h-96 rounded-full border border-luxury-gold/20 blur-3xl"></div>
+<div class="absolute bottom-0 left-0 w-72 h-72 rounded-full border border-luxury-gold/10 blur-2xl"></div>
+</div>
+<div class="relative z-10 mx-auto flex max-w-2xl flex-col items-center text-center gap-8">
+<h2 class="text-3xl lg:text-4xl font-black text-gray-100">
+RESERVASI MEJA ANDA SEKARANG
+</h2>
+<p class="text-gray-400 leading-relaxed max-w-lg">
+Karena kesediaan terbatas, kami hanya menerima 20 meja per hari. Hubungi concierge kami untuk pengalaman yang tak terlupakan.
+</p>
+<div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+<a href="tel:085155043133" class="flex items-center justify-center gap-2 rounded border-2 border-luxury-gold text-luxury-gold hover:bg-luxury-gold/20 transition-all px-8 py-4 text-sm font-bold uppercase tracking-[0.15em] font-mono">
+<span class="material-symbols-outlined">phone</span>
+085155043133
+</a>
+<button class="flex items-center justify-center gap-2 rounded bg-luxury-gold text-luxury-dark hover:bg-luxury-gold/90 transition-all px-8 py-4 text-sm font-bold uppercase tracking-[0.15em]">
+<span class="material-symbols-outlined">mail</span>
+kirim email
+</button>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="border-t border-luxury-gold/20 px-6 py-16 lg:px-20">
+<div class="mx-auto max-w-[1200px] flex flex-col gap-12">
+<!-- Main Footer Content -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 text-luxury-gold">
+<div class="flex size-8 items-center justify-center rounded border border-luxury-gold text-luxury-gold">
+<span class="material-symbols-outlined !text-sm font-bold">restaurant_2</span>
+</div>
+<div>
+<h2 class="text-sm font-bold uppercase tracking-[0.2em]">Bangalexzz</h2>
+<p class="text-luxury-gold text-xs font-light">Prestige Dimsum</p>
+</div>
+</div>
+<p class="text-gray-600 text-xs leading-relaxed max-w-xs">
+Pengalaman kuliner kanton terbaik dengan standar internasional. Sejak 1987.
+</p>
+</div>
+
+<div class="flex flex-col gap-4">
+<h3 class="text-xs font-bold uppercase tracking-[0.2em] text-luxury-gold">Jelajahi</h3>
+<nav class="flex flex-col gap-2">
+<a href="#" class="text-gray-600 hover:text-luxury-gold transition-colors text-xs">Koleksi Menu</a>
+<a href="#" class="text-gray-600 hover:text-luxury-gold transition-colors text-xs">Tentang Kami</a>
+<a href="#" class="text-gray-600 hover:text-luxury-gold transition-colors text-xs">Warisan</a>
+<a href="#" class="text-gray-600 hover:text-luxury-gold transition-colors text-xs">Pekarangan Chef</a>
+</nav>
+</div>
+
+<div class="flex flex-col gap-4">
+<h3 class="text-xs font-bold uppercase tracking-[0.2em] text-luxury-gold">Informasi</h3>
+<div class="flex flex-col gap-2 text-xs text-gray-600">
+<p>Jl. Raya Kraton No. 123</p>
+<p>Surabaya 60175, Indonesia</p>
+<p class="mt-3">
+<span class="block">📞 085155043133</span>
+<span class="block">⏰ Terbuka: 11:00 - 23:00</span>
+</p>
+</div>
+</div>
+
+<div class="flex flex-col gap-4">
+<h3 class="text-xs font-bold uppercase tracking-[0.2em] text-luxury-gold">Connect</h3>
+<div class="flex gap-3">
+<a href="#" class="flex items-center justify-center size-10 rounded border border-luxury-gold/30 text-luxury-gold hover:border-luxury-gold/60 hover:bg-luxury-gold/10 transition-all">
+<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path></svg>
+</a>
+<a href="#" class="flex items-center justify-center size-10 rounded border border-luxury-gold/30 text-luxury-gold hover:border-luxury-gold/60 hover:bg-luxury-gold/10 transition-all">
+<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465 1.067-.047 1.407-.06 4.123-.06h.08z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+
+<!-- Bottom Bar -->
+<div class="border-t border-luxury-gold/20 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-600">
+<p>© 2024 Bangalexzz Prestige Dimsum. Semua hak dilindungi.</p>
+<div class="flex gap-4">
+<a href="#" class="hover:text-luxury-gold transition-colors">Syarat & Ketentuan</a>
+<span>•</span>
+<a href="#" class="hover:text-luxury-gold transition-colors">Kebijakan Privasi</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
 </body>
 </html>
