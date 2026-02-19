@@ -88,7 +88,7 @@ export const staticProjectsData = [
     gallery: [
       { type: "link", title: "Buka Landing Page", src: "/landing-pages/resto-mie-ayam-landing.html" }
     ],
-    landingPageUrl: "/landing-pages/resto-mie-ayam-landing.html"
+    landingPageUrl: "/landing-pages/resto-mie-ayam"
   },
   {
     id: "bangalexzz-nasi-campur-landing",
@@ -103,7 +103,7 @@ export const staticProjectsData = [
     gallery: [
       { type: "link", title: "Buka Landing Page", src: "/landing-pages/resto-nasi-campur-landing.html" }
     ],
-    landingPageUrl: "/landing-pages/resto-nasi-campur-landing.html"
+    landingPageUrl: "/landing-pages/resto-nasi-campur"
   },
   {
     id: "bangalexzz-dimsum-modern-landing",
@@ -118,7 +118,7 @@ export const staticProjectsData = [
     gallery: [
       { type: "link", title: "Buka Landing Page", src: "/landing-pages/snack-dimsum-modern.html" }
     ],
-    landingPageUrl: "/landing-pages/snack-dimsum-modern.html"
+    landingPageUrl: "/landing-pages/dimsum-modern"
   },
   {
     id: "bangalexzz-dimsum-playful-landing",
@@ -133,7 +133,7 @@ export const staticProjectsData = [
     gallery: [
       { type: "link", title: "Buka Landing Page", src: "/landing-pages/snack-dimsum-playful.html" }
     ],
-    landingPageUrl: "/landing-pages/snack-dimsum-playful.html"
+    landingPageUrl: "/landing-pages/dimsum-playful"
   },
   {
     id: "bangalexzz-dimsum-luxury-landing",
@@ -148,7 +148,7 @@ export const staticProjectsData = [
     gallery: [
       { type: "link", title: "Buka Landing Page", src: "/landing-pages/snack-dimsum-luxury.html" }
     ],
-    landingPageUrl: "/landing-pages/snack-dimsum-luxury.html"
+    landingPageUrl: "/landing-pages/dimsum-luxury"
   },
   {
     id: "bangalexzz-property-agent-landing",
@@ -163,7 +163,7 @@ export const staticProjectsData = [
     gallery: [
       { type: "link", title: "Buka Landing Page", src: "/landing-pages/property-agent-landing.html" }
     ],
-    landingPageUrl: "/landing-pages/property-agent-landing.html"
+    landingPageUrl: "/landing-pages/property-agent"
   }
 ]
 

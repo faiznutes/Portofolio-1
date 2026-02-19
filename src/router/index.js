@@ -12,6 +12,11 @@ import CompanyPackage from '../views/company/CompanyPackage.vue'
 import CompanyGallery from '../views/company/CompanyGallery.vue'
 import CompanyContact from '../views/company/CompanyContact.vue'
 import RestaurantNasiCampur from '../views/landings/RestaurantNasiCampur.vue'
+import RestoMieAyamLanding from '../views/landings/RestoMieAyamLanding.vue'
+import PropertyAgentLanding from '../views/landings/PropertyAgentLanding.vue'
+import DimsuModernLanding from '../views/landings/DimsuModernLanding.vue'
+import DimsuPlayfulLanding from '../views/landings/DimsuPlayfulLanding.vue'
+import DimsuLuxuryLanding from '../views/landings/DimsuLuxuryLanding.vue'
 import { useProjects } from '../composables/useProjects'
 
 const { getProjectById } = useProjects()
@@ -77,6 +82,56 @@ const routes = [
       title: 'Nasi Campur Bangalexzz - Hidangan Indonesia Modern',
       description: 'Bangalexzz Nasi Campur - Cita rasa autentik Indonesia dengan sentuhan modern di Surabaya. Interactive menu builder dengan customizable toppings.',
       keywords: 'nasi campur, bangalexzz, restoran surabaya, hidangan indonesia, menu customizable'
+    }
+  },
+  {
+    path: '/landing-pages/resto-mie-ayam',
+    name: 'RestoMieAyamLanding',
+    component: RestoMieAyamLanding,
+    meta: {
+      title: 'Mie Ayam Bangalexzz - Resto Modern Surabaya',
+      description: 'Bangalexzz Mie Ayam - Cita rasa autentik mie ayam dengan harga terjangkau di Surabaya. Menu spesial dengan berbagai pilihan paket bundling.',
+      keywords: 'mie ayam, resto, bangalexzz, surabaya, makanan terkenal, paket bundling'
+    }
+  },
+  {
+    path: '/landing-pages/property-agent',
+    name: 'PropertyAgentLanding',
+    component: PropertyAgentLanding,
+    meta: {
+      title: 'Agen Properti Surabaya - Jual Beli Rumah Terpercaya',
+      description: 'Layanan jual-beli properti profesional di Surabaya. Kami membantu menemukan rumah idaman Anda dengan harga terbaik.',
+      keywords: 'agen properti, rumah, surabaya, jual beli, properti terpercaya'
+    }
+  },
+  {
+    path: '/landing-pages/dimsum-modern',
+    name: 'DimsuModernLanding',
+    component: DimsuModernLanding,
+    meta: {
+      title: 'Dimsum Modern Surabaya - Dimsum Premium Berkualitas',
+      description: 'Dimsum Modern Premium - Cita rasa dimsum berkualitas tinggi dengan bahan terbaik. Pengalaman kuliner modern yang tak terlupakan di Surabaya.',
+      keywords: 'dimsum, dimsum modern, surabaya, premium, restoran, makanan asia'
+    }
+  },
+  {
+    path: '/landing-pages/dimsum-playful',
+    name: 'DimsuPlayfulLanding',
+    component: DimsuPlayfulLanding,
+    meta: {
+      title: 'Dimsum Playful - Dimsum Seru dan Menyenangkan',
+      description: 'Bangalexzz Dimsum Playful - Dimsum seru dengan suasana yang menyenangkan dan menu yang bikin ngakak. Cocok untuk keluarga dan teman-teman.',
+      keywords: 'dimsum, dimsum seru, dimsum playful, surabaya, makan bersama, family friendly'
+    }
+  },
+  {
+    path: '/landing-pages/dimsum-luxury',
+    name: 'DimsuLuxuryLanding',
+    component: DimsuLuxuryLanding,
+    meta: {
+      title: 'Dimsum Luxury - Premium Dimsum Masterpiece Collection',
+      description: 'Bangalexzz Dimsum Luxury - Pengalaman fine dining dengan koleksi dimsum premium. Bahan pilihan dan chef berpengalaman untuk kepuasan maksimal.',
+      keywords: 'dimsum luxury, dimsum premium, fine dining, surabaya, masterpiece, exclusive'
     }
   },
   {
