@@ -1,289 +1,311 @@
+<!-- Dimsum Modern Landing Page - Indonesian -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dimsum Modern - Surabaya</title>
+    <title>Dimsum Modern - Bangalexzz</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13eca4",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#10221c",
+                        "surface": "#ffffff",
+                        "neutral-dark": "#0d1b17",
+                        "neutral-mid": "#4c9a80",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
     <style>
-        :root {
-            --primary: #1a1a1a;
-            --accent: #dc2626;
-            --accent-light: #ef4444;
-            --bg: #ffffff;
-            --bg-light: #f9fafb;
-            --text: #111827;
-            --text-light: #6b7280;
-            --border: #e5e7eb;
-            --spacing: 8px;
-            --radius: 12px;
-            --shadow: 0 4px 12px rgba(0,0,0,0.08);
-            --shadow-lg: 0 8px 24px rgba(220,38,38,0.12);
-            --transition: 0.3s ease;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text); line-height: 1.6; background: var(--bg); }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 calc(var(--spacing) * 2); }
-        
-        header { background: linear-gradient(135deg, var(--primary) 0%, #2d2d2d 100%); color: white; padding: calc(var(--spacing) * 2) 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-        .header-content { display: flex; align-items: center; justify-content: space-between; }
-        .logo { font-size: 1.5rem; font-weight: 700; text-decoration: none; color: white; letter-spacing: 0.5px; }
-        .header-contact { display: flex; gap: calc(var(--spacing) * 4); align-items: center; font-size: 0.95rem; }
-        .header-contact a { color: white; text-decoration: none; font-weight: 600; }
-        
-        h1, h2, h3 { font-weight: 700; }
-        h1 { font-size: clamp(2.5rem, 6vw, 3.5rem); line-height: 1.1; color: var(--primary); }
-        h2 { font-size: clamp(2rem, 5vw, 2.75rem); margin-bottom: calc(var(--spacing) * 3); color: var(--text); position: relative; display: inline-block; }
-        h2::after { content: ''; position: absolute; bottom: -12px; left: 0; width: 60px; height: 3px; background: var(--accent); border-radius: 2px; }
-        h3 { font-size: 1.2rem; color: var(--text); }
-        p { color: var(--text-light); }
-        
-        .btn { display: inline-flex; align-items: center; justify-content: center; padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 3); border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; border: none; cursor: pointer; transition: all var(--transition); white-space: nowrap; }
-        .btn-primary { background: var(--accent); color: white; box-shadow: 0 4px 12px rgba(220,38,38,0.2); }
-        .btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(220,38,38,0.3); }
-        
-        section { padding: calc(var(--spacing) * 8) 0; }
-        section.light { background: var(--bg-light); }
-        
-        .hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: calc(var(--spacing) * 3); align-items: center; }
-        .hero h1 { margin-bottom: calc(var(--spacing) * 2); }
-        .hero p { font-size: 1.1rem; margin-bottom: calc(var(--spacing) * 2); }
-        .hero-emoji { font-size: 9rem; text-align: center; animation: float 3s ease-in-out infinite; }
-        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-15px); } }
-        
-        .section-title { margin-bottom: calc(var(--spacing) * 4); }
-        
-        .grid { display: grid; gap: calc(var(--spacing) * 2.5); }
-        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-        .grid-4 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-        
-        .feature-card { background: white; border-radius: var(--radius); padding: calc(var(--spacing) * 2.5); border: 1px solid var(--border); box-shadow: var(--shadow); transition: all var(--transition); text-align: center; }
-        .feature-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
-        .feature-icon { font-size: 3.5rem; margin-bottom: calc(var(--spacing) * 1.5); display: block; }
-        .feature-card h3 { margin-bottom: calc(var(--spacing) * 1); }
-        .feature-card p { font-size: 0.95rem; }
-        
-        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: calc(var(--spacing) * 2.5); }
-        .menu-item { background: white; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); transition: all var(--transition); }
-        .menu-item:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
-        .menu-image { font-size: 3.5rem; padding: calc(var(--spacing) * 2.5) 0; text-align: center; background: linear-gradient(135deg, rgba(220,38,38,0.05), rgba(239,68,68,0.05)); min-height: 130px; display: flex; align-items: center; justify-content: center; }
-        .menu-body { padding: calc(var(--spacing) * 2); }
-        .menu-name { font-weight: 700; font-size: 1.1rem; margin-bottom: calc(var(--spacing) * 0.5); }
-        .menu-desc { font-size: 0.85rem; color: var(--text-light); margin-bottom: calc(var(--spacing) * 1); }
-        .menu-footer { display: flex; align-items: center; justify-content: space-between; margin-top: calc(var(--spacing) * 1.5); padding-top: calc(var(--spacing) * 1.5); border-top: 1px solid var(--border); }
-        .menu-price { font-weight: 700; font-size: 1.2rem; color: var(--accent); }
-        .menu-item .btn { padding: calc(var(--spacing) * 1) calc(var(--spacing) * 1.5); font-size: 0.85rem; }
-        
-        .testimonial { background: white; border-radius: var(--radius); padding: calc(var(--spacing) * 2.5); border-left: 4px solid var(--accent); box-shadow: var(--shadow); }
-        .testimonial-stars { color: var(--accent); margin-bottom: calc(var(--spacing) * 1); font-size: 1.1rem; }
-        .testimonial-text { font-style: italic; font-size: 0.95rem; margin-bottom: calc(var(--spacing) * 1.5); color: var(--text-light); }
-        .testimonial-author { font-weight: 700; color: var(--text); }
-        
-        footer { background: linear-gradient(135deg, var(--primary) 0%, #2d2d2d 100%); color: white; padding: calc(var(--spacing) * 4) 0 calc(var(--spacing) * 2); }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: calc(var(--spacing) * 3); margin-bottom: calc(var(--spacing) * 3); }
-        .footer-grid h4 { margin-bottom: calc(var(--spacing) * 1.5); }
-        .footer-grid p { color: rgba(255,255,255,0.9); font-size: 0.95rem; }
-        .footer-grid a { color: #fbbf24; text-decoration: none; }
-        .footer-bottom { text-align: center; padding-top: calc(var(--spacing) * 2); border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; }
-        
-        .cta-section { background: linear-gradient(135deg, var(--primary) 0%, #2d2d2d 100%); color: white; border-radius: var(--radius); padding: calc(var(--spacing) * 4); text-align: center; }
-        .cta-section h3 { color: white; font-size: 1.75rem; margin-bottom: calc(var(--spacing) * 1.5); }
-        .cta-section p { color: rgba(255,255,255,0.9); margin-bottom: calc(var(--spacing) * 2); }
-        
-        .back-button { position: fixed; bottom: calc(var(--spacing) * 2); right: calc(var(--spacing) * 2); width: 50px; height: 50px; background: var(--accent); color: white; border: none; border-radius: 50%; font-size: 1.5rem; cursor: pointer; box-shadow: var(--shadow-lg); display: flex; align-items: center; justify-content: center; transition: all var(--transition); z-index: 50; }
-        .back-button:hover { transform: scale(1.1); }
-        
-        @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            h2 { font-size: 1.5rem; }
-            .hero { grid-template-columns: 1fr; }
-            .hero-emoji { font-size: 6rem; }
-            .footer-grid { grid-template-columns: 1fr; }
-            .header-contact { flex-direction: column; gap: calc(var(--spacing) * 1); }
-        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f6f8f7; }
+        ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
     </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <a href="#" class="logo">✨ Dimsum Modern</a>
-                <div class="header-contact">
-                    <span>📍 Surabaya</span>
-                    <a href="tel:085155043133">📱 085155043133</a>
-                </div>
-            </div>
-        </div>
-    </header>
+<body class="bg-background-light text-neutral-dark overflow-x-hidden antialiased">
+<div class="relative flex min-h-screen w-full flex-col group/design-root">
+<!-- Navbar -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-neutral-dark/5 bg-background-light/90 backdrop-blur-md px-6 py-4 lg:px-20">
+<div class="flex items-center gap-4 text-neutral-dark">
+<div class="flex size-8 items-center justify-center rounded bg-primary text-neutral-dark">
+<span class="material-symbols-outlined !text-xl font-bold">restaurant</span>
+</div>
+<h2 class="text-neutral-dark text-lg font-extrabold leading-tight tracking-tight">BANGALEXZZ</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8">
+<nav class="flex items-center gap-9">
+<a class="text-neutral-dark/70 hover:text-primary text-sm font-bold uppercase tracking-wider transition-colors" href="#">Menu Pilihan</a>
+<a class="text-neutral-dark/70 hover:text-primary text-sm font-bold uppercase tracking-wider transition-colors" href="#">Cerita</a>
+<a class="text-neutral-dark/70 hover:text-primary text-sm font-bold uppercase tracking-wider transition-colors" href="#">Pesan</a>
+</nav>
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded bg-neutral-dark text-white hover:bg-neutral-dark/90 transition-all h-10 px-6 text-sm font-bold uppercase tracking-wider shadow-lg shadow-neutral-dark/20">
+<span class="truncate">Pesan Sekarang</span>
+</button>
+</div>
+<!-- Mobile Menu Icon -->
+<button class="md:hidden flex items-center justify-center text-neutral-dark">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
 
-    <main>
-        <section>
-            <div class="container">
-                <div class="hero">
-                    <div>
-                        <h1>Dimsum Modern</h1>
-                        <p>Cita rasa tradisional bertemu inovasi kontemporer. Setiap gigitan adalah perpaduan sempurna antara tekstur lembut, rasa autentik, dan presentasi modern yang memukau.</p>
-                        <a href="https://wa.me/6285155043133?text=Halo%20Dimsum%20Modern,%20saya%20ingin%20memesan" class="btn btn-primary">🛵 Pesan Sekarang</a>
-                    </div>
-                    <div class="hero-emoji">🥡</div>
-                </div>
-            </div>
-        </section>
+<!-- Hero Section -->
+<div class="w-full px-4 pt-4 pb-10 lg:px-20 lg:pt-8">
+<div class="relative flex min-h-[600px] flex-col items-center justify-center overflow-hidden rounded-xl bg-neutral-dark px-4 py-20 text-center shadow-2xl">
+<!-- Background Image -->
+<div class="absolute inset-0 z-0 opacity-40 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDL3A8RiUAVxeGHZCTJmurn7NiI0cm4oF1BNmu2hULII4RBjlc-oSRCW1W7WWePZbopEldOWd7ENRNrScU9FEP96gUiXRzflZCW-Iwmh1NvHmOkf_g5Px67wrwxoQKSyhmsay8z5kHK4G7mUuXDGsqA3LSfr6DAnrcvOkbF9zNVLxyuxJGN7dh58N8rCuRJy1GKOYSY8or6yXzE-Kf75qEB3Wpt4ZmSOYHS-YFyIN8m154kn4wndmkO96-Ok9xxZ5h17VJLjI1qXLU');"></div>
+<div class="absolute inset-0 z-0 bg-gradient-to-t from-neutral-dark via-transparent to-transparent"></div>
+<div class="relative z-10 max-w-4xl flex flex-col items-center gap-6">
+<div class="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 backdrop-blur-sm">
+<span class="block size-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-xs font-medium uppercase tracking-widest text-white/80">Dimsum Terbaik Surabaya</span>
+</div>
+<h1 class="font-display text-5xl font-black leading-tight tracking-tighter text-white sm:text-7xl lg:text-8xl">
+PRESISI<br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-white">SEMPURNA</span>
+</h1>
+<p class="max-w-xl text-lg text-white/70 sm:text-xl font-light">
+Masa depan cita rasa tradisional. Dirancang untuk tekstur optimal, dikukus sampai sempurna dalam keranjang bambu.
+</p>
+<div class="mt-4 flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+<button class="flex items-center justify-center gap-2 rounded bg-primary px-8 py-4 text-sm font-bold uppercase tracking-wider text-neutral-dark hover:bg-primary/90 hover:scale-105 transition-all duration-300 w-full sm:w-auto">
+Pesan Sekarang
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+<button class="flex items-center justify-center gap-2 rounded border border-white/20 bg-white/5 px-8 py-4 text-sm font-bold uppercase tracking-wider text-white backdrop-blur-sm hover:bg-white/10 transition-all w-full sm:w-auto">
+Lihat Menu
+</button>
+</div>
+</div>
+</div>
+</div>
 
-        <section class="light">
-            <div class="container">
-                <h2 class="section-title">Keunggulan Kami</h2>
-                <div class="grid grid-3">
-                    <div class="feature-card">
-                        <span class="feature-icon">👨‍🍳</span>
-                        <h3>Chef Berpengalaman</h3>
-                        <p>Tim chef profesional dengan pengalaman puluhan tahun membuat dimsum berkualitas tinggi.</p>
-                    </div>
-                    <div class="feature-card">
-                        <span class="feature-icon">🌾</span>
-                        <h3>Bahan Premium</h3>
-                        <p>Bahan pilihan terbaik dipilih langsung untuk menjamin kualitas rasa dan kesegaran.</p>
-                    </div>
-                    <div class="feature-card">
-                        <span class="feature-icon">⚡</span>
-                        <h3>Fresh & Cepat</h3>
-                        <p>Setiap pesanan dibuat fresh on-demand dengan layanan kilat dan ramah hati.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- Specs Strip -->
+<div class="w-full overflow-hidden bg-white border-y border-neutral-dark/5 py-4">
+<div class="flex items-center justify-center gap-12 lg:gap-24 opacity-60">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">verified</span>
+<span class="text-sm font-bold tracking-widest uppercase">Bahan Organik</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">thermostat</span>
+<span class="text-sm font-bold tracking-widest uppercase">100°C Presisi</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">timer</span>
+<span class="text-sm font-bold tracking-widest uppercase">6 Menit Uap</span>
+</div>
+<div class="hidden sm:flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">eco</span>
+<span class="text-sm font-bold tracking-widest uppercase">Keranjang Bambu</span>
+</div>
+</div>
+</div>
 
-        <section>
-            <div class="container">
-                <h2 class="section-title">Menu Dimsum Favorit</h2>
-                <div class="menu-grid">
-                    <div class="menu-item">
-                        <div class="menu-image">🥟</div>
-                        <div class="menu-body">
-                            <div class="menu-name">Shumai Udang</div>
-                            <div class="menu-desc">Udang premium dengan telur ikan yang nikmat</div>
-                            <div class="menu-footer">
-                                <span class="menu-price">Rp 15K</span>
-                                <a href="https://wa.me/6285155043133?text=Pesan%20Shumai%20Udang" class="btn btn-primary">Pesan</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-image">🥟</div>
-                        <div class="menu-body">
-                            <div class="menu-name">Dimsum Ayam Jamur</div>
-                            <div class="menu-desc">Ayam juicy dengan jamur pinus pilihan</div>
-                            <div class="menu-footer">
-                                <span class="menu-price">Rp 14K</span>
-                                <a href="https://wa.me/6285155043133?text=Pesan%20Dimsum%20Ayam%20Jamur" class="btn btn-primary">Pesan</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-image">🍤</div>
-                        <div class="menu-body">
-                            <div class="menu-name">Har Gow (Udang)</div>
-                            <div class="menu-desc">Kulit transparan lembut dengan isi udang segar</div>
-                            <div class="menu-footer">
-                                <span class="menu-price">Rp 18K</span>
-                                <a href="https://wa.me/6285155043133?text=Pesan%20Har%20Gow" class="btn btn-primary">Pesan</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-image">🥟</div>
-                        <div class="menu-body">
-                            <div class="menu-name">Char Siu Bao</div>
-                            <div class="menu-desc">Bao lembut dengan isi daging babi asap nikmat</div>
-                            <div class="menu-footer">
-                                <span class="menu-price">Rp 12K</span>
-                                <a href="https://wa.me/6285155043133?text=Pesan%20Char%20Siu%20Bao" class="btn btn-primary">Pesan</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-image">🧅</div>
-                        <div class="menu-body">
-                            <div class="menu-name">Onion Cake Dimsum</div>
-                            <div class="menu-desc">Kue bawang renyah dengan aroma sedap</div>
-                            <div class="menu-footer">
-                                <span class="menu-price">Rp 10K</span>
-                                <a href="https://wa.me/6285155043133?text=Pesan%20Onion%20Cake" class="btn btn-primary">Pesan</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-image">🥡</div>
-                        <div class="menu-body">
-                            <div class="menu-name">Paket Hemat (4 porsi)</div>
-                            <div class="menu-desc">Pilihan dimsum populer dalam satu paket</div>
-                            <div class="menu-footer">
-                                <span class="menu-price">Rp 50K</span>
-                                <a href="https://wa.me/6285155043133?text=Pesan%20Paket%20Hemat" class="btn btn-primary">Pesan</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- Culinary Specs Grid -->
+<section class="px-6 py-20 lg:px-20 bg-background-light">
+<div class="mx-auto max-w-[1200px]">
+<div class="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+<div>
+<h2 class="text-sm font-bold uppercase tracking-widest text-primary mb-2">Spesifikasi Kuliner</h2>
+<h3 class="text-3xl font-black tracking-tight text-neutral-dark md:text-5xl">SPESIFIKASI DIMSUM</h3>
+</div>
+<p class="max-w-md text-neutral-dark/60 md:text-right">
+Dirancang untuk profil rasa maksimal. Setiap lipatan dan siklus uap diperhitungkan untuk konsistensi.
+</p>
+</div>
+<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+<!-- Spec Card 1 -->
+<div class="group relative flex flex-col justify-between overflow-hidden rounded-lg bg-white p-8 transition-all hover:shadow-xl border border-transparent hover:border-primary/20">
+<div class="mb-6 flex size-12 items-center justify-center rounded-full bg-background-light text-neutral-dark group-hover:bg-primary group-hover:text-neutral-dark transition-colors">
+<span class="material-symbols-outlined text-2xl">fingerprint</span>
+</div>
+<div>
+<h4 class="mb-2 text-xl font-bold">Dilipat Tangan</h4>
+<p class="text-neutral-dark/60">Tepat 18 lipatan per dimsum. Integritas struktural memastikan retensi jus optimal.</p>
+</div>
+<div class="absolute right-0 top-0 h-24 w-24 translate-x-8 translate-y--8 rounded-full bg-primary/5 blur-2xl transition-all group-hover:bg-primary/20"></div>
+</div>
+<!-- Spec Card 2 -->
+<div class="group relative flex flex-col justify-between overflow-hidden rounded-lg bg-white p-8 transition-all hover:shadow-xl border border-transparent hover:border-primary/20">
+<div class="mb-6 flex size-12 items-center justify-center rounded-full bg-background-light text-neutral-dark group-hover:bg-primary group-hover:text-neutral-dark transition-colors">
+<span class="material-symbols-outlined text-2xl">science</span>
+</div>
+<div>
+<h4 class="mb-2 text-xl font-bold">Uap Presisi</h4>
+<p class="text-neutral-dark/60">Dikukus tepat di 100°C selama 6 menit. Waktu diotomatisasi untuk tekstur sempurna.</p>
+</div>
+<div class="absolute right-0 top-0 h-24 w-24 translate-x-8 translate-y--8 rounded-full bg-primary/5 blur-2xl transition-all group-hover:bg-primary/20"></div>
+</div>
+<!-- Spec Card 3 -->
+<div class="group relative flex flex-col justify-between overflow-hidden rounded-lg bg-white p-8 transition-all hover:shadow-xl border border-transparent hover:border-primary/20">
+<div class="mb-6 flex size-12 items-center justify-center rounded-full bg-background-light text-neutral-dark group-hover:bg-primary group-hover:text-neutral-dark transition-colors">
+<span class="material-symbols-outlined text-2xl">local_florist</span>
+</div>
+<div>
+<h4 class="mb-2 text-xl font-bold">Bahan Organik</h4>
+<p class="text-neutral-dark/60">Bersumber lokal, bahan berkelanjutan dilacak melalui blockchain.</p>
+</div>
+<div class="absolute right-0 top-0 h-24 w-24 translate-x-8 translate-y--8 rounded-full bg-primary/5 blur-2xl transition-all group-hover:bg-primary/20"></div>
+</div>
+</div>
+</div>
+</section>
 
-        <section class="light">
-            <div class="container">
-                <h2 class="section-title">Testimoni Pelanggan</h2>
-                <div class="grid grid-3">
-                    <div class="testimonial">
-                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="testimonial-text">"Dimsum Modern yang sangat menggugah selera. Cita rasanya autentik dengan presentasi elegant. Best dimsum ever!"</p>
-                        <p class="testimonial-author">Rini Kusuma</p>
-                    </div>
-                    <div class="testimonial">
-                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="testimonial-text">"Setiap dimsum dibuat dengan detail yang sempurna. Kulit transparan, isi juicy, harganya worth it banget!"</p>
-                        <p class="testimonial-author">Ahmad Hidayat</p>
-                    </div>
-                    <div class="testimonial">
-                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="testimonial-text">"Ini adalah pengalaman dimsum terbaik saya di Surabaya. Texturenya perfect, rasa yang kompleks. Rekomen berat!"</p>
-                        <p class="testimonial-author">Sophia Chen</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- The Collection -->
+<section class="bg-white px-6 py-20 lg:px-20">
+<div class="mx-auto max-w-[1200px]">
+<div class="mb-10 flex items-center justify-between">
+<h2 class="text-3xl font-black tracking-tight text-neutral-dark md:text-4xl">KOLEKSI DIMSUM KAMI</h2>
+<a class="group flex items-center gap-1 text-sm font-bold uppercase text-neutral-dark hover:text-primary" href="#">
+Lihat Menu Lengkap
+<span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:grid-rows-2 h-auto lg:h-[600px]">
+<!-- Featured Item -->
+<div class="group relative col-span-1 sm:col-span-2 lg:col-span-2 lg:row-span-2 overflow-hidden rounded-lg bg-neutral-100">
+<div class="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBGjDUTEHnb6v3087-afpR8JD5QtZ15d09r48irkYuIDZ9QhBQRNdjwSyyHAQDxZ6BtdjsYh_q37-Gj5iO8N6MNOYunieQk1tMsScb158tizqg-QMMkdsUTc0Rvj6UwVAK-piv79vd_xua7WB5DkWqD_lby9iefCwthxbuVbNESN6mIWJqQbNOFkoKeRDqdJxXgKT1a1ppdroyV7uSDzYyjqg6jFRET6MIJ-LicMUCzrkn0UQcAKCAi0kX4oLVJ_seD2kMX8c8cZqs');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 text-white">
+<div class="mb-2 inline-block rounded bg-primary px-2 py-1 text-xs font-bold uppercase tracking-wider text-neutral-dark">Spesialisasi</div>
+<h3 class="mb-1 text-3xl font-bold">Crystal Shrimp (Har Gow)</h3>
+<p class="mb-4 text-white/80">Kulit plastik transparan, udang harimau utuh, tunas bambu.</p>
+<div class="flex items-center gap-4">
+<span class="text-xl font-bold text-primary">Rp 105K</span>
+<button class="rounded-full bg-white/20 p-2 text-white hover:bg-white/40 backdrop-blur-md transition-colors">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</div>
 
-        <section>
-            <div class="container">
-                <div class="cta-section">
-                    <h3>Pesan Dimsum Modern Sekarang</h3>
-                    <p>Nikmati kelezatan dimsum authentic dengan sentuhan modern. Pesan via WhatsApp, kami siap melayani Anda!</p>
-                    <a href="https://wa.me/6285155043133?text=Halo%20Dimsum%20Modern,%20saya%20ingin%20memesan%20dimsum" class="btn btn-primary" style="background: white; color: var(--accent);">💬 Chat WhatsApp</a>
-                </div>
-            </div>
-        </section>
-    </main>
+<!-- Small Item 1 -->
+<div class="group relative col-span-1 lg:col-span-1 lg:row-span-1 overflow-hidden rounded-lg bg-neutral-100 min-h-[250px]">
+<div class="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD7qXyzTApM4U2HPi8_ISR1MjAHG0X6qTuxXYNSYug2tj5R-AbDwVcHMgQyKO2J-SCB1ltL6zbTL37NkKnY6BvWFofHU9OfEDjz7jXeG3_iH4x3EU7KKR9NPb9ptrbosvp7ulFIOPdNcdE2ysZmRopwC0BMrb4xV-yyJ_bTAWwjz5GcM6VuSsr-T4kN0z7_o6xZ_jbl2S_NRYmxm-rIzXU1sjRe81c55JgdP6DKD-BU_elSkCCU4u5gZqSaFtsODB5eRYuOF_Rdoxo');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 text-white">
+<h3 class="text-lg font-bold">Siu Mai Truffle</h3>
+<p class="text-sm text-white/70">Truffle hitam, babi kurobuta.</p>
+<div class="mt-2 flex items-center justify-between">
+<span class="font-bold text-primary">Rp 95K</span>
+<button class="rounded-full bg-white/20 p-1.5 text-white hover:bg-white/40 backdrop-blur-md transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
 
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <h4>✨ Dimsum Modern</h4>
-                    <p>Dimsum authentic dengan inovasi modern. Setiap gigitan adalah pengalaman kuliner yang tak terlupakan.</p>
-                </div>
-                <div>
-                    <h4>Jam Operasional</h4>
-                    <p><strong>Senin - Minggu</strong><br>10:00 - 21:00</p>
-                    <p style="font-size: 0.85rem;">Pesan sebelum jam 20:00 untuk jaminan ketersediaan</p>
-                </div>
-                <div>
-                    <h4>Hubungi Kami</h4>
-                    <p><strong>WhatsApp/Telepon</strong><br><a href="tel:085155043133">085155043133</a></p>
-                    <p><strong>Chat Sekarang:</strong> <a href="https://wa.me/6285155043133">Pesan Menu</a></p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Dimsum Modern Bangalexzz. Semua hak cipta dilindungi.</p>
-            </div>
-        </div>
-    </footer>
+<!-- Small Item 2 -->
+<div class="group relative col-span-1 lg:col-span-1 lg:row-span-1 overflow-hidden rounded-lg bg-neutral-100 min-h-[250px]">
+<div class="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAy0mW4np5IU6ML0TGcJxADgqVkgvKSXV2AAn_1J4hcBbrS1FY2V_oQ-sdxNh0I_kW8-HuhNuacFCluhG_ziLd8IWFB8Zy3Zw2bjDG2mAZxR_LX-zqrKi2XVtIo9agUMbdKy8jEe_j_odebL8CIFLHNORPM5uOAS7wEgAXqFw8z-zyx53RX-9fBqTIaz3x4qc0szGamM7EOLbF0uS1k6fsJevC0B8KzdyEf15cwgNqIZVBhh64W8HlexTvXVslhBeXNoJQB_EB99xA');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 text-white">
+<h3 class="text-lg font-bold">Char Siu Bao</h3>
+<p class="text-sm text-white/70">Bun lembut, babi BBQ madu.</p>
+<div class="mt-2 flex items-center justify-between">
+<span class="font-bold text-primary">Rp 75K</span>
+<button class="rounded-full bg-white/20 p-1.5 text-white hover:bg-white/40 backdrop-blur-md transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
 
-    <button class="back-button" onclick="window.history.back()" title="Kembali">←</button>
+<!-- Wide Item -->
+<div class="group relative col-span-1 sm:col-span-2 lg:col-span-2 lg:row-span-1 overflow-hidden rounded-lg bg-neutral-100 min-h-[250px]">
+<div class="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAqzIPK7LiJQT_8hnzAdO0f_T9lWb3sh3PSyulThBzUwZGN7hEESHdv0k3gvBf6JNKQp2pg3DJNsuaIjpTY4dcPmWRkqSQjIOekf4LPVOANgwoTbiBZtXcOP7L6TzAPi-JPzgUs3x9AoSmV4dwFcT4ZLL4e6wzevWHBtB_bZPL3KG3Sbn9Dtf3Q1R8z8PWzPdiRmIMPcgK8IfY9eIIXiVReQxRvJodOoze54J0EgVdqbc5pGMzrmiBJk4ytmdcN7OokI_A9B2Bhrh0');"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent"></div>
+<div class="absolute inset-y-0 left-0 flex flex-col justify-center p-8 text-white max-w-md">
+<div class="mb-2 text-primary font-bold tracking-wider text-xs uppercase">Pilihan Chef</div>
+<h3 class="mb-2 text-2xl font-bold">Xiao Long Bao Flight</h3>
+<p class="mb-4 text-white/80">Rasakan dimsum kuah dalam 4 rasa berbeda: Asli, Kepiting, Truffle, dan Daging Pedas.</p>
+<div class="flex items-center gap-4">
+<span class="text-xl font-bold text-primary">Rp 125K</span>
+<button class="text-sm font-bold uppercase underline decoration-primary underline-offset-4 hover:text-primary transition-colors">Tambah ke Pesanan</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Newsletter CTA -->
+<section class="relative bg-neutral-dark px-6 py-24 lg:px-20 overflow-hidden">
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#13eca4 1px, transparent 1px); background-size: 32px 32px;"></div>
+<div class="relative z-10 mx-auto flex max-w-4xl flex-col items-center text-center">
+<h2 class="mb-6 text-4xl font-black text-white sm:text-5xl">
+BERGABUNGLAH DENGAN <span class="text-primary">INNER CIRCLE</span>
+</h2>
+<p class="mb-8 max-w-lg text-lg text-white/60">
+Dapatkan akses eksklusif ke menu rahasia, acara meja chef, dan reservasi prioritas.
+</p>
+<form class="flex w-full max-w-md flex-col gap-3 sm:flex-row">
+<input class="flex-1 rounded border-2 border-transparent bg-white/10 px-4 py-3 text-white placeholder-white/40 outline-none backdrop-blur-sm focus:border-primary focus:bg-white/20 transition-all font-medium" placeholder="MASUKKAN EMAIL ANDA" type="email">
+<button class="rounded bg-primary px-8 py-3 text-sm font-bold uppercase tracking-wider text-neutral-dark hover:bg-primary/90 transition-colors" type="button">
+Berlangganan
+</button>
+</form>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-background-light px-6 py-12 lg:px-20 border-t border-neutral-dark/10">
+<div class="mx-auto flex max-w-[1200px] flex-col justify-between gap-10 md:flex-row">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 text-neutral-dark">
+<div class="flex size-6 items-center justify-center rounded bg-neutral-dark text-white">
+<span class="material-symbols-outlined !text-xs font-bold">restaurant</span>
+</div>
+<h2 class="text-lg font-extrabold tracking-tight">BANGALEXZZ DIMSUM</h2>
+</div>
+<p class="max-w-xs text-sm text-neutral-dark/60">
+Mendefinisikan kembali masakan Kanton tradisional melalui rekayasa kuliner modern.
+</p>
+<div class="flex gap-4 mt-2">
+<a class="text-neutral-dark/60 hover:text-primary transition-colors" href="#"><svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path></svg></a>
+<a class="text-neutral-dark/60 hover:text-primary transition-colors" href="#"><svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465 1.067-.047 1.407-.06 4.123-.06h.08zm0 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058z"></path></svg></a>
+</div>
+</div>
+<div class="flex gap-12 md:gap-24">
+<div class="flex flex-col gap-3">
+<h3 class="text-sm font-bold uppercase tracking-wider text-neutral-dark">Jelajahi</h3>
+<a class="text-sm text-neutral-dark/60 hover:text-primary transition-colors" href="#">Menu</a>
+<a class="text-sm text-neutral-dark/60 hover:text-primary transition-colors" href="#">Cerita Kami</a>
+<a class="text-sm text-neutral-dark/60 hover:text-primary transition-colors" href="#">Lokasi</a>
+<a class="text-sm text-neutral-dark/60 hover:text-primary transition-colors" href="#">Karir</a>
+</div>
+<div class="flex flex-col gap-3">
+<h3 class="text-sm font-bold uppercase tracking-wider text-neutral-dark">Dukungan</h3>
+<a class="text-sm text-neutral-dark/60 hover:text-primary transition-colors" href="#">Pesan Meja</a>
+<a class="text-sm text-neutral-dark/60 hover:text-primary transition-colors" href="#">Acara Pribadi</a>
+<a class="text-sm text-neutral-dark/60 hover:text-primary transition-colors" href="#">Kartu Hadiah</a>
+<a class="text-sm text-neutral-dark/60 hover:text-primary transition-colors" href="#">Hubungi Kami</a>
+</div>
+</div>
+<div class="flex flex-col gap-2 md:items-end">
+<div class="h-24 w-40 overflow-hidden rounded bg-gray-200">
+<div class="h-full w-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD0eUNnvzqUsQG1pTvf04ClGqtH29x0y-RgFLq8SH3Ymbx-sjnbs2FVha9NOheF5HvDWNgxu_UfL0ryT632AoSY_TrCighKlbuC7D-sz3gzPV1XTQTe4J74X_H0gmKBNj6mXB7oXUkOLdN-4UW-EWRLJ8wAxlAL_KdFa5k74FyO-XniDch0h0krUuXbqnusLO-GGS43rdNJ_ieCWQd9hMzeRrS0vfKfP9XDaaue2k41fQpD6XIJ_cSTjY22dp4QD9y9-A8fER7z5Mo');"></div>
+</div>
+<p class="text-xs text-neutral-dark/50">© 2024 Bangalexzz Dimsum Modern. Semua hak dilindungi.</p>
+</div>
+</div>
+</footer>
+</div>
 </body>
 </html>
