@@ -1,3 +1,8 @@
+/* Tailwind CSS Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   /* 🎨 Midnight Blue Theme - Soft & Elegant */
   --bg-color: #0f1419;
