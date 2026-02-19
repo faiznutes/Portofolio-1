@@ -44,7 +44,7 @@ export function useProjects() {
 
   const getFeaturedProjects = () => {
     const projectsData = getProjectsData()
-    const featuredIds = ['banner-pencalonan-bupati-lamongan', 'ayam-lepas-lebak-bulus', 'logo-fossei-rakereg-2021']
+    const featuredIds = ['pencalonan-bupati-lamongan', 'ayam-lepas-lebak-bulus', 'logo-fossei-rakereg-2021']
     return featuredIds
       .map(id => projectsData.find(p => p.id === id))
       .filter(p => p)

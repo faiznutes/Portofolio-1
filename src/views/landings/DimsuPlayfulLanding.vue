@@ -34,7 +34,10 @@
                 Pesan Yuk! 🍜
               </button>
             </div>
-            <div class="bg-gradient-to-br from-pink-400 to-yellow-300 rounded-3xl aspect-video shadow-2xl flex items-center justify-center text-6xl">😋</div>
+            <div class="relative rounded-3xl aspect-video shadow-2xl flex items-center justify-center overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?w=1200&h=800&auto=format&fit=crop" 
+                class="w-full h-full object-cover" alt="Dimsum Playful Hero" />
+            </div>
           </div>
         </div>
       </section>
@@ -46,7 +49,10 @@
           <p class="text-slate-600 text-center mb-12">Dimsum yang bikin senyum dari telinga ke telinga!</p>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 bg-gradient-to-br from-pink-100 to-pink-50 border-2 border-pink-200">
-              <div class="aspect-video bg-gradient-to-br from-pink-300 to-orange-300 flex items-center justify-center text-6xl">🦐</div>
+              <div class="aspect-video flex items-center justify-center overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?w=800&h=600&auto=format&crop=center" 
+                  class="w-full h-full object-cover" alt="Shrimp Dimsum" />
+              </div>
               <div class="p-4">
                 <h3 class="font-bold text-lg text-slate-900">Shrimp Dimsum Rainbow</h3>
                 <p class="text-slate-600 text-sm mt-1">Warna-warni cerah, rasa yang ngakak! ✨</p>
@@ -55,7 +61,10 @@
             </div>
 
             <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 bg-gradient-to-br from-yellow-100 to-yellow-50 border-2 border-yellow-200">
-              <div class="aspect-video bg-gradient-to-br from-yellow-300 to-orange-300 flex items-center justify-center text-6xl">🥓</div>
+              <div class="aspect-video flex items-center justify-center overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1526318896980-cf78c088247c?w=800&h=600&auto=format&crop=center" 
+                  class="w-full h-full object-cover" alt="Pork Bun" />
+              </div>
               <div class="p-4">
                 <h3 class="font-bold text-lg text-slate-900">Pork Bun Creamy</h3>
                 <p class="text-slate-600 text-sm mt-1">Lumer di mulut, bikin senyum! 😋</p>
@@ -64,7 +73,10 @@
             </div>
 
             <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 bg-gradient-to-br from-orange-100 to-orange-50 border-2 border-orange-200">
-              <div class="aspect-video bg-gradient-to-br from-orange-300 to-red-300 flex items-center justify-center text-6xl">🧡</div>
+              <div class="aspect-video flex items-center justify-center overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1496116214517-7982d5a9d84f?w=800&h=600&auto=format&crop=center" 
+                  class="w-full h-full object-cover" alt="Veggie Dimsum" />
+              </div>
               <div class="p-4">
                 <h3 class="font-bold text-lg text-slate-900">Veggie Dimsum Crunchy</h3>
                 <p class="text-slate-600 text-sm mt-1">Sehat tapi tetap fun! 🥬</p>

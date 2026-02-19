@@ -33,7 +33,10 @@
                 Pesan Sekarang
               </button>
             </div>
-            <div class="bg-gradient-to-br from-amber-800 to-orange-900 rounded-2xl aspect-video shadow-2xl"></div>
+            <div class="relative rounded-2xl aspect-video shadow-2xl overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1496116214517-7982d5a9d84f?w=1200&h=800&auto=format&fit=crop" 
+                class="w-full h-full object-cover" alt="Dimsum Modern Hero" />
+            </div>
           </div>
         </div>
       </section>
@@ -44,7 +47,10 @@
           <h2 class="text-3xl md:text-4xl font-bold text-white mb-12">Koleksi Dimsum</h2>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div class="rounded-xl overflow-hidden bg-slate-700 hover:bg-slate-600 transition-colors">
-              <div class="aspect-video bg-orange-700"></div>
+              <div class="aspect-video overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?w=800&h=600&auto=format&crop=center" 
+                  class="w-full h-full object-cover" alt="Crystal Shrimp" />
+              </div>
               <div class="p-4">
                 <h3 class="font-bold text-lg text-white">Crystal Shrimp (Har Gow)</h3>
                 <p class="text-slate-300 text-sm mt-1">Kulit bening, udang tiger premium - 4 pcs</p>
@@ -53,7 +59,10 @@
             </div>
 
             <div class="rounded-xl overflow-hidden bg-slate-700 hover:bg-slate-600 transition-colors">
-              <div class="aspect-video bg-orange-700"></div>
+              <div class="aspect-video overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1526318896980-cf78c088247c?w=800&h=600&auto=format&crop=center" 
+                  class="w-full h-full object-cover" alt="Siu Mai Truffle" />
+              </div>
               <div class="p-4">
                 <h3 class="font-bold text-lg text-white">Siu Mai Truffle</h3>
                 <p class="text-slate-300 text-sm mt-1">Kurobuta, telur asli, truffle hitam - 4 pcs</p>
@@ -62,7 +71,10 @@
             </div>
 
             <div class="rounded-xl overflow-hidden bg-slate-700 hover:bg-slate-600 transition-colors">
-              <div class="aspect-video bg-orange-700"></div>
+              <div class="aspect-video overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?w=800&h=600&auto=format&crop=center" 
+                  class="w-full h-full object-cover" alt="Xiao Long Bao Flight" />
+              </div>
               <div class="p-4">
                 <h3 class="font-bold text-lg text-white">Xiao Long Bao Flight</h3>
                 <p class="text-slate-300 text-sm mt-1">Kupuk tangan, jus kepiting harim - 6 pcs</p>

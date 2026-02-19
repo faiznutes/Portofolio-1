@@ -28,18 +28,18 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="w-full px-4 py-12 lg:py-20 lg:px-10 mx-auto max-w-7xl">
+    <section class="w-full px-4 py-12 lg:py-20 lg:px-10 mx-auto max-w-7xl bg-background-dark rounded-3xl mt-8">
       <div class="flex flex-col-reverse lg:flex-row gap-10 items-center">
         <div class="flex-1 flex flex-col gap-6 text-left lg:pr-10">
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 w-fit">
             <span class="material-symbols-outlined text-primary text-sm">restaurant</span>
             <span class="text-primary-dark text-xs font-bold uppercase tracking-wider">Autentik Indonesia</span>
           </div>
-          <h1 class="text-text-main text-4xl sm:text-5xl lg:text-7xl font-black leading-[1.1] tracking-[-0.033em]">
+          <h1 class="text-white text-4xl sm:text-5xl lg:text-7xl font-black leading-[1.1] tracking-[-0.033em]">
             Seni Mencampur.<br/>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-600">Cita rasa tradisional</span>, piring modern.
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-white">Cita rasa tradisional</span>, piring modern.
           </h1>
-          <p class="text-text-muted text-lg font-normal leading-relaxed max-w-xl">
+          <p class="text-gray-300 text-lg font-normal leading-relaxed max-w-xl">
             Rasakan kekayaan warisan kuliner Indonesia dengan sentuhan kontemporer. Bahan segar, rempah berani, kombinasi tak terbatas.
           </p>
           <div class="flex gap-4 pt-4">
@@ -75,7 +75,7 @@
           <div class="absolute inset-0 bg-primary/20 rounded-2xl blur-3xl transform rotate-3 scale-95 opacity-50 group-hover:rotate-6 transition-transform duration-700"></div>
           <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
             <img alt="Nasi Campur" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700" 
-              src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=800&h=600&auto=format&crop=center" />
+              src="https://images.unsplash.com/photo-1544148103-0773bf10d330?w=1200&h=800&auto=format&fit=crop" />
           </div>
           <!-- Floating Badge -->
           <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl flex items-center gap-3 animate-bounce" style="animation-duration: 3s;">
@@ -105,14 +105,20 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 h-auto md:h-[600px]">
           <!-- Menu items grid -->
-          <div class="md:col-span-2 md:row-span-2 relative group rounded-2xl overflow-hidden cursor-pointer bg-gray-200">
+          <div class="md:col-span-2 md:row-span-2 relative group rounded-2xl overflow-hidden cursor-pointer">
+            <img alt="Beef Rendang close up"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&h=800&auto=format&fit=crop" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 flex flex-col justify-end">
               <span class="bg-primary text-text-main text-xs font-bold px-2 py-1 rounded w-fit mb-2">Spesialisasi</span>
               <h3 class="text-white text-2xl font-bold">Rendang Daging</h3>
               <p class="text-gray-300 text-sm mt-1">Dimasak 8 jam dalam santan kaya dan rempah.</p>
             </div>
           </div>
-          <div class="md:col-span-1 md:row-span-1 relative group rounded-2xl overflow-hidden cursor-pointer bg-gray-200">
+          <div class="md:col-span-1 md:row-span-1 relative group rounded-2xl overflow-hidden cursor-pointer">
+            <img alt="Sate Ayam skewers"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?w=800&h=800&auto=format&fit=crop" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-4 flex flex-col justify-end">
               <h3 class="text-white text-lg font-bold">Sate Ayam</h3>
               <p class="text-gray-300 text-xs">Tusuk ayam panggang.</p>
@@ -128,7 +134,10 @@
               <button class="mt-4 text-xs font-bold underline decoration-2 decoration-primary underline-offset-4">Jelajahi Pedas</button>
             </div>
           </div>
-          <div class="md:col-span-2 md:row-span-1 relative group rounded-2xl overflow-hidden cursor-pointer bg-gray-200">
+          <div class="md:col-span-2 md:row-span-1 relative group rounded-2xl overflow-hidden cursor-pointer">
+            <img alt="Gado Gado salad"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&h=400&auto=format&fit=crop" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-4 flex flex-col justify-end">
               <h3 class="text-white text-lg font-bold">Gado Gado</h3>
               <p class="text-gray-300 text-xs">Sayuran campur dengan kuah kacang.</p>
@@ -159,8 +168,8 @@
             <h3 class="font-bold text-xl mb-4">Pilih Nasi Anda</h3>
             <div class="grid grid-cols-2 gap-4">
               <div class="border-2 border-primary bg-primary/5 p-4 rounded-xl cursor-pointer flex flex-col items-center gap-3">
-                <div class="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center">
-                  <span class="text-3xl">🍚</span>
+                <div class="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center overflow-hidden">
+                  <img alt="White Rice" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1516684732162-798a0062be99?w=300&h=300&auto=format&crop=center" />
                 </div>
                 <div class="text-center">
                   <p class="font-bold text-text-main">Nasi Putih</p>
@@ -171,8 +180,8 @@
                 </div>
               </div>
               <div class="border border-gray-200 hover:border-primary/50 p-4 rounded-xl cursor-pointer flex flex-col items-center gap-3">
-                <div class="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center">
-                  <span class="text-3xl">💛</span>
+                <div class="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center overflow-hidden">
+                  <img alt="Yellow Rice" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1564869733874-7c154d33d712?w=300&h=300&auto=format&crop=center" />
                 </div>
                 <div class="text-center">
                   <p class="font-bold text-text-main">Nasi Kuning</p>
@@ -180,8 +189,8 @@
                 </div>
               </div>
               <div class="border border-gray-200 hover:border-primary/50 p-4 rounded-xl cursor-pointer flex flex-col items-center gap-3">
-                <div class="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center">
-                  <span class="text-3xl">❤️</span>
+                <div class="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center overflow-hidden">
+                  <img alt="Red Rice" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1536304993881-ff0d9e8fe78e?w=300&h=300&auto=format&crop=center" />
                 </div>
                 <div class="text-center">
                   <p class="font-bold text-text-main">Nasi Merah</p>
@@ -189,8 +198,8 @@
                 </div>
               </div>
               <div class="border border-gray-200 hover:border-primary/50 p-4 rounded-xl cursor-pointer flex flex-col items-center gap-3">
-                <div class="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center">
-                  <span class="text-3xl">🥥</span>
+                <div class="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center overflow-hidden">
+                  <img alt="Uduk Rice" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=300&h=300&auto=format&crop=center" />
                 </div>
                 <div class="text-center">
                   <p class="font-bold text-text-main">Nasi Uduk</p>
@@ -201,8 +210,9 @@
           </div>
           <div class="flex-1 bg-background-light rounded-2xl flex flex-col items-center justify-center p-8 relative min-h-[300px]">
             <p class="absolute top-4 left-4 text-xs font-bold uppercase text-gray-400 tracking-widest">Pratinjau Piring</p>
-            <div class="relative w-64 h-64 rounded-full bg-white shadow-2xl border-4 border-gray-100 flex items-center justify-center">
-              <span class="material-symbols-outlined text-gray-300 text-6xl opacity-20">add_circle</span>
+            <div class="relative w-64 h-64 rounded-full bg-white shadow-2xl border-4 border-gray-100 flex items-center justify-center overflow-hidden">
+              <img alt="Rice Base" class="w-48 h-48 object-cover rounded-full opacity-90"
+                src="https://images.unsplash.com/photo-1516684732162-798a0062be99?w=400&h=400&auto=format&crop=center" />
             </div>
             <div class="w-full mt-8 flex justify-between items-center bg-white p-4 rounded-xl shadow-sm border border-gray-100">
               <div>
@@ -226,7 +236,7 @@
           <div class="bg-background-light p-8 rounded-2xl relative">
             <span class="material-symbols-outlined absolute top-6 right-6 text-4xl text-primary/20">format_quote</span>
             <div class="flex items-center gap-4 mb-6">
-              <img alt="Sarah Jenkins" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANK-OY_rCE9oBUSVFTU9Tsrst" />
+              <img alt="Sarah Jenkins" class="w-12 h-12 rounded-full object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&auto=format&crop=faces" />
               <div>
                 <h4 class="font-bold text-text-main">Sarah Jenkins</h4>
                 <div class="flex text-yellow-400 text-xs">
@@ -243,7 +253,7 @@
           <div class="bg-background-light p-8 rounded-2xl relative">
             <span class="material-symbols-outlined absolute top-6 right-6 text-4xl text-primary/20">format_quote</span>
             <div class="flex items-center gap-4 mb-6">
-              <img alt="Michael Chen" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvBxLOjVVz" />
+              <img alt="Michael Chen" class="w-12 h-12 rounded-full object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&auto=format&crop=faces" />
               <div>
                 <h4 class="font-bold text-text-main">Michael Chen</h4>
                 <div class="flex text-yellow-400 text-xs">
@@ -259,7 +269,7 @@
           <div class="bg-background-light p-8 rounded-2xl relative">
             <span class="material-symbols-outlined absolute top-6 right-6 text-4xl text-primary/20">format_quote</span>
             <div class="flex items-center gap-4 mb-6">
-              <img alt="Amanda Lee" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxJUjjiE1UcvRb" />
+              <img alt="Amanda Lee" class="w-12 h-12 rounded-full object-cover" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&auto=format&crop=faces" />
               <div>
                 <h4 class="font-bold text-text-main">Amanda Lee</h4>
                 <div class="flex text-yellow-400 text-xs">
@@ -283,7 +293,8 @@
         <div class="flex-1">
           <div class="relative">
             <div class="absolute -top-4 -left-4 w-20 h-20 border-t-4 border-l-4 border-primary"></div>
-            <div class="w-full rounded-lg shadow-2xl relative z-10 bg-gray-600 aspect-video"></div>
+            <img alt="Kitchen preparation" class="rounded-lg shadow-2xl relative z-10 w-full"
+              src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=1200&h=800&auto=format&fit=crop" />
             <div class="absolute -bottom-4 -right-4 w-20 h-20 border-b-4 border-r-4 border-primary"></div>
           </div>
         </div>

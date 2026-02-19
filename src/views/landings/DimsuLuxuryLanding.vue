@@ -35,7 +35,10 @@
                 Reservasi Sekarang ✦
               </button>
             </div>
-            <div class="bg-gradient-to-br from-amber-600/30 to-amber-900/30 border border-amber-600/50 rounded-3xl aspect-video shadow-2xl flex items-center justify-center text-6xl backdrop-blur-sm">👑</div>
+            <div class="relative rounded-3xl aspect-video shadow-2xl flex items-center justify-center overflow-hidden border border-amber-600/50 backdrop-blur-sm">
+               <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=1200&h=800&auto=format&fit=crop" 
+                 class="w-full h-full object-cover" alt="Dimsum Luxury Hero" />
+            </div>
           </div>
         </div>
       </section>
@@ -77,7 +80,10 @@
           <p class="text-slate-400 text-center mb-12">Limited edition dimsum untuk kesempurnaan rasa</p>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             <div class="rounded-2xl overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900 border border-amber-600/40 hover:border-amber-400 transition-all transform hover:scale-105 shadow-xl">
-              <div class="aspect-video bg-gradient-to-br from-amber-900/50 to-amber-800/30 flex items-center justify-center text-6xl">🦐</div>
+              <div class="aspect-video flex items-center justify-center overflow-hidden">
+                 <img src="https://images.unsplash.com/photo-1496116214517-7982d5a9d84f?w=800&h=600&auto=format&crop=center" 
+                   class="w-full h-full object-cover" alt="Crystal Shrimp Perfection" />
+              </div>
               <div class="p-6">
                 <h3 class="font-bold text-xl text-amber-400">Crystal Shrimp Perfection</h3>
                 <p class="text-slate-400 text-sm mt-2">Udang pilihan dengan pasta krim eksklusif dari Perancis</p>
@@ -92,7 +98,10 @@
             </div>
 
             <div class="rounded-2xl overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900 border border-amber-600/40 hover:border-amber-400 transition-all transform hover:scale-105 shadow-xl">
-              <div class="aspect-video bg-gradient-to-br from-amber-900/50 to-amber-800/30 flex items-center justify-center text-6xl">🍖</div>
+              <div class="aspect-video flex items-center justify-center overflow-hidden">
+                 <img src="https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?w=800&h=600&auto=format&crop=center" 
+                   class="w-full h-full object-cover" alt="Siu Mai Truffle Premium" />
+              </div>
               <div class="p-6">
                 <h3 class="font-bold text-xl text-amber-400">Siu Mai Truffle Premium</h3>
                 <p class="text-slate-400 text-sm mt-2">Daging babi premium dengan truffle hitam dari Italia</p>
@@ -107,7 +116,10 @@
             </div>
 
             <div class="rounded-2xl overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900 border border-amber-600/40 hover:border-amber-400 transition-all transform hover:scale-105 shadow-xl">
-              <div class="aspect-video bg-gradient-to-br from-amber-900/50 to-amber-800/30 flex items-center justify-center text-6xl">🥟</div>
+              <div class="aspect-video flex items-center justify-center overflow-hidden">
+                 <img src="https://images.unsplash.com/photo-1526318896980-cf78c088247c?w=800&h=600&auto=format&crop=center" 
+                   class="w-full h-full object-cover" alt="Xiao Long Bao Gold" />
+              </div>
               <div class="p-6">
                 <h3 class="font-bold text-xl text-amber-400">Xiao Long Bao Gold Edition</h3>
                 <p class="text-slate-400 text-sm mt-2">Pangsit emas dengan kuah kaldu gading 24 jam</p>
@@ -122,7 +134,10 @@
             </div>
 
             <div class="rounded-2xl overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900 border border-amber-600/40 hover:border-amber-400 transition-all transform hover:scale-105 shadow-xl">
-              <div class="aspect-video bg-gradient-to-br from-amber-900/50 to-amber-800/30 flex items-center justify-center text-6xl">🍤</div>
+              <div class="aspect-video flex items-center justify-center overflow-hidden">
+                 <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?w=800&h=600&auto=format&crop=center" 
+                   class="w-full h-full object-cover" alt="Har Gow Royal" />
+              </div>
               <div class="p-6">
                 <h3 class="font-bold text-xl text-amber-400">Har Gow Royal Collection</h3>
                 <p class="text-slate-400 text-sm mt-2">Udang raksasa dengan kulit transparan sempurna</p>
