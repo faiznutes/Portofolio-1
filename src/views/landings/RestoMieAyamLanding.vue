@@ -93,7 +93,10 @@
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Menu Item 1 -->
             <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <div class="aspect-video bg-gray-200"></div>
+              <div class="aspect-video overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1555126634-323283e090fa?w=800&h=600&auto=format&crop=center" 
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt="Mie Ayam Spesial" />
+              </div>
               <div class="p-4">
                 <h3 class="font-bold text-lg text-slate-900">Mie Ayam Spesial</h3>
                 <p class="text-slate-600 text-sm mt-1">Mi dicukil tangan, ayam goreng renyah, telur keras</p>
@@ -103,7 +106,10 @@
 
             <!-- Menu Item 2 -->
             <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <div class="aspect-video bg-gray-200"></div>
+              <div class="aspect-video overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1591814468924-caf88d1232e1?w=800&h=600&auto=format&crop=center" 
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt="Mie Ayam Premium" />
+              </div>
               <div class="p-4">
                 <h3 class="font-bold text-lg text-slate-900">Mie Ayam Premium</h3>
                 <p class="text-slate-600 text-sm mt-1">Mi dicukil, daging ayam premium, pangsit goreng</p>
@@ -113,7 +119,10 @@
 
             <!-- Menu Item 3 -->
             <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <div class="aspect-video bg-gray-200"></div>
+              <div class="aspect-video overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800&h=600&auto=format&crop=center" 
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt="Paket Bundling Mie Ayam" />
+              </div>
               <div class="p-4">
                 <h3 class="font-bold text-lg text-slate-900">Paket Bundling</h3>
                 <p class="text-slate-600 text-sm mt-1">2 porsi mie ayam + minuman</p>
@@ -154,7 +163,10 @@
         <div class="mx-auto max-w-7xl">
           <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-8">Kunjungi Kami</h2>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div class="bg-gray-200 rounded-xl aspect-video"></div>
+            <div class="rounded-xl overflow-hidden shadow-lg">
+              <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&h=600&auto=format&crop=center" 
+                class="w-full h-full object-cover" alt="Lokasi Restoran" />
+            </div>
             <div class="space-y-6">
               <div>
                 <h3 class="font-bold text-lg text-slate-900 flex items-center gap-2">

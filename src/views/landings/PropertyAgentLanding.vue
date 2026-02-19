@@ -29,7 +29,10 @@
                 Konsultasi Gratis
               </button>
             </div>
-            <div class="bg-blue-400 rounded-2xl aspect-video shadow-2xl"></div>
+            <div class="rounded-2xl overflow-hidden shadow-2xl aspect-video">
+              <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&h=800&auto=format&fit=crop" 
+                class="w-full h-full object-cover" alt="Property Hero" />
+            </div>
           </div>
         </div>
       </section>
@@ -64,7 +67,10 @@
           <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-12">Properti Unggulan</h2>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow bg-white">
-              <div class="aspect-video bg-blue-200"></div>
+              <div class="aspect-video overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&auto=format&crop=center" 
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt="Rumah Mewah Modern" />
+              </div>
               <div class="p-4">
                 <h3 class="font-bold text-lg text-slate-900">Rumah Mewah Modern</h3>
                 <p class="text-blue-600 font-bold text-2xl mt-2">Rp 2.5M</p>
@@ -72,7 +78,10 @@
               </div>
             </div>
             <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow bg-white">
-              <div class="aspect-video bg-blue-200"></div>
+              <div class="aspect-video overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&auto=format&crop=center" 
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt="Apartemen Premium" />
+              </div>
               <div class="p-4">
                 <h3 class="font-bold text-lg text-slate-900">Apartemen Premium</h3>
                 <p class="text-blue-600 font-bold text-2xl mt-2">Rp 1.2M</p>
@@ -80,7 +89,10 @@
               </div>
             </div>
             <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow bg-white">
-              <div class="aspect-video bg-blue-200"></div>
+              <div class="aspect-video overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&h=600&auto=format&crop=center" 
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt="Tanah Komersial" />
+              </div>
               <div class="p-4">
                 <h3 class="font-bold text-lg text-slate-900">Tanah Komersial</h3>
                 <p class="text-blue-600 font-bold text-2xl mt-2">Rp 800JT</p>

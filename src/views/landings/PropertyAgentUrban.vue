@@ -129,7 +129,7 @@
           </div>
 
           <div class="group relative overflow-hidden rounded-2xl border border-orange-500/50 hover:border-orange-400 transition-all hover:shadow-2xl hover:shadow-orange-600/40">
-            <img src="https://images.unsplash.com/photo-1512174786900-eb277915b5f1?w=800&h=600&auto=format&crop=center" alt="Surabaya Business Hub" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"/>
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&auto=format&crop=center" alt="Surabaya Business Hub" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"/>
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
             <div class="absolute bottom-0 left-0 right-0 p-8">
               <h3 class="text-3xl font-black text-white mb-2">Surabaya Business Hub</h3>

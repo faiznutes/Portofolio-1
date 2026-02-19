@@ -74,7 +74,7 @@
 
             <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 bg-gradient-to-br from-orange-100 to-orange-50 border-2 border-orange-200">
               <div class="aspect-video flex items-center justify-center overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1496116214517-7982d5a9d84f?w=800&h=600&auto=format&crop=center" 
+                <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?w=800&h=600&auto=format&crop=center" 
                   class="w-full h-full object-cover" alt="Veggie Dimsum" />
               </div>
               <div class="p-4">

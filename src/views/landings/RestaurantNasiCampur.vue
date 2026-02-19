@@ -106,9 +106,9 @@
         <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 h-auto md:h-[600px]">
           <!-- Menu items grid -->
           <div class="md:col-span-2 md:row-span-2 relative group rounded-2xl overflow-hidden cursor-pointer">
-            <img alt="Beef Rendang close up"
+            <img alt="Beef Rendang"
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&h=800&auto=format&fit=crop" />
+              src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800&h=800&auto=format&fit=crop" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 flex flex-col justify-end">
               <span class="bg-primary text-text-main text-xs font-bold px-2 py-1 rounded w-fit mb-2">Spesialisasi</span>
               <h3 class="text-white text-2xl font-bold">Rendang Daging</h3>
@@ -116,9 +116,9 @@
             </div>
           </div>
           <div class="md:col-span-1 md:row-span-1 relative group rounded-2xl overflow-hidden cursor-pointer">
-            <img alt="Sate Ayam skewers"
+            <img alt="Sate Ayam"
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?w=800&h=800&auto=format&fit=crop" />
+              src="https://images.unsplash.com/photo-1529563021893-cc83c992d75d?w=800&h=800&auto=format&fit=crop" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-4 flex flex-col justify-end">
               <h3 class="text-white text-lg font-bold">Sate Ayam</h3>
               <p class="text-gray-300 text-xs">Tusuk ayam panggang.</p>
@@ -180,8 +180,8 @@
                 </div>
               </div>
               <div class="border border-gray-200 hover:border-primary/50 p-4 rounded-xl cursor-pointer flex flex-col items-center gap-3">
-                <div class="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center overflow-hidden">
-                  <img alt="Yellow Rice" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1564869733874-7c154d33d712?w=300&h=300&auto=format&crop=center" />
+                <div class="w-16 h-16 rounded-full bg-yellow-100 flex items-center justify-center overflow-hidden">
+                  <img alt="Nasi Kuning" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=300&h=300&auto=format&crop=center" />
                 </div>
                 <div class="text-center">
                   <p class="font-bold text-text-main">Nasi Kuning</p>
@@ -189,8 +189,8 @@
                 </div>
               </div>
               <div class="border border-gray-200 hover:border-primary/50 p-4 rounded-xl cursor-pointer flex flex-col items-center gap-3">
-                <div class="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center overflow-hidden">
-                  <img alt="Red Rice" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1536304993881-ff0d9e8fe78e?w=300&h=300&auto=format&crop=center" />
+                <div class="w-16 h-16 rounded-full bg-amber-100 flex items-center justify-center overflow-hidden">
+                  <img alt="Nasi Merah" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1574894709920-11b28e7367e3?w=300&h=300&auto=format&crop=center" />
                 </div>
                 <div class="text-center">
                   <p class="font-bold text-text-main">Nasi Merah</p>
@@ -198,8 +198,8 @@
                 </div>
               </div>
               <div class="border border-gray-200 hover:border-primary/50 p-4 rounded-xl cursor-pointer flex flex-col items-center gap-3">
-                <div class="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center overflow-hidden">
-                  <img alt="Uduk Rice" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=300&h=300&auto=format&crop=center" />
+                <div class="w-16 h-16 rounded-full bg-yellow-50 flex items-center justify-center overflow-hidden">
+                  <img alt="Nasi Uduk" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1634086346466-0c7c2e18e92b?w=300&h=300&auto=format&crop=center" />
                 </div>
                 <div class="text-center">
                   <p class="font-bold text-text-main">Nasi Uduk</p>

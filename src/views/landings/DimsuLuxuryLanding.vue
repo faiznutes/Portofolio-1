@@ -81,7 +81,7 @@
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             <div class="rounded-2xl overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900 border border-amber-600/40 hover:border-amber-400 transition-all transform hover:scale-105 shadow-xl">
               <div class="aspect-video flex items-center justify-center overflow-hidden">
-                 <img src="https://images.unsplash.com/photo-1496116214517-7982d5a9d84f?w=800&h=600&auto=format&crop=center" 
+                 <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?w=800&h=600&auto=format&crop=center" 
                    class="w-full h-full object-cover" alt="Crystal Shrimp Perfection" />
               </div>
               <div class="p-6">

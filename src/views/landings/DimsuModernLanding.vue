@@ -3,7 +3,7 @@
     <!-- Header -->
     <header class="sticky top-0 z-40 flex items-center justify-between border-b border-slate-700 bg-slate-900/95 backdrop-blur-md px-4 py-4 md:px-10">
       <div class="flex items-center gap-4">
-        <span class="material-symbols-outlined text-3xl text-amber-400">restaurant_2</span>
+        <span class="material-symbols-outlined text-3xl text-amber-400">dinner_dining</span>
         <h2 class="text-white text-lg md:text-xl font-bold">Bangalexzz Dimsum Modern</h2>
       </div>
       <nav class="hidden md:flex items-center gap-6">
