@@ -53,11 +53,11 @@
           <div class="flex items-center gap-4 mt-8 pt-8 border-t border-[#e7f3ef]">
             <div class="flex -space-x-4">
               <img alt="Customer avatar" class="w-10 h-10 rounded-full border-2 border-white object-cover" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0cDg011H3Kem3h_PIcfZ5LjrpRTzuG5F3Xc4I5Btj5wwGc" />
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&auto=format&crop=faces" />
               <img alt="Customer avatar" class="w-10 h-10 rounded-full border-2 border-white object-cover" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtqA3M1dcLb5YM2P4DPeMpR6tjXF1yfCV6TtG77XV9s3hqz5SwX9DbFiKWYBTpoMrDJRnd54BWmXjlWUjT1ryKlePbOdaP" />
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&auto=format&crop=faces" />
               <img alt="Customer avatar" class="w-10 h-10 rounded-full border-2 border-white object-cover" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuY6UD-ThQWAYFUISNBNfUWxipScoTU" />
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&auto=format&crop=faces" />
             </div>
             <div class="flex flex-col">
               <div class="flex text-yellow-400">
@@ -75,7 +75,7 @@
           <div class="absolute inset-0 bg-primary/20 rounded-2xl blur-3xl transform rotate-3 scale-95 opacity-50 group-hover:rotate-6 transition-transform duration-700"></div>
           <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
             <img alt="Nasi Campur" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEYfy7J788RR2Hmtg_jTeCS_9VfdL8tI6dspLJUeXw8AyItyLMLeoO4CJZtdsktGsXr5Hmi-H3nwbQn1D9fSGpM4kDkBeyzlHtl8dkVle" />
+              src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=800&h=600&auto=format&crop=center" />
           </div>
           <!-- Floating Badge -->
           <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl flex items-center gap-3 animate-bounce" style="animation-duration: 3s;">

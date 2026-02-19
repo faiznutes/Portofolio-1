@@ -26,7 +26,7 @@
               <div class="absolute -inset-2 bg-gradient-to-r from-primary to-yellow-400 rounded-2xl opacity-30 blur-2xl group-hover:opacity-50 transition duration-1000"></div>
               <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <img alt="Mie Ayam" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMGbltDQ7JTYTw6iNMaSkPK-lmG39CLpKrsKA0LjLm5eWEPEspWVxYX_KUAchZ4LHK2mNH-x7BcVtFL4EBKHkz5DEYemPJh8w-YAw-lkd1x-Cg5s8eOKmpFSFmj3idqQapr6Qact-HwOfw0M5oQQ6capd9foLFcTTriOnBXK2JYqfeYnT2S4BgswpjwE2MO0mCylbu3b29ZmWhVmql1e_WPQQtSE9sHakMfFgGczszBLKX5CTcir1l2YZqn7GcYJr2vt4-56hzMOc" />
+                  src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&h=600&auto=format&crop=center" />
               </div>
               <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-xl flex items-center gap-3 animate-bounce" style="animation-duration: 3s;">
                 <div class="bg-yellow-100 p-2 rounded-full text-yellow-600">
@@ -62,11 +62,11 @@
               <div class="flex items-center gap-4 pt-8 border-t border-slate-200">
                 <div class="flex -space-x-3">
                   <img alt="Customer" class="w-10 h-10 rounded-full border-2 border-white object-cover"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhM-EZKQdm-Cl9_5N0fEcWDXl8lRXJVy5JvTTX" />
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&auto=format&crop=faces" />
                   <img alt="Customer" class="w-10 h-10 rounded-full border-2 border-white object-cover"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFCvcGVNl10UhXb1w2d8_y0eVPqFhBjNQPSA8s" />
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&auto=format&crop=faces" />
                   <img alt="Customer" class="w-10 h-10 rounded-full border-2 border-white object-cover"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGaEJv8O47N3p5ZY9V2zN5TwJ4lYHkBR8pSA" />
+                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&auto=format&crop=faces" />
                 </div>
                 <div>
                   <div class="flex text-yellow-400">
